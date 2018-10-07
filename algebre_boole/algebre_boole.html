@@ -1,0 +1,556 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="fr" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="fr" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta content="David Gayerie" name="author" />
+<meta content="Rappel mathématiques sur l'algèbre de Boole." name="description" />
+<meta content="algèbre de Boole, Boole, bool, booléen, De Morgan, fonction logique" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>L’algèbre de Boole &mdash; Documentation U&#39;Dev 2018 1.0</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom_rtd_theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="next" title="Représentation et simplification d’une fonction booléenne" href="representation_simplification.html" />
+    <link rel="prev" title="Sommaire" href="../index.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> U'Dev 2018
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Recherche dans les pages" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">L'algèbre de Boole</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">L’algèbre de Boole</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#definition">Définition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#algebre-de-boole-et-connecteurs-logiques">Algèbre de Boole et connecteurs logiques</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#proprietes">Propriétés</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#l-involution">L’involution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#l-idempotence">L’idempotence</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#les-elements-absorbants">Les éléments absorbants</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#les-lois-de-de-morgan">Les lois de De Morgan</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#l-optimisation">L’optimisation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#les-fonctions-logiques">Les fonctions logiques</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#la-fonction-de-conjonction">La fonction de conjonction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#la-fonction-de-disjonction">La fonction de disjonction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#la-fonction-de-negation">La fonction de négation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#formes-canoniques">Formes canoniques</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#forme-normale-disjonctive">Forme normale disjonctive</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#forme-normale-conjonctive">Forme normale conjonctive</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#simplification">Simplification</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="representation_simplification.html">Représentation et simplification d’une fonction booléenne</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="representation_simplification.html#table-de-verite">Table de vérité</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="representation_simplification.html#table-de-verite-pour-la-fonction-et">Table de vérité pour la fonction ET</a></li>
+<li class="toctree-l3"><a class="reference internal" href="representation_simplification.html#table-de-verite-pour-la-fonction-ou">Table de vérité pour la fonction OU</a></li>
+<li class="toctree-l3"><a class="reference internal" href="representation_simplification.html#table-de-verite-pour-la-fonction-non">Table de vérité pour la fonction NON</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="representation_simplification.html#passage-d-une-fonction-logique-a-une-table-de-verite">Passage d’une fonction logique à une table de vérité</a></li>
+<li class="toctree-l2"><a class="reference internal" href="representation_simplification.html#passage-d-une-table-de-verite-a-une-fonction-logique">Passage d’une table de vérité à une fonction logique</a></li>
+<li class="toctree-l2"><a class="reference internal" href="representation_simplification.html#les-tables-de-karnaugh">Les tables de Karnaugh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="representation_simplification.html#simplification-a-l-aide-d-une-table-de-karnaugh">Simplification à l’aide d’une table de Karnaugh</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">U'Dev 2018</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Accueil</a> &raquo;</li>
+        
+      <li>L’algèbre de Boole</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="representation_simplification.html" class="btn btn-neutral float-right" title="Représentation et simplification d’une fonction booléenne" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../index.html" class="btn btn-neutral" title="Sommaire" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="l-algebre-de-boole">
+<h1>L’algèbre de Boole<a class="headerlink" href="#l-algebre-de-boole" title="Lien permanent vers ce titre">¶</a></h1>
+<p>George Boole (1815 - 1864) est un mathématicien et philosophe britannique. Il est
+le créateur de la logique moderne. Il a travaillé sur une approche symbolique et
+mathématique de la logique aboutissant à la définition d’une structure algébrique
+binaire qui porte son nom.</p>
+<p>L’algèbre de Boole est très largement utilisée aujourd’hui en automatique,
+en électronique et en informatique.</p>
+<div class="section" id="definition">
+<h2>Définition<a class="headerlink" href="#definition" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Soit l’ensemble <img class="math" src="../_images/math/02edec01a875b0a666c307d0a2e688e52144b0a2.svg" alt="\mathbb{B}"/> qui est constitué
+de deux éléments : <strong>les valeurs de vérité</strong> notées 0 et 1.</p>
+<div class="math">
+<p><img src="../_images/math/0e9ecd56894074a587258ee69065f5284e66beb7.svg" alt="\mathbb{B} = \{0, 1\}"/></p>
+</div><p>Sur cet ensemble, on définit deux opérations : <strong>l’addition</strong> (notée +) et la <strong>multiplication</strong> (notée .) ainsi
+qu’une transformation appelée <strong>complémentaire</strong> ou inverse (notée par une barre horizontale).</p>
+<p><img class="math" src="../_images/math/02edec01a875b0a666c307d0a2e688e52144b0a2.svg" alt="\mathbb{B}"/> est une algèbre de Boole si et seulement si il respecte les axiomes suivants :</p>
+<ul>
+<li><p class="first">0 est l’élément neutre pour l’addition</p>
+<div class="math">
+<p><img src="../_images/math/90c870eb772d67df94ff28831b5b2250129c17d5.svg" alt="\forall a \in \mathbb{B} \Rightarrow a + 0 = a"/></p>
+</div></li>
+<li><p class="first">1 est l’élément neutre pour la multiplication</p>
+<div class="math">
+<p><img src="../_images/math/26878e93623f573923f684e59b5e7b00183b12ca.svg" alt="\forall a \in \mathbb{B} \Rightarrow\ a . 1 = a"/></p>
+</div></li>
+<li><p class="first">L’addition et la multiplication sont commutatives</p>
+<div class="math">
+<p><img src="../_images/math/db97f724882c2115ef21f707e992d3922cad7a67.svg" alt="\forall a, b \in \mathbb{B} \Rightarrow\ &amp;a + b = b + a\\
+                                         &amp;a . b = b . a"/></p>
+</div></li>
+<li><p class="first">L’addition et la multiplication sont associatives</p>
+<div class="math">
+<p><img src="../_images/math/ab92936a6c2ffcbb7773df3b805d908f21714c62.svg" alt="\forall a, b \in \mathbb{B} \Rightarrow\ &amp;a + (b + c) = (a + b) + c\\
+                                         &amp;a . (b . c) = (a . b) . c"/></p>
+</div></li>
+<li><p class="first">L’addition et la multiplication sont distributives entre-elles</p>
+<div class="math">
+<p><img src="../_images/math/a844463ed698c7b54d8b6f9ab49dcd2abf625a6c.svg" alt="\forall a, b \in \mathbb{B} \Rightarrow\ &amp;a + (b . c) = (a + b) . (b +c)\\
+                                         &amp;a . (b + c) = (a . b) + (a . c)"/></p>
+</div></li>
+<li><p class="first">Le complémentaire est tel que</p>
+<div class="math">
+<p><img src="../_images/math/62d876f15c38920f609281bcb9de56c4bfdad7aa.svg" alt="\forall a \in \mathbb{B} \Rightarrow\ &amp;a + \overline{a} = 1\\
+                                      &amp;a . \overline{a} = 0"/></p>
+</div></li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Pour la notation, la multiplication est prioritaire sur l’addition. Le complémentaire
+est prioritaire sur les opérations d’addition et de multiplication. On utilise
+des parenthèses pour préciser la priorité :</p>
+<div class="last math">
+<p><img src="../_images/math/1d20859062ff61cf6708631c7e466af0ca5cf411.svg" alt="(a + b) . (a . (c + \overline{d}))"/></p>
+</div></div>
+</div>
+<div class="section" id="algebre-de-boole-et-connecteurs-logiques">
+<h2>Algèbre de Boole et connecteurs logiques<a class="headerlink" href="#algebre-de-boole-et-connecteurs-logiques" title="Lien permanent vers ce titre">¶</a></h2>
+<p>L’algèbre de Boole permet très facilement de représenter des opérations sur des variables
+logiques. L’addition correspond au connecteur logique <strong>OU</strong> et la multiplication correspond
+au connecteur logique <strong>ET</strong>. Ainsi, si nous disons :</p>
+<blockquote>
+<div>La porte OU la fenêtre doivent être ouvertes</div></blockquote>
+<p>Si nous associons <em>a</em> à l’événement <em>la porte est ouverte</em> et <em>b</em> à l’événement <em>la fenêtre est ouverte</em>,
+nous pouvons représenter cette condition algébriquement :</p>
+<div class="math">
+<p><img src="../_images/math/11b08fd6d34cf4d47e44c35c14144e0a4c206b87.svg" alt="a + b"/></p>
+</div><p>De la même manière, si nous disons :</p>
+<blockquote>
+<div>La porte doit être fermée ET la fenêtre aussi.</div></blockquote>
+<p>Nous pouvons aussi représenter cette condition algébriquement :</p>
+<div class="math">
+<p><img src="../_images/math/6a890db8ff11c0a2e1f88daf5724e6842e6d71df.svg" alt="\overline{a} . \overline{b}"/></p>
+</div><p>Grâce à une représentation algébrique d’une proposition logique, il est possible
+de réaliser des simplifications et aussi de faciliter le traitement de ces propositions
+par une machine telle qu’un ordinateur.</p>
+<div class="hint admonition">
+<p class="first admonition-title">Exercice 1</p>
+<p>Pour contrôler l’état d’un système d’alarme, le dispositif central doit
+vérifier qu’une des conditions suivantes est respectée :</p>
+<ul class="simple">
+<li>Il fait nuit et le détecteur de mouvement est activé</li>
+<li>Il fait jour et le système de caméras est activé</li>
+<li>le système de caméras est activé et le détecteur de mouvement est activé</li>
+</ul>
+<p class="last">Traduisez ces conditions à l’aide de variables logiques et d’une expression
+algébrique.</p>
+</div>
+<div class="hint admonition">
+<p class="first admonition-title">Exercice 2</p>
+<p>Un étudiant passe un examen pour quatre matières (français, anglais,
+mathématiques, éducation physique).
+Pour obtenir son diplôme, il doit satisfaire à une de ces conditions :</p>
+<ul class="simple">
+<li>Il doit réussir l’examen de mathématiques et au moins deux autres matières</li>
+<li>Il doit réussir l’examen de français et au moins deux matières qui ne sont pas l’anglais</li>
+<li>Il doit réussir les examens d’anglais et d’éducation physique et au moins une autre matière</li>
+</ul>
+<p class="last">Traduisez ces conditions à l’aide de variables logiques et d’une expression
+algébrique.</p>
+</div>
+</div>
+<div class="section" id="proprietes">
+<h2>Propriétés<a class="headerlink" href="#proprietes" title="Lien permanent vers ce titre">¶</a></h2>
+<p>En plus de l’associativité, de la commutativité et de la distributivité, une algèbre
+de Boole possède les propriétés suivantes :</p>
+<div class="section" id="l-involution">
+<h3>L’involution<a class="headerlink" href="#l-involution" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="math">
+<p><img src="../_images/math/0b04a14627c99bc71c9a686abb86b2c58bbcfea7.svg" alt="\overline{\overline{a}} = a"/></p>
+</div></div>
+<div class="section" id="l-idempotence">
+<h3>L’idempotence<a class="headerlink" href="#l-idempotence" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="math">
+<p><img src="../_images/math/ac306e3a6011384e7d209f776659847092481c97.svg" alt="a + a &amp;= a\\
+a . a &amp;= a"/></p>
+</div></div>
+<div class="section" id="les-elements-absorbants">
+<h3>Les éléments absorbants<a class="headerlink" href="#les-elements-absorbants" title="Lien permanent vers ce titre">¶</a></h3>
+<p>1 est l’élément absorbant pour l’addition et 0 est l’élément absorbant pour
+la multiplication.</p>
+<div class="math">
+<p><img src="../_images/math/a4da4dc50239bd8d2ce0eb6dd201558378e0089d.svg" alt="a + 1 &amp;= 1 \\
+a . 0 &amp;= 0"/></p>
+</div></div>
+<div class="section" id="les-lois-de-de-morgan">
+<h3>Les lois de De Morgan<a class="headerlink" href="#les-lois-de-de-morgan" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Les lois de De Morgan établissent comment on réalise l’inversion d’une expression
+booléenne.</p>
+<div class="math">
+<p><img src="../_images/math/924176319f831af894475f35925aad4359eb12bd.svg" alt="\overline{a + b} &amp;= \overline{a} . \overline{b}\\
+\overline{a . b} &amp;= \overline{a} + \overline{b}"/></p>
+</div><div class="hint admonition">
+<p class="first admonition-title">Exercice</p>
+<p>Dans le règlement intérieur d’une école, on trouve la règle suivante :</p>
+<blockquote>
+<div>Il est défendu de boire ou de manger dans les salles de cours.</div></blockquote>
+<p>Soit les variables logiques B (pour boire) et M (pour manger) :</p>
+<ul class="last simple">
+<li>Déduisez-en une expression logique en fonction de B et M.</li>
+<li>Reformulez cette mention en commençant par «&nbsp;Il est interdit de …&nbsp;» suivi de «&nbsp;et&nbsp;»</li>
+<li>Déduisez de cette reformulation une expression logique en fonction de B et M.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="l-optimisation">
+<h3>L’optimisation<a class="headerlink" href="#l-optimisation" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="math">
+<p><img src="../_images/math/c3606aa0e673a8ea174e10d544cf0822df5ce1ad.svg" alt="a + \overline{a} . b &amp;= a + b\\
+a + b . c &amp;= (a + b) . (a + c)"/></p>
+</div></div>
+</div>
+<div class="section" id="les-fonctions-logiques">
+<h2>Les fonctions logiques<a class="headerlink" href="#les-fonctions-logiques" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Une fonction logique prend comme paramètres une ou plusieurs variables et
+est définie par une expression utilisant les opérations de l’algèbre de Boole.</p>
+<div class="math">
+<p><img src="../_images/math/7d84db38031ccf611a73eb8ac36ee39a4cd4c6f0.svg" alt="f(a, b, c) = a + \overline{b} . c"/></p>
+</div><p>On peut ainsi définir les fonctions standards pour la conjonction, la disjonction
+et la négation.</p>
+<div class="section" id="la-fonction-de-conjonction">
+<h3>La fonction de conjonction<a class="headerlink" href="#la-fonction-de-conjonction" title="Lien permanent vers ce titre">¶</a></h3>
+<p>La fonction de conjonction retourne 1 si les deux paramètres valent 1. Il s’agit
+de la représentation du connecteur logique <strong>ET</strong>.</p>
+<div class="math">
+<p><img src="../_images/math/92ac49c1260e6feb2c4bcae3aec1eeb89e03b260.svg" alt="f(a, b) = a . b"/></p>
+</div></div>
+<div class="section" id="la-fonction-de-disjonction">
+<h3>La fonction de disjonction<a class="headerlink" href="#la-fonction-de-disjonction" title="Lien permanent vers ce titre">¶</a></h3>
+<p>La fonction de disjonction retourne 1 si au moins un des deux paramètres vaut 1.
+Il s’agit de la représentation du connecteur logique <strong>OU</strong>.</p>
+<div class="math">
+<p><img src="../_images/math/58eff03aafea915a72244d03062cb093cc6b222d.svg" alt="f(a, b) = a + b"/></p>
+</div></div>
+<div class="section" id="la-fonction-de-negation">
+<h3>La fonction de négation<a class="headerlink" href="#la-fonction-de-negation" title="Lien permanent vers ce titre">¶</a></h3>
+<p>La fonction de négation retourne la valeur inverse du paramètre passé.
+Il s’agit de la représentation de la négation logique <strong>NON</strong>.</p>
+<div class="math">
+<p><img src="../_images/math/44f390c34959dc4ba94be6e05342080875a713b3.svg" alt="f(a) = \overline{a}"/></p>
+</div></div>
+</div>
+<div class="section" id="formes-canoniques">
+<h2>Formes canoniques<a class="headerlink" href="#formes-canoniques" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Toute fonction logique peut s’écrire sous une forme canonique. On distingue
+la <strong>forme normale disjonctive</strong> (ou première forme canonique) et la <strong>forme normale
+conjonctive</strong> (ou deuxième forme canonique). Les formes canoniques se définissent
+à partir de <strong>mintermes</strong> et de <strong>maxtermes</strong></p>
+<dl class="docutils">
+<dt><strong>minterme</strong></dt>
+<dd>Un minterme de n variables booléennes est une multiplication de ces n variables ou de
+leur complémentaire.</dd>
+<dt><strong>maxterme</strong></dt>
+<dd>Un maxterme de n variables booléennes est une addition de ces n variables ou de
+leur complémentaire.</dd>
+</dl>
+<div class="section" id="forme-normale-disjonctive">
+<h3>Forme normale disjonctive<a class="headerlink" href="#forme-normale-disjonctive" title="Lien permanent vers ce titre">¶</a></h3>
+<p>La forme normale disjonctive d’une fonction logique est l’écriture de son expression
+selon la somme de mintermes.</p>
+<p>Exemple de forme normale disjonctive :</p>
+<div class="math">
+<p><img src="../_images/math/499e1b841c954898427e05a556d6bf442cc3c4bc.svg" alt="f(a, b, c) = (a . b . c) + (a . \overline{b} . c)"/></p>
+</div></div>
+<div class="section" id="forme-normale-conjonctive">
+<h3>Forme normale conjonctive<a class="headerlink" href="#forme-normale-conjonctive" title="Lien permanent vers ce titre">¶</a></h3>
+<p>La forme normale conjonctive d’une fonction logique est l’écriture de son expression
+selon le produit de maxtermes.</p>
+<p>Exemple de forme normale conjonctive :</p>
+<div class="math">
+<p><img src="../_images/math/2fc878e2d5254b3d9ad259fcb3907a150ec6ff64.svg" alt="f(a, b, c) = (a + \overline{b} + c) . (a + b +  \overline{c})"/></p>
+</div><div class="hint admonition">
+<p class="first admonition-title">Exercice : passage à la forme normale</p>
+<p>Soit la fonction logique suivante :</p>
+<div class="math">
+<p><img src="../_images/math/c166fac450ff1731d7f8f4440dd6284ed10bcd1c.svg" alt="f(a, b, c) = a . b + b . \overline{c}"/></p>
+</div><p>Écrivez la fonction <img class="math" src="../_images/math/b1d5b403f2c17082eac91072e3bdc5f3d9d32f08.svg" alt="f(a, b, c)"/> sous sa forme normale disjonctive et sous sa forme
+normale conjonctive.</p>
+<p>Rappelez-vous que : <img class="math" src="../_images/math/9e5286b26f249e7062feac74711ca47c8dae324d.svg" alt="a + \overline{a} = 1"/></p>
+<p class="last">Pour la forme normale disjonctive, il faut utiliser la loi de De Morgan
+pour travailler sur la fonction logique complémentaire.</p>
+</div>
+</div>
+</div>
+<div class="section" id="simplification">
+<h2>Simplification<a class="headerlink" href="#simplification" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Le recours à une représentation algébrique permet de réaliser des simplifications.
+On peut ainsi simplifier une fonction logique pour réduire le nombre de termes ou
+de variables.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">En électronique, la simplification permet de concevoir des circuits avec moins de portes
+logiques. En informatique, c’est une des méthodes qui permet de faciliter la
+compréhension du code source d’un programme en réalisant des modifications
+structurelles sans changer le résultat produit par le programme (on parle de <em>refactoring</em>).</p>
+</div>
+<p>Soit la fonction logique <img class="math" src="../_images/math/b1d5b403f2c17082eac91072e3bdc5f3d9d32f08.svg" alt="f(a, b, c)"/> telle que :</p>
+<div class="math">
+<p><img src="../_images/math/742bfd5f8414d2226b25fcb5b41ec4619b8f4850.svg" alt="f(a, b, c) = a . b . c + \overline{a} . \overline{b} . c + a . b . \overline{c} + \overline{a} . \overline{b} . \overline{c}"/></p>
+</div><p>En factorisant, on obtient :</p>
+<div class="math">
+<p><img src="../_images/math/b75d9e0fffeb1e81cef33bd0504a1fc1e4b7e288.svg" alt="f(a, b, c) &amp;= a . (b . c + b . \overline{c}) + \overline{a} . (\overline{b} . c + \overline{b} . \overline{c})\\
+           &amp;= a . (b . (c + \overline{c})) + \overline{a} . (\overline{b} . (c + \overline{c}))\\"/></p>
+</div><p>Puis par simplification, on obtient :</p>
+<div class="math">
+<p><img src="../_images/math/38a462d0916810414966da77634d9d31299c4857.svg" alt="f(a, b, c) &amp;= a . b + \overline{a} . \overline{b}"/></p>
+</div><p>Après simplification, on se rend compte que la fonction logique ne dépend pas
+de la variable c. Il est donc possible de définir la même fonction mais avec
+uniquement deux paramètres :</p>
+<div class="math">
+<p><img src="../_images/math/a83ef256cd6e36e645f489c80f4505af3d9ab72e.svg" alt="f(a, b) &amp;= a . b + \overline{a} . \overline{b}"/></p>
+</div><div class="hint admonition">
+<p class="first admonition-title">Exercice : simplification</p>
+<p>Simplifiez la fonction logique :</p>
+<div class="last math">
+<p><img src="../_images/math/eb5110f397fd22c5c844c13be07425dda668d0f1.svg" alt="f(a, b) = a . b + \overline{a + \overline{b}}"/></p>
+</div></div>
+<div class="hint admonition">
+<p class="first admonition-title">Exercice : simplification</p>
+<p>Simplifiez la fonction logique :</p>
+<div class="last math">
+<p><img src="../_images/math/7e812436a2c4a08dda541757226d35adfbda62f7.svg" alt="f(a, b, c) = a . \overline{b} . c + (\overline{a} + c) . (\overline{a} + \overline{b}) + \overline{b + \overline{c}}"/></p>
+</div></div>
+<div class="hint admonition">
+<p class="first admonition-title">Exercice : simplification</p>
+<p>L’accès d’une salle de spectacle est réservé aux personnes :</p>
+<ul class="simple">
+<li>seules, munies d’un ticket et ayant 10 ans et plus</li>
+<li>ayant moins de 10 ans et qui ont un ticket ou qui sont accompagnées</li>
+<li>ayant 10 ans ou plus, munies d’un ticket et accompagnées</li>
+</ul>
+<p class="last">Trouvez la fonction logique qui correpond aux critères d’entrée. Simplifiez
+cette fonction et proposez une reformulation des règles d’accès à la salle.</p>
+</div>
+<div class="hint admonition">
+<p class="first admonition-title">Exercice : simplification</p>
+<p>On souhaite mettre en place une circulation alternée pour limiter la pollution.
+Les automobilistes peuvent rouler dans un des cas suivants :</p>
+<ul class="simple">
+<li>en soirée pour les jours impairs du mois lorsqu’il y a une alerte à la pollution</li>
+<li>les jours impairs du mois pour les voitures diesel</li>
+<li>les voitures diesel peuvent rouler en soirée</li>
+<li>tous les types de voiture peuvent rouler en soirée pour les jours pairs du mois</li>
+<li>les voitures à essence peuvent rouler les jours pairs</li>
+<li>s’il n’y a pas d’alerte à la pollution, tous les types de voiture peuvent rouler en soirée les jours impairs</li>
+</ul>
+<p class="last">Trouvez la fonction logique qui permet de savoir si un automobiliste peut
+rouler. Simplifiez cette fonction et proposez une reformulation des règles de
+circulation alternée.</p>
+</div>
+<div class="hint admonition">
+<p class="first admonition-title">Exercice : application à la théorie des ensembles</p>
+<p>Soit E un ensemble non vide et P(E) l’ensemble des parties de E.</p>
+<p>P(E) est muni des opérations ∪ (union) et ∩ (intersection).</p>
+<p class="last">Définissez P(E) comme une algèbre de Boole en donnant la traduction des quatre
+axiomes de cette algèbre.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="representation_simplification.html" class="btn btn-neutral float-right" title="Représentation et simplification d’une fonction booléenne" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../index.html" class="btn btn-neutral" title="Sommaire" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright David Gayerie - david.gayerie at epsi.fr - CC-BY-SA
+
+    </p>
+  </div>
+    <div><a class="reference download" href="https://github.com/spoonless/udev-2018/archive/master.zip"><code class="download docutils literal notranslate"><span class="pre">Télécharger ce cours</pre></code></a></div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,1437 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="fr" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="fr" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta content="David Gayerie" name="author" />
+<meta content="Comment représenter une fonction booléenne grâce à une table de vérité. Comment simplifier une fonction booléenne avec une table de Karnaugh" name="description" />
+<meta content="algèbre de Boole, Boole, bool, fonction logique, table de vérité, Karnaugh" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Représentation et simplification d’une fonction booléenne &mdash; Documentation U&#39;Dev 2018 1.0</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom_rtd_theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="prev" title="L’algèbre de Boole" href="algebre_boole.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> U'Dev 2018
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Recherche dans les pages" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">L'algèbre de Boole</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="algebre_boole.html">L’algèbre de Boole</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="algebre_boole.html#definition">Définition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="algebre_boole.html#algebre-de-boole-et-connecteurs-logiques">Algèbre de Boole et connecteurs logiques</a></li>
+<li class="toctree-l2"><a class="reference internal" href="algebre_boole.html#proprietes">Propriétés</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="algebre_boole.html#l-involution">L’involution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="algebre_boole.html#l-idempotence">L’idempotence</a></li>
+<li class="toctree-l3"><a class="reference internal" href="algebre_boole.html#les-elements-absorbants">Les éléments absorbants</a></li>
+<li class="toctree-l3"><a class="reference internal" href="algebre_boole.html#les-lois-de-de-morgan">Les lois de De Morgan</a></li>
+<li class="toctree-l3"><a class="reference internal" href="algebre_boole.html#l-optimisation">L’optimisation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="algebre_boole.html#les-fonctions-logiques">Les fonctions logiques</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="algebre_boole.html#la-fonction-de-conjonction">La fonction de conjonction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="algebre_boole.html#la-fonction-de-disjonction">La fonction de disjonction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="algebre_boole.html#la-fonction-de-negation">La fonction de négation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="algebre_boole.html#formes-canoniques">Formes canoniques</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="algebre_boole.html#forme-normale-disjonctive">Forme normale disjonctive</a></li>
+<li class="toctree-l3"><a class="reference internal" href="algebre_boole.html#forme-normale-conjonctive">Forme normale conjonctive</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="algebre_boole.html#simplification">Simplification</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Représentation et simplification d’une fonction booléenne</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#table-de-verite">Table de vérité</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#table-de-verite-pour-la-fonction-et">Table de vérité pour la fonction ET</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#table-de-verite-pour-la-fonction-ou">Table de vérité pour la fonction OU</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#table-de-verite-pour-la-fonction-non">Table de vérité pour la fonction NON</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#passage-d-une-fonction-logique-a-une-table-de-verite">Passage d’une fonction logique à une table de vérité</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#passage-d-une-table-de-verite-a-une-fonction-logique">Passage d’une table de vérité à une fonction logique</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#les-tables-de-karnaugh">Les tables de Karnaugh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#simplification-a-l-aide-d-une-table-de-karnaugh">Simplification à l’aide d’une table de Karnaugh</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">U'Dev 2018</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Accueil</a> &raquo;</li>
+        
+      <li>Représentation et simplification d’une fonction booléenne</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+      
+        <a href="algebre_boole.html" class="btn btn-neutral" title="L’algèbre de Boole" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="representation-et-simplification-d-une-fonction-booleenne">
+<h1>Représentation et simplification d’une fonction booléenne<a class="headerlink" href="#representation-et-simplification-d-une-fonction-booleenne" title="Lien permanent vers ce titre">¶</a></h1>
+<p>Il est possible de représenter une fonction logique sous la forme d’une table.
+Cette représentation offre des avantages pour en déduire sa forme normale ou pour
+réaliser des simplification.</p>
+<div class="section" id="table-de-verite">
+<h2>Table de vérité<a class="headerlink" href="#table-de-verite" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Une table de vérité permet de représenter une fonction logique de la manière suivante :</p>
+<ul class="simple">
+<li>La table compte autant de colonnes que de paramètres à la fonction plus une colonne
+pour indiquer le résultat de la fonction.</li>
+<li>La table compte autant de lignes que de combinaisons possibles pour les valeurs
+des paramètres. Pour, une fonction à <em>n</em> paramètres, la table de vérité associée
+compte 2 <sup>n</sup> lignes.</li>
+</ul>
+<p>Soit la fonction :</p>
+<div class="math">
+<p><img src="../_images/math/c21207bd11ccf3f58d171cfca04737c84b02fb55.svg" alt="f(a, b, c) = \overline{a} . b + a .b . c + b . \overline{c}"/></p>
+</div><p>La table de vérité associée est</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">a</th>
+<th class="head">b</th>
+<th class="head">c</th>
+<th class="head">f(a, b, c)</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr class="row-even"><td>0</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr class="row-odd"><td>0</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="row-even"><td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr class="row-even"><td>1</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr class="row-odd"><td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="table-de-verite-pour-la-fonction-et">
+<h3>Table de vérité pour la fonction ET<a class="headerlink" href="#table-de-verite-pour-la-fonction-et" title="Lien permanent vers ce titre">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">a</th>
+<th class="head">b</th>
+<th class="head">ET</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr class="row-even"><td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>Cette table correspond à la fonction logique :</p>
+<div class="math">
+<p><img src="../_images/math/92ac49c1260e6feb2c4bcae3aec1eeb89e03b260.svg" alt="f(a, b) = a . b"/></p>
+</div><p>La fonction est vraie si tous ces paramètres sont vrais.</p>
+</div>
+<div class="section" id="table-de-verite-pour-la-fonction-ou">
+<h3>Table de vérité pour la fonction OU<a class="headerlink" href="#table-de-verite-pour-la-fonction-ou" title="Lien permanent vers ce titre">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">a</th>
+<th class="head">b</th>
+<th class="head">OU</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="row-even"><td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr class="row-odd"><td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>Cette table correspond à la fonction logique :</p>
+<div class="math">
+<p><img src="../_images/math/58eff03aafea915a72244d03062cb093cc6b222d.svg" alt="f(a, b) = a + b"/></p>
+</div><p>La fonction est vraie si un de ces paramètres est vrai.</p>
+</div>
+<div class="section" id="table-de-verite-pour-la-fonction-non">
+<h3>Table de vérité pour la fonction NON<a class="headerlink" href="#table-de-verite-pour-la-fonction-non" title="Lien permanent vers ce titre">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">a</th>
+<th class="head">NON</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>0</td>
+<td>1</td>
+</tr>
+<tr class="row-odd"><td>1</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p>Cette table correspond à la fonction logique :</p>
+<div class="math">
+<p><img src="../_images/math/44f390c34959dc4ba94be6e05342080875a713b3.svg" alt="f(a) = \overline{a}"/></p>
+</div><p>La fonction est vraie si son paramètre est faux.</p>
+</div>
+</div>
+<div class="section" id="passage-d-une-fonction-logique-a-une-table-de-verite">
+<h2>Passage d’une fonction logique à une table de vérité<a class="headerlink" href="#passage-d-une-fonction-logique-a-une-table-de-verite" title="Lien permanent vers ce titre">¶</a></h2>
+<p>On construit une table de vérité avec l’ensemble des valeurs possibles des paramètres.
+Puis on ajoute les colonnes nécessaires pour déterminer petit à petit les valeurs
+des termes de la fonction.</p>
+<p>Soit la fonction suivante :</p>
+<div class="math">
+<p><img src="../_images/math/cdb50e53b533571d69a7e7218a40e0185c6a8578.svg" alt="f(a, b, c) = a . c + \overline{b} . c + \overline{a} . \overline{b}"/></p>
+</div><p>On commence par construire la table avec l’ensemble des valeurs des paramètres :</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">a</th>
+<th class="head">b</th>
+<th class="head">c</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>0</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr class="row-even"><td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="row-even"><td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr class="row-even"><td>1</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>Puis on ajoute les colonnes pour les complémentaires :</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">a</th>
+<th class="head">b</th>
+<th class="head">c</th>
+<th class="head"><img class="math" src="../_images/math/fd718b5e61f1b08e3a45715d1a25e61251e8825c.svg" alt="\overline{a}"/></th>
+<th class="head"><img class="math" src="../_images/math/72bff847e574c5dce9c0506dab68a73eb2177314.svg" alt="\overline{b}"/></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="row-odd"><td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="row-even"><td>0</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>0</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr class="row-even"><td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr class="row-odd"><td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr class="row-even"><td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>1</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p>Puis on ajoute les colonnes pour connaître la valeur de chaque terme de la fonction :</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">a</th>
+<th class="head">b</th>
+<th class="head">c</th>
+<th class="head"><img class="math" src="../_images/math/fd718b5e61f1b08e3a45715d1a25e61251e8825c.svg" alt="\overline{a}"/></th>
+<th class="head"><img class="math" src="../_images/math/72bff847e574c5dce9c0506dab68a73eb2177314.svg" alt="\overline{b}"/></th>
+<th class="head"><img class="math" src="../_images/math/25b02ce2c9590a4f4ffc31310fb8fe52b050ef8b.svg" alt="a . c"/></th>
+<th class="head"><img class="math" src="../_images/math/ad09b9217a8df7fa860084a552642465b393a7f3.svg" alt="\overline{b} . c"/></th>
+<th class="head"><img class="math" src="../_images/math/4204f98befd19527e7764b2613383b4d912a36e9.svg" alt="\overline{a} . \overline{b}"/></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr class="row-odd"><td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="row-even"><td>0</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>0</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="row-even"><td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr class="row-even"><td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>1</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p>On en déduit les valeurs de la fonction :</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">a</th>
+<th class="head">b</th>
+<th class="head">c</th>
+<th class="head"><img class="math" src="../_images/math/fd718b5e61f1b08e3a45715d1a25e61251e8825c.svg" alt="\overline{a}"/></th>
+<th class="head"><img class="math" src="../_images/math/72bff847e574c5dce9c0506dab68a73eb2177314.svg" alt="\overline{b}"/></th>
+<th class="head"><img class="math" src="../_images/math/25b02ce2c9590a4f4ffc31310fb8fe52b050ef8b.svg" alt="a . c"/></th>
+<th class="head"><img class="math" src="../_images/math/ad09b9217a8df7fa860084a552642465b393a7f3.svg" alt="\overline{b} . c"/></th>
+<th class="head"><img class="math" src="../_images/math/4204f98befd19527e7764b2613383b4d912a36e9.svg" alt="\overline{a} . \overline{b}"/></th>
+<th class="head">f(a, b, c)</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="row-odd"><td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="row-even"><td>0</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>0</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="row-even"><td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr class="row-even"><td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>1</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>Enfin, on obtient la table de vérité en supprimant les colonnes superflues :</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">a</th>
+<th class="head">b</th>
+<th class="head">c</th>
+<th class="head">f(a, b, c)</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr class="row-odd"><td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="row-even"><td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>0</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr class="row-even"><td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>1</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="row-even"><td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<div class="hint admonition">
+<p class="first admonition-title">Exercice</p>
+<p>Construire la table de vérité pour la fonction :</p>
+<div class="last math">
+<p><img src="../_images/math/2bca1a7f69fc7e0790ee6fd5ab7e3da1c298da0d.svg" alt="f(a, b) = a . b + a . \overline{b}"/></p>
+</div></div>
+<div class="hint admonition">
+<p class="first admonition-title">Exercice</p>
+<p>Construire la table de vérité pour la fonction :</p>
+<div class="last math">
+<p><img src="../_images/math/cc2dbf1282e08a994ea58a9a37017c6269835830.svg" alt="f(a, b, c) = a . b . \overline{c} + \overline{a} . \overline{b} . \overline{c} + b . c"/></p>
+</div></div>
+</div>
+<div class="section" id="passage-d-une-table-de-verite-a-une-fonction-logique">
+<h2>Passage d’une table de vérité à une fonction logique<a class="headerlink" href="#passage-d-une-table-de-verite-a-une-fonction-logique" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Il est très simple de passer d’une table de vérité à une fonction logique
+sous sa forme normale disjonctive.</p>
+<p>Dans la table de vérité, on ne retient que les lignes qui produisent un résultat
+de 1. Pour chaque valeur des paramètres, on construit le minterme associé.
+Pour la variable a, on note <img class="math" src="../_images/math/bd9d9c7512c898e0a254a0882184197bc1bd9c9f.svg" alt="a"/> si la valeur est 1 ou <img class="math" src="../_images/math/fd718b5e61f1b08e3a45715d1a25e61251e8825c.svg" alt="\overline{a}"/>
+si la valeur est 0. La fonction logique correspond à l’addition des mintermes créés.</p>
+<p>Pour la table de vérité suivante :</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">a</th>
+<th class="head">b</th>
+<th class="head">c</th>
+<th class="head">f(a, b, c)</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr class="row-odd"><td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr class="row-even"><td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>0</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr class="row-even"><td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr class="row-odd"><td>1</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="row-even"><td>1</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr class="row-odd"><td>1</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p>On ne conserve que les lignes produisant un résultat de 1 :</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">a</th>
+<th class="head">b</th>
+<th class="head">c</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="row-even"><td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr class="row-odd"><td>1</td>
+<td>1</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p>On construit les mintermes que l’on additionne pour donner la fonction logique :</p>
+<div class="math">
+<p><img src="../_images/math/3393d1c29ffff5058dc663c3af3adf45e870e96e.svg" alt="f(a, b, c) = \overline{a} . \overline{b} . \overline{c} + a . \overline{b} . \overline{c} + a . \overline{b} . c + a . b . \overline{c}"/></p>
+</div><div class="hint admonition">
+<p class="first admonition-title">Exercice : OU exclusif</p>
+<p>Le OU exclusif (ou XOR) est vrai si exactement un seul de ses paramètres est vrai.</p>
+<p>La table de vérité pour cette fonction est :</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">a</th>
+<th class="head">b</th>
+<th class="head">XOR</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr class="row-even"><td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr class="row-odd"><td>1</td>
+<td>1</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p>Déduisez la fonction logique de sa table de vérité.</p>
+<div class="last admonition note">
+<p class="first admonition-title">Note</p>
+<p>Le OU exclusif est parfois noté</p>
+<div class="last math">
+<p><img src="../_images/math/1944d10c06f65d830eda59dc8e5881fff9c40b4a.svg" alt="a \oplus\ b"/></p>
+</div></div>
+</div>
+<div class="hint admonition">
+<p class="first admonition-title">Exercice</p>
+<p>Soit la table de vérité suivante :</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">a</th>
+<th class="head">b</th>
+<th class="head">c</th>
+<th class="head">d</th>
+<th class="head">f(a, b, c, d)</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="row-even"><td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr class="row-even"><td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr class="row-odd"><td>0</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="row-even"><td>0</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr class="row-odd"><td>0</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="row-even"><td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr class="row-even"><td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>1</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="row-even"><td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr class="row-odd"><td>1</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr class="row-even"><td>1</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p class="last">Déduisez la fonction logique de sa table de vérité. Effectuez une simplification
+de la formule trouvée.</p>
+</div>
+</div>
+<div class="section" id="les-tables-de-karnaugh">
+<h2>Les tables de Karnaugh<a class="headerlink" href="#les-tables-de-karnaugh" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Maurice Karnaugh a inventé une méthode basée sur une représentation graphique
+pour simplifier les équations logiques. Cette méthode fonctionne bien sur un
+nombre restreint de variables (au plus 5 ou 6).</p>
+<p>Une table de Karnaugh est une table à deux entrées. Si la fonction possède 2n
+variables alors on place en ligne les n premières variables et en colonne les n
+suivantes. Si la fonction possède un nombre impair de variables, on place les n+1
+premières en ligne.</p>
+<p>D’une colonne à une autre (et d’une ligne à une autre), on ne peut faire varier
+la valeur que d’une seule variable.</p>
+<p>Pour la fonction à deux variables <img class="math" src="../_images/math/bde418820dc9c2a8496cdebe3a68670bdaa06859.svg" alt="f(a, b) = a . b"/></p>
+<p>on peut construire la table :</p>
+<table border="1" class="karnaugh docutils">
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head" colspan="2" rowspan="2">f(a, b)</th>
+<th class="head" colspan="2">a</th>
+</tr>
+<tr class="row-even"><th class="head">0</th>
+<th class="head">1</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-odd"><td rowspan="2">b</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="row-even"><td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>Pour la fonction à trois variables <img class="math" src="../_images/math/58a36bc70565660249d7ee36cbc10a96fbcb489b.svg" alt="f(a, b, c) = a . b + b . \overline{c}"/></p>
+<p>on peut construire la table :</p>
+<table border="1" class="karnaugh docutils">
+<colgroup>
+<col width="15%" />
+<col width="15%" />
+<col width="18%" />
+<col width="18%" />
+<col width="18%" />
+<col width="18%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head" colspan="2" rowspan="2">f(a, b, c)</th>
+<th class="head" colspan="4">a b</th>
+</tr>
+<tr class="row-even"><th class="head">00</th>
+<th class="head">01</th>
+<th class="head">11</th>
+<th class="head">10</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-odd"><td rowspan="2">c</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr class="row-even"><td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Pour les valeurs de a et b, notez que pour passer d’une colonne à l’autre,
+on fait varier soit la valeur de a soit la valeur de b.</p>
+</div>
+<p>Pour la fonction à quatre variables <img class="math" src="../_images/math/d4961a3038a409bfdccb5132635d7f57207750c4.svg" alt="f(a, b, c, d) = a . c + b . c . d + \overline{b} . \overline{d}"/></p>
+<p>on peut construire la table :</p>
+<table border="1" class="karnaugh docutils">
+<colgroup>
+<col width="17%" />
+<col width="17%" />
+<col width="17%" />
+<col width="17%" />
+<col width="17%" />
+<col width="17%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head" colspan="2" rowspan="2">f(a, b, c, d)</th>
+<th class="head" colspan="4">a b</th>
+</tr>
+<tr class="row-even"><th class="head">00</th>
+<th class="head">01</th>
+<th class="head">11</th>
+<th class="head">10</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-odd"><td rowspan="4">cd</td>
+<td>00</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr class="row-even"><td>01</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>11</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="row-even"><td>10</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="simplification-a-l-aide-d-une-table-de-karnaugh">
+<h2>Simplification à l’aide d’une table de Karnaugh<a class="headerlink" href="#simplification-a-l-aide-d-une-table-de-karnaugh" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Pour simplifier une fonction logique à partir d’un tableau de Karnaugh, on recherche
+les cases adjacentes contenant des 1. On identifie ainsi les blocs les plus grands possibles
+composés de 1, 2, 4, 8… cases de la table.</p>
+<p>La table est refermée sur elle-même. Cela signifie qu’un case sur la dernière colonne
+est considérée comme adjacente à une case de la première colonne (et réciproquement).
+De même, une case sur la dernière ligne est considérée comme adjacente à une case de
+la première ligne (et réciproquement).</p>
+<p>Chaque bloc permet de construire un terme de la fonction.</p>
+<ul class="simple">
+<li>Si une variable change de valeur pour ce bloc, elle n’est pas prise en compte.
+On ne conserve que les variables qui ne varient pas.</li>
+<li>Pour une variable a qui ne varie pas, si la valeur est 1, on la note <img class="math" src="../_images/math/bd9d9c7512c898e0a254a0882184197bc1bd9c9f.svg" alt="a"/>
+et si la valeur est 0, on la note <img class="math" src="../_images/math/fd718b5e61f1b08e3a45715d1a25e61251e8825c.svg" alt="\overline{a}"/>.</li>
+<li>Chaque variable du terme est multipliée aux autres (relation logique ET)</li>
+<li>Chaque terme est additionné aux autres (relation logique OU)</li>
+</ul>
+<p>Pour la table suivante :</p>
+<table border="1" class="karnaugh docutils">
+<colgroup>
+<col width="15%" />
+<col width="15%" />
+<col width="35%" />
+<col width="35%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head" colspan="2" rowspan="2">f(a, b)</th>
+<th class="head" colspan="2">a</th>
+</tr>
+<tr class="row-even"><th class="head">0</th>
+<th class="head">1</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-odd"><td rowspan="2">b</td>
+<td>0</td>
+<td><span class="red">1</span></td>
+<td><span class="red">1</span></td>
+</tr>
+<tr class="row-even"><td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p>On peut identifier le bloc rouge pour lequel seul b ne varie pas et vaut 0. La
+fonction logique associée est donc :</p>
+<div class="math">
+<p><img src="../_images/math/e79c076123d350fa26be845b5f0ab62fa155dc10.svg" alt="f(a, b) = \overline{b}"/></p>
+</div><p>Pour la table suivante :</p>
+<table border="1" class="karnaugh docutils">
+<colgroup>
+<col width="8%" />
+<col width="8%" />
+<col width="20%" />
+<col width="23%" />
+<col width="22%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head" colspan="2" rowspan="2">f(a, b, c)</th>
+<th class="head" colspan="4">a b</th>
+</tr>
+<tr class="row-even"><th class="head">00</th>
+<th class="head">01</th>
+<th class="head">11</th>
+<th class="head">10</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-odd"><td rowspan="2">c</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr class="row-even"><td>1</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p>On peut identifier les blocs marqués en rouge et en vert.</p>
+<table border="1" class="karnaugh docutils">
+<colgroup>
+<col width="8%" />
+<col width="8%" />
+<col width="20%" />
+<col width="23%" />
+<col width="22%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head" colspan="2" rowspan="2">f(a, b, c)</th>
+<th class="head" colspan="4">a b</th>
+</tr>
+<tr class="row-even"><th class="head">00</th>
+<th class="head">01</th>
+<th class="head">11</th>
+<th class="head">10</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-odd"><td rowspan="2">c</td>
+<td>0</td>
+<td>1</td>
+<td><span class="green">1</span></td>
+<td><span class="green">1</span></td>
+<td>0</td>
+</tr>
+<tr class="row-even"><td>1</td>
+<td>0</td>
+<td><span class="green">1</span></td>
+<td><span class="green">1</span></td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p>Avec le bloc vert, on peut construire le terme : <img class="math" src="../_images/math/57c9d14bb082716df9000146882ce365335d08f1.svg" alt="b"/></p>
+<table border="1" class="karnaugh docutils">
+<colgroup>
+<col width="8%" />
+<col width="8%" />
+<col width="20%" />
+<col width="23%" />
+<col width="22%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head" colspan="2" rowspan="2">f(a, b, c)</th>
+<th class="head" colspan="4">a b</th>
+</tr>
+<tr class="row-even"><th class="head">00</th>
+<th class="head">01</th>
+<th class="head">11</th>
+<th class="head">10</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-odd"><td rowspan="2">c</td>
+<td>0</td>
+<td><span class="red">1</span></td>
+<td><span class="red">1</span></td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr class="row-even"><td>1</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p>Avec le bloc rouge, on peut construire le terme : <img class="math" src="../_images/math/7c93ba15d0da48e2d38b4072bbd527540cc111e7.svg" alt="\overline{a} . \overline{c}"/></p>
+<p>La fonction associée est donc :</p>
+<div class="math">
+<p><img src="../_images/math/27a6564f100269962fd8a488d4516ce2148afde0.svg" alt="f(a, b, c) = b + \overline{a} . \overline{c}"/></p>
+</div><div class="hint admonition">
+<p class="first admonition-title">Exercice</p>
+<p>À l’aide de la table de Karnaugh suivante, trouvez la fonction logique :</p>
+<table border="1" class="karnaugh last docutils">
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head" colspan="2" rowspan="2">f(a, b)</th>
+<th class="head" colspan="2">a</th>
+</tr>
+<tr class="row-even"><th class="head">0</th>
+<th class="head">1</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-odd"><td rowspan="2">b</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="row-even"><td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="hint admonition">
+<p class="first admonition-title">Exercice</p>
+<p>En utilisant une table de Karnaugh, simplifiez la fonction suivante :</p>
+<div class="last math">
+<p><img src="../_images/math/7e812436a2c4a08dda541757226d35adfbda62f7.svg" alt="f(a, b, c) = a . \overline{b} . c + (\overline{a} + c) . (\overline{a} + \overline{b}) + \overline{b + \overline{c}}"/></p>
+</div></div>
+<div class="hint admonition">
+<p class="first admonition-title">Exercice</p>
+<p>En utilisant une table de Karnaugh, simplifiez la fonction suivante :</p>
+<div class="last math">
+<p><img src="../_images/math/6f396352828277779055ce4ad099945da7f9aaab.svg" alt="f(a, b, c, d) = &amp; a . b . c . d + \overline{a} . \overline{b} . \overline{c} . \overline{d} + \overline{a} . b . d + a . b . \overline{c} . d + a . \overline{b} . c . \overline{d} + b . c . d + \overline{a} . \overline{b} . c . \overline{d}"/></p>
+</div></div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="algebre_boole.html" class="btn btn-neutral" title="L’algèbre de Boole" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright David Gayerie - david.gayerie at epsi.fr - CC-BY-SA
+
+    </p>
+  </div>
+    <div><a class="reference download" href="https://github.com/spoonless/udev-2018/archive/master.zip"><code class="download docutils literal notranslate"><span class="pre">Télécharger ce cours</pre></code></a></div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>
