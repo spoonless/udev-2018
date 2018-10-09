@@ -277,8 +277,18 @@ vérifier qu’une des conditions suivantes est respectée :</p>
 <li>Il fait jour et le système de caméras est activé</li>
 <li>le système de caméras est activé et le détecteur de mouvement est activé</li>
 </ul>
-<p class="last">Traduisez ces conditions à l’aide de variables logiques et d’une expression
+<p>Traduisez ces conditions à l’aide de variables logiques et d’une expression
 algébrique.</p>
+<div class="admonition-solution last admonition">
+<p class="first admonition-title">Solution</p>
+<ul class="simple">
+<li>a = jour</li>
+<li>b = détecteur de mouvement activé</li>
+<li>c = système de caméras activé</li>
+</ul>
+<div class="last math">
+<p><img src="../_images/math/5c297fbb2d651c53f118f8e60a13d0541c0991af.svg" alt="\overline{a} . b + a . c + b . c"/></p>
+</div></div>
 </div>
 <div class="hint admonition">
 <p class="first admonition-title">Exercice 2</p>
@@ -290,8 +300,19 @@ Pour obtenir son diplôme, il doit satisfaire à une de ces conditions :</p>
 <li>Il doit réussir l’examen de français et au moins deux matières qui ne sont pas l’anglais</li>
 <li>Il doit réussir les examens d’anglais et d’éducation physique et au moins une autre matière</li>
 </ul>
-<p class="last">Traduisez ces conditions à l’aide de variables logiques et d’une expression
+<p>Traduisez ces conditions à l’aide de variables logiques et d’une expression
 algébrique.</p>
+<div class="admonition-solution last admonition">
+<p class="first admonition-title">Solution</p>
+<ul class="simple">
+<li>f = examen de français réussi</li>
+<li>a = examen d’anglais réussi</li>
+<li>m = examen de mathématiques réussi</li>
+<li>e = examen d’éducation physique réussi</li>
+</ul>
+<div class="last math">
+<p><img src="../_images/math/d7b95626a3a155cc37c307a22dd282a38e3ec24a.svg" alt="m . f . a + m . a . e + m . f . e + f . m . e + a . e . m + a . e . f"/></p>
+</div></div>
 </div>
 </div>
 <div class="section" id="proprietes">
@@ -328,13 +349,21 @@ booléenne.</p>
 <p class="first admonition-title">Exercice</p>
 <p>Dans le règlement intérieur d’une école, on trouve la règle suivante :</p>
 <blockquote>
-<div>Il est défendu de boire ou de manger dans les salles de cours.</div></blockquote>
+<div>Défense de boire ou de manger dans les salles de cours.</div></blockquote>
 <p>Soit les variables logiques B (pour boire) et M (pour manger) :</p>
-<ul class="last simple">
+<ul class="simple">
 <li>Déduisez-en une expression logique en fonction de B et M.</li>
 <li>Reformulez cette mention en commençant par «&nbsp;Il est interdit de …&nbsp;» suivi de «&nbsp;et&nbsp;»</li>
 <li>Déduisez de cette reformulation une expression logique en fonction de B et M.</li>
 </ul>
+<div class="admonition-solution last admonition">
+<p class="first admonition-title">Solution</p>
+<div class="math">
+<p><img src="../_images/math/529d6ebd95579417e5c36294934a64d018699be5.svg" alt="\overline{B + M}"/></p>
+</div><p>Il est interdit de boire et de manger</p>
+<div class="last math">
+<p><img src="../_images/math/8ab6d9f10783a6b0d025c55753729fd6cf67d292.svg" alt="\overline{B} . \overline{M}"/></p>
+</div></div>
 </div>
 </div>
 <div class="section" id="l-optimisation">
@@ -411,8 +440,35 @@ selon le produit de maxtermes.</p>
 </div><p>Écrivez la fonction <img class="math" src="../_images/math/b1d5b403f2c17082eac91072e3bdc5f3d9d32f08.svg" alt="f(a, b, c)"/> sous sa forme normale disjonctive et sous sa forme
 normale conjonctive.</p>
 <p>Rappelez-vous que : <img class="math" src="../_images/math/9e5286b26f249e7062feac74711ca47c8dae324d.svg" alt="a + \overline{a} = 1"/></p>
-<p class="last">Pour la forme normale disjonctive, il faut utiliser la loi de De Morgan
+<p>Pour la forme normale disjonctive, il faut utiliser la loi de De Morgan
 pour travailler sur la fonction logique complémentaire.</p>
+<div class="admonition-solution last admonition">
+<p class="first admonition-title">Solution</p>
+<p>Solution pour la forme normale disjonctive :</p>
+<div class="math">
+<p><img src="../_images/math/1ff68367f2600170029c3071821bf8a17edcd00f.svg" alt="f(a, b, c) &amp;= a . b + b . \overline{c} \\
+           &amp;= a . b . (c + \overline{c}) + (a + \overline{a}) . b . \overline{c} \\
+           &amp;= a . b . c + a . b . \overline{c} + a . b . \overline{c} + \overline{a} . b . \overline{c} \\
+           &amp;= a . b . c + a . b . \overline{c} + \overline{a} . b . \overline{c} \\"/></p>
+</div><p>Solution pour la forme normale conjonctive, on utilise l’involution et les lois
+de De Morgan pour passer par le complémentaire en notant que :</p>
+<div class="last math">
+<p><img src="../_images/math/d6cc5353f9e041b9211066eb83aa60f2f40a4892.svg" alt="f(a, b, c) &amp;= \overline{\overline{f(a, b, c)}}
+
+\Rightarrow
+
+\overline{f(a, b, c)} &amp;= (\overline{a} + \overline{b}) . (\overline{b} + c)\\
+                      &amp;= \overline{a} . \overline{b} + \overline{a} . c + \overline{b} . \overline{b} + \overline{b} . c\\
+                      &amp;= \overline{a} . \overline{b} + \overline{a} . c + \overline{b} + \overline{b} . c\\
+                      &amp;= \overline{a} . \overline{b} . (c + \overline{c}) + \overline{a} . c . (b + \overline{b}) + \overline{b} . (a + \overline{a}) . (c + \overline{c}) + \overline{b} . c . (a + \overline{a})\\
+                      &amp;= \overline{a} . \overline{b} . c + \overline{a} . \overline{b} . \overline{c} + \overline{a} . b . c + \overline{a}. \overline{b} . c  + a . \overline{b} . c + a . \overline{b} . \overline{c} + \overline{a} . \overline{b} . c + \overline{a} . \overline{b} . \overline{c} + a . \overline{b} . c + \overline{a} . \overline{b} . c\\
+                      &amp;= \overline{a} . \overline{b} . c + \overline{a} . \overline{b} . \overline{c} + \overline{a} . b . c + a . \overline{b} . c + a . \overline{b} . \overline{c}
+
+\Rightarrow
+
+f(a, b, c) &amp;= \overline{\overline{a} . \overline{b} . c + \overline{a} . \overline{b} . \overline{c} + \overline{a} . b . c + a . \overline{b} . c + a . \overline{b} . \overline{c}}\\
+f(a, b, c) &amp;= (a + b + \overline{c}) . (a + b + c) . (a + \overline{b} + \overline{c}) . (\overline{a} + b + \overline{c}) . (\overline{a} + b + c)"/></p>
+</div></div>
 </div>
 </div>
 </div>
@@ -446,9 +502,17 @@ uniquement deux paramètres :</p>
 </div><div class="hint admonition">
 <p class="first admonition-title">Exercice : simplification</p>
 <p>Simplifiez la fonction logique :</p>
-<div class="last math">
+<div class="math">
 <p><img src="../_images/math/eb5110f397fd22c5c844c13be07425dda668d0f1.svg" alt="f(a, b) = a . b + \overline{a + \overline{b}}"/></p>
+</div><div class="admonition-solution last admonition">
+<p class="first admonition-title">Solution</p>
+<div class="last math">
+<p><img src="../_images/math/0f42c43b24fb952c56ffc311e4c63b1388cfa239.svg" alt="f(a, b) &amp;= a.b + \overline{a} . b\\
+        &amp;= b . (a + \overline{a})\\
+        &amp;= b . 1\\
+        &amp;= b"/></p>
 </div></div>
+</div>
 <div class="hint admonition">
 <p class="first admonition-title">Exercice : simplification</p>
 <p>Simplifiez la fonction logique :</p>
@@ -463,7 +527,7 @@ uniquement deux paramètres :</p>
 <li>ayant moins de 10 ans et qui ont un ticket ou qui sont accompagnées</li>
 <li>ayant 10 ans ou plus, munies d’un ticket et accompagnées</li>
 </ul>
-<p class="last">Trouvez la fonction logique qui correpond aux critères d’entrée. Simplifiez
+<p class="last">Trouvez la fonction logique qui correspond aux critères d’entrée. Simplifiez
 cette fonction et proposez une reformulation des règles d’accès à la salle.</p>
 </div>
 <div class="hint admonition">
