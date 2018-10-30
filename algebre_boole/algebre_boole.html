@@ -871,8 +871,29 @@ uniquement deux paramètres :</p>
 <li>ayant moins de 10 ans et qui ont un ticket ou qui sont accompagnées</li>
 <li>ayant 10 ans ou plus, munies d’un ticket et accompagnées</li>
 </ul>
-<p class="last">Trouvez la fonction logique qui correspond aux critères d’entrée. Simplifiez
+<p>Trouvez la fonction logique qui correspond aux critères d’entrée. Simplifiez
 cette fonction et proposez une reformulation des règles d’accès à la salle.</p>
+<div class="admonition-solution last admonition">
+<p class="first admonition-title">Solution</p>
+<ul class="simple">
+<li>s = seul</li>
+<li>m = moins de 10 ans</li>
+<li>t = ticket</li>
+</ul>
+<div class="math">
+<p><img src="../_images/math/f1b7bf297b5ae4bf003b603a139dc89e50314c11.svg" alt="f(s, m, t) &amp;= s . t . \overline{m} + m . (t + \overline{s}) + \overline{m} . t . \overline{s}\\
+           &amp;= t . (s . \overline{m} + m + \overline{s} . \overline{m}) + m . \overline{s}\\
+           &amp;= t . (\overline{m} . (s + \overline{s}) + m) + m . \overline{s}\\
+           &amp;= t . (\overline{m} + m) + m . \overline{s}\\
+           &amp;= t + m . \overline{s}"/></p>
+</div><p>L’accès à la salle de spectacle est réservé aux personnes :</p>
+<blockquote class="last">
+<div><ul class="simple">
+<li>munies d’un ticket</li>
+<li>ayant moins de 10 ans et qui sont accompagnées</li>
+</ul>
+</div></blockquote>
+</div>
 </div>
 <div class="hint admonition">
 <p class="first admonition-title">Exercice : simplification</p>
@@ -886,9 +907,29 @@ Les automobilistes peuvent rouler dans un des cas suivants :</p>
 <li>les voitures à essence peuvent rouler les jours pairs</li>
 <li>s’il n’y a pas d’alerte à la pollution, tous les types de voiture peuvent rouler en soirée les jours impairs</li>
 </ul>
-<p class="last">Trouvez la fonction logique qui permet de savoir si un automobiliste peut
+<p>Trouvez la fonction logique qui permet de savoir si un automobiliste peut
 rouler. Simplifiez cette fonction et proposez une reformulation des règles de
 circulation alternée.</p>
+<div class="admonition-solution last admonition">
+<p class="first admonition-title">Solution</p>
+<ul class="simple">
+<li>a = pas d’alerte à la pollution</li>
+<li>b = voiture à essence</li>
+<li>c = jour pair</li>
+<li>d = journée</li>
+</ul>
+<div class="math">
+<p><img src="../_images/math/5019eea01d046228d44677ca8ef0a69139079b92.svg" alt="f(a, b, c, d) &amp;= (\overline{a} . \overline{c} . \overline{d}) + (\overline{b} . \overline{c}) + (\overline{b} . \overline{d}) + (c . \overline{d}) + (b . c) + (a . \overline{c} . \overline{d})\\
+              &amp;= (\overline{c} . \overline{d}) + (\overline{b} . \overline{c}) + (\overline{b} . \overline{d}) + (c . \overline{d}) + (b . c)\\
+              &amp;= \overline{d} + (\overline{b} . \overline{c}) + (\overline{b} . \overline{d}) + (b . c)\\
+              &amp;= \overline{d} + (\overline{b} . \overline{c}) + (b . c)"/></p>
+</div><p>Les automobilistes peuvent rouler dans les cas suivants :</p>
+<ul class="last simple">
+<li>en soirée</li>
+<li>les jours impairs pour les voitures diesel</li>
+<li>les jours pairs pour les voitures à essence</li>
+</ul>
+</div>
 </div>
 <div class="hint admonition">
 <p class="first admonition-title">Exercice : application à la théorie des ensembles</p>

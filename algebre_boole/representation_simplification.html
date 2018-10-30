@@ -1098,9 +1098,92 @@ des termes de la fonction.</p>
 <div class="hint admonition">
 <p class="first admonition-title">Exercice</p>
 <p>Construire la table de vérité pour la fonction :</p>
-<div class="last math">
+<div class="math">
 <p><img src="../_images/math/2bca1a7f69fc7e0790ee6fd5ab7e3da1c298da0d.svg" alt="f(a, b) = a . b + a . \overline{b}"/></p>
-</div></div>
+</div><div class="admonition-solution last admonition">
+<p class="first admonition-title">Solution</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="17%" />
+<col width="17%" />
+<col width="17%" />
+<col width="17%" />
+<col width="17%" />
+<col width="17%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">a</th>
+<th class="head">b</th>
+<th class="head"><img class="math" src="../_images/math/0781da9ff3222496da4dce2b16f87fff2937a119.svg" alt="a . b"/></th>
+<th class="head"><img class="math" src="../_images/math/72bff847e574c5dce9c0506dab68a73eb2177314.svg" alt="\overline{b}"/></th>
+<th class="head"><img class="math" src="../_images/math/678d21ad24891fed08efd844ed746777dbe58635.svg" alt="a . \overline{b}"/></th>
+<th class="head">f(a, b)</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="row-even"><td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="row-odd"><td>1</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="last docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">a</th>
+<th class="head">b</th>
+<th class="head">f(a, b)</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr class="row-even"><td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr class="row-odd"><td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <div class="hint admonition">
 <p class="first admonition-title">Exercice</p>
 <p>Construire la table de vérité pour la fonction :</p>
@@ -1245,11 +1328,16 @@ si la valeur est 0. La fonction logique correspond à l’addition des mintermes
 </tbody>
 </table>
 <p>Déduisez la fonction logique de sa table de vérité.</p>
-<div class="last admonition note">
+<div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p>Le OU exclusif est parfois noté</p>
 <div class="last math">
 <p><img src="../_images/math/1944d10c06f65d830eda59dc8e5881fff9c40b4a.svg" alt="a \oplus\ b"/></p>
+</div></div>
+<div class="admonition-solution last admonition">
+<p class="first admonition-title">Solution</p>
+<div class="last math">
+<p><img src="../_images/math/2c48fd497eac2e2e8b5c5cbecaab093472852c84.svg" alt="f(a, b) &amp;= a . \overline{b} + \overline{a} . b"/></p>
 </div></div>
 </div>
 <div class="hint admonition">
@@ -1370,8 +1458,15 @@ si la valeur est 0. La fonction logique correspond à l’addition des mintermes
 </tr>
 </tbody>
 </table>
-<p class="last">Déduisez la fonction logique de sa table de vérité. Effectuez une simplification
+<p>Déduisez la fonction logique de sa table de vérité. Effectuez une simplification
 de la formule trouvée.</p>
+<div class="admonition-solution last admonition">
+<p class="first admonition-title">Solution</p>
+<div class="last math">
+<p><img src="../_images/math/86f86101d6de0314320bf7f4c32706767df6c0f4.svg" alt="f(a, b, c, d) &amp;= \overline{a} . \overline{b} . \overline{c} . d + \overline{a} . b . \overline{c} . \overline{d} + \overline{a} . b . \overline{c} . d + \overline{a} . b . c . \overline{d} + \overline{a} . b . c . d + a . \overline{b} . c . d + a . b . \overline{c} . \overline{d}\\
+              &amp;= \overline{a} . b . (\overline{c} . \overline{d} + \overline{c} . d + c . \overline{d} + c . d) + \overline{a} . \overline{b} . \overline{c} . d + a . \overline{b} . c . d + a . b . \overline{c} . \overline{d}\\
+              &amp;= \overline{a} . b + \overline{a} . \overline{b} . \overline{c} . d + a . \overline{b} . c . d + a . b . \overline{c} . \overline{d}"/></p>
+</div></div>
 </div>
 </div>
 <div class="section" id="les-tables-de-karnaugh">
