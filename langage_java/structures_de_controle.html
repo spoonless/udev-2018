@@ -680,7 +680,7 @@ qui permet d’exprimer plus succinctement un parcours d’une collection d’é
 </pre></div>
 </div>
 <p>Pour que cette expression compile, il faut que la variable désignant la collection
-à droite de <strong>:</strong> implémente le type <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Iterable.html">Iterable</a> ou qu’il s’agisse d’un tableau.
+à droite de <strong>:</strong> implémente le type <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html">Iterable</a> ou qu’il s’agisse d’un tableau.
 Il faut également que la variable à gauche de <strong>:</strong> soit compatible pour l’assignation
 d’un élément de la collection.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">short</span> <span class="n">arrayOfShort</span><span class="o">[]</span> <span class="o">=</span> <span class="o">{</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="mi">5</span><span class="o">,</span> <span class="mi">6</span><span class="o">,</span> <span class="mi">7</span><span class="o">,</span> <span class="mi">8</span><span class="o">,</span> <span class="mi">9</span><span class="o">,</span> <span class="mi">10</span><span class="o">};</span>
@@ -995,7 +995,7 @@ algorithme fonctionne correctement.</p>
 <div class="last admonition hint">
 <p class="first admonition-title">Indication</p>
 <p>On peut obtenir un tableau de caractères à partir d’une chaîne avec la méthode
-<a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html#toCharArray()">toCharArray</a>. S’il n’est pas possible de parcourir les éléments d’une chaîne de caractères
+<a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#toCharArray--">toCharArray</a>. S’il n’est pas possible de parcourir les éléments d’une chaîne de caractères
 avec un for amélioré, on peut facilement parcourir le tableau de caractères :</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">helloWorld</span> <span class="o">=</span> <span class="s">&quot;Hello world!&quot;</span><span class="o">;</span>
 <span class="k">for</span> <span class="o">(</span><span class="kt">char</span> <span class="n">c</span> <span class="o">:</span> <span class="n">helloWorld</span><span class="o">.</span><span class="na">toCharArray</span><span class="o">())</span> <span class="o">{</span>

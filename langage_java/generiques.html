@@ -540,7 +540,7 @@ l’instanciation. On parle alors de méthodes et de classes génériques.</p>
 <h2>L’exemple de la classe ArrayList<a class="headerlink" href="#l-exemple-de-la-classe-arraylist" title="Lien permanent vers ce titre">¶</a></h2>
 <p>En Java, l’API standard fournit un ensemble de classes que l’on appelle couramment
 les <a class="reference internal" href="les_collections.html"><span class="doc">collections</span></a>. Ces classes permettent de gérer un ensemble d’objets. Elles apportent
-des fonctionnalités plus avancées que les tableaux. Par exemple la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/ArrayList.html">java.util.ArrayList</a>
+des fonctionnalités plus avancées que les tableaux. Par exemple la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html">java.util.ArrayList</a>
 permet de gérer une liste d’objets. Cette classe autorise l’ajout en fin de liste,
 l’insertion, la suppression et bien évidemment l’accès à un élément selon son index
 et le parcours complet des éléments.</p>
@@ -566,28 +566,28 @@ et le parcours complet des éléments.</p>
 <span class="o">}</span>
 </pre></div>
 </div>
-<p>Pour des instances de la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/ArrayList.html">ArrayList</a>, on peut ajouter des éléments avec la méthode
-<a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/ArrayList.html#add(E)">ArrayList.add</a> et accéder à un élément selon son index avec la méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/ArrayList.html#get(int)">ArrayList.get</a>.
+<p>Pour des instances de la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html">ArrayList</a>, on peut ajouter des éléments avec la méthode
+<a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html#add-E-">ArrayList.add</a> et accéder à un élément selon son index avec la méthode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html#get-int-">ArrayList.get</a>.
 Dans l’exemple précédent, on voit que cela n’est pas sans risque. En effet, un objet de
-type <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/ArrayList.html">ArrayList</a> peut contenir tout type d’objet. Donc quand le programme accède à un élément
-d’une instance de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/ArrayList.html">ArrayList</a>, il doit réaliser explicitement un transtypage (<em>cast</em>) avec le risque
+type <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html">ArrayList</a> peut contenir tout type d’objet. Donc quand le programme accède à un élément
+d’une instance de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html">ArrayList</a>, il doit réaliser explicitement un transtypage (<em>cast</em>) avec le risque
 que cela suppose de se tromper de type. Ce type de classe exige donc beaucoup de rigueur
 d’utilisation pour les développeurs.</p>
 <p>Une situation plus simple serait de pouvoir déclarer en tant que développeur qu’une instance
-de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/ArrayList.html">ArrayList</a> se limite à un type d’éléments : par exemple au type <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html">String</a>. Ainsi le
+de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html">ArrayList</a> se limite à un type d’éléments : par exemple au type <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a>. Ainsi le
 compilateur pourrait signaler une erreur si le programme tente d’ajouter un élément qui n’est
-pas compatible avec le type <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html">String</a> ou s’il veut récupérer un élément dans une variable qui
+pas compatible avec le type <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a> ou s’il veut récupérer un élément dans une variable qui
 n’est pas d’un type compatible. Les classes et les méthodes génériques permettent
 de gérer ce type de situation. Elles sont une aide pour les développeurs afin
 d’écrire des programmes plus robustes.</p>
 </div>
 <div class="section" id="creation-et-assignation-d-une-classe-generique">
 <h2>Création et assignation d’une classe générique<a class="headerlink" href="#creation-et-assignation-d-une-classe-generique" title="Lien permanent vers ce titre">¶</a></h2>
-<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/ArrayList.html">ArrayList</a> et l’interface <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/List.html">List</a> sont justement une classe générique
+<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html">ArrayList</a> et l’interface <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html">List</a> sont justement une classe générique
 et une interface générique supportant un type paramétré.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last"><a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/List.html">List</a> est une interface implémentée notamment par la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/ArrayList.html">ArrayList</a>.</p>
+<p class="last"><a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html">List</a> est une interface implémentée notamment par la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html">ArrayList</a>.</p>
 </div>
 <p>Il est possible, par exemple, de déclarer qu’une instance est une liste de
 chaînes de caractères :</p>
@@ -611,24 +611,24 @@ assigné à une variable sans nécessiter un transtypage explicite du développe
 <span class="hll"><span class="n">Voiture</span> <span class="n">v</span> <span class="o">=</span> <span class="o">(</span><span class="n">Voiture</span><span class="o">)</span> <span class="n">list</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span> <span class="c1">// Erreur de compilation Voiture n&#39;hérite pas de String</span>
 </span></pre></div>
 </div>
-<p>Pour les types paramétrés, le principe de substitution s’applique. Comme la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html">String</a>
-hérite de la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Object.html">Object</a>, il est possible de récupérer un élément de la liste
-dans une variable de type <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Object.html">Object</a> :</p>
+<p>Pour les types paramétrés, le principe de substitution s’applique. Comme la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a>
+hérite de la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html">Object</a>, il est possible de récupérer un élément de la liste
+dans une variable de type <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html">Object</a> :</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Object</span> <span class="n">o</span> <span class="o">=</span> <span class="n">list</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span> <span class="c1">// OK</span>
 </pre></div>
 </div>
 <p>Une classe générique peut permettre de déclarer plusieurs types paramétrés. Par exemple,
-la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/HashMap.html">java.util.HashMap</a> permet de créer des tableaux associatifs (parfois
+la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html">java.util.HashMap</a> permet de créer des tableaux associatifs (parfois
 appelés dictionnaires ou plus simplement <em>maps</em>) pour associer une clé à une valeur.
-La classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/HashMap.html">HashMap</a> permet de spécifier le type de la clé et le type de la valeur.
-Pour créer un tableau associatif entre le nom d’une personne (type <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html">String</a>) et
+La classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html">HashMap</a> permet de spécifier le type de la clé et le type de la valeur.
+Pour créer un tableau associatif entre le nom d’une personne (type <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a>) et
 une instance de la classe <em>Personne</em>, on peut écrire :</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Personne</span><span class="o">&gt;</span> <span class="n">tableauAssociatif</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Personne</span><span class="o">&gt;();</span>
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last"><a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Map.html">Map</a> est une interface implémentée notamment par la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/HashMap.html">HashMap</a>.</p>
+<p class="last"><a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html">Map</a> est une interface implémentée notamment par la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html">HashMap</a>.</p>
 </div>
 </div>
 <div class="section" id="notation-en-diamant">
@@ -651,17 +651,17 @@ qui en hérite. On appelle cela le principe de substitution.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Object</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="o">();</span>
 </pre></div>
 </div>
-<p>Dans l’exemple ci-dessus, il est possible d’affecter un objet du type <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html">String</a>
-à une variable de type <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Object.html">Object</a> car <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html">String</a> hérite de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Object.html">Object</a>. Avec les types
+<p>Dans l’exemple ci-dessus, il est possible d’affecter un objet du type <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a>
+à une variable de type <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html">Object</a> car <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a> hérite de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html">Object</a>. Avec les types
 génériques, le principe de substitution est possible mais devient un peu
 plus complexe. Par exemple :</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="n">List</span><span class="o">&lt;</span><span class="n">Object</span><span class="o">&gt;</span> <span class="n">listeString</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;();</span> <span class="c1">// ERREUR DE COMPILATION</span>
 </span></pre></div>
 </div>
-<p>Il n’est pas possible d’affecter une <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/ArrayList.html">ArrayList</a> de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html">String</a> à une variable de type
-<a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/ArrayList.html">ArrayList</a> de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Object.html">Object</a>. En effet, si cela était autorisé, il serait alors possible
-d’ajouter avec la méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/List.html#add(E)">List.add</a> n’importe quel objet de type <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Object.html">Object</a> ou
-d’un type héritant de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Object.html">Object</a>. Donc un développeur pourrait ajouter à cette liste
+<p>Il n’est pas possible d’affecter une <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html">ArrayList</a> de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a> à une variable de type
+<a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html">ArrayList</a> de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html">Object</a>. En effet, si cela était autorisé, il serait alors possible
+d’ajouter avec la méthode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html#add-E-">List.add</a> n’importe quel objet de type <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html">Object</a> ou
+d’un type héritant de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html">Object</a>. Donc un développeur pourrait ajouter à cette liste
 une instance d’une classe <em>Voiture</em> par exemple sans que le compilateur puisse
 détecter le problème :</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="n">listeString</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Voiture</span><span class="o">());</span> <span class="c1">// Il vaut mieux ne pas pouvoir faire cela !</span>
@@ -692,7 +692,7 @@ de classes qui héritent les unes des autres : <em>Vehicule</em>, <em>Voiture</e
 <span class="o">}</span>
 </pre></div>
 </div>
-<p>Si nous créons une instance de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/ArrayList.html">ArrayList</a> pour le type <em>Voiture</em> :</p>
+<p>Si nous créons une instance de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html">ArrayList</a> pour le type <em>Voiture</em> :</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Voiture</span><span class="o">&gt;</span> <span class="n">listeVoitures</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
 </pre></div>
 </div>
@@ -949,11 +949,11 @@ paramétrés :</p>
 </pre></div>
 </div>
 <p>En précisant <strong>&lt;U extends Number, V&gt;</strong> dans la déclaration de la classe,
-nous limitons le premier type paramétré au type <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Number.html">Number</a> ou un type qui en hérite.</p>
+nous limitons le premier type paramétré au type <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Number.html">Number</a> ou un type qui en hérite.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">La classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Number.html">Number</a> est la classe parente des classes enveloppes <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Integer.html">Integer</a>, <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Long.html">Long</a>,
-<a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Short.html">Short</a>, <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Byte.html">Byte</a>, <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Float.html">Float</a> et <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Double.html">Double</a>.</p>
+<p class="last">La classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Number.html">Number</a> est la classe parente des classes enveloppes <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html">Integer</a>, <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html">Long</a>,
+<a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Short.html">Short</a>, <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Byte.html">Byte</a>, <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Float.html">Float</a> et <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html">Double</a>.</p>
 </div>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Paire</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">paireIntegerString</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Paire</span><span class="o">&lt;&gt;(</span><span class="mi">1</span><span class="o">,</span> <span class="s">&quot;Test&quot;</span><span class="o">);</span>
 <span class="n">Paire</span><span class="o">&lt;</span><span class="n">Float</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">paireFloatString</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Paire</span><span class="o">&lt;&gt;(</span><span class="mf">1.3f</span><span class="o">,</span> <span class="s">&quot;Test&quot;</span><span class="o">);</span>
@@ -965,8 +965,8 @@ nous limitons le premier type paramétré au type <a class="reference external" 
 <p>Les méthodes et les classes génériques ont des limitations.</p>
 <p>Les types paramétrés ne s’appliquent que pour des classes. On ne peut pas spécifier
 un type primitif. Si on désire créer une instance
-de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/ArrayList.html">ArrayList</a> pour des nombres, alors on peut passer par la classe enveloppe
-<a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Integer.html">Integer</a> :</p>
+de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html">ArrayList</a> pour des nombres, alors on peut passer par la classe enveloppe
+<a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html">Integer</a> :</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">listeDeNombres</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;();</span>
 </pre></div>
 </div>

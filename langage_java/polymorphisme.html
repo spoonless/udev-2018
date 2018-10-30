@@ -843,7 +843,7 @@ annotations servent à ajouter une information sur une classe, un attribut,
 une méthode, un paramètre ou une variable. Une annotation apporte une information
 au moment de la compilation, du chargement de la classe dans la JVM ou lors
 de l’exécution du code. Le langage Java proprement dit utilise relativement peu les annotations.
-On trouve cependant l’annotation <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Override.html">&#64;Override</a> qui est très utile pour le polymorphisme.
+On trouve cependant l’annotation <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Override.html">&#64;Override</a> qui est très utile pour le polymorphisme.
 Cette annotation s’ajoute au début de la signature d’une méthode pour préciser
 que cette méthode est une redéfinition d’une méthode héritée. Cela permet au
 compilateur de vérifier que la signature de la méthode correspond bien à une
@@ -941,8 +941,8 @@ méthode de classe qui a la même signature dans les classes qui en héritent.</
 <p>Les constructeurs sont des méthodes particulières qu’il n’est pas possible
 de redéfinir. Les constructeurs créent une séquence d’appel qui garantit
 qu’ils seront exécutés en commençant par la classe la plus haute dans la hiérarchie
-d’héritage. Puisque toutes les classes Java héritent de la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Object.html">Object</a>, cela
-signifie que le constructeur de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Object.html">Object</a> est toujours appelé en premier.</p>
+d’héritage. Puisque toutes les classes Java héritent de la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html">Object</a>, cela
+signifie que le constructeur de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html">Object</a> est toujours appelé en premier.</p>
 <p>Cependant un constructeur peut appeler une méthode et dans ce cas le polymorphisme
 s’applique. Comme les constructeurs sont appelés dans l’ordre
 de la hiérarchie d’héritage, cela signifie qu’un constructeur invoque
@@ -1000,13 +1000,13 @@ avec une vitesse minimale :</p>
 </pre></div>
 </div>
 <p>Le constructeur de <em>VehiculeMotorise</em> commence par appeler le constructeur
-de <em>Vehicule</em>. Ce dernier appelle implicitement le constructeur de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Object.html">Object</a> (qui
+de <em>Vehicule</em>. Ce dernier appelle implicitement le constructeur de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html">Object</a> (qui
 ne fait rien) puis il initialise l’attribut <em>marque</em> et il appelle la méthode
 <em>accelerer</em>. Comme cette dernière est redéfinie, c’est en fait l’implémentation
 fournie par <em>VehiculeMotorise</em> qui est appelée. Cette implémentation commence par appeler
 une méthode sur l’attribut <em>moteur</em> qui n’a pas encore été initialisé. Donc sa
 valeur est nulle et donc la création d’une instance de <em>VehiculeMotorise</em>
-échoue systématiquement avec une erreur du type <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/NullPointerException.html">NullPointerException</a>.</p>
+échoue systématiquement avec une erreur du type <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/NullPointerException.html">NullPointerException</a>.</p>
 <p>On voit par cet exemple que l’appel de méthode dans un constructeur peut amener
 à des situations complexes. Il est fortement recommandé d’appeler dans un constructeur
 des méthodes dont le comportement ne peut pas être modifié par la redéfinition : soit

@@ -1073,7 +1073,7 @@ récupéré, il doit s’assurer que plus aucune référence n’existe vers cet
 Par exemple, il peut affecter la valeur <strong>null</strong> aux variables et aux attributs
 qui référencent cet objet.</p>
 <p>Il est également possible de forcer l’appel au ramasse-miettes gâce à la méthode
-<a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/System.html#gc()">java.lang.System.gc()</a>. Cependant, cette méthode ne donne aucune garantie quant au résultat.
+<a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/System.html#gc--">java.lang.System.gc()</a>. Cependant, cette méthode ne donne aucune garantie quant au résultat.
 Vous ne pouvez pas vous baser sur son appel pour garantir la suppression d’un objet
 non référencé. Le ramasse-miettes utilise un algorithme complexe qui rend son
 comportement difficilement prédictible.</p>
@@ -1096,7 +1096,7 @@ Pour Java 9, vous pouvez vous reporter au
 l’espace mémoire que des objets non référencés. Si vous développez une application
 qui crée beaucoup d’objets sans donner la possibilité au ramasse-miettes de les collecter,
 votre application peut se retrouver à cours d’espace mémoire. Lors de la création d’un
-nouvel objet, vous obtiendrez alors une erreur du type <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/OutOfMemoryError.html">java.lang.OutOfMemoryError</a>.</p>
+nouvel objet, vous obtiendrez alors une erreur du type <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/OutOfMemoryError.html">java.lang.OutOfMemoryError</a>.</p>
 <p class="last">La mémoire n’est pas la seule ressource système avec laquelle les développeurs doivent
 composer. Si Java propose un mécanisme pour la gestion de la mémoire, il ne propose
 pas de mécanisme automatique pour réclamer les autres types de ressources,
@@ -1137,7 +1137,7 @@ pas le même statut ni la même importance qu’un destructeur dans le langage C
 </div>
 <p>Dans l’exemple ci-dessus, Un objet qui n’implémente que la méthode <em>finalize</em> est créé
 puis la variable qui le référence est mise à <strong>null</strong>. Ensuite, le programme appelle
-explicitement le ramasse-miettes avec la méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/System.html#gc()">java.lang.System.gc()</a>. Enfin,
+explicitement le ramasse-miettes avec la méthode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/System.html#gc--">java.lang.System.gc()</a>. Enfin,
 une boucle se contente d’afficher mille points sur la sortie standard. Cette boucle <strong>for</strong>
 est utile car généralement le programme s’arrête trop vite et le ramasse-miettes
 n’a pas le temps d’appeler <em>finalize</em>. Si vous exécutez ce programme plusieurs fois,

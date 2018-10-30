@@ -842,12 +842,12 @@ un héritage.</p>
 <h2>Héritage simple : Object<a class="headerlink" href="#heritage-simple-object" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Java ne supporte pas l’héritage multiple. Soit le développeur déclare avec
 le mot-clé <strong>extends</strong> une seule classe parente, soit le compilateur part
-du principe que la classe hérite de la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Object.html">Object</a>. Toutes les classes
-en Java ont une classe parente (hormis la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Object.html">Object</a>). L’arbre d’héritage
-en Java ne possède qu’une seule classe racine : la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Object.html">Object</a>.</p>
+du principe que la classe hérite de la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html">Object</a>. Toutes les classes
+en Java ont une classe parente (hormis la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html">Object</a>). L’arbre d’héritage
+en Java ne possède qu’une seule classe racine : la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html">Object</a>.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">C’est la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Object.html">Object</a> qui déclare notamment les méthodes <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Object.html#toString()">toString</a> et <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Object.html#equals(java.lang.Object)">equals</a>.
+<p class="last">C’est la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html">Object</a> qui déclare notamment les méthodes <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html#toString--">toString</a> et <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html#equals-java.lang.Object-">equals</a>.
 Voilà pourquoi tous les objets Java peuvent avoir par défaut une représentation
 sous forme de chaîne de caractères et qu’ils peuvent être comparés aux autres.</p>
 </div>
@@ -894,8 +894,8 @@ de type <em>Voiture</em> à des variables de type <em>Vehicule</em>.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p>Comme Java se base sur une hiérarchie à racine unique, toutes les classes
-héritent directement ou indirectement de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Object.html">Object</a>. Donc, toute instance peut
-être affectée à une variable, un attribut ou un paramètre de type <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Object.html">Object</a>.</p>
+héritent directement ou indirectement de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html">Object</a>. Donc, toute instance peut
+être affectée à une variable, un attribut ou un paramètre de type <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html">Object</a>.</p>
 <div class="last highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Object</span> <span class="n">obj</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
 <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Voiture</span><span class="o">(</span><span class="s">&quot;DeLorean&quot;</span><span class="o">);</span>
 <span class="n">obj</span> <span class="o">=</span> <span class="s">&quot;ceci est une chaine de caractère&quot;</span><span class="o">;</span>
@@ -924,7 +924,7 @@ Cependant, l’affectation à la ligne 3 est erronée puisque la variable <em>ve
 référence une instance de <em>Voiture</em> que l’on veut affecter à une variable de type
 <em>Moto</em>. Pour les types primitifs, un transtypage invalide conduit à une possible
 perte de données. Par contre, pour des objets, un transtypage invalide génère à
-l’exécution une erreur de type <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/ClassCastException.html">java.lang.ClassCastException</a>.</p>
+l’exécution une erreur de type <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/ClassCastException.html">java.lang.ClassCastException</a>.</p>
 </div>
 <div class="section" id="le-mot-cle-instanceof">
 <h2>Le mot-clé instanceof<a class="headerlink" href="#le-mot-cle-instanceof" title="Lien permanent vers ce titre">¶</a></h2>
@@ -1170,8 +1170,8 @@ Elle représente un élément terminal dans l’arborescence d’héritage.</p>
 est maintenant impossible de déclarer une classe qui étende la classe <em>Moto</em>.</p>
 <p>En raison de son impact très fort, la déclaration d’une classe comme <strong>final</strong>
 est réservée à des cas très particuliers. Un exemple est la classe
-<a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html">java.lang.String</a>. Cette classe est déclarée <strong>final</strong>. Il est donc impossible
-en Java de créer une classe qui hérite de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html">java.lang.String</a>. Les développeurs de
+<a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">java.lang.String</a>. Cette classe est déclarée <strong>final</strong>. Il est donc impossible
+en Java de créer une classe qui hérite de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">java.lang.String</a>. Les développeurs de
 l’API standard ont jugé qu’en raison de son importance, cette classe devait être
 fermée en extension afin d’éviter toute modification de comportement par héritage.</p>
 </div>
