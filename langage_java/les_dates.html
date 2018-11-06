@@ -293,6 +293,11 @@
 <li class="toctree-l2"><a class="reference internal" href="polymorphisme.html#le-principe-du-ouvert-ferme">Le principe du ouvert/fermé</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="classe_abstraite.html">Les classes abstraites</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classe_abstraite.html#declarer-une-classe-abstraite">Déclarer une classe abstraite</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classe_abstraite.html#declarer-une-methode-abstraite">Déclarer une méthode abstraite</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="la_classe_object.html">La classe Object</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="la_classe_object.html#la-methode-equals">La méthode equals</a></li>
 <li class="toctree-l2"><a class="reference internal" href="la_classe_object.html#la-methode-hashcode">La méthode hashCode</a></li>
@@ -325,11 +330,6 @@
 <li class="toctree-l2"><a class="reference internal" href="les_exceptions.html#exception-cause">Exception cause</a></li>
 <li class="toctree-l2"><a class="reference internal" href="les_exceptions.html#les-erreurs-et-les-exceptions-runtime">Les erreurs et les exceptions runtime</a></li>
 <li class="toctree-l2"><a class="reference internal" href="les_exceptions.html#choix-entre-checked-et-unchecked">Choix entre checked et unchecked</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="classe_abstraite.html">Les classes abstraites</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="classe_abstraite.html#declarer-une-classe-abstraite">Déclarer une classe abstraite</a></li>
-<li class="toctree-l2"><a class="reference internal" href="classe_abstraite.html#declarer-une-methode-abstraite">Déclarer une méthode abstraite</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="enumeration.html">Les énumérations</a><ul>
@@ -537,7 +537,7 @@ classes sont demeurées même si une partie de leurs méthodes ont été dépré
 Ainsi, il existe plusieurs façons de représenter les dates et le temps en Java.</p>
 <div class="section" id="date-la-classe-historique">
 <h2>Date : la classe historique<a class="headerlink" href="#date-la-classe-historique" title="Lien permanent vers ce titre">¶</a></h2>
-<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html">java.util.Date</a> est la première classe a être apparue pour représenter
+<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Date.html">java.util.Date</a> est la première classe a être apparue pour représenter
 une date. Elle comporte de nombreuses limitations :</p>
 <ul class="simple">
 <li>Il n’est pas possible de représenter des dates antérieures à 1900</li>
@@ -546,11 +546,11 @@ une date. Elle comporte de nombreuses limitations :</p>
 <li>Elle ne permet pas d’effectuer des opérations (ajout d’un jour, d’une année…)</li>
 </ul>
 <p>La quasi totalité des constructeurs et des méthodes de cette classe ont été
-dépréciés. Cela signifie qu’il ne faut pas les utiliser. Pourtant, la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html">Date</a>
-reste une classe largement utilisée en Java. Par exemple, la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html">Date</a> est la
-classe mère des classes <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/sql/Date.html">java.sql.Date</a>, <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/sql/Time.html">java.sql.Time</a> et <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/sql/Timestamp.html">java.sql.Timestamp</a> qui
+dépréciés. Cela signifie qu’il ne faut pas les utiliser. Pourtant, la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Date.html">Date</a>
+reste une classe largement utilisée en Java. Par exemple, la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Date.html">Date</a> est la
+classe mère des classes <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/sql/Date.html">java.sql.Date</a>, <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/sql/Time.html">java.sql.Time</a> et <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/sql/Timestamp.html">java.sql.Timestamp</a> qui
 servent à représenter les types du même nom en SQL. Beaucoup de bibliothèques
-tierces utilisent directement ou indirectement la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html">Date</a>.</p>
+tierces utilisent directement ou indirectement la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Date.html">Date</a>.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.cgi.udev</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">java.time.Instant</span><span class="o">;</span>
@@ -574,17 +574,17 @@ tierces utilisent directement ou indirectement la classe <a class="reference ext
 <span class="o">}</span>
 </pre></div>
 </div>
-<p>Actuellement, les méthodes permettant de comparer des instances de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html">Date</a>
-ne sont pas dépréciées. Pour construire une instance de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html">Date</a>, on peut utiliser
+<p>Actuellement, les méthodes permettant de comparer des instances de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Date.html">Date</a>
+ne sont pas dépréciées. Pour construire une instance de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Date.html">Date</a>, on peut utiliser
 le constructeur sans paramètre pour créer une date au jour et à l’heure d’aujourd’hui.
 On peut également passer un nombre de type <strong>long</strong> représentant le nombre de millisecondes
 depuis le 1er janvier 1970 à 00:00:00.000 (<em>l’epoch</em>). Il est également possible de modifier
-une instance de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html">Date</a> avec la méthode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html#setTime-long-">Date.setTime</a> en fournissant le nombre de
+une instance de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Date.html">Date</a> avec la méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Date.html#setTime(long)">Date.setTime</a> en fournissant le nombre de
 millisecondes depuis le 1er janvier 1970 à 00:00:00.000.</p>
 <div class="admonition tip">
 <p class="first admonition-title">Astuce</p>
 <p>Pour connaître le nombre de millisecondes écoulées depuis le 1er janvier 1970
-à 00:00:00.000, il faut appeler la méthodes <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/System.html#currentTimeMillis--">System.currentTimeMillis</a>.</p>
+à 00:00:00.000, il faut appeler la méthodes <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/System.html#currentTimeMillis()">System.currentTimeMillis</a>.</p>
 <div class="last highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">long</span> <span class="n">nbMilliSecondes</span> <span class="o">=</span> <span class="n">System</span><span class="o">.</span><span class="na">currentTimeMillis</span><span class="o">();</span>
 </pre></div>
 </div>
@@ -592,21 +592,21 @@ millisecondes depuis le 1er janvier 1970 à 00:00:00.000.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">Depuis l’introduction en Java 8 de la nouvelle API des dates,
-il est possible de convertir une instance de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html">Date</a> en une instance de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/time/Instant.html">Instant</a> avec
-la méthode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html#toInstant--">Date.toInstant</a>.</p>
+il est possible de convertir une instance de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Date.html">Date</a> en une instance de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/time/Instant.html">Instant</a> avec
+la méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Date.html#toInstant()">Date.toInstant</a>.</p>
 </div>
 </div>
 <div class="section" id="calendar">
 <h2>Calendar<a class="headerlink" href="#calendar" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Depuis Java 1.1, la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html">java.util.Calendar</a> a été proposée pour remplacer
-la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html">java.util.Date</a>. La classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html">Calendar</a> pallie les nombreux désavantages
-de la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html">Date</a> :</p>
+<p>Depuis Java 1.1, la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Calendar.html">java.util.Calendar</a> a été proposée pour remplacer
+la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Date.html">java.util.Date</a>. La classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Calendar.html">Calendar</a> pallie les nombreux désavantages
+de la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Date.html">Date</a> :</p>
 <ul class="simple">
 <li>Il est possible de représenter toutes les dates (y compris avant notre ère)</li>
-<li>La classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html">Calendar</a> supporte les fuseaux horaires (<em>timezone</em>)</li>
-<li>La classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html">Calendar</a> est une classe abstraite pour laquelle il est possible de
+<li>La classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Calendar.html">Calendar</a> supporte les fuseaux horaires (<em>timezone</em>)</li>
+<li>La classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Calendar.html">Calendar</a> est une classe abstraite pour laquelle il est possible de
 fournir des classes concrètes pour gérer différents calendriers (le JDK ne propose
-que la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/GregorianCalendar.html">GregorianCalendar</a> comme implémentation concrète pour le calendrier grégorien).</li>
+que la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/GregorianCalendar.html">GregorianCalendar</a> comme implémentation concrète pour le calendrier grégorien).</li>
 </ul>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.cgi.udev</span><span class="o">;</span>
 
@@ -640,26 +640,26 @@ que la classe <a class="reference external" href="https://docs.oracle.com/javase
 <span class="o">}</span>
 </pre></div>
 </div>
-<p>Comme pour les instances de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html">Date</a>, il est possible de comparer les instances
-de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html">Calendar</a> entre elles. Il est également possible de convertir une instance
-de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html">Calendar</a> en <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html">Date</a> (mais alors on perd l’information du fuseau horaire
-puisque la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html">Date</a> ne contient pas cette information) grâce à la méthode
-<a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html#getTime--">Calendar.getTime</a>. Enfin, on utilise la méthode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html#toInstant--">Calendar.toInstant</a> pour convertir
-une instance de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html">Calendar</a> en une instance de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/time/Instant.html">Instant</a>.</p>
-<p>Même si la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html">Calendar</a> est beaucoup plus complète que la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html">Date</a>, son
+<p>Comme pour les instances de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Date.html">Date</a>, il est possible de comparer les instances
+de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Calendar.html">Calendar</a> entre elles. Il est également possible de convertir une instance
+de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Calendar.html">Calendar</a> en <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Date.html">Date</a> (mais alors on perd l’information du fuseau horaire
+puisque la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Date.html">Date</a> ne contient pas cette information) grâce à la méthode
+<a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Calendar.html#getTime()">Calendar.getTime</a>. Enfin, on utilise la méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Calendar.html#toInstant()">Calendar.toInstant</a> pour convertir
+une instance de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Calendar.html">Calendar</a> en une instance de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/time/Instant.html">Instant</a>.</p>
+<p>Même si la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Calendar.html">Calendar</a> est beaucoup plus complète que la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Date.html">Date</a>, son
 utilisation est restée limitée car elle est également plus difficile à manipuler.
 Son API la rend assez fastidieuse d’utilisation. Elle ne permet pas de représenter
 simplement la notion du durée. Et surtout, comme il s’agit d’une classe abstraite,
 il n’est pas possible construire une instance avec l’opérateur <strong>new</strong>. Il faut
-systématiquement utiliser une des méthodes de classes <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html#getInstance--">Calendar.getInstance</a>.</p>
+systématiquement utiliser une des méthodes de classes <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Calendar.html#getInstance()">Calendar.getInstance</a>.</p>
 </div>
 <div class="section" id="l-api-date-time">
 <h2>L’API Date/Time<a class="headerlink" href="#l-api-date-time" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Depuis Java 8, une nouvelle API a été introduite pour représenter les dates, le
-temps et la durée. Toutes ces classes ont été regroupées dans la package <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html">java.time</a>.</p>
+temps et la durée. Toutes ces classes ont été regroupées dans la package <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/time/package-summary.html">java.time</a>.</p>
 <div class="section" id="id1">
 <h3>Les Dates<a class="headerlink" href="#id1" title="Lien permanent vers ce titre">¶</a></h3>
-<p>Les classes <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html">LocalDate</a>, <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/time/LocalTime.html">LocalTime</a> et <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/time/LocalDateTime.html">LocalDateTime</a> permettent de représenter respectivement
+<p>Les classes <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/time/LocalDate.html">LocalDate</a>, <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/time/LocalTime.html">LocalTime</a> et <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/time/LocalDateTime.html">LocalDateTime</a> permettent de représenter respectivement
 une date, une heure, une date et une heure.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.cgi.udev</span><span class="o">;</span>
 
@@ -684,8 +684,8 @@ une date, une heure, une date et une heure.</p>
 </pre></div>
 </div>
 <p>On peut facilement passer d’un type à une autre. Par exemple la méthode
-<a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html#atTime-int-int-">LocalDate.atTime</a> permet d’ajouter une heure à une date, créant ainsi une instance
-de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/time/LocalDateTime.html">LocalDateTime</a>. Toutes les instances de ces classes sont immutables.</p>
+<a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/time/LocalDate.html#atTime(int,int)">LocalDate.atTime</a> permet d’ajouter une heure à une date, créant ainsi une instance
+de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/time/LocalDateTime.html">LocalDateTime</a>. Toutes les instances de ces classes sont immutables.</p>
 <p>Si on veut avoir l’information de la date ou de l’heure d’aujourd’hui, on peut
 créer une instance grâce à la méthode <em>now</em>.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">LocalDate</span> <span class="n">dateAujourdhui</span> <span class="o">=</span> <span class="n">LocalDate</span><span class="o">.</span><span class="na">now</span><span class="o">();</span>
@@ -694,7 +694,7 @@ créer une instance grâce à la méthode <em>now</em>.</p>
 </pre></div>
 </div>
 <p>Une instance de ces classes ne contient pas d’information de fuseau horaire.
-On peut néanmoins passer en paramètre des méthodes <em>now</em> un <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/time/ZoneId.html">ZoneId</a> pour indiquer
+On peut néanmoins passer en paramètre des méthodes <em>now</em> un <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/time/ZoneId.html">ZoneId</a> pour indiquer
 le fuseau horaire pour lequel on désire la date et/ou l’heure actuelle.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">LocalDate</span> <span class="n">dateAujourdhui</span> <span class="o">=</span> <span class="n">LocalDate</span><span class="o">.</span><span class="na">now</span><span class="o">(</span><span class="n">ZoneId</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="s">&quot;GMT&quot;</span><span class="o">));</span>
 <span class="n">LocalTime</span> <span class="n">heureMaintenant</span> <span class="o">=</span> <span class="n">LocalTime</span><span class="o">.</span><span class="na">now</span><span class="o">(</span><span class="n">ZoneId</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="s">&quot;Europe/Paris&quot;</span><span class="o">));</span>
@@ -704,9 +704,9 @@ le fuseau horaire pour lequel on désire la date et/ou l’heure actuelle.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">Si vous avez besoin de représenter des dates avec le fuseau horaire, alors il faut
-utiliser la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/time/ZonedDateTime.html">ZonedDateTime</a>.</p>
+utiliser la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/time/ZonedDateTime.html">ZonedDateTime</a>.</p>
 </div>
-<p>Les classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/time/Year.html">Year</a> et <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/time/YearMonth.html">YearMonth</a> permettent de manipuler les dates et d’obtenir
+<p>Les classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/time/Year.html">Year</a> et <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/time/YearMonth.html">YearMonth</a> permettent de manipuler les dates et d’obtenir
 des informations intéressantes à partir de l’année ou du mois et de l’année.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.cgi.udev</span><span class="o">;</span>
 
@@ -736,9 +736,9 @@ des informations intéressantes à partir de l’année ou du mois et de l’ann
 </div>
 <div class="section" id="la-classe-instant">
 <h3>La classe Instant<a class="headerlink" href="#la-classe-instant" title="Lien permanent vers ce titre">¶</a></h3>
-<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/time/Instant.html">Instant</a> représente un point dans le temps. Contrairement aux classes
+<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/time/Instant.html">Instant</a> représente un point dans le temps. Contrairement aux classes
 précédentes qui permettent de représenter les dates pour les humains, la classe
-<a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/time/Instant.html">Instant</a> est adaptée pour réaliser des traitements de données temporelles.</p>
+<a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/time/Instant.html">Instant</a> est adaptée pour réaliser des traitements de données temporelles.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.cgi.udev</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">java.time.Instant</span><span class="o">;</span>
@@ -759,18 +759,18 @@ précédentes qui permettent de représenter les dates pour les humains, la clas
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Les classes <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html">LocalDate</a>, <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/time/LocalTime.html">LocalTime</a>, <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/time/LocalDateTime.html">LocalDateTime</a>, <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/time/ZonedDateTime.html">ZonedDateTime</a>, <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/time/Year.html">Year</a>, <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/time/YearMonth.html">YearMonth</a>,
-<a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/time/Instant.html">Instant</a> implémentent toutes les interfaces <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/time/temporal/Temporal.html">Temporal</a> et <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/time/temporal/TemporalAccessor.html">TemporalAccessor</a>. Cela
+<p class="last">Les classes <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/time/LocalDate.html">LocalDate</a>, <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/time/LocalTime.html">LocalTime</a>, <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/time/LocalDateTime.html">LocalDateTime</a>, <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/time/ZonedDateTime.html">ZonedDateTime</a>, <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/time/Year.html">Year</a>, <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/time/YearMonth.html">YearMonth</a>,
+<a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/time/Instant.html">Instant</a> implémentent toutes les interfaces <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/time/temporal/Temporal.html">Temporal</a> et <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/time/temporal/TemporalAccessor.html">TemporalAccessor</a>. Cela
 permet d’utiliser facilement des instances de ces classes les unes avec les autres
 puisque beaucoup de leurs méthodes attendent en paramètres des instances de type
-<a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/time/temporal/Temporal.html">Temporal</a> ou <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/time/temporal/TemporalAccessor.html">TemporalAccessor</a>.</p>
+<a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/time/temporal/Temporal.html">Temporal</a> ou <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/time/temporal/TemporalAccessor.html">TemporalAccessor</a>.</p>
 </div>
 </div>
 <div class="section" id="periode-et-duree">
 <h3>Période et durée<a class="headerlink" href="#periode-et-duree" title="Lien permanent vers ce titre">¶</a></h3>
-<p>Il est possible de définir des périodes grâce à des instances de la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/time/Period.html">Period</a>.
+<p>Il est possible de définir des périodes grâce à des instances de la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/time/Period.html">Period</a>.
 Une période peut être construite directement ou à partir de la différence entre deux
-instances de type <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/time/temporal/Temporal.html">Temporal</a>. Il est ensuite possible de modifier une date en ajoutant ou soustrayant
+instances de type <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/time/temporal/Temporal.html">Temporal</a>. Il est ensuite possible de modifier une date en ajoutant ou soustrayant
 une période.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.cgi.udev</span><span class="o">;</span>
 
@@ -796,8 +796,8 @@ une période.</p>
 <span class="o">}</span>
 </pre></div>
 </div>
-<p>La durée est représentée par une instance de la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html">Duration</a>. Elle peut être
-obtenue à partir de deux instances de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/time/Instant.html">Instant</a>.</p>
+<p>La durée est représentée par une instance de la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/time/Duration.html">Duration</a>. Elle peut être
+obtenue à partir de deux instances de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/time/Instant.html">Instant</a>.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.cgi.udev</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">java.time.Duration</span><span class="o">;</span>
@@ -822,10 +822,10 @@ obtenue à partir de deux instances de <a class="reference external" href="https
 <div class="section" id="formatage-des-dates">
 <h2>Formatage des dates<a class="headerlink" href="#formatage-des-dates" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Pour formater une date pour l’affichage, il est possible d’utiliser la méthode
-<em>format</em> déclarée dans les classes <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html">LocalDate</a>, <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/time/LocalTime.html">LocalTime</a>, <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/time/LocalDateTime.html">LocalDateTime</a>,
-<a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/time/ZonedDateTime.html">ZonedDateTime</a>, <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/time/Year.html">Year</a> et <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/time/YearMonth.html">YearMonth</a>.</p>
+<em>format</em> déclarée dans les classes <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/time/LocalDate.html">LocalDate</a>, <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/time/LocalTime.html">LocalTime</a>, <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/time/LocalDateTime.html">LocalDateTime</a>,
+<a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/time/ZonedDateTime.html">ZonedDateTime</a>, <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/time/Year.html">Year</a> et <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/time/YearMonth.html">YearMonth</a>.</p>
 <p>Le format de représentation d’une date et/ou du temps est défini par la classe
-<a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html">DateTimeFormatter</a>.</p>
+<a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/time/format/DateTimeFormatter.html">DateTimeFormatter</a>.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.cgi.udev</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">java.time.LocalDateTime</span><span class="o">;</span>
@@ -862,8 +862,8 @@ obtenue à partir de deux instances de <a class="reference external" href="https
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Il est toujours possible d’utiliser la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html">SimpleDateFormat</a> pour formater
-une instance de la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html">java.util.Date</a>.</p>
+<p class="last">Il est toujours possible d’utiliser la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/text/SimpleDateFormat.html">SimpleDateFormat</a> pour formater
+une instance de la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Date.html">java.util.Date</a>.</p>
 </div>
 </div>
 </div>

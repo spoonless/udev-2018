@@ -293,6 +293,11 @@
 <li class="toctree-l2"><a class="reference internal" href="polymorphisme.html#le-principe-du-ouvert-ferme">Le principe du ouvert/fermé</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="classe_abstraite.html">Les classes abstraites</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classe_abstraite.html#declarer-une-classe-abstraite">Déclarer une classe abstraite</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classe_abstraite.html#declarer-une-methode-abstraite">Déclarer une méthode abstraite</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="la_classe_object.html">La classe Object</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="la_classe_object.html#la-methode-equals">La méthode equals</a></li>
 <li class="toctree-l2"><a class="reference internal" href="la_classe_object.html#la-methode-hashcode">La méthode hashCode</a></li>
@@ -325,11 +330,6 @@
 <li class="toctree-l2"><a class="reference internal" href="les_exceptions.html#exception-cause">Exception cause</a></li>
 <li class="toctree-l2"><a class="reference internal" href="les_exceptions.html#les-erreurs-et-les-exceptions-runtime">Les erreurs et les exceptions runtime</a></li>
 <li class="toctree-l2"><a class="reference internal" href="les_exceptions.html#choix-entre-checked-et-unchecked">Choix entre checked et unchecked</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="classe_abstraite.html">Les classes abstraites</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="classe_abstraite.html#declarer-une-classe-abstraite">Déclarer une classe abstraite</a></li>
-<li class="toctree-l2"><a class="reference internal" href="classe_abstraite.html#declarer-une-methode-abstraite">Déclarer une méthode abstraite</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="enumeration.html">Les énumérations</a><ul>
@@ -530,7 +530,7 @@
             
   <div class="section" id="la-classe-string">
 <h1>La classe String<a class="headerlink" href="#la-classe-string" title="Lien permanent vers ce titre">¶</a></h1>
-<p>En Java, les chaînes de caractères sont des instances de la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a>.
+<p>En Java, les chaînes de caractères sont des instances de la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html">String</a>.
 Les chaînes de caractères écrites littéralement sont toujours délimitées par des
 guillemets :</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="s">&quot;Hello World&quot;</span>
@@ -540,7 +540,7 @@ guillemets :</p>
 <h2>String et tableau de caractères<a class="headerlink" href="#string-et-tableau-de-caracteres" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Contrairement à d’autres langages de programmation, une chaîne de caractères
 ne peut pas être traitée comme un tableau. Si on souhaite accéder à un caractère
-de la chaîne à partir de son index, il faut utiliser la méthode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#charAt-int-">String.charAt</a>.
+de la chaîne à partir de son index, il faut utiliser la méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html#charAt(int)">String.charAt</a>.
 On peut ainsi parcourir les caractères d’une chaîne :</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">s</span> <span class="o">=</span> <span class="s">&quot;Hello World&quot;</span><span class="o">;</span>
 
@@ -550,11 +550,11 @@ On peut ainsi parcourir les caractères d’une chaîne :</p>
 <span class="o">}</span>
 </pre></div>
 </div>
-<p>La méthode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#length--">String.length</a> permet de connaître le nombre de caractères dans la chaîne.
+<p>La méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html#length()">String.length</a> permet de connaître le nombre de caractères dans la chaîne.
 Il n’est malheureusement pas possible d’utiliser un for amélioré pour parcourir
-les caractères d’une chaîne car la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a> n’implémente pas l’interface
-<a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html">Iterable</a>. Par contre, il est possible d’obtenir un tableau des caractères avec
-la méthode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#toCharArray--">String.toCharArray</a>. On peut alors parcourir ce tableau avec un for amélioré.</p>
+les caractères d’une chaîne car la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html">String</a> n’implémente pas l’interface
+<a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Iterable.html">Iterable</a>. Par contre, il est possible d’obtenir un tableau des caractères avec
+la méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html#toCharArray()">String.toCharArray</a>. On peut alors parcourir ce tableau avec un for amélioré.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">s</span> <span class="o">=</span> <span class="s">&quot;Hello World&quot;</span><span class="o">;</span>
 
 <span class="k">for</span> <span class="o">(</span><span class="kt">char</span> <span class="n">c</span> <span class="o">:</span> <span class="n">s</span><span class="o">.</span><span class="na">toCharArray</span><span class="o">())</span> <span class="o">{</span>
@@ -564,7 +564,7 @@ la méthode <a class="reference external" href="https://docs.oracle.com/javase/8
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p>La méthode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#toCharArray--">String.toCharArray</a> a l’inconvénient de créer un tableau de la même
+<p>La méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html#toCharArray()">String.toCharArray</a> a l’inconvénient de créer un tableau de la même
 longueur que la chaîne et de copier un à un les caractères. Si votre programme
 manipule intensivement des chaînes de caractères de taille importante, cela
 peut être pénalisant pour les performances. Depuis Java 8, il existe avec une
@@ -578,10 +578,10 @@ l’utilisation des streams et des lambdas.</p>
 </div>
 <div class="section" id="quelques-methodes-utilitaires">
 <h2>Quelques méthodes utilitaires<a class="headerlink" href="#quelques-methodes-utilitaires" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Voici ci-dessous, quelques méthodes utiles fournies par la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a>.
+<p>Voici ci-dessous, quelques méthodes utiles fournies par la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html">String</a>.
 Reportez-vous à la documentation de la classe pour consulter la liste complète
 des méthodes.</p>
-<p><a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#equals-java.lang.Object-">String.equals</a></p>
+<p><a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html#equals(java.lang.Object)">String.equals</a></p>
 <blockquote>
 <div><p>Compare la chaîne de caractères avec une autre chaînes de caractères.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;a&quot;</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">&quot;a&quot;</span><span class="o">));</span>   <span class="c1">// true</span>
@@ -600,7 +600,7 @@ la casse seront considérées comme identiques.</p>
 </pre></div>
 </div>
 </div></blockquote>
-<p><a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#compareTo-java.lang.String-">String.compareTo</a></p>
+<p><a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html#compareTo(java.lang.String)">String.compareTo</a></p>
 <blockquote>
 <div><p>Compare la chaîne de caractères avec une autre chaînes de caractères. La comparaison
 se fait suivant la taille des chaînes et l’ordre lexicographique des caractères. Cette méthode
@@ -615,7 +615,7 @@ que la seconde.</p>
 </pre></div>
 </div>
 </div></blockquote>
-<p><a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#compareToIgnoreCase-java.lang.String-">String.compareToIgnoreCase</a></p>
+<p><a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html#compareToIgnoreCase(java.lang.String)">String.compareToIgnoreCase</a></p>
 <blockquote>
 <div><p>Comme la méthode précédente sauf que deux chaînes qui ne diffèrent que par
 la casse seront considérées comme identiques.</p>
@@ -627,7 +627,7 @@ la casse seront considérées comme identiques.</p>
 </pre></div>
 </div>
 </div></blockquote>
-<p><a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#concat-java.lang.String-">String.concat</a></p>
+<p><a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html#concat(java.lang.String)">String.concat</a></p>
 <blockquote>
 <div><p>Concatène les deux chaînes dans une troisième. Cette méthode est équivalente
 à l’utilisation de l’opérateur <strong>+</strong>.</p>
@@ -635,7 +635,7 @@ la casse seront considérées comme identiques.</p>
 </pre></div>
 </div>
 </div></blockquote>
-<p><a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#contains-java.lang.CharSequence-">String.contains</a></p>
+<p><a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html#contains(java.lang.CharSequence)">String.contains</a></p>
 <blockquote>
 <div><p>Retourne <strong>true</strong> si la chaîne contient une séquence de caractères donnée.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">boolean</span> <span class="n">b</span> <span class="o">=</span> <span class="s">&quot;Hello World&quot;</span><span class="o">.</span><span class="na">contains</span><span class="o">(</span><span class="s">&quot;World&quot;</span><span class="o">);</span> <span class="c1">// true</span>
@@ -643,7 +643,7 @@ la casse seront considérées comme identiques.</p>
 </pre></div>
 </div>
 </div></blockquote>
-<p><a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#endsWith-java.lang.String-">String.endsWith</a></p>
+<p><a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html#endsWith(java.lang.String)">String.endsWith</a></p>
 <blockquote>
 <div><p>Retourne <strong>true</strong> si la chaîne se termine par une chaîne de caractères donnée.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">boolean</span> <span class="n">b</span> <span class="o">=</span> <span class="s">&quot;Hello World&quot;</span><span class="o">.</span><span class="na">endsWith</span><span class="o">(</span><span class="s">&quot;World&quot;</span><span class="o">);</span> <span class="c1">// true</span>
@@ -651,7 +651,7 @@ la casse seront considérées comme identiques.</p>
 </pre></div>
 </div>
 </div></blockquote>
-<p><a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#startsWith-java.lang.String-">String.startsWith</a></p>
+<p><a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html#startsWith(java.lang.String)">String.startsWith</a></p>
 <blockquote>
 <div><p>Retourne <strong>true</strong> si la chaîne commence par une chaîne de caractères donnée.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">boolean</span> <span class="n">b</span> <span class="o">=</span> <span class="s">&quot;Hello World&quot;</span><span class="o">.</span><span class="na">endsWith</span><span class="o">(</span><span class="s">&quot;Hello&quot;</span><span class="o">);</span> <span class="c1">// true</span>
@@ -659,7 +659,7 @@ la casse seront considérées comme identiques.</p>
 </pre></div>
 </div>
 </div></blockquote>
-<p><a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#isEmpty--">String.isEmpty</a></p>
+<p><a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html#isEmpty()">String.isEmpty</a></p>
 <blockquote>
 <div><p>Retourne <strong>true</strong> si la chaîne est la chaîne vide (<em>length()</em> vaut 0)</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">boolean</span> <span class="n">b</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">();</span>    <span class="c1">// true</span>
@@ -667,14 +667,14 @@ la casse seront considérées comme identiques.</p>
 </pre></div>
 </div>
 </div></blockquote>
-<p><a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#length--">String.length</a></p>
+<p><a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html#length()">String.length</a></p>
 <blockquote>
 <div><p>Retourne le nombre de caractères dans la chaîne.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="s">&quot;Hello World&quot;</span><span class="o">.</span><span class="na">length</span><span class="o">();</span> <span class="c1">// 11</span>
 </pre></div>
 </div>
 </div></blockquote>
-<p><a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#replace-char-char-">String.replace</a></p>
+<p><a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html#replace(char,char)">String.replace</a></p>
 <blockquote>
 <div><p>Remplace un caractère par un autre dans une nouvelle chaîne de caractères.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">s</span> <span class="o">=</span> <span class="s">&quot;Hello World&quot;</span><span class="o">.</span><span class="na">replace</span><span class="o">(</span><span class="sc">&#39;l&#39;</span><span class="o">,</span> <span class="sc">&#39;x&#39;</span><span class="o">);</span> <span class="c1">// &quot;Hexxo Worxd&quot;</span>
@@ -686,7 +686,7 @@ paramètres.</p>
 </pre></div>
 </div>
 </div></blockquote>
-<p><a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#substring-int-int-">String.substring</a></p>
+<p><a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html#substring(int,int)">String.substring</a></p>
 <blockquote>
 <div><p>Crée une nouvelle sous-chaîne à partir de l’index de début et jusqu’à
 l’index de fin (non inclus).</p>
@@ -695,21 +695,21 @@ l’index de fin (non inclus).</p>
 </pre></div>
 </div>
 </div></blockquote>
-<p><a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#toLowerCase--">String.toLowerCase</a></p>
+<p><a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html#toLowerCase()">String.toLowerCase</a></p>
 <blockquote>
 <div><p>Crée une chaîne de caractères équivalente en minuscules.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">s</span> <span class="o">=</span> <span class="s">&quot;Hello World&quot;</span><span class="o">.</span><span class="na">toLowerCase</span><span class="o">();</span> <span class="c1">// &quot;hello world&quot;</span>
 </pre></div>
 </div>
 </div></blockquote>
-<p><a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#toUpperCase--">String.toUpperCase</a></p>
+<p><a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html#toUpperCase()">String.toUpperCase</a></p>
 <blockquote>
 <div><p>Crée une chaîne de caractères équivalente en majuscules.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">s</span> <span class="o">=</span> <span class="s">&quot;Hello World&quot;</span><span class="o">.</span><span class="na">toUpperCase</span><span class="o">();</span> <span class="c1">// &quot;HELLO WORLD&quot;</span>
 </pre></div>
 </div>
 </div></blockquote>
-<p><a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#trim--">String.trim</a></p>
+<p><a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html#trim()">String.trim</a></p>
 <blockquote>
 <div><p>Crée une nouvelle chaîne de caractères en supprimant les espaces au début et
 à la fin.</p>
@@ -720,7 +720,7 @@ l’index de fin (non inclus).</p>
 </div>
 <div class="section" id="construction-d-une-instance-de-string">
 <h2>Construction d’une instance de String<a class="headerlink" href="#construction-d-une-instance-de-string" title="Lien permanent vers ce titre">¶</a></h2>
-<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a> possède plusieurs constructeurs qui permettent de créer
+<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html">String</a> possède plusieurs constructeurs qui permettent de créer
 une chaîne de caractères avec l’opérateur <strong>new</strong>.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">s1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="o">();</span> <span class="c1">// chaîne vide</span>
 
@@ -737,7 +737,7 @@ une chaîne de caractères avec l’opérateur <strong>new</strong>.</p>
 </div>
 <div class="section" id="immutabilite-des-chaines-de-caracteres">
 <h2>Immutabilité des chaînes de caractères<a class="headerlink" href="#immutabilite-des-chaines-de-caracteres" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Les instances de la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a> sont immutables. Cela signifie qu’il est
+<p>Les instances de la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html">String</a> sont immutables. Cela signifie qu’il est
 impossible d’altérer le contenu de la chaîne de caractères une fois qu’elle
 a été créée. Si vous reprenez la liste des méthodes ci-dessus, vous verrez
 que toutes les méthodes qui <em>modifient</em> le contenu de la chaîne de caractères
@@ -747,7 +747,7 @@ Cela signifie que des opérations intensives sur les chaînes de caractères peu
 toutes les opérations se font finalement par copie.</p>
 <p>Nous avons vu qu’il n’existe pas réellement de constante en Java mais
 uniquement des attributs déclarés avec <strong>static</strong> et <strong>final</strong>. Cette immutabilité
-permet de garantir qu’une variable de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a> déclarée <strong>static</strong> et <strong>final</strong>
+permet de garantir qu’une variable de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html">String</a> déclarée <strong>static</strong> et <strong>final</strong>
 ne peut plus être modifié.</p>
 <p>La JVM tire également partie de cette immutabilité afin de réaliser
 des optimisations de place mémoire. Si par exemple vous écrivez plusieurs fois
@@ -769,20 +769,20 @@ au premier abord en Java :</p>
 le contenu des chaînes de caractères mais la référence des objets. La chaîne
 de caractères «&nbsp;test&nbsp;» apparaît plusieurs fois dans le code. Donc quand la JVM
 va charger la classe qui contient ce code, elle ne créera qu’une et une seule
-fois l’instance de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a> pour «&nbsp;test&nbsp;». Voilà pourquoi la ligne 3 affiche
+fois l’instance de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html">String</a> pour «&nbsp;test&nbsp;». Voilà pourquoi la ligne 3 affiche
 <strong>true</strong>. Le contenu de la variable <em>s</em> référence exactement la même instance
-de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a>. Par contre, les lignes 4 et 5 créent explicitement une nouvelle instance
-de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a> avec l’opérateur <strong>new</strong>. Il s’agit donc de nouveaux objets avec de
+de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html">String</a>. Par contre, les lignes 4 et 5 créent explicitement une nouvelle instance
+de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html">String</a> avec l’opérateur <strong>new</strong>. Il s’agit donc de nouveaux objets avec de
 nouvelles références.</p>
 </div>
 <div class="section" id="la-classe-stringbuilder">
 <h2>La classe StringBuilder<a class="headerlink" href="#la-classe-stringbuilder" title="Lien permanent vers ce titre">¶</a></h2>
-<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/StringBuilder.html">StringBuilder</a> permet de construire une chaîne de caractères par ajout
+<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/StringBuilder.html">StringBuilder</a> permet de construire une chaîne de caractères par ajout
 (concaténation) ou insertion d’élements. Il est même possible de supprimer des portions.
-La quasi totalité des méthodes de la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/StringBuilder.html">StringBuilder</a> retourne l’instance
-courante du <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/StringBuilder.html">StringBuilder</a> ce qui permet de chaîner les appels en une seule
+La quasi totalité des méthodes de la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/StringBuilder.html">StringBuilder</a> retourne l’instance
+courante du <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/StringBuilder.html">StringBuilder</a> ce qui permet de chaîner les appels en une seule
 instruction.
-Pour obtenir la chaîne de caractères, il suffit d’appeler la méthode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/StringBuilder.html#toString--">StringBuilder.toString</a>.</p>
+Pour obtenir la chaîne de caractères, il suffit d’appeler la méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/StringBuilder.html#toString()">StringBuilder.toString</a>.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">StringBuilder</span> <span class="n">sb</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuilder</span><span class="o">();</span>
 <span class="n">sb</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">&quot;Hello&quot;</span><span class="o">)</span>
   <span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">&quot; &quot;</span><span class="o">)</span>
@@ -798,10 +798,10 @@ Pour obtenir la chaîne de caractères, il suffit d’appeler la méthode <a cla
 <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">sb</span><span class="o">);</span> <span class="c1">// &quot;Hello the world&quot;</span>
 </pre></div>
 </div>
-<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/StringBuilder.html">StringBuilder</a> permet de pallier au fait que les instances de la
-classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a> sont immutables. D’ailleurs, l’opérateur <strong>+</strong> de concaténation
+<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/StringBuilder.html">StringBuilder</a> permet de pallier au fait que les instances de la
+classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html">String</a> sont immutables. D’ailleurs, l’opérateur <strong>+</strong> de concaténation
 de chaînes n’est qu’un sucre syntaxique, le compilateur le remplace par une
-utilisation de la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/StringBuilder.html">StringBuilder</a>.</p>
+utilisation de la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/StringBuilder.html">StringBuilder</a>.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">s1</span> <span class="o">=</span> <span class="s">&quot;Hello&quot;</span><span class="o">;</span>
 <span class="n">String</span> <span class="n">s2</span> <span class="o">=</span> <span class="s">&quot;the&quot;</span><span class="o">;</span>
 <span class="n">String</span> <span class="n">s3</span> <span class="o">=</span> <span class="s">&quot;world&quot;</span><span class="o">;</span>
@@ -818,7 +818,7 @@ utilisation de la classe <a class="reference external" href="https://docs.oracle
 </div>
 <div class="section" id="formatage-de-texte">
 <h2>Formatage de texte<a class="headerlink" href="#formatage-de-texte" title="Lien permanent vers ce titre">¶</a></h2>
-<p>La méthode de classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#format-java.lang.String-java.lang.Object...-">String.format</a> permet de passer une chaîne de caractères
+<p>La méthode de classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html#format(java.lang.String,java.lang.Object...)">String.format</a> permet de passer une chaîne de caractères
 décrivant un formatage ainsi que plusieurs objets correspondant à des paramètres
 du formatage.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">who</span> <span class="o">=</span> <span class="s">&quot;the world&quot;</span><span class="o">;</span>
@@ -828,11 +828,11 @@ du formatage.</p>
 </pre></div>
 </div>
 <p>Dans l’exemple ci-dessus, la chaîne de formatage «&nbsp;Hello %s&nbsp;» contient un paramètre
-identifié par <em>%s</em> (s signifie que le paramètre attendu est de type <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a>.</p>
+identifié par <em>%s</em> (s signifie que le paramètre attendu est de type <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html">String</a>.</p>
 <p>Un paramètre dans la chaîne de formatage peut contenir différente information :</p>
 <blockquote>
 <div>%[index$][flags][taille]conversion</div></blockquote>
-<p>L’index est la place du paramètre dans l’appel à la méthode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#format-java.lang.String-java.lang.Object...-">String.format</a>.</p>
+<p>L’index est la place du paramètre dans l’appel à la méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html#format(java.lang.String,java.lang.Object...)">String.format</a>.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">quantite</span> <span class="o">=</span> <span class="mi">12</span><span class="o">;</span>
 <span class="n">LocalDate</span> <span class="n">now</span> <span class="o">=</span> <span class="n">LocalDate</span><span class="o">.</span><span class="na">now</span><span class="o">();</span>
 
@@ -841,8 +841,8 @@ identifié par <em>%s</em> (s signifie que le paramètre attendu est de type <a 
 <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">message</span><span class="o">);</span> <span class="c1">// &quot;quantité = 0000000012 au 5 septembre 2017&quot;</span>
 </pre></div>
 </div>
-<p>Il existe également une définition de la méthode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#format-java.lang.String-java.lang.Object...-">String.format</a> qui attend une
-instance de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Locale.html">Locale</a> en premier paramètre. La locale indique la langue du message
+<p>Il existe également une définition de la méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html#format(java.lang.String,java.lang.Object...)">String.format</a> qui attend une
+instance de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Locale.html">Locale</a> en premier paramètre. La locale indique la langue du message
 et permet de formater les nombres, les dates, etc comme attendu.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">quantite</span> <span class="o">=</span> <span class="mi">12</span><span class="o">;</span>
 <span class="n">LocalDate</span> <span class="n">now</span> <span class="o">=</span> <span class="n">LocalDate</span><span class="o">.</span><span class="na">now</span><span class="o">();</span>
@@ -853,22 +853,22 @@ et permet de formater les nombres, les dates, etc comme attendu.</p>
 </pre></div>
 </div>
 <p>Pour mieux comprendre la syntaxe des paramètres dans une chaîne de formatage,
-reportez-vous à la documentation du <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Formatter.html">Formatter</a> qui est utilisé par la méthode
-<a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#format-java.lang.String-java.lang.Object...-">String.format</a>.</p>
+reportez-vous à la documentation du <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Formatter.html">Formatter</a> qui est utilisé par la méthode
+<a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html#format(java.lang.String,java.lang.Object...)">String.format</a>.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Il est également possible de formater des messages avec la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/text/MessageFormat.html">MessageFormat</a>.
+<p class="last">Il est également possible de formater des messages avec la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/text/MessageFormat.html">MessageFormat</a>.
 Il s’agit d’une classe plus ancienne qui offre une syntaxe différente pour décrire
 les paramètres dans la chaîne de formatage.</p>
 </div>
 </div>
 <div class="section" id="les-expressions-regulieres">
 <h2>Les expressions régulières<a class="headerlink" href="#les-expressions-regulieres" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Certaines méthodes de la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a> acceptent comme paramètre une <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html#sum">expression
+<p>Certaines méthodes de la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html">String</a> acceptent comme paramètre une <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/regex/Pattern.html#sum">expression
 régulière</a> (<em>regular expression</em> ou <em>regexp</em>). Une expression régulière permet
 d’exprimer avec des motifs un ensemble
-de chaînes de caractères possibles. Par exemple la méthode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#matches-java.lang.String-">String.matches</a> prend
-un paramètre de type <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a> qui est interprété comme une expression régulière.
+de chaînes de caractères possibles. Par exemple la méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html#matches(java.lang.String)">String.matches</a> prend
+un paramètre de type <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html">String</a> qui est interprété comme une expression régulière.
 Cette méthode retourne <strong>true</strong> si la chaîne de caractères est conforme à l’expression
 régulière passée en paramètre.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">boolean</span> <span class="n">match</span> <span class="o">=</span> <span class="s">&quot;hello&quot;</span><span class="o">.</span><span class="na">matches</span><span class="o">(</span><span class="s">&quot;hello&quot;</span><span class="o">);</span>
@@ -964,16 +964,16 @@ une séquence de caractères dans la chaîne.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">Il existe beaucoup d’autres motifs qui peuvent être utilisés dans une expression
-régulière. Reportez-vous à la <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html#sum">documentation Java</a>.</p>
+régulière. Reportez-vous à la <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/regex/Pattern.html#sum">documentation Java</a>.</p>
 </div>
-<p>Il est possible d’utiliser la méthode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#replaceFirst-java.lang.String-java.lang.String-">String.replaceFirst</a> ou <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#replaceAll-java.lang.String-java.lang.String-">String.replaceAll</a>
+<p>Il est possible d’utiliser la méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html#replaceFirst(java.lang.String,java.lang.String)">String.replaceFirst</a> ou <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html#replaceAll(java.lang.String,java.lang.String)">String.replaceAll</a>
 pour remplacer respectivement la première ou toutes les occurrences d’une
 séquence de caractères définie par une expression régulière.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">s</span> <span class="o">=</span> <span class="s">&quot;hello&quot;</span><span class="o">;</span>
 <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">s</span><span class="o">.</span><span class="na">replaceAll</span><span class="o">(</span><span class="s">&quot;[aeiouy]&quot;</span><span class="o">,</span> <span class="s">&quot;^_^&quot;</span><span class="o">));</span> <span class="c1">// h^_^ll^_^</span>
 </pre></div>
 </div>
-<p>La méthode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#split-java.lang.String-">String.split</a> permet de découper une chaîne de caractères en tableau
+<p>La méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html#split(java.lang.String)">String.split</a> permet de découper une chaîne de caractères en tableau
 de chaînes de caractère en utilisant une expression régulière pour identifier
 le séparateur.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">s</span> <span class="o">=</span> <span class="s">&quot;hello the world&quot;</span><span class="o">;</span>
@@ -990,9 +990,9 @@ le séparateur.</p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Les expressions régulières sont représentées en Java par la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html">Pattern</a>.
+<p class="last">Les expressions régulières sont représentées en Java par la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/regex/Pattern.html">Pattern</a>.
 Il est possible de créer des instances de cette classe en compilant une
-expression régulière à l’aide de la méthode de classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html#compile-java.lang.String-">Pattern.compile</a>.</p>
+expression régulière à l’aide de la méthode de classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/regex/Pattern.html#compile(java.lang.String)">Pattern.compile</a>.</p>
 </div>
 </div>
 </div>

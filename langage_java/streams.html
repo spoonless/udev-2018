@@ -293,6 +293,11 @@
 <li class="toctree-l2"><a class="reference internal" href="polymorphisme.html#le-principe-du-ouvert-ferme">Le principe du ouvert/fermé</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="classe_abstraite.html">Les classes abstraites</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classe_abstraite.html#declarer-une-classe-abstraite">Déclarer une classe abstraite</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classe_abstraite.html#declarer-une-methode-abstraite">Déclarer une méthode abstraite</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="la_classe_object.html">La classe Object</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="la_classe_object.html#la-methode-equals">La méthode equals</a></li>
 <li class="toctree-l2"><a class="reference internal" href="la_classe_object.html#la-methode-hashcode">La méthode hashCode</a></li>
@@ -325,11 +330,6 @@
 <li class="toctree-l2"><a class="reference internal" href="les_exceptions.html#exception-cause">Exception cause</a></li>
 <li class="toctree-l2"><a class="reference internal" href="les_exceptions.html#les-erreurs-et-les-exceptions-runtime">Les erreurs et les exceptions runtime</a></li>
 <li class="toctree-l2"><a class="reference internal" href="les_exceptions.html#choix-entre-checked-et-unchecked">Choix entre checked et unchecked</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="classe_abstraite.html">Les classes abstraites</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="classe_abstraite.html#declarer-une-classe-abstraite">Déclarer une classe abstraite</a></li>
-<li class="toctree-l2"><a class="reference internal" href="classe_abstraite.html#declarer-une-methode-abstraite">Déclarer une méthode abstraite</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="enumeration.html">Les énumérations</a><ul>
@@ -545,13 +545,13 @@ d’une processeur multi-cœurs ou d’une machine multi-processeurs.</li>
 </ol>
 <div class="section" id="creation-d-un-stream">
 <h2>Création d’un stream<a class="headerlink" href="#creation-d-un-stream" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Un <em>stream</em> est représenté par une instance de l’interface générique <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html">Stream</a>.
-On peut créer un <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html">Stream</a> en utilisant un objet de type <a class="reference external" href="https://en.wikipedia.org/wiki/Builder_pattern">builder</a></p>
+<p>Un <em>stream</em> est représenté par une instance de l’interface générique <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/stream/Stream.html">Stream</a>.
+On peut créer un <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/stream/Stream.html">Stream</a> en utilisant un objet de type <a class="reference external" href="https://en.wikipedia.org/wiki/Builder_pattern">builder</a></p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Stream</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">stream</span> <span class="o">=</span> <span class="n">Stream</span><span class="o">.&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="n">builder</span><span class="o">().</span><span class="na">add</span><span class="o">(</span><span class="s">&quot;Hello&quot;</span><span class="o">).</span><span class="na">add</span><span class="o">(</span><span class="s">&quot;World&quot;</span><span class="o">).</span><span class="na">build</span><span class="o">();</span>
 </pre></div>
 </div>
-<p>Il existe également des interfaces filles de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html">Stream</a> pour certains types primitifs :
-<a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/stream/IntStream.html">IntStream</a>, <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/stream/LongStream.html">LongStream</a> et <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/stream/DoubleStream.html">DoubleStream</a>. On peut créer des <em>streams</em> de ces
+<p>Il existe également des interfaces filles de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/stream/Stream.html">Stream</a> pour certains types primitifs :
+<a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/stream/IntStream.html">IntStream</a>, <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/stream/LongStream.html">LongStream</a> et <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/stream/DoubleStream.html">DoubleStream</a>. On peut créer des <em>streams</em> de ces
 types soit à partir d’une liste de valeurs soit en donnant les limites d’un intervalle.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">IntStream</span> <span class="n">intStream</span> <span class="o">=</span> <span class="n">IntStream</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">20</span><span class="o">,</span> <span class="mi">30</span><span class="o">,</span> <span class="mi">579</span><span class="o">);</span>
 
@@ -573,13 +573,13 @@ par une lambda.</p>
 </pre></div>
 </div>
 <p>Il est également possible de créer un <em>stream</em> à partir d’un tableau grâce aux méthodes
-<a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Arrays.html#stream-T:A-">Arrays.stream</a> :</p>
+<a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Arrays.html#stream(T[])">Arrays.stream</a> :</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">[]</span> <span class="n">tableau</span> <span class="o">=</span> <span class="o">{</span> <span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span> <span class="o">};</span>
 <span class="n">IntStream</span> <span class="n">tableauStream</span> <span class="o">=</span> <span class="n">Arrays</span><span class="o">.</span><span class="na">stream</span><span class="o">(</span><span class="n">tableau</span><span class="o">);</span>
 </pre></div>
 </div>
 <p>Les collections peuvent également être utilisées sous la forme d’un <em>stream</em> car
-l’interface <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html">Collection</a> définit la méthode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html#stream--">Collection.stream</a>.</p>
+l’interface <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Collection.html">Collection</a> définit la méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Collection.html#stream()">Collection.stream</a>.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">liste</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
 <span class="n">liste</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&quot;Hello&quot;</span><span class="o">);</span>
 <span class="n">liste</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&quot;World&quot;</span><span class="o">);</span>
@@ -588,7 +588,7 @@ l’interface <a class="reference external" href="https://docs.oracle.com/javase
 </pre></div>
 </div>
 <p>Le contenu d’un fichier texte peut aussi être parcouru sous la forme d’un <em>stream</em>
-de chacune de ses lignes grâce à la méthode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/nio/file/Files.html#lines-java.nio.file.Path-">Files.lines</a> :</p>
+de chacune de ses lignes grâce à la méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/nio/file/Files.html#lines(java.nio.file.Path)">Files.lines</a> :</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Path</span> <span class="n">fichier</span> <span class="o">=</span> <span class="n">Paths</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">&quot;fichier.txt&quot;</span><span class="o">);</span>
 <span class="n">Stream</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">linesStream</span> <span class="o">=</span> <span class="n">Files</span><span class="o">.</span><span class="na">lines</span><span class="o">(</span><span class="n">fichier</span><span class="o">);</span>
 </pre></div>
@@ -596,7 +596,7 @@ de chacune de ses lignes grâce à la méthode <a class="reference external" hre
 <p>Ainsi, toutes les opérations qui impliquent une séquence d’éléments peuvent être
 traitées sous la forme d’un <em>stream</em>.</p>
 <p>Il est possible de réaliser un traitement sur chaque élément du <em>stream</em>
-grâce à la méthode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html#forEach-java.util.function.Consumer-">Stream.forEach</a>.</p>
+grâce à la méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/stream/Stream.html#forEach(java.util.function.Consumer)">Stream.forEach</a>.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// Affiche les chiffres de 10 jusqu&#39;à 0</span>
 <span class="n">IntStream</span><span class="o">.</span><span class="na">iterate</span><span class="o">(</span><span class="mi">10</span><span class="o">,</span> <span class="n">n</span> <span class="o">-&gt;</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="o">).</span><span class="na">limit</span><span class="o">(</span><span class="mi">11</span><span class="o">).</span><span class="na">forEach</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">::</span><span class="n">println</span><span class="o">);</span>
 </pre></div>
@@ -622,13 +622,13 @@ la moyenne ou en demandant la valeur minimale ou maximale…</p>
 </div>
 <p>L’API <em>streams</em> introduit la notion de <em>Optional</em>. Certaines opérations de réduction
 peuvent ne pas être possibles. Par exemple, le calcul de la moyenne n’est pas possible
-si le <em>stream</em> ne contient aucun élément. La méthode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/stream/IntStream.html#average--">average</a> qui permet de calculer
-la moyenne d’un <em>stream</em> numérique retourne donc un <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/OptionalDouble.html">OptionalDouble</a> qui permet
+si le <em>stream</em> ne contient aucun élément. La méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/stream/IntStream.html#average()">average</a> qui permet de calculer
+la moyenne d’un <em>stream</em> numérique retourne donc un <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/OptionalDouble.html">OptionalDouble</a> qui permet
 de représenter soit le résultat, soit le fait qu’il n’y a pas de résultat.
-On peut appeler la méthode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/OptionalDouble.html#isPresent--">OptionalDouble.isPresent</a> pour s’assurer qu’il existe
+On peut appeler la méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/OptionalDouble.html#isPresent()">OptionalDouble.isPresent</a> pour s’assurer qu’il existe
 un résultat pour cette réduction.</p>
 <p>Pour les streams de tout type, il est possible de réaliser une réduction à partir
-d’une lambda grâce à la méthode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/stream/IntStream.html#reduce-int-java.util.function.IntBinaryOperator-">Stream.reduce</a>.</p>
+d’une lambda grâce à la méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/stream/IntStream.html#reduce(int,java.util.function.IntBinaryOperator)">Stream.reduce</a>.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">liste</span> <span class="o">=</span> <span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="s">&quot;une chaine&quot;</span><span class="o">,</span> <span class="s">&quot;une autre chaine&quot;</span><span class="o">,</span> <span class="s">&quot;encore une chaine&quot;</span><span class="o">);</span>
 <span class="n">Optional</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">chaineLaPlusLongue</span> <span class="o">=</span> <span class="n">liste</span><span class="o">.</span><span class="na">stream</span><span class="o">().</span><span class="na">reduce</span><span class="o">((</span><span class="n">s1</span><span class="o">,</span> <span class="n">s2</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">s1</span><span class="o">.</span><span class="na">length</span><span class="o">()</span> <span class="o">&gt;</span> <span class="n">s2</span><span class="o">.</span><span class="na">length</span><span class="o">()</span> <span class="o">?</span> <span class="n">s1</span> <span class="o">:</span> <span class="n">s2</span><span class="o">);</span>
 
@@ -639,12 +639,12 @@ d’une lambda grâce à la méthode <a class="reference external" href="https:/
 <div class="section" id="la-collecte">
 <h2>La collecte<a class="headerlink" href="#la-collecte" title="Lien permanent vers ce titre">¶</a></h2>
 <p>La collecte permet de créer un nouvelle collection à partir d’un stream. Pour
-cela, il faut fournir une implémentation de l’interface <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/stream/Collector.html">Collector</a>. Cette interface
-est assez complexe, heureusement la classe outil <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/stream/Collectors.html">Collectors</a> fournit des méthodes
-pour générer une instance de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/stream/Collector.html">Collector</a>. Pour réaliser la collecte, il faut
-appeler la méthode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html#collect-java.util.stream.Collector-">Stream.collect</a>.</p>
-<p>On peut ainsi collecter les éléments d’un stream sous la forme d’une <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html">List</a>, d’un
-<a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html">Set</a> ou de tout type de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html">Collection</a>.</p>
+cela, il faut fournir une implémentation de l’interface <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/stream/Collector.html">Collector</a>. Cette interface
+est assez complexe, heureusement la classe outil <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/stream/Collectors.html">Collectors</a> fournit des méthodes
+pour générer une instance de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/stream/Collector.html">Collector</a>. Pour réaliser la collecte, il faut
+appeler la méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/stream/Stream.html#collect(java.util.stream.Collector)">Stream.collect</a>.</p>
+<p>On peut ainsi collecter les éléments d’un stream sous la forme d’une <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/List.html">List</a>, d’un
+<a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Set.html">Set</a> ou de tout type de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Collection.html">Collection</a>.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">liste</span> <span class="o">=</span> <span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="s">&quot;une chaine&quot;</span><span class="o">,</span> <span class="s">&quot;une autre chaine&quot;</span><span class="o">,</span> <span class="s">&quot;encore une chaine&quot;</span><span class="o">);</span>
 <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">autreListe</span> <span class="o">=</span> <span class="n">liste</span><span class="o">.</span><span class="na">stream</span><span class="o">().</span><span class="na">collect</span><span class="o">(</span><span class="n">Collectors</span><span class="o">.</span><span class="na">toList</span><span class="o">());</span>
 </pre></div>
@@ -652,8 +652,8 @@ appeler la méthode <a class="reference external" href="https://docs.oracle.com/
 <p>L’exemple précédent peut sembler trivial puisqu’au final, ce code crée un copie
 de la liste d’origine. Son intérêt deviendra évident lorsque nous appliquerons
 des opérations de filtre ou de mapping sur un <em>stream</em>.</p>
-<p>Un <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/stream/Collector.html">Collector</a> peut également réaliser un opération de regroupement pour créer
-des <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html">Map</a>. Si on dispose de la classe <em>Voiture</em> :</p>
+<p>Un <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/stream/Collector.html">Collector</a> peut également réaliser un opération de regroupement pour créer
+des <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Map.html">Map</a>. Si on dispose de la classe <em>Voiture</em> :</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.cgi.udev</span><span class="o">;</span>
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Voiture</span> <span class="o">{</span>
@@ -697,7 +697,7 @@ leur marque.</p>
 <h2>Le filtrage<a class="headerlink" href="#le-filtrage" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Une opération courante sur un <em>stream</em> consiste à appliquer un filtre pour
 éliminer une partie de ses éléments. Pour, cela on peut utiliser
-la méthode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html#filter-java.util.function.Predicate-">Stream.filter</a>.</p>
+la méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/stream/Stream.html#filter(java.util.function.Predicate)">Stream.filter</a>.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">List</span><span class="o">&lt;</span><span class="n">Voiture</span><span class="o">&gt;</span> <span class="n">liste</span> <span class="o">=</span> <span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="k">new</span> <span class="n">Voiture</span><span class="o">(</span><span class="s">&quot;citroen&quot;</span><span class="o">),</span>
                                     <span class="k">new</span> <span class="n">Voiture</span><span class="o">(</span><span class="s">&quot;audi&quot;</span><span class="o">),</span>
                                     <span class="k">new</span> <span class="n">Voiture</span><span class="o">(</span><span class="s">&quot;citroen&quot;</span><span class="o">));</span>
@@ -717,10 +717,10 @@ la méthode <a class="reference external" href="https://docs.oracle.com/javase/8
          <span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">::</span><span class="n">println</span><span class="o">);</span>
 </pre></div>
 </div>
-<p>La méthode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html#filter-java.util.function.Predicate-">Stream.filter</a> peut accepter une lambda qui reçoit en paramètre
+<p>La méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/stream/Stream.html#filter(java.util.function.Predicate)">Stream.filter</a> peut accepter une lambda qui reçoit en paramètre
 un élément du <em>stream</em> et qui retourne un <strong>boolean</strong> (<strong>true</strong> signifie
 que l’élément doit être conservé dans le <em>stream</em>). On peut bien évidemment chaîner
-les appels à la méthode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html#filter-java.util.function.Predicate-">Stream.filter</a> :</p>
+les appels à la méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/stream/Stream.html#filter(java.util.function.Predicate)">Stream.filter</a> :</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// On affiche les 500 premiers nombres qui ne sont pas divisibles par 7</span>
 <span class="c1">// et qui sont impairs</span>
 <span class="n">IntStream</span><span class="o">.</span><span class="na">iterate</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="n">n</span> <span class="o">-&gt;</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="o">)</span>
@@ -737,7 +737,7 @@ les appels à la méthode <a class="reference external" href="https://docs.oracl
 afin de passer d’un type à un autre.</p>
 <p>Par exemple, si nous voulons récupérer l’ensemble des marques distinctes d’une
 liste de <em>Voiture</em>, nous pouvons utiliser un mapping pour passer d’un <em>stream</em>
-de <em>Voiture</em> à un <em>stream</em> de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a> (représentant les marques des voitures).</p>
+de <em>Voiture</em> à un <em>stream</em> de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html">String</a> (représentant les marques des voitures).</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">List</span><span class="o">&lt;</span><span class="n">Voiture</span><span class="o">&gt;</span> <span class="n">liste</span> <span class="o">=</span> <span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="k">new</span> <span class="n">Voiture</span><span class="o">(</span><span class="s">&quot;citroen&quot;</span><span class="o">),</span>
                                     <span class="k">new</span> <span class="n">Voiture</span><span class="o">(</span><span class="s">&quot;audi&quot;</span><span class="o">),</span>
                                     <span class="k">new</span> <span class="n">Voiture</span><span class="o">(</span><span class="s">&quot;renault&quot;</span><span class="o">),</span>
@@ -753,7 +753,7 @@ de <em>Voiture</em> à un <em>stream</em> de <a class="reference external" href=
 </pre></div>
 </div>
 <p>Pour réaliser un mapping vers un type primitif, il faut utiliser les méthodes
-<a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html#mapToInt-java.util.function.ToIntFunction-">Stream.mapToInt</a>, <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html#mapToLong-java.util.function.ToLongFunction-">Stream.mapToLong</a> ou <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html#mapToDouble-java.util.function.ToDoubleFunction-">Stream.mapToDouble</a>. On peut également
+<a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/stream/Stream.html#mapToInt(java.util.function.ToIntFunction)">Stream.mapToInt</a>, <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/stream/Stream.html#mapToLong(java.util.function.ToLongFunction)">Stream.mapToLong</a> ou <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/stream/Stream.html#mapToDouble(java.util.function.ToDoubleFunction)">Stream.mapToDouble</a>. On peut également
 utiliser ces méthodes pour convertir un <em>stream</em> contenant un type primitif
 vers un <em>stream</em> contenant un autre type primitif.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// Affichage de la racine carré des 100 premiers entiers</span>
@@ -762,15 +762,15 @@ vers un <em>stream</em> contenant un autre type primitif.</p>
          <span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">::</span><span class="n">println</span><span class="o">);</span>
 </pre></div>
 </div>
-<p>Pour la méthode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html#map-java.util.function.Function-">Stream.map</a>, le type de retour de la lambda ou de la référence de
+<p>Pour la méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/stream/Stream.html#map(java.util.function.Function)">Stream.map</a>, le type de retour de la lambda ou de la référence de
 méthode indique le nouveau type du <em>stream</em>.</p>
 </div>
 <div class="section" id="le-parallelisme">
 <h2>Le parallélisme<a class="headerlink" href="#le-parallelisme" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Afin de tirer profit des processeurs multi-cœurs et des machines multi-processeurs,
-les opérations sur les <em>streams</em> peuvent être exécutées en parallèle. À partir d’une <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html">Collection</a>, il
-suffit d’appeler la méthode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html#parallelStream--">Collection.parallelStream</a> ou à partir d’un <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html">Stream</a>,
-il suffit d’appeler la méthode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/stream/BaseStream.html#parallel--">BaseStream.parallel</a>.</p>
+les opérations sur les <em>streams</em> peuvent être exécutées en parallèle. À partir d’une <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Collection.html">Collection</a>, il
+suffit d’appeler la méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Collection.html#parallelStream()">Collection.parallelStream</a> ou à partir d’un <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/stream/Stream.html">Stream</a>,
+il suffit d’appeler la méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/stream/BaseStream.html#parallel()">BaseStream.parallel</a>.</p>
 <p>Un <em>stream</em> en parallèle découpe le flux pour assigner l’exécution à différents
 processeurs et recombine ensuite le résultat à la fin. Cela signifie que les
 traitements sur le <em>stream</em> ne doivent pas être dépendant de l’ordre d’exécution.</p>
@@ -797,9 +797,9 @@ de caractères.</p>
 <div class="last admonition tip">
 <p class="first admonition-title">Astuce</p>
 <ul class="last simple">
-<li>La méthode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/CharSequence.html#chars--">chars</a> permet d’obtenir un stream de caractères depuis un objet
-de type <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a>.</li>
-<li>La méthode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Character.html#isAlphabetic-int-">Character.isAlphabetic</a> retourne <strong>true</strong> si le caractère passé
+<li>La méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/CharSequence.html#chars()">chars</a> permet d’obtenir un stream de caractères depuis un objet
+de type <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html">String</a>.</li>
+<li>La méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Character.html#isAlphabetic(int)">Character.isAlphabetic</a> retourne <strong>true</strong> si le caractère passé
 en paramètre est une lettre.</li>
 </ul>
 </div>

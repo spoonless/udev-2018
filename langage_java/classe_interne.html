@@ -293,6 +293,11 @@
 <li class="toctree-l2"><a class="reference internal" href="polymorphisme.html#le-principe-du-ouvert-ferme">Le principe du ouvert/fermé</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="classe_abstraite.html">Les classes abstraites</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classe_abstraite.html#declarer-une-classe-abstraite">Déclarer une classe abstraite</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classe_abstraite.html#declarer-une-methode-abstraite">Déclarer une méthode abstraite</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="la_classe_object.html">La classe Object</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="la_classe_object.html#la-methode-equals">La méthode equals</a></li>
 <li class="toctree-l2"><a class="reference internal" href="la_classe_object.html#la-methode-hashcode">La méthode hashCode</a></li>
@@ -325,11 +330,6 @@
 <li class="toctree-l2"><a class="reference internal" href="les_exceptions.html#exception-cause">Exception cause</a></li>
 <li class="toctree-l2"><a class="reference internal" href="les_exceptions.html#les-erreurs-et-les-exceptions-runtime">Les erreurs et les exceptions runtime</a></li>
 <li class="toctree-l2"><a class="reference internal" href="les_exceptions.html#choix-entre-checked-et-unchecked">Choix entre checked et unchecked</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="classe_abstraite.html">Les classes abstraites</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="classe_abstraite.html#declarer-une-classe-abstraite">Déclarer une classe abstraite</a></li>
-<li class="toctree-l2"><a class="reference internal" href="classe_abstraite.html#declarer-une-methode-abstraite">Déclarer une méthode abstraite</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="enumeration.html">Les énumérations</a><ul>
@@ -639,7 +639,7 @@ comme une classe interne.</p>
 </pre></div>
 </div>
 <p>Dans l’exemple ci-dessus, la classe <em>Individu</em> fournit publiquement une
-implémentation d’un <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Comparator.html">Comparator</a> qui permet de comparer deux instances en
+implémentation d’un <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Comparator.html">Comparator</a> qui permet de comparer deux instances en
 fonction de leur nom et de leur prénom. Notez que l’implémentation de la
 méthode <em>compare</em> peut accéder aux attributs privés <em>nom</em> et <em>prenom</em> des
 paramètres <em>i1</em> et <em>i2</em> car ils sont de type <em>Individu</em>.</p>
@@ -793,13 +793,13 @@ en Java avec l’API <a class="reference external" href="https://docs.oracle.com
 </td></tr></table></div>
 <p>L’exemple ci-dessus est un programme complet qui crée une boite de dialogue
 contenant deux boutons qui permettent respectivement d’incrémenter et de
-décrémenter un nombre qui est affiché. La classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/javax/swing/JButton.html">JButton</a> qui représente un
+décrémenter un nombre qui est affiché. La classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/javax/swing/JButton.html">JButton</a> qui représente un
 bouton attend comme paramètre de construction une instance
-implémentant l’interface <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/javax/swing/Action.html">Action</a>. Cette instance définit le libellé du bouton et l’action
+implémentant l’interface <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/javax/swing/Action.html">Action</a>. Cette instance définit le libellé du bouton et l’action
 à réaliser lorsque l’utilisateur clique sur le bouton. Les boutons sont créés
 aux lignes 44 et 45. Les classes d’action utilisées pour chaque bouton sont
 définies aux lignes 13 et 24. Ces classes sont
-des classes internes. Dans leur méthode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/javax/swing/Action.html">actionPerformed</a>, elles appellent soit
+des classes internes. Dans leur méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/javax/swing/Action.html">actionPerformed</a>, elles appellent soit
 la méthode <em>incrementer</em> soit la méthode <em>decrementer</em>. Ces deux méthodes
 sont définies par la classe englobante BoiteDeDialogue. Donc les instances de
 ces classes d’action appellent ces méthodes sur l’instance de l’objet englobant
@@ -881,7 +881,7 @@ l’interface <em>Logger</em>.</p>
       <span class="nd">@Override</span>
       <span class="kd">public</span> <span class="kt">void</span> <span class="nf">log</span><span class="o">(</span><span class="n">String</span> <span class="n">message</span><span class="o">)</span> <span class="o">{</span>
         <span class="c1">// Pour le format du message utilisé dans printf</span>
-        <span class="c1">// Cf. https://docs.oracle.com/javase/8/docs/api/java/util/Formatter.html#syntax</span>
+        <span class="c1">// Cf. https://docs.oracle.com/javase/10/docs/api/java/util/Formatter.html#syntax</span>
         <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&quot;%1$tY-%1$tb-%1$ta %1$tH:%1$tM %2$s - %3$s&quot;</span><span class="o">,</span>
                                          <span class="n">LocalDateTime</span><span class="o">.</span><span class="na">now</span><span class="o">(),</span> <span class="n">application</span><span class="o">,</span> <span class="n">message</span><span class="o">));</span>
       <span class="o">}</span>
@@ -995,7 +995,7 @@ dans un fichier.</p>
       <span class="nd">@Override</span>
       <span class="kd">public</span> <span class="kt">void</span> <span class="nf">log</span><span class="o">(</span><span class="n">String</span> <span class="n">message</span><span class="o">)</span> <span class="o">{</span>
         <span class="c1">// Pour le format du message utilisé dans printf</span>
-        <span class="c1">// Cf. https://docs.oracle.com/javase/8/docs/api/java/util/Formatter.html#syntax</span>
+        <span class="c1">// Cf. https://docs.oracle.com/javase/10/docs/api/java/util/Formatter.html#syntax</span>
         <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&quot;%1$tY-%1$tb-%1$ta %1$tH:%1$tM %2$s - %3$s&quot;</span><span class="o">,</span>
                                          <span class="n">LocalDateTime</span><span class="o">.</span><span class="na">now</span><span class="o">(),</span> <span class="n">application</span><span class="o">,</span> <span class="n">message</span><span class="o">));</span>
       <span class="o">}</span>
@@ -1015,7 +1015,7 @@ dans un fichier.</p>
       <span class="nd">@Override</span>
       <span class="kd">public</span> <span class="kt">void</span> <span class="nf">log</span><span class="o">(</span><span class="n">String</span> <span class="n">message</span><span class="o">)</span> <span class="o">{</span>
         <span class="c1">// Pour le format du message utilisé dans printf</span>
-        <span class="c1">// Cf. https://docs.oracle.com/javase/8/docs/api/java/util/Formatter.html#syntax</span>
+        <span class="c1">// Cf. https://docs.oracle.com/javase/10/docs/api/java/util/Formatter.html#syntax</span>
         <span class="n">String</span> <span class="n">logMessage</span> <span class="o">=</span> <span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&quot;%1$tY-%1$tb-%1$ta %1$tH:%1$tM %2$s - %3$s&quot;</span><span class="o">,</span>
                                           <span class="n">LocalDateTime</span><span class="o">.</span><span class="na">now</span><span class="o">(),</span> <span class="n">application</span><span class="o">,</span> <span class="n">message</span><span class="o">);</span>
         <span class="k">try</span><span class="o">(</span><span class="n">Writer</span> <span class="n">w</span> <span class="o">=</span> <span class="n">Files</span><span class="o">.</span><span class="na">newBufferedWriter</span><span class="o">(</span><span class="n">path</span><span class="o">,</span> <span class="n">StandardOpenOption</span><span class="o">.</span><span class="na">CREATE</span><span class="o">,</span> <span class="n">StandardOpenOption</span><span class="o">.</span><span class="na">APPEND</span><span class="o">))</span> <span class="o">{</span>
@@ -1052,7 +1052,7 @@ paramètre ou une variable déclaré dans la méthode et utilisé par une classe
     <span class="nd">@Override</span>
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">log</span><span class="o">(</span><span class="n">String</span> <span class="n">message</span><span class="o">)</span> <span class="o">{</span>
       <span class="c1">// Pour le format du message utilisé dans printf</span>
-      <span class="c1">// Cf. https://docs.oracle.com/javase/8/docs/api/java/util/Formatter.html#syntax</span>
+      <span class="c1">// Cf. https://docs.oracle.com/javase/10/docs/api/java/util/Formatter.html#syntax</span>
       <span class="n">String</span> <span class="n">logMessage</span> <span class="o">=</span> <span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&quot;%1$tY-%1$tb-%1$ta %1$tH:%1$tM %2$s - %3$s&quot;</span><span class="o">,</span>
                                         <span class="n">LocalDateTime</span><span class="o">.</span><span class="na">now</span><span class="o">(),</span> <span class="n">application</span><span class="o">,</span> <span class="n">message</span><span class="o">);</span>
       <span class="k">try</span><span class="o">(</span><span class="n">Writer</span> <span class="n">w</span> <span class="o">=</span> <span class="n">Files</span><span class="o">.</span><span class="na">newBufferedWriter</span><span class="o">(</span><span class="n">path</span><span class="o">,</span> <span class="n">StandardOpenOption</span><span class="o">.</span><span class="na">CREATE</span><span class="o">,</span> <span class="n">StandardOpenOption</span><span class="o">.</span><span class="na">APPEND</span><span class="o">))</span> <span class="o">{</span>
@@ -1100,8 +1100,7 @@ dans la classe englobante qui pourra être appelée par chaque classe anonyme.</
       <span class="nd">@Override</span>
       <span class="kd">public</span> <span class="kt">void</span> <span class="nf">log</span><span class="o">(</span><span class="n">String</span> <span class="n">message</span><span class="o">)</span> <span class="o">{</span>
         <span class="c1">// Pour le format du message utilisé dans printf</span>
-        <span class="c1">// Cf. https://docs.oracle.com/javase/8/docs/api/java/util/Formatter.html#syntax</span>
-
+        <span class="c1">// Cf. https://docs.oracle.com/javase/10/docs/api/java/util/Formatter.html#syntax</span>
         <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">genererLogMessage</span><span class="o">(</span><span class="n">message</span><span class="o">));</span>
       <span class="o">}</span>
     <span class="o">};</span>
@@ -1180,7 +1179,7 @@ la classe englobante.</p>
       <span class="nd">@Override</span>
       <span class="kd">public</span> <span class="kt">void</span> <span class="nf">log</span><span class="o">(</span><span class="n">String</span> <span class="n">message</span><span class="o">)</span> <span class="o">{</span>
         <span class="c1">// Pour le format du message utilisé dans printf</span>
-        <span class="c1">// Cf. https://docs.oracle.com/javase/8/docs/api/java/util/Formatter.html#syntax</span>
+        <span class="c1">// Cf. https://docs.oracle.com/javase/10/docs/api/java/util/Formatter.html#syntax</span>
         <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">GenerateurLogger</span><span class="o">.</span><span class="na">this</span><span class="o">.</span><span class="na">log</span><span class="o">(</span><span class="n">message</span><span class="o">));</span>
       <span class="o">}</span>
     <span class="o">};</span>
@@ -1191,7 +1190,7 @@ la classe englobante.</p>
       <span class="nd">@Override</span>
       <span class="kd">public</span> <span class="kt">void</span> <span class="nf">log</span><span class="o">(</span><span class="n">String</span> <span class="n">message</span><span class="o">)</span> <span class="o">{</span>
         <span class="c1">// Pour le format du message utilisé dans printf</span>
-        <span class="c1">// Cf. https://docs.oracle.com/javase/8/docs/api/java/util/Formatter.html#syntax</span>
+        <span class="c1">// Cf. https://docs.oracle.com/javase/10/docs/api/java/util/Formatter.html#syntax</span>
         <span class="k">try</span><span class="o">(</span><span class="n">Writer</span> <span class="n">w</span> <span class="o">=</span> <span class="n">Files</span><span class="o">.</span><span class="na">newBufferedWriter</span><span class="o">(</span><span class="n">path</span><span class="o">,</span> <span class="n">StandardOpenOption</span><span class="o">.</span><span class="na">CREATE</span><span class="o">,</span> <span class="n">StandardOpenOption</span><span class="o">.</span><span class="na">APPEND</span><span class="o">))</span> <span class="o">{</span>
           <span class="n">w</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">GenerateurLogger</span><span class="o">.</span><span class="na">this</span><span class="o">.</span><span class="na">log</span><span class="o">(</span><span class="n">message</span><span class="o">)).</span><span class="na">append</span><span class="o">(</span><span class="sc">&#39;\n&#39;</span><span class="o">);</span>
         <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
@@ -1256,7 +1255,7 @@ condition qu’ils ne soient modifiés ni par la méthode ni par la classe).</p>
       <span class="nd">@Override</span>
       <span class="kd">public</span> <span class="kt">void</span> <span class="nf">log</span><span class="o">(</span><span class="n">String</span> <span class="n">message</span><span class="o">)</span> <span class="o">{</span>
         <span class="c1">// Pour le format du message utilisé dans printf</span>
-        <span class="c1">// Cf. https://docs.oracle.com/javase/8/docs/api/java/util/Formatter.html#syntax</span>
+        <span class="c1">// Cf. https://docs.oracle.com/javase/10/docs/api/java/util/Formatter.html#syntax</span>
         <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">GenerateurLogger</span><span class="o">.</span><span class="na">this</span><span class="o">.</span><span class="na">log</span><span class="o">(</span><span class="n">message</span><span class="o">));</span>
       <span class="o">}</span>
     <span class="o">}</span>

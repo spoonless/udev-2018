@@ -293,6 +293,11 @@
 <li class="toctree-l2"><a class="reference internal" href="polymorphisme.html#le-principe-du-ouvert-ferme">Le principe du ouvert/fermé</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="classe_abstraite.html">Les classes abstraites</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classe_abstraite.html#declarer-une-classe-abstraite">Déclarer une classe abstraite</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classe_abstraite.html#declarer-une-methode-abstraite">Déclarer une méthode abstraite</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="la_classe_object.html">La classe Object</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="la_classe_object.html#la-methode-equals">La méthode equals</a></li>
 <li class="toctree-l2"><a class="reference internal" href="la_classe_object.html#la-methode-hashcode">La méthode hashCode</a></li>
@@ -325,11 +330,6 @@
 <li class="toctree-l2"><a class="reference internal" href="les_exceptions.html#exception-cause">Exception cause</a></li>
 <li class="toctree-l2"><a class="reference internal" href="les_exceptions.html#les-erreurs-et-les-exceptions-runtime">Les erreurs et les exceptions runtime</a></li>
 <li class="toctree-l2"><a class="reference internal" href="les_exceptions.html#choix-entre-checked-et-unchecked">Choix entre checked et unchecked</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="classe_abstraite.html">Les classes abstraites</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="classe_abstraite.html#declarer-une-classe-abstraite">Déclarer une classe abstraite</a></li>
-<li class="toctree-l2"><a class="reference internal" href="classe_abstraite.html#declarer-une-methode-abstraite">Déclarer une méthode abstraite</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="enumeration.html">Les énumérations</a><ul>
@@ -536,14 +536,14 @@ ce type de structure reste limité : un tableau a une taille fixe (il est imposs
 d’ajouter ou d’enlever des éléments d’un tableau). De plus, il est souvent utile
 de disposer d’autres structures de données pour gérer des groupes d’éléments.</p>
 <p>On appelle <em>collections</em> un ensemble de classes et d’interfaces fournies par
-l’API standard et disponibles pour la plupart dans le package <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/package-summary.html">java.util</a>.
+l’API standard et disponibles pour la plupart dans le package <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/package-summary.html">java.util</a>.
 Parmi ces collections, on trouve les listes (<em>lists</em>), les ensembles (<em>sets</em>) et
 les tableaux associatifs (<em>maps</em>). Elles forment ce que l’on appelle le
-<a class="reference external" href="https://docs.oracle.com/javase/8/docs/technotes/guides/collections/index.html">Java Collections Framework</a>.</p>
+<a class="reference external" href="https://docs.oracle.com/javase/8/docs/technotes/guides/collections/overview.html">Java Collections Framework</a>.</p>
 <p>Toutes ces classes et interfaces sont génériques. On ne peut donc créer que
 des collections d’objets. Si vous souhaitez créer une collection pour un type
 primitif, vous devez utiliser la classe enveloppe correspondante (par exemple
-<a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html">Integer</a> pour <strong>int</strong>).</p>
+<a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Integer.html">Integer</a> pour <strong>int</strong>).</p>
 <div class="section" id="les-listes">
 <h2>Les listes<a class="headerlink" href="#les-listes" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Une liste est une collection ordonnée d’éléments. Il existe différentes façons
@@ -553,20 +553,20 @@ d’éléments.</p>
 <p>Java propose plusieurs classes d’implémentation pour les listes selon les besoins
 de performance. Comme toutes ces classes implémentent des interfaces communes,
 il est conseillé de manipuler les instances de ces classes uniquement à travers
-des variables du type de l’interface adaptée : <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html">Collection</a>, <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html">List</a>, <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Queue.html">Queue</a>
-ou <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Deque.html">Deque</a>.</p>
-<p>L’interface <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html">Collection</a> dont hérite toutes les autres interfaces pour les listes,
-hérite elle-même de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html">Iterable</a>. Cela signifie que toutes les classes et toutes
-les interfaces servant à représenter des listes dans le <a class="reference external" href="https://docs.oracle.com/javase/8/docs/technotes/guides/collections/index.html">Java Collections Framework</a>
+des variables du type de l’interface adaptée : <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Collection.html">Collection</a>, <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/List.html">List</a>, <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Queue.html">Queue</a>
+ou <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Deque.html">Deque</a>.</p>
+<p>L’interface <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Collection.html">Collection</a> dont hérite toutes les autres interfaces pour les listes,
+hérite elle-même de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Iterable.html">Iterable</a>. Cela signifie que toutes les classes et toutes
+les interfaces servant à représenter des listes dans le <a class="reference external" href="https://docs.oracle.com/javase/8/docs/technotes/guides/collections/overview.html">Java Collections Framework</a>
 peuvent être parcourues avec une structure de <strong>for</strong> amélioré (<em>foreach</em>).</p>
 <div class="section" id="la-classe-arraylist">
 <h3>La classe ArrayList<a class="headerlink" href="#la-classe-arraylist" title="Lien permanent vers ce titre">¶</a></h3>
-<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html">java.util.ArrayList</a> est une implémentation de l’interface <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html">List</a>. Elle
+<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/ArrayList.html">java.util.ArrayList</a> est une implémentation de l’interface <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/List.html">List</a>. Elle
 stocke les éléments de la liste sous la forme de blocs en mémoire. Cela signifie
-que la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html">ArrayList</a> est très performante pour les accès aléatoire en lecture
+que la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/ArrayList.html">ArrayList</a> est très performante pour les accès aléatoire en lecture
 aux éléments de la liste. Par contre, les opérations d’ajout et de suppression
 d’un élement se font en temps linéaire. Elle est donc moins performante que la
-classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/LinkedList.html">LinkedList</a> sur ce point.</p>
+classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/LinkedList.html">LinkedList</a> sur ce point.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">liste</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;();</span>
 
 <span class="n">liste</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&quot;une première chaîne&quot;</span><span class="o">);</span>
@@ -602,7 +602,7 @@ classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs
 </div>
 <p>Il est possible de réserver de l’espace mémoire pour une liste pouvant contenir
 n éléments. Pour cela, on peut passer la taille voulue à la création d’une
-instance de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html">ArrayList</a> ou en appelant la méthode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html#ensureCapacity-int-">ArrayList.ensureCapacity</a>.
+instance de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/ArrayList.html">ArrayList</a> ou en appelant la méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/ArrayList.html#ensureCapacity(int)">ArrayList.ensureCapacity</a>.
 La liste ne change pas de taille pour autant, un espace mémoire est simplement
 alloué en prévision.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// capacité de 10</span>
@@ -617,12 +617,12 @@ alloué en prévision.</p>
 </div>
 <div class="section" id="la-classe-linkedlist">
 <h3>La classe LinkedList<a class="headerlink" href="#la-classe-linkedlist" title="Lien permanent vers ce titre">¶</a></h3>
-<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/LinkedList.html">java.util.LinkedList</a> est une implémentation de l’interface <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html">List</a>.
+<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/LinkedList.html">java.util.LinkedList</a> est une implémentation de l’interface <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/List.html">List</a>.
 Sa représentation interne est une liste doublement chaînée. Cela signifie que
-la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/LinkedList.html">LinkedList</a> est très performante pour les opérations d’insertion et
+la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/LinkedList.html">LinkedList</a> est très performante pour les opérations d’insertion et
 de suppression d’éléments. Par contre, l’accès aléatoire en lecture aux éléments
 se fait en temps linéaire. Elle est donc moins performante que la classe
-<a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html">ArrayList</a> sur ce point.</p>
+<a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/ArrayList.html">ArrayList</a> sur ce point.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">liste</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;();</span>
 
 
@@ -655,7 +655,7 @@ se fait en temps linéaire. Elle est donc moins performante que la classe
 <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">liste</span><span class="o">);</span>
 </pre></div>
 </div>
-<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/LinkedList.html">LinkedList</a> implémente également les interfaces <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Queue.html">Queue</a> et <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Deque.html">Deque</a> (<em>double
+<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/LinkedList.html">LinkedList</a> implémente également les interfaces <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Queue.html">Queue</a> et <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Deque.html">Deque</a> (<em>double
 ended queue</em>), elle peut donc représenter des structures
 de type LIFO (<em>Last In First Out</em>) ou FIFO (<em>First In First Out</em>).</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Queue</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">queue</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;();</span>
@@ -693,13 +693,13 @@ de type LIFO (<em>Last In First Out</em>) ou FIFO (<em>First In First Out</em>).
 </div>
 <div class="section" id="la-classe-arraydeque">
 <h3>La classe ArrayDeque<a class="headerlink" href="#la-classe-arraydeque" title="Lien permanent vers ce titre">¶</a></h3>
-<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayDeque.html">java.util.ArrayDeque</a> est une implémentation des interfaces <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Queue.html">Queue</a> et
-<a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Deque.html">Deque</a> (mais elle <strong>n’implémente pas</strong> <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html">List</a>). Elle est conçue pour être plus
-performante que <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/LinkedList.html">LinkedList</a> pour les opérations d’ajout et de suppression en tête
+<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/ArrayDeque.html">java.util.ArrayDeque</a> est une implémentation des interfaces <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Queue.html">Queue</a> et
+<a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Deque.html">Deque</a> (mais elle <strong>n’implémente pas</strong> <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/List.html">List</a>). Elle est conçue pour être plus
+performante que <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/LinkedList.html">LinkedList</a> pour les opérations d’ajout et de suppression en tête
 et en fin de liste. Si vous voulez utiliser une collection uniquement pour
 représenter une file ou une pile de type LIFO (<em>Last In First Out</em>) ou FIFO
 (<em>First In First Out</em>), alors il est préférable de créer une instance de la classe
-<a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayDeque.html">ArrayDeque</a>.</p>
+<a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/ArrayDeque.html">ArrayDeque</a>.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Queue</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">queue</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayDeque</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;();</span>
 
 <span class="c1">// insère un élément dans la file</span>
@@ -732,7 +732,7 @@ représenter une file ou une pile de type LIFO (<em>Last In First Out</em>) ou F
 <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">deque</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">());</span> <span class="c1">// true</span>
 </pre></div>
 </div>
-<p>Comme pour la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html">ArrayList</a>, il est possible de réserver un espace mémoire
+<p>Comme pour la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/ArrayList.html">ArrayList</a>, il est possible de réserver un espace mémoire
 pour n éléments au moment de la création d’une instance de ArrayDeque.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// Assurer une capacité minimale de 100 éléments</span>
 <span class="n">ArrayDeque</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">arrayDeque</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayDeque</span><span class="o">&lt;&gt;(</span><span class="mi">100</span><span class="o">);</span>
@@ -743,10 +743,10 @@ pour n éléments au moment de la création d’une instance de ArrayDeque.</p>
 </div>
 <div class="section" id="la-classe-priorityqueue">
 <h3>La classe PriorityQueue<a class="headerlink" href="#la-classe-priorityqueue" title="Lien permanent vers ce titre">¶</a></h3>
-<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/PriorityQueue.html">java.util.PriorityQueue</a> permet d’ajouter des éléments dans une file
+<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/PriorityQueue.html">java.util.PriorityQueue</a> permet d’ajouter des éléments dans une file
 selon un ordre naturel : soit parce que les éléments de la file implémentent l’interface
-<a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Comparable.html">Comparable</a>, soit parce qu’une instance de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Comparator.html">Comparator</a> a été fournie à la création
-de l’instance de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/PriorityQueue.html">PriorityQueue</a>. Quel que soit l’ordre d’insertion, les éléments
+<a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Comparable.html">Comparable</a>, soit parce qu’une instance de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Comparator.html">Comparator</a> a été fournie à la création
+de l’instance de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/PriorityQueue.html">PriorityQueue</a>. Quel que soit l’ordre d’insertion, les éléments
 seront extraits de la file selon l’ordre naturel.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Queue</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">queue</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PriorityQueue</span><span class="o">&lt;&gt;();</span>
 
@@ -773,9 +773,9 @@ si on parcourt la file à l’aide d’un <strong>for</strong>.</p>
 </div>
 <div class="section" id="les-classes-vector-et-stack">
 <h3>Les classes Vector et Stack<a class="headerlink" href="#les-classes-vector-et-stack" title="Lien permanent vers ce titre">¶</a></h3>
-<p>La version 1.0 de Java a d’abord inclus les classes <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Vector.html">java.util.Vector</a> et <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Stack.html">java.util.Stack</a>.
-La classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Vector.html">Vector</a> permet de représenter une liste d’éléments comme la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html">ArrayList</a>.
-La classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Stack.html">Stack</a> qui hérite de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Vector.html">Vector</a> permet de représenter des piles de type
+<p>La version 1.0 de Java a d’abord inclus les classes <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Vector.html">java.util.Vector</a> et <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Stack.html">java.util.Stack</a>.
+La classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Vector.html">Vector</a> permet de représenter une liste d’éléments comme la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/ArrayList.html">ArrayList</a>.
+La classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Stack.html">Stack</a> qui hérite de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Vector.html">Vector</a> permet de représenter des piles de type
 LIFO (<em>Last In First Out</em>). Ces deux classes sont toujours présentes dans
 l’API pour des raisons de compatibilité ascendante mais il ne faut <strong>surtout pas</strong>
 s’en servir. En effet, ces classes utilisent des mécanismes de synchronisation
@@ -784,50 +784,50 @@ internes dans le cas où elles sont utilisées pour des accès concurrents
 de synchronisation pénalisent les performances mais en plus, ils se révèlent
 largement inefficaces pour gérer les accès concurrents (il existe d’autres façons
 de faire en Java).</p>
-<p>Les classes <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html">ArrayList</a> et <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayDeque.html">ArrayDeque</a> se substituent très bien aux classes
-<a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Vector.html">Vector</a> et <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Stack.html">Stack</a>.</p>
+<p>Les classes <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/ArrayList.html">ArrayList</a> et <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/ArrayDeque.html">ArrayDeque</a> se substituent très bien aux classes
+<a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Vector.html">Vector</a> et <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Stack.html">Stack</a>.</p>
 </div>
 <div class="section" id="les-interfaces-pour-les-listes">
 <h3>Les interfaces pour les listes<a class="headerlink" href="#les-interfaces-pour-les-listes" title="Lien permanent vers ce titre">¶</a></h3>
-<p>Les listes du <a class="reference external" href="https://docs.oracle.com/javase/8/docs/technotes/guides/collections/index.html">Java Collections Framework</a> sont liées aux interfaces <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html">Iterable</a>,
-<a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html">Collection</a>, <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html">List</a>, <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Queue.html">Queue</a>, <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Deque.html">Deque</a> et <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/RandomAccess.html">RandomAccess</a>. Ci-dessous le diagramme
+<p>Les listes du <a class="reference external" href="https://docs.oracle.com/javase/8/docs/technotes/guides/collections/overview.html">Java Collections Framework</a> sont liées aux interfaces <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Iterable.html">Iterable</a>,
+<a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Collection.html">Collection</a>, <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/List.html">List</a>, <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Queue.html">Queue</a>, <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Deque.html">Deque</a> et <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/RandomAccess.html">RandomAccess</a>. Ci-dessous le diagramme
 de classes présentant les différents héritages et implémentations pour les quatre
 principales classes :</p>
 <img alt="../_images/list_classes_interfaces.png" src="../_images/list_classes_interfaces.png" />
 <p>Comme proposé par le <a class="reference external" href="https://en.wikipedia.org/wiki/Interface_segregation_principle">principe de ségrégation d’interface</a>, les variables,
 les paramètres et les attributs représentant des listes devraient avoir le
-type de l’interface adaptée. Par exemple, si vous utilisez une instance de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/PriorityQueue.html">PriorityQueue</a>,
-vous devriez y accéder à partir de l’interface <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Queue.html">Queue</a> si vous n’effectuez que
+type de l’interface adaptée. Par exemple, si vous utilisez une instance de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/PriorityQueue.html">PriorityQueue</a>,
+vous devriez y accéder à partir de l’interface <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Queue.html">Queue</a> si vous n’effectuez que
 des opérations d’ajout, de suppression ou de consultation des éléments.</p>
 <dl class="docutils">
-<dt><a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html">Iterable</a></dt>
-<dd>Cette interface permet d’obtenir un <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html">Iterator</a> pour parcourir la liste. Elle
+<dt><a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Iterable.html">Iterable</a></dt>
+<dd>Cette interface permet d’obtenir un <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Iterator.html">Iterator</a> pour parcourir la liste. Elle
 permet également de parcourir la liste avec un <strong>for</strong> amélioré (<em>foreach</em>).</dd>
-<dt><a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html">Collection</a></dt>
+<dt><a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Collection.html">Collection</a></dt>
 <dd>Il s’agit de l’interface racine pour les collections. Elle déclare beaucoup de méthodes
 pour consulter ou modifier une collection. C’est également cette interface
-qui déclare la méthode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html#size--">size</a> pour connaître la taille de la collection et les
-méthodes <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html#toArray--">toArray</a> pour obtenir un tableau à partir d’une collection. Par contre,
+qui déclare la méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Collection.html#size()">size</a> pour connaître la taille de la collection et les
+méthodes <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Collection.html#toArray()">toArray</a> pour obtenir un tableau à partir d’une collection. Par contre,
 cette interface ne permet pas d’accéder aléatoirement à un élément d’une collection
 (c’est-à-dire à partir de son index).</dd>
-<dt><a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html">List</a></dt>
+<dt><a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/List.html">List</a></dt>
 <dd>Cette interface représente une collection ordonnée (une séquence) d’éléments.
 Elle déclare des méthodes pour accéder, pour modifier ou pour supprimer des
 éléments à partir de leur index (on parle aussi d’accès aléatoire). Cette
-interface déclare également la méthode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html#sort-java.util.Comparator-">sort</a> pour permettre de trier la liste.</dd>
-<dt><a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Queue.html">Queue</a></dt>
+interface déclare également la méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/List.html#sort(java.util.Comparator)">sort</a> pour permettre de trier la liste.</dd>
+<dt><a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Queue.html">Queue</a></dt>
 <dd>Une file (<em>queue</em>) est une structure de données pour laquelle l’ordre des éléments
 est important mais les opérations de consultation, d’ajout et de suppression se
 font uniquement sur la tête de la file (le premier élément).</dd>
-<dt><a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Deque.html">Deque</a></dt>
-<dd><a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Deque.html">Deque</a> est la contraction de <em>double ended queue</em>. Cette interface représente une structure
+<dt><a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Deque.html">Deque</a></dt>
+<dd><a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Deque.html">Deque</a> est la contraction de <em>double ended queue</em>. Cette interface représente une structure
 de données pour laquelle l’ordre des éléments est important mais les opération
 des consultation, d’ajout et de suppression se font soit sur le premier élément
 soit sur le dernier élément.</dd>
-<dt><a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/RandomAccess.html">RandomAccess</a></dt>
+<dt><a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/RandomAccess.html">RandomAccess</a></dt>
 <dd>Il s’agit d’une <a class="reference internal" href="interface.html#interface-marqueur"><span class="std std-ref">interface marqueur</span></a> qui signale que
 l’implémentation associée supporte les accès aléatoire en un temps constant. Par
-exemple, <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html">ArrayList</a> implémente <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/RandomAccess.html">RandomAccess</a> mais pas <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/LinkedList.html">LinkedList</a>. Cette interface
+exemple, <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/ArrayList.html">ArrayList</a> implémente <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/RandomAccess.html">RandomAccess</a> mais pas <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/LinkedList.html">LinkedList</a>. Cette interface
 existe avant tout pour des raisons d’optimisation de parcours de liste.</dd>
 </dl>
 </div>
@@ -840,21 +840,21 @@ Deux élements e1 et e2 sont des doublons si :</p>
 </pre></div>
 </div>
 <p>ou si e1 vaut <strong>null</strong> et e2 vaut <strong>null</strong>. Pour contrôler l’unicité, le
-<a class="reference external" href="https://docs.oracle.com/javase/8/docs/technotes/guides/collections/index.html">Java Collections Framework</a> fournit trois implémentations : <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/TreeSet.html">TreeSet</a>,
-<a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/HashSet.html">HashSet</a> et <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/LinkedHashSet.html">LinkedHashSet</a>.</p>
+<a class="reference external" href="https://docs.oracle.com/javase/8/docs/technotes/guides/collections/overview.html">Java Collections Framework</a> fournit trois implémentations : <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/TreeSet.html">TreeSet</a>,
+<a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/HashSet.html">HashSet</a> et <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/LinkedHashSet.html">LinkedHashSet</a>.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Il existe également un <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/EnumSet.html">EnumSet</a> qui représente un ensemble d’énumérations. Son
+<p class="last">Il existe également un <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/EnumSet.html">EnumSet</a> qui représente un ensemble d’énumérations. Son
 implémentation est très compacte et très performante mais n’est utilisable que
 pour des <a class="reference internal" href="enumeration.html"><span class="doc">énumérations</span></a>.</p>
 </div>
 <div class="section" id="la-classe-treeset">
 <h3>La classe TreeSet<a class="headerlink" href="#la-classe-treeset" title="Lien permanent vers ce titre">¶</a></h3>
-<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/TreeSet.html">TreeSet</a> contrôle l’unicité de ces éléments en maintenant en interne
+<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/TreeSet.html">TreeSet</a> contrôle l’unicité de ces éléments en maintenant en interne
 une liste triée par ordre naturel des éléments. L’ordre peut être donné soit
-parce que les éléments implémentent l’interface <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Comparable.html">Comparable</a> soit parce qu’une
-implémentation de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Comparator.html">Comparator</a> est passée en paramètre de constructeur au moment
-de la création de l’instance de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/TreeSet.html">TreeSet</a>.</p>
+parce que les éléments implémentent l’interface <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Comparable.html">Comparable</a> soit parce qu’une
+implémentation de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Comparator.html">Comparator</a> est passée en paramètre de constructeur au moment
+de la création de l’instance de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/TreeSet.html">TreeSet</a>.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Set</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">ensemble</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TreeSet</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;();</span>
 
 <span class="n">ensemble</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&quot;élément&quot;</span><span class="o">);</span>
@@ -869,31 +869,31 @@ de la création de l’instance de <a class="reference external" href="https://d
 <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">ensemble</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">());</span> <span class="c1">// true</span>
 </pre></div>
 </div>
-<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/TreeSet.html">TreeSet</a> a donc comme particularité de toujours conserver ses éléments
+<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/TreeSet.html">TreeSet</a> a donc comme particularité de toujours conserver ses éléments
 triés.</p>
 </div>
 <div class="section" id="la-classe-hashset">
 <h3>La classe HashSet<a class="headerlink" href="#la-classe-hashset" title="Lien permanent vers ce titre">¶</a></h3>
-<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/HashSet.html">HashSet</a> utilise un code de hachage (hash code) pour contrôler l’unicité
+<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/HashSet.html">HashSet</a> utilise un code de hachage (hash code) pour contrôler l’unicité
 de ces éléments. Un code de hachage est une valeur associée à objet. Deux
 objets identiques doivent obligatoirement avoir le même code de hachage. Par contre
 deux objets distincts ont des codes de hachage qui peuvent être soit différents
 soit identiques. Un ensemble d’éléments différents mais qui ont néanmoins le
-même code de hachage forment un <em>bucket</em>. La classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/HashSet.html">HashSet</a> maintient en interne
+même code de hachage forment un <em>bucket</em>. La classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/HashSet.html">HashSet</a> maintient en interne
 un tableau associatif entre une valeur de hachage et un <em>bucket</em>. Lorsqu’un nouvel
-élément est ajouté au <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/HashSet.html">HashSet</a>, ce dernier calcule son code de hachage et vérifie
+élément est ajouté au <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/HashSet.html">HashSet</a>, ce dernier calcule son code de hachage et vérifie
 si cette valeur a déjà été stockée. Si c’est le cas, alors les éléments du
 <em>bucket</em> associé sont parcourus un à un pour vérifier s’ils sont identiques
 ou non au nouvel élément.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Le code de hachage d’un objet est donné par la méthode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html#hashCode--">Object.hashCode</a>.
+<p class="last">Le code de hachage d’un objet est donné par la méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Object.html#hashCode()">Object.hashCode</a>.
 L’implémentation par défaut de cette méthode ne convient généralement pas. En
 effet, elle retourne un code différent pour des objets différents en mémoire.
 Deux objets qui ont un état considéré comme identique mais qui existent de
 manière distincte en mémoire auront un code de hachage différent si on utilise l’implémentation
 par défaut. Beaucoup de classes redéfinissent donc cette méthode (c’est notamment le
-cas de la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a>).</p>
+cas de la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html">String</a>).</p>
 </div>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Set</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">ensemble</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashSet</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;();</span>
 
@@ -909,19 +909,19 @@ cas de la classe <a class="reference external" href="https://docs.oracle.com/jav
 <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">ensemble</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">());</span> <span class="c1">// true</span>
 </pre></div>
 </div>
-<p>L’implémentation de la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/HashSet.html">HashSet</a> a des performances en temps très supérieures
-à <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/TreeSet.html">TreeSet</a> pour les opérations d’ajout et de suppression d’élément.
+<p>L’implémentation de la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/HashSet.html">HashSet</a> a des performances en temps très supérieures
+à <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/TreeSet.html">TreeSet</a> pour les opérations d’ajout et de suppression d’élément.
 Elle impose néanmoins que les éléments qu’elle contient génèrent correctement
-un code de hachage avec la méthode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html#hashCode--">hashCode</a>. Contrairement à <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/TreeSet.html">TreeSet</a>, elle
+un code de hachage avec la méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Object.html#hashCode()">hashCode</a>. Contrairement à <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/TreeSet.html">TreeSet</a>, elle
 ne garantit pas l’ordre dans lequel les éléments sont stockés et donc l’ordre dans
 lequel ils peuvent être parcourus.</p>
 </div>
 <div class="section" id="la-classe-linkedhashset">
 <h3>La classe LinkedHashSet<a class="headerlink" href="#la-classe-linkedhashset" title="Lien permanent vers ce titre">¶</a></h3>
-<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/LinkedHashSet.html">LinkedHashSet</a>, comme la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/HashSet.html">HashSet</a>, utilise en interne un code
+<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/LinkedHashSet.html">LinkedHashSet</a>, comme la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/HashSet.html">HashSet</a>, utilise en interne un code
 de hachage mais elle garantit en plus que l’ordre de parcours des éléments sera le
 même que l’ordre d’insertion. Cette implémentation garantit également que si
-elle est créée à partir d’un autre <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html">Set</a>, l’ordre des éléments sera maintenu.</p>
+elle est créée à partir d’un autre <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Set.html">Set</a>, l’ordre des éléments sera maintenu.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Set</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">ensemble</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LinkedHashSet</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;();</span>
 
 <span class="n">ensemble</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&quot;premier élément&quot;</span><span class="o">);</span>
@@ -941,38 +941,38 @@ elle est créée à partir d’un autre <a class="reference external" href="http
 <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">ensemble</span><span class="o">);</span>
 </pre></div>
 </div>
-<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/LinkedHashSet.html">LinkedHashSet</a> a été créée pour réaliser un compromis entre la classe
-<a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/HashSet.html">HashSet</a> et la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/TreeSet.html">TreeSet</a> afin d’avoir des performances proches de la première
+<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/LinkedHashSet.html">LinkedHashSet</a> a été créée pour réaliser un compromis entre la classe
+<a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/HashSet.html">HashSet</a> et la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/TreeSet.html">TreeSet</a> afin d’avoir des performances proches de la première
 tout en offrant l’ordre de parcours pour ses éléments.</p>
 </div>
 <div class="section" id="les-interfaces-pour-les-ensembles">
 <h3>Les interfaces pour les ensembles<a class="headerlink" href="#les-interfaces-pour-les-ensembles" title="Lien permanent vers ce titre">¶</a></h3>
-<p>Les ensembles du <a class="reference external" href="https://docs.oracle.com/javase/8/docs/technotes/guides/collections/index.html">Java Collections Framework</a> sont liés aux interfaces <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html">Iterable</a>,
-<a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html">Collection</a>, <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html">Set</a>, <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/SortedSet.html">SortedSet</a> et <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/NavigableSet.html">NavigableSet</a>. Ci-dessous le diagramme
+<p>Les ensembles du <a class="reference external" href="https://docs.oracle.com/javase/8/docs/technotes/guides/collections/overview.html">Java Collections Framework</a> sont liés aux interfaces <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Iterable.html">Iterable</a>,
+<a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Collection.html">Collection</a>, <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Set.html">Set</a>, <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/SortedSet.html">SortedSet</a> et <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/NavigableSet.html">NavigableSet</a>. Ci-dessous le diagramme
 de classes présentant les différents héritages et implémentations pour les trois
 principales classes :</p>
 <img alt="../_images/set_classes_interfaces.png" src="../_images/set_classes_interfaces.png" />
 <p>Comme proposé par le <a class="reference external" href="https://en.wikipedia.org/wiki/Interface_segregation_principle">principe de ségrégation d’interface</a>, les variables,
 les paramètres et les attributs représentant des ensemble devraient avoir le
-type de l’interface adaptée. Par exemple, si vous utilisez une instance de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/HashSet.html">HashSet</a>,
-vous devriez y accéder à partir de l’interface <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html">Set</a>.</p>
+type de l’interface adaptée. Par exemple, si vous utilisez une instance de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/HashSet.html">HashSet</a>,
+vous devriez y accéder à partir de l’interface <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Set.html">Set</a>.</p>
 <dl class="docutils">
-<dt><a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html">Iterable</a></dt>
-<dd>Cette interface permet d’obtenir un <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html">Iterator</a> pour parcourir la liste. Elle
+<dt><a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Iterable.html">Iterable</a></dt>
+<dd>Cette interface permet d’obtenir un <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Iterator.html">Iterator</a> pour parcourir la liste. Elle
 permet également de parcourir l’ensemble avec un <strong>for</strong> amélioré (<em>foreach</em>).</dd>
-<dt><a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html">Collection</a></dt>
+<dt><a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Collection.html">Collection</a></dt>
 <dd>Il s’agit de l’interface racine pour les collections. Elle déclare beaucoup de méthodes
 pour consulter ou modifier une collection. C’est également cette interface
-qui déclare la méthode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html#size--">size</a> pour connaître la taille de la collection et les
-méthodes <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html#toArray--">toArray</a> pour obtenir un tableau à partir d’une collection.</dd>
-<dt><a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html">Set</a></dt>
+qui déclare la méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Collection.html#size()">size</a> pour connaître la taille de la collection et les
+méthodes <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Collection.html#toArray()">toArray</a> pour obtenir un tableau à partir d’une collection.</dd>
+<dt><a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Set.html">Set</a></dt>
 <dd>Il s’agit de l’interface qui définit la collection comme un ensemble, c’est-à-dire
 comme une liste d’éléments sans doublon.</dd>
-<dt><a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/SortedSet.html">SortedSet</a></dt>
+<dt><a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/SortedSet.html">SortedSet</a></dt>
 <dd>Cette interface indique que l’ensemble maintient en interne un ordre naturel
 de ses éléments. Elle offre notamment des méthodes pour accéder au premier et
 au dernier élément de l’ensemble.</dd>
-<dt><a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/NavigableSet.html">NavigableSet</a></dt>
+<dt><a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/NavigableSet.html">NavigableSet</a></dt>
 <dd>Cette interface déclare des méthodes de navigation permettant par exemple
 de créer un sous ensemble à partir des éléments qui sont plus grands qu’un
 élément donné.</dd>
@@ -981,14 +981,14 @@ de créer un sous ensemble à partir des éléments qui sont plus grands qu’un
 </div>
 <div class="section" id="copie-d-une-collection-dans-un-tableau">
 <h2>Copie d’une collection dans un tableau<a class="headerlink" href="#copie-d-une-collection-dans-un-tableau" title="Lien permanent vers ce titre">¶</a></h2>
-<p>L’interface <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html">Collection</a> commune aux listes et aux ensembles déclare deux
+<p>L’interface <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Collection.html">Collection</a> commune aux listes et aux ensembles déclare deux
 méthodes qui permettent de copier les références des éléments d’une collection
 dans un tableau :</p>
 <dl class="docutils">
-<dt><a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html#toArray--">toArray()</a></dt>
+<dt><a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Collection.html#toArray()">toArray()</a></dt>
 <dd>Crée une nouvelle instance d’un tableau d’Object de la même taille que la collection et
 copie les références des éléments de la collection dans ce tableau.</dd>
-<dt><a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html#toArray-T:A-">toArray(T[])</a></dt>
+<dt><a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Collection.html#toArray(T[])">toArray(T[])</a></dt>
 <dd>Si le tableau passé en paramètre est suffisamment grand pour contenir les éléments
 de la collection, alors les références y sont copiées. Sinon un tableau du même
 type que celui passé en paramètre est créé et les références des éléments
@@ -1023,25 +1023,25 @@ une clé à une valeur. Un tableau associatif ne peut pas contenir de doublon
 de clés.</p>
 <p>Les classes et les interfaces représentant des tableaux associatifs sont génériques
 et permettent de spécifier un type pour la clé et un type pour la valeur. Le
-<a class="reference external" href="https://docs.oracle.com/javase/8/docs/technotes/guides/collections/index.html">Java Collections Framework</a> fournit plusieurs implémentations de tableaux
-associatifs : <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/TreeMap.html">TreeMap</a>, <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html">HashMap</a>, <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/LinkedHashMap.html">LinkedHashMap</a>.</p>
+<a class="reference external" href="https://docs.oracle.com/javase/8/docs/technotes/guides/collections/overview.html">Java Collections Framework</a> fournit plusieurs implémentations de tableaux
+associatifs : <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/TreeMap.html">TreeMap</a>, <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/HashMap.html">HashMap</a>, <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/LinkedHashMap.html">LinkedHashMap</a>.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">La classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/EnumMap.html">EnumMap</a> qui représente un tableau associatif dont les clés sont
+<p class="last">La classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/EnumMap.html">EnumMap</a> qui représente un tableau associatif dont les clés sont
 des énumérations. Son implémentation est très compacte et très performante
 mais n’est utilisable que pour des clés de type <a class="reference internal" href="enumeration.html"><span class="doc">énumération</span></a>.</p>
 </div>
 <div class="section" id="la-classe-treemap">
 <h3>La classe TreeMap<a class="headerlink" href="#la-classe-treemap" title="Lien permanent vers ce titre">¶</a></h3>
-<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/TreeMap.html">TreeMap</a> est basée sur l’implémentation d’un arbre bicolore pour déterminer
+<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/TreeMap.html">TreeMap</a> est basée sur l’implémentation d’un arbre bicolore pour déterminer
 si une clé existe ou non dans le tableau associatif. Elle dispose d’une bonne
 performance en temps pour les opérations d’accès, d’ajout et de suppression de la
 clé.</p>
 <p>Cette classe contrôle l’unicité et l’accès à la clé en maintenant en interne
 une liste triée par ordre naturel des clés. L’ordre peut être donné soit
-parce que les éléments implémentent l’interface <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Comparable.html">Comparable</a> soit parce qu’une
-implémentation de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Comparator.html">Comparator</a> est passée en paramètre de constructeur au moment
-de la création de l’instance de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/TreeMap.html">TreeMap</a>.</p>
+parce que les éléments implémentent l’interface <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Comparable.html">Comparable</a> soit parce qu’une
+implémentation de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Comparator.html">Comparator</a> est passée en paramètre de constructeur au moment
+de la création de l’instance de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/TreeMap.html">TreeMap</a>.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="n">tableauAssociatif</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TreeMap</span><span class="o">&lt;&gt;();</span>
 <span class="n">tableauAssociatif</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;un&quot;</span><span class="o">,</span> <span class="mi">1</span><span class="o">);</span>
 <span class="n">tableauAssociatif</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;deux&quot;</span><span class="o">,</span> <span class="mi">2</span><span class="o">);</span>
@@ -1063,31 +1063,31 @@ de la création de l’instance de <a class="reference external" href="https://d
 <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">tableauAssociatif</span><span class="o">.</span><span class="na">values</span><span class="o">());</span> <span class="c1">// [1000, 1]</span>
 </pre></div>
 </div>
-<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/TreeMap.html">TreeMap</a> a donc comme particularité de conserver toujours ses clés
+<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/TreeMap.html">TreeMap</a> a donc comme particularité de conserver toujours ses clés
 triées.</p>
 </div>
 <div class="section" id="la-classe-hashmap">
 <h3>La classe HashMap<a class="headerlink" href="#la-classe-hashmap" title="Lien permanent vers ce titre">¶</a></h3>
-<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html">HashMap</a> utilise un code de hachage (hash code) pour contrôler l’unicité
+<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/HashMap.html">HashMap</a> utilise un code de hachage (hash code) pour contrôler l’unicité
 et l’accès aux clés. Un code de hachage est une valeur associée à un objet. Deux
 objets identiques doivent obligatoirement avoir le même code de hachage. Par contre
 deux objets distincts ont des codes de hachage qui peuvent être soit différents
 soit identiques. Un ensemble de clés différentes mais qui ont néanmoins le
-même code de hachage forment un <em>bucket</em>. La classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html">HashMap</a> maintient en interne
+même code de hachage forment un <em>bucket</em>. La classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/HashMap.html">HashMap</a> maintient en interne
 un tableau associatif entre une valeur de hachage et un <em>bucket</em>. Lorsqu’une nouvelle
-clé est ajoutée au <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html">HashMap</a>, ce dernier calcule son code de hachage et vérifie
+clé est ajoutée au <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/HashMap.html">HashMap</a>, ce dernier calcule son code de hachage et vérifie
 si ce code a déjà été stocké. Si c’est le cas, alors la valeur passée remplace
 l’ancienne valeur associée à cette clé. Sinon la nouvelle clé est ajoutée avec
 sa valeur.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Le code de hachage d’un objet est donné par la méthode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html#hashCode--">Object.hashCode</a>.
+<p class="last">Le code de hachage d’un objet est donné par la méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Object.html#hashCode()">Object.hashCode</a>.
 L’implémentation par défaut de cette méthode ne convient généralement pas. En
 effet, elle retourne un code différent pour des objets différents en mémoire.
 Deux objets qui ont un état considéré comme identique mais qui existent de
 manière distincte en mémoire auront un code de hachage différent si on utilise l’implémentation
 par défaut. Beaucoup de classes redéfinissent donc cette méthode (c’est notamment le
-cas de la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a>).</p>
+cas de la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html">String</a>).</p>
 </div>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="n">tableauAssociatif</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;();</span>
 <span class="n">tableauAssociatif</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;un&quot;</span><span class="o">,</span> <span class="mi">1</span><span class="o">);</span>
@@ -1110,19 +1110,19 @@ cas de la classe <a class="reference external" href="https://docs.oracle.com/jav
 <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">tableauAssociatif</span><span class="o">.</span><span class="na">values</span><span class="o">());</span> <span class="c1">// [1, 1000]</span>
 </pre></div>
 </div>
-<p>L’implémentation de la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/HashSet.html">HashSet</a> a des performances en temps supérieures
-à <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/TreeSet.html">TreeSet</a> pour les opérations d’ajout et d’accès.
+<p>L’implémentation de la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/HashSet.html">HashSet</a> a des performances en temps supérieures
+à <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/TreeSet.html">TreeSet</a> pour les opérations d’ajout et d’accès.
 Elle impose néanmoins que les éléments qu’elle contient génèrent correctement
-un code de hachage avec la méthode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html#hashCode--">hashCode</a>. Contrairement à la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/TreeMap.html">TreeMap</a>, elle
+un code de hachage avec la méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Object.html#hashCode()">hashCode</a>. Contrairement à la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/TreeMap.html">TreeMap</a>, elle
 ne garantit pas l’ordre dans lequel les clés sont stockées et donc l’ordre dans
 lequel elles peuvent être parcourues.</p>
 </div>
 <div class="section" id="la-classe-linkedhashmap">
 <h3>La classe LinkedHashMap<a class="headerlink" href="#la-classe-linkedhashmap" title="Lien permanent vers ce titre">¶</a></h3>
-<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/LinkedHashMap.html">LinkedHashMap</a>, comme la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html">HashMap</a>, utilise en interne un code
+<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/LinkedHashMap.html">LinkedHashMap</a>, comme la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/HashMap.html">HashMap</a>, utilise en interne un code
 de hachage mais elle garantit en plus que l’ordre de parcours des clés sera le
 même que l’ordre d’insertion. Cette implémentation garantit également que si
-elle est créée à partir d’une autre <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html">Map</a>, l’ordre des clés sera maintenu.</p>
+elle est créée à partir d’une autre <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Map.html">Map</a>, l’ordre des clés sera maintenu.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="n">tableauAssociatif</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LinkedHashMap</span><span class="o">&lt;&gt;();</span>
 <span class="n">tableauAssociatif</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;rouge&quot;</span><span class="o">,</span> <span class="mh">0xff0000</span><span class="o">);</span>
 <span class="n">tableauAssociatif</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;vert&quot;</span><span class="o">,</span> <span class="mh">0x00ff00</span><span class="o">);</span>
@@ -1134,14 +1134,14 @@ elle est créée à partir d’une autre <a class="reference external" href="htt
 <span class="o">}</span>
 </pre></div>
 </div>
-<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/LinkedHashMap.html">LinkedHashMap</a> a été créée pour réaliser un compromis entre la classe
-<a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html">HashMap</a> et la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/TreeMap.html">TreeMap</a> afin d’avoir des performances proches de la première
+<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/LinkedHashMap.html">LinkedHashMap</a> a été créée pour réaliser un compromis entre la classe
+<a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/HashMap.html">HashMap</a> et la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/TreeMap.html">TreeMap</a> afin d’avoir des performances proches de la première
 tout en offrant l’ordre de parcours pour ses clés.</p>
 </div>
 <div class="section" id="les-classes-dictionary-et-hashtable">
 <h3>Les classes Dictionary et Hashtable<a class="headerlink" href="#les-classes-dictionary-et-hashtable" title="Lien permanent vers ce titre">¶</a></h3>
-<p>La version 1.0 de Java a d’abord inclus les classes <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Dictionary.html">java.util.Dictionary</a> et
-<a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Hashtable.html">java.util.Hashtable</a> pour représenter des tableaux associatifs.
+<p>La version 1.0 de Java a d’abord inclus les classes <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Dictionary.html">java.util.Dictionary</a> et
+<a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Hashtable.html">java.util.Hashtable</a> pour représenter des tableaux associatifs.
 Ces deux classes sont toujours présentent dans
 l’API pour des raisons de compatibilité ascendante mais il ne faut <strong>surtout pas</strong>
 s’en servir. En effet, ces classes utilisent des mécanismes de synchronisation
@@ -1153,27 +1153,27 @@ de faire en Java).</p>
 </div>
 <div class="section" id="les-interfaces-pour-les-tableaux-associatifs">
 <h3>Les interfaces pour les tableaux associatifs<a class="headerlink" href="#les-interfaces-pour-les-tableaux-associatifs" title="Lien permanent vers ce titre">¶</a></h3>
-<p>Les tableaux associatifs du <a class="reference external" href="https://docs.oracle.com/javase/8/docs/technotes/guides/collections/index.html">Java Collections Framework</a> sont liés aux interfaces
-<a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html">Map</a>, <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/SortedMap.html">SortedMap</a> et <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/NavigableMap.html">NavigableMap</a>. Ci-dessous le diagramme
+<p>Les tableaux associatifs du <a class="reference external" href="https://docs.oracle.com/javase/8/docs/technotes/guides/collections/overview.html">Java Collections Framework</a> sont liés aux interfaces
+<a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Map.html">Map</a>, <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/SortedMap.html">SortedMap</a> et <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/NavigableMap.html">NavigableMap</a>. Ci-dessous le diagramme
 de classes présentant les différents héritages et implémentations pour les trois
 principales classes :</p>
 <img alt="../_images/map_classes_interfaces.png" src="../_images/map_classes_interfaces.png" />
 <p>Comme proposé par le <a class="reference external" href="https://en.wikipedia.org/wiki/Interface_segregation_principle">principe de ségrégation d’interface</a>, les variables,
 les paramètres et les attributs représentant des tableaux associatifs devraient avoir
-le type de l’interface adaptée. Par exemple, si vous utilisez une instance de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html">HashMap</a>,
-vous devriez y accéder à partir de l’interface <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html">Map</a>.</p>
+le type de l’interface adaptée. Par exemple, si vous utilisez une instance de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/HashMap.html">HashMap</a>,
+vous devriez y accéder à partir de l’interface <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Map.html">Map</a>.</p>
 <dl class="docutils">
-<dt><a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html">Map</a></dt>
+<dt><a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Map.html">Map</a></dt>
 <dd>Il s’agit de l’interface qui définit un tableau associatif. Elle déclare
 les méthodes d’ajout de clé et de valeur, de consultation et de suppression
 à partir de la clé. Il est également possible d’obtenir l’ensemble des clés
 ou la collection de toutes les valeurs. Cette interface permet également
 de connaître la taille du tableau associatif.</dd>
-<dt><a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/SortedMap.html">SortedMap</a></dt>
+<dt><a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/SortedMap.html">SortedMap</a></dt>
 <dd>Cette interface indique que le tableau associatif maintient en interne un ordre naturel
 de ses clés. Elle offre notamment des méthodes pour accéder à la première et
 à la dernière clé de l’ensemble.</dd>
-<dt><a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/NavigableMap.html">NavigableMap</a></dt>
+<dt><a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/NavigableMap.html">NavigableMap</a></dt>
 <dd>Cette interface déclare des méthodes de navigation permettant par exemple
 de créer un sous ensemble à partir des clés qui sont plus grandes qu’une
 clé donnée.</dd>
@@ -1182,7 +1182,7 @@ clé donnée.</dd>
 </div>
 <div class="section" id="la-classe-outil-collections">
 <h2>La classe outil Collections<a class="headerlink" href="#la-classe-outil-collections" title="Lien permanent vers ce titre">¶</a></h2>
-<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Collections.html">java.util.Collections</a> est une classe outil qui contient de nombreuses
+<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Collections.html">java.util.Collections</a> est une classe outil qui contient de nombreuses
 méthodes pour les listes, les ensembles et les tableaux associatifs. Elle contient
 également des attributs de classes correspondant à une liste, un ensemble et
 un tableau associatif vides et immutables.</p>

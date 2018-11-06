@@ -293,6 +293,11 @@
 <li class="toctree-l2"><a class="reference internal" href="polymorphisme.html#le-principe-du-ouvert-ferme">Le principe du ouvert/fermé</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="classe_abstraite.html">Les classes abstraites</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classe_abstraite.html#declarer-une-classe-abstraite">Déclarer une classe abstraite</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classe_abstraite.html#declarer-une-methode-abstraite">Déclarer une méthode abstraite</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="la_classe_object.html">La classe Object</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="la_classe_object.html#la-methode-equals">La méthode equals</a></li>
 <li class="toctree-l2"><a class="reference internal" href="la_classe_object.html#la-methode-hashcode">La méthode hashCode</a></li>
@@ -325,11 +330,6 @@
 <li class="toctree-l2"><a class="reference internal" href="les_exceptions.html#exception-cause">Exception cause</a></li>
 <li class="toctree-l2"><a class="reference internal" href="les_exceptions.html#les-erreurs-et-les-exceptions-runtime">Les erreurs et les exceptions runtime</a></li>
 <li class="toctree-l2"><a class="reference internal" href="les_exceptions.html#choix-entre-checked-et-unchecked">Choix entre checked et unchecked</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="classe_abstraite.html">Les classes abstraites</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="classe_abstraite.html#declarer-une-classe-abstraite">Déclarer une classe abstraite</a></li>
-<li class="toctree-l2"><a class="reference internal" href="classe_abstraite.html#declarer-une-methode-abstraite">Déclarer une méthode abstraite</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="enumeration.html">Les énumérations</a><ul>
@@ -860,9 +860,9 @@ cela, il suffit de déclarer que cette nouvelle classe implémente <em>Cannibale
 parente, le fait de déclarer l’interface marqueur <em>Cannibale</em> suffit a modifier
 son comportement.</p>
 <p>Le principe de l’interface marqueur est quelques fois utilisé dans l’API standard
-de Java. Par exemple, La méthode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html#clone--">clone</a> déclarée par <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html">Object</a> jette une
-<a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/CloneNotSupportedException.html">CloneNotSupportedException</a> si elle est appelée sur une instance qui n’implémente
-pas l’interface <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Cloneable.html">Cloneable</a>. Cela permet de fournir une méthode par défaut pour créer
+de Java. Par exemple, La méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Object.html#clone()">clone</a> déclarée par <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Object.html">Object</a> jette une
+<a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/CloneNotSupportedException.html">CloneNotSupportedException</a> si elle est appelée sur une instance qui n’implémente
+pas l’interface <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Cloneable.html">Cloneable</a>. Cela permet de fournir une méthode par défaut pour créer
 une copie d’un objet mais sans activer la fonctionnalité. Il faut
 que la classe déclare son intention d’être clonable grâce à l’interface
 marqueur.</p>
@@ -974,12 +974,12 @@ judicieusement pour restreindre au type minimum nécessaire par le code.</li>
 leurs interfaces plutôt que d’utiliser le type réel de l’objet. Un exemple
 classique en Java concerne l’API des <a class="reference internal" href="les_collections.html"><span class="doc">collections</span></a>.
 Il s’agit de classes permettant de gérer un ensemble d’objets. Elles apportent
-des fonctionnalités plus avancées que les tableaux. Par exemple la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html">java.util.ArrayList</a>
+des fonctionnalités plus avancées que les tableaux. Par exemple la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/ArrayList.html">java.util.ArrayList</a>
 permet de gérer une liste d’objets. Cette classe autorise l’ajout en fin de liste,
 l’insertion, la suppression et bien évidemment l’accès à un élément selon son index
 et le parcours complet des éléments.</p>
-<p>Un programme qui crée une <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html">ArrayList</a> pour stocker un ensemble d’éléments
-n’utilisera jamais une variable de type <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html">ArrayList</a> mais plutôt une variable
+<p>Un programme qui crée une <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/ArrayList.html">ArrayList</a> pour stocker un ensemble d’éléments
+n’utilisera jamais une variable de type <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/ArrayList.html">ArrayList</a> mais plutôt une variable
 ayant le type d’une interface implémentée par cette classe.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// Utilisation de l&#39;interface List</span>
 <span class="n">List</span> <span class="n">maListe</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">();</span>

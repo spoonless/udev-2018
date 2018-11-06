@@ -293,6 +293,11 @@
 <li class="toctree-l2"><a class="reference internal" href="polymorphisme.html#le-principe-du-ouvert-ferme">Le principe du ouvert/fermé</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="classe_abstraite.html">Les classes abstraites</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classe_abstraite.html#declarer-une-classe-abstraite">Déclarer une classe abstraite</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classe_abstraite.html#declarer-une-methode-abstraite">Déclarer une méthode abstraite</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="la_classe_object.html">La classe Object</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="la_classe_object.html#la-methode-equals">La méthode equals</a></li>
 <li class="toctree-l2"><a class="reference internal" href="la_classe_object.html#la-methode-hashcode">La méthode hashCode</a></li>
@@ -325,11 +330,6 @@
 <li class="toctree-l2"><a class="reference internal" href="les_exceptions.html#exception-cause">Exception cause</a></li>
 <li class="toctree-l2"><a class="reference internal" href="les_exceptions.html#les-erreurs-et-les-exceptions-runtime">Les erreurs et les exceptions runtime</a></li>
 <li class="toctree-l2"><a class="reference internal" href="les_exceptions.html#choix-entre-checked-et-unchecked">Choix entre checked et unchecked</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="classe_abstraite.html">Les classes abstraites</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="classe_abstraite.html#declarer-une-classe-abstraite">Déclarer une classe abstraite</a></li>
-<li class="toctree-l2"><a class="reference internal" href="classe_abstraite.html#declarer-une-methode-abstraite">Déclarer une méthode abstraite</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="enumeration.html">Les énumérations</a><ul>
@@ -980,22 +980,38 @@ d’un appel à une méthode de classe :</p>
 ajoutez les constructeurs suivants :</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// constructeur sans paramètre</span>
 <span class="n">Phrase</span> <span class="n">phrase</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Phrase</span><span class="o">();</span>
+<span class="n">phrase</span><span class="o">.</span><span class="na">ajouter</span><span class="o">(</span><span class="s">&quot;Bonjour&quot;</span><span class="o">,</span> <span class="s">&quot;le&quot;</span><span class="o">,</span> <span class="s">&quot;monde&quot;</span><span class="o">);</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">phrase</span><span class="o">);</span> <span class="c1">// Bonjour le monde.</span>
 
 <span class="c1">// constructeur pour indiquer quel caractère fini la phrase</span>
-<span class="n">phrase</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Phrase</span><span class="o">(</span><span class="n">Phrase</span><span class="o">.</span><span class="na">INTERROGATION</span><span class="o">);</span> <span class="c1">// ?</span>
-<span class="n">phrase</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Phrase</span><span class="o">(</span><span class="n">Phrase</span><span class="o">.</span><span class="na">EXCLAMATION</span><span class="o">);</span>   <span class="c1">// !</span>
-<span class="n">phrase</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Phrase</span><span class="o">(</span><span class="n">Phrase</span><span class="o">.</span><span class="na">DECLARATION</span><span class="o">);</span>   <span class="c1">// .</span>
+<span class="n">Phrase</span> <span class="n">phraseInterrogative</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Phrase</span><span class="o">(</span><span class="n">Phrase</span><span class="o">.</span><span class="na">INTERROGATION</span><span class="o">);</span>
+<span class="n">phraseInterrogative</span><span class="o">.</span><span class="na">ajouter</span><span class="o">(</span><span class="s">&quot;Ça&quot;</span><span class="o">,</span> <span class="s">&quot;va&quot;</span><span class="o">);</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">phraseInterrogative</span><span class="o">);</span> <span class="c1">// Ça  va ?</span>
+
+<span class="n">Phrase</span> <span class="n">phraseExclamative</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Phrase</span><span class="o">(</span><span class="n">Phrase</span><span class="o">.</span><span class="na">EXCLAMATION</span><span class="o">);</span>
+<span class="n">phraseExclamative</span><span class="o">.</span><span class="na">ajouter</span><span class="o">(</span><span class="s">&quot;Oui&quot;</span><span class="o">);</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">phraseExclamative</span><span class="o">);</span> <span class="c1">// Oui !</span>
+
+<span class="n">Phrase</span> <span class="n">phraseDeclarative</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Phrase</span><span class="o">(</span><span class="n">Phrase</span><span class="o">.</span><span class="na">DECLARATION</span><span class="o">);</span>
+<span class="n">phraseDeclarative</span><span class="o">.</span><span class="na">ajouter</span><span class="o">(</span><span class="s">&quot;C&#39;est&quot;</span><span class="o">,</span> <span class="s">&quot;bien&quot;</span><span class="o">);</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">phraseDeclarative</span><span class="o">);</span> <span class="c1">// Assez bien.</span>
 
 <span class="c1">// constructeur pour indiquer quel caractère fini la phrase</span>
 <span class="c1">// et passer un nombre quelconque de mots à la phrase</span>
-<span class="n">phrase</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Phrase</span><span class="o">(</span><span class="n">Phrase</span><span class="o">.</span><span class="na">INTERROGATION</span><span class="o">,</span> <span class="s">&quot;une&quot;</span><span class="o">,</span> <span class="s">&quot;phrase&quot;</span><span class="o">);</span>
+<span class="n">phrase</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Phrase</span><span class="o">(</span><span class="n">Phrase</span><span class="o">.</span><span class="na">INTERROGATION</span><span class="o">,</span> <span class="s">&quot;Et&quot;</span><span class="o">,</span> <span class="s">&quot;ensuite&quot;</span><span class="o">);</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">phrase</span><span class="o">);</span> <span class="c1">// Et ensuite ?</span>
 </pre></div>
 </div>
 <p>Ajoutez également des méthodes de classe pour créer directement une <em>Phrase</em>
 selon son type :</p>
-<div class="last highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Phrase</span> <span class="n">phrase</span> <span class="o">=</span> <span class="n">Phrase</span><span class="o">.</span><span class="na">interrogation</span><span class="o">(</span><span class="s">&quot;Comme&quot;</span><span class="o">,</span> <span class="s">&quot;allez&quot;</span><span class="o">,</span> <span class="s">&quot;vous&quot;</span><span class="o">);</span>
+<div class="last highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">phrase</span> <span class="o">=</span> <span class="n">Phrase</span><span class="o">.</span><span class="na">interrogation</span><span class="o">(</span><span class="s">&quot;Comment&quot;</span><span class="o">,</span> <span class="s">&quot;allez&quot;</span><span class="o">,</span> <span class="s">&quot;vous&quot;</span><span class="o">);</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">phrase</span><span class="o">);</span> <span class="c1">// Comment allez vous ?</span>
+
 <span class="n">phrase</span> <span class="o">=</span> <span class="n">Phrase</span><span class="o">.</span><span class="na">exclamation</span><span class="o">(</span><span class="s">&quot;Dormez&quot;</span><span class="o">);</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">phrase</span><span class="o">);</span> <span class="c1">// Dormez !</span>
+
 <span class="n">phrase</span> <span class="o">=</span> <span class="n">Phrase</span><span class="o">.</span><span class="na">declaration</span><span class="o">(</span><span class="s">&quot;Brian&quot;</span><span class="o">,</span> <span class="s">&quot;est&quot;</span><span class="o">,</span> <span class="s">&quot;dans&quot;</span><span class="o">,</span> <span class="s">&quot;la&quot;</span><span class="o">,</span> <span class="s">&quot;cuisine&quot;</span><span class="o">);</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">phrase</span><span class="o">);</span> <span class="c1">// Brian est dans la cuisine.</span>
 </pre></div>
 </div>
 </div>
@@ -1070,7 +1086,7 @@ récupéré, il doit s’assurer que plus aucune référence n’existe vers cet
 Par exemple, il peut affecter la valeur <strong>null</strong> aux variables et aux attributs
 qui référencent cet objet.</p>
 <p>Il est également possible de forcer l’appel au ramasse-miettes gâce à la méthode
-<a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/System.html#gc--">java.lang.System.gc()</a>. Cependant, cette méthode ne donne aucune garantie quant au résultat.
+<a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/System.html#gc()">java.lang.System.gc()</a>. Cependant, cette méthode ne donne aucune garantie quant au résultat.
 Vous ne pouvez pas vous baser sur son appel pour garantir la suppression d’un objet
 non référencé. Le ramasse-miettes utilise un algorithme complexe qui rend son
 comportement difficilement prédictible.</p>
@@ -1093,7 +1109,7 @@ Pour Java 9, vous pouvez vous reporter au
 l’espace mémoire que des objets non référencés. Si vous développez une application
 qui crée beaucoup d’objets sans donner la possibilité au ramasse-miettes de les collecter,
 votre application peut se retrouver à cours d’espace mémoire. Lors de la création d’un
-nouvel objet, vous obtiendrez alors une erreur du type <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/OutOfMemoryError.html">java.lang.OutOfMemoryError</a>.</p>
+nouvel objet, vous obtiendrez alors une erreur du type <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/OutOfMemoryError.html">java.lang.OutOfMemoryError</a>.</p>
 <p class="last">La mémoire n’est pas la seule ressource système avec laquelle les développeurs doivent
 composer. Si Java propose un mécanisme pour la gestion de la mémoire, il ne propose
 pas de mécanisme automatique pour réclamer les autres types de ressources,
@@ -1134,7 +1150,7 @@ pas le même statut ni la même importance qu’un destructeur dans le langage C
 </div>
 <p>Dans l’exemple ci-dessus, Un objet qui n’implémente que la méthode <em>finalize</em> est créé
 puis la variable qui le référence est mise à <strong>null</strong>. Ensuite, le programme appelle
-explicitement le ramasse-miettes avec la méthode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/System.html#gc--">java.lang.System.gc()</a>. Enfin,
+explicitement le ramasse-miettes avec la méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/System.html#gc()">java.lang.System.gc()</a>. Enfin,
 une boucle se contente d’afficher mille points sur la sortie standard. Cette boucle <strong>for</strong>
 est utile car généralement le programme s’arrête trop vite et le ramasse-miettes
 n’a pas le temps d’appeler <em>finalize</em>. Si vous exécutez ce programme plusieurs fois,

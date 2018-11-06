@@ -292,6 +292,11 @@
 <li class="toctree-l2"><a class="reference internal" href="polymorphisme.html#le-principe-du-ouvert-ferme">Le principe du ouvert/fermé</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="classe_abstraite.html">Les classes abstraites</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classe_abstraite.html#declarer-une-classe-abstraite">Déclarer une classe abstraite</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classe_abstraite.html#declarer-une-methode-abstraite">Déclarer une méthode abstraite</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="la_classe_object.html">La classe Object</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="la_classe_object.html#la-methode-equals">La méthode equals</a></li>
 <li class="toctree-l2"><a class="reference internal" href="la_classe_object.html#la-methode-hashcode">La méthode hashCode</a></li>
@@ -324,11 +329,6 @@
 <li class="toctree-l2"><a class="reference internal" href="les_exceptions.html#exception-cause">Exception cause</a></li>
 <li class="toctree-l2"><a class="reference internal" href="les_exceptions.html#les-erreurs-et-les-exceptions-runtime">Les erreurs et les exceptions runtime</a></li>
 <li class="toctree-l2"><a class="reference internal" href="les_exceptions.html#choix-entre-checked-et-unchecked">Choix entre checked et unchecked</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="classe_abstraite.html">Les classes abstraites</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="classe_abstraite.html#declarer-une-classe-abstraite">Déclarer une classe abstraite</a></li>
-<li class="toctree-l2"><a class="reference internal" href="classe_abstraite.html#declarer-une-methode-abstraite">Déclarer une méthode abstraite</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="enumeration.html">Les énumérations</a><ul>
@@ -551,29 +551,29 @@ qu’elle vient enrichir :</p>
 <span class="o">}</span>
 </pre></div>
 </div>
-<p>L’annotation <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Override.html">Override</a> est définie dans le package <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/package-summary.html">java.lang</a> (c’est pour cela
+<p>L’annotation <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Override.html">Override</a> est définie dans le package <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/package-summary.html">java.lang</a> (c’est pour cela
 qu’il n’est pas nécessaire de l’importer explicitement). Cette annotation est
 utilisable uniquement sur les méthodes pour indiquer que la méthode est une
 redéfinition d’une méthode d’une classe parente (dans l’exemple précédent, la méthode
-redéfinit <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html#toString--">Object.toString</a>). Cette annotation est exploitée par le compilateur
+redéfinit <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Object.html#toString()">Object.toString</a>). Cette annotation est exploitée par le compilateur
 pour réaliser des vérifications supplémentaires. C’est également le cas pour les
 autres annotations déclarées dans le même package :</p>
 <dl class="docutils">
-<dt><a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html">Deprecated</a></dt>
+<dt><a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Deprecated.html">Deprecated</a></dt>
 <dd>Permet de générer des warnings afin d’informer les autres développeurs que
 quelque chose (une classe, une méthode…) a été dépréciée et ne devrait plus
 être utilisée.</dd>
-<dt><a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/FunctionalInterface.html">FunctionalInterface</a></dt>
+<dt><a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/FunctionalInterface.html">FunctionalInterface</a></dt>
 <dd>Permet au compilateur de s’assurer que l’interface qui porte cette annotation
 peut être implémentée par une lambda (Cf. <a class="reference internal" href="les_lambdas.html#functionalinterface"><span class="std std-ref">le chapitre sur les lambdas</span></a>).</dd>
-<dt><a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Override.html">Override</a></dt>
+<dt><a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Override.html">Override</a></dt>
 <dd>Signale qu’une méthode est une redéfinition d’une méthode déclarée dans une classe
 parente. Cela permet au compilateur de signaler une erreur si ce n’est
 pas le cas.</dd>
-<dt><a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/SuppressWarnings.html">SuppressWarnings</a></dt>
+<dt><a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/SuppressWarnings.html">SuppressWarnings</a></dt>
 <dd>Permet de forcer le compilateur à ne plus émettre d’avertissement à la compilation
 dans certains cas.</dd>
-<dt><a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/SafeVarargs.html">SafeVarargs</a></dt>
+<dt><a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/SafeVarargs.html">SafeVarargs</a></dt>
 <dd>Cette annotation s’ajoute à une méthode acceptant un paramètre variable
 (<em>varargs</em>) dont le type est un générique. En effet, le principe de l’effacement
 de type (<em>type erasure</em>) dans la gestion des classes génériques fait qu’il
@@ -589,7 +589,7 @@ beaucoup d’autres annotations qui ne sont pas interprétées par le compilateu
 mais par le programme lui-même à l’exécution.</p>
 <p>Certaines annotations déclarent des attributs. Il est possible de spécifier
 entre parenthèses la valeur de chaque attribut d’une annotation. Par exemple,
-l’annotation <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/javax/xml/bind/annotation/XmlRootElement.html">XmlRootElement</a> permet d’indiquer qu’une classe peut être instanciée
+l’annotation <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/javax/xml/bind/annotation/XmlRootElement.html">XmlRootElement</a> permet d’indiquer qu’une classe peut être instanciée
 à partir d’un document XML et/ou qu’une de ses instances peut servir à générer
 un document XML. Cette annotation accepte deux attributs optionnels : <em>name</em>
 pour donner le nom de l’élément XML correspondant et <em>namespace</em> pour donner
@@ -648,7 +648,7 @@ On déclare une annotation avec le mot-clé <strong>&#64;interface</strong>.</p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Une annotation implémente implicitement l’interface <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/annotation/Annotation.html">Annotation</a> et rien d’autre !</p>
+<p class="last">Une annotation implémente implicitement l’interface <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/annotation/Annotation.html">Annotation</a> et rien d’autre !</p>
 </div>
 <p>La déclaration des attributs d’une annotation a une syntaxe très particulière :</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.cgi.udev</span><span class="o">;</span>
@@ -663,9 +663,9 @@ On déclare une annotation avec le mot-clé <strong>&#64;interface</strong>.</p>
 <p>Les attributs d’une annotation peuvent être uniquement :</p>
 <ul class="simple">
 <li>un type primitif,</li>
-<li>une chaîne de caractères (<a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">java.lang.String</a>),</li>
-<li>une référence de classe (<a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html">java.lang.Class</a>),</li>
-<li>une Annotation (<a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/annotation/Annotation.html">java.lang.annotation.Annotation</a>),</li>
+<li>une chaîne de caractères (<a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html">java.lang.String</a>),</li>
+<li>une référence de classe (<a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Class.html">java.lang.Class</a>),</li>
+<li>une Annotation (<a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/annotation/Annotation.html">java.lang.annotation.Annotation</a>),</li>
 <li>une <a class="reference internal" href="enumeration.html"><span class="doc">énumération</span></a>,</li>
 <li>un tableau à une dimension d’un de ces types.</li>
 </ul>
@@ -673,17 +673,17 @@ On déclare une annotation avec le mot-clé <strong>&#64;interface</strong>.</p>
 aucune valeur n’est donnée pour cet attribut lors de l’utilisation de cette annotation.</p>
 <p>La déclaration d’une annotation peut elle-même être annotée par :</p>
 <dl class="docutils">
-<dt><a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/annotation/Documented.html">Documented</a></dt>
+<dt><a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/annotation/Documented.html">Documented</a></dt>
 <dd>Pour indiquer si l’annotation doit apparaître dans la documentation générée
 par un outil comme <em>javadoc</em>.</dd>
-<dt><a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/annotation/Inherited.html">Inherited</a></dt>
+<dt><a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/annotation/Inherited.html">Inherited</a></dt>
 <dd>Pour indiquer que l’annotation doit être héritée par la classe fille.</dd>
-<dt><a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/annotation/Retention.html">Retention</a></dt>
+<dt><a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/annotation/Retention.html">Retention</a></dt>
 <dd>Pour préciser le niveau de rétention de l’annotation (Cf. ci-dessous).</dd>
-<dt><a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/annotation/Target.html">Target</a></dt>
+<dt><a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/annotation/Target.html">Target</a></dt>
 <dd>Pour indiquer quels types d’éléments peuvent utiliser l’annotation : classe,
 méthode, attribut…</dd>
-<dt><a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/annotation/Repeatable.html">Repeatable</a></dt>
+<dt><a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/annotation/Repeatable.html">Repeatable</a></dt>
 <dd>Pour indiquer qu’une annotation peut être déclarée plusieurs fois sur un même élément.</dd>
 </dl>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.cgi.udev</span><span class="o">;</span>
@@ -715,7 +715,7 @@ que sa rétention est de type <em>RUNTIME</em>.</p>
 <h2>Rétention d’une annotation<a class="headerlink" href="#retention-d-une-annotation" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Une annotation est définie par sa rétention, c’est-à-dire la façon dont une
 annotation sera conservée. La rétention est définie grâce à la méta-annotation
-<a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/annotation/Retention.html">Retention</a>. Les différentes rétentions d’annotation sont :</p>
+<a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/annotation/Retention.html">Retention</a>. Les différentes rétentions d’annotation sont :</p>
 <dl class="docutils">
 <dt><strong>SOURCE</strong></dt>
 <dd>L’annotation est accessible durant la compilation mais n’est pas intégrée dans
@@ -811,7 +811,7 @@ et qui va exécuter une à une les méthodes publiques ayant l’annotation <em>
 </pre></div>
 </div>
 <p>Grâce à l’API de réflexion, il est possible d’accéder à la représentation objet
-d’une classe avec la méthode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html#getClass--">getClass</a>.</p>
+d’une classe avec la méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Object.html#getClass()">getClass</a>.</p>
 <p>Finalement, nous pouvons écrire une pseudo-classe de tests :</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.cgi.udev</span><span class="o">;</span>
 
@@ -848,9 +848,9 @@ des annotations qui indiquent la correspondance en XML des classes et de leurs
 attributs.</p>
 <p>Parmi ces annotations, il y a :</p>
 <ul class="simple">
-<li><a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/javax/xml/bind/annotation/XmlRootElement.html">XmlRootElement</a></li>
-<li><a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/javax/xml/bind/annotation/XmlElement.html">XmlElement</a></li>
-<li><a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/javax/xml/bind/annotation/XmlAttribute.html">XmlAttribute</a></li>
+<li><a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/javax/xml/bind/annotation/XmlRootElement.html">XmlRootElement</a></li>
+<li><a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/javax/xml/bind/annotation/XmlElement.html">XmlElement</a></li>
+<li><a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/javax/xml/bind/annotation/XmlAttribute.html">XmlAttribute</a></li>
 </ul>
 <p>Par ailleurs, JAXB permet de créer des instances de <em>Marshaller</em> et de <em>Unmarshaller</em>.
 Le premier type permet de passer de Java à un document XML et le second type

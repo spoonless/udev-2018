@@ -293,6 +293,11 @@
 <li class="toctree-l2"><a class="reference internal" href="polymorphisme.html#le-principe-du-ouvert-ferme">Le principe du ouvert/fermé</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="classe_abstraite.html">Les classes abstraites</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classe_abstraite.html#declarer-une-classe-abstraite">Déclarer une classe abstraite</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classe_abstraite.html#declarer-une-methode-abstraite">Déclarer une méthode abstraite</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="la_classe_object.html">La classe Object</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="la_classe_object.html#la-methode-equals">La méthode equals</a></li>
 <li class="toctree-l2"><a class="reference internal" href="la_classe_object.html#la-methode-hashcode">La méthode hashCode</a></li>
@@ -325,11 +330,6 @@
 <li class="toctree-l2"><a class="reference internal" href="les_exceptions.html#exception-cause">Exception cause</a></li>
 <li class="toctree-l2"><a class="reference internal" href="les_exceptions.html#les-erreurs-et-les-exceptions-runtime">Les erreurs et les exceptions runtime</a></li>
 <li class="toctree-l2"><a class="reference internal" href="les_exceptions.html#choix-entre-checked-et-unchecked">Choix entre checked et unchecked</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="classe_abstraite.html">Les classes abstraites</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="classe_abstraite.html#declarer-une-classe-abstraite">Déclarer une classe abstraite</a></li>
-<li class="toctree-l2"><a class="reference internal" href="classe_abstraite.html#declarer-une-methode-abstraite">Déclarer une méthode abstraite</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="enumeration.html">Les énumérations</a><ul>
@@ -633,7 +633,7 @@ de zéro.</p>
 </div>
 <p class="last">Par contre, donner une taille négative est autorisé par le compilateur
 mais aboutira à une erreur d’exécution avec une exception de type
-<a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/NegativeArraySizeException.html">java.lang.NegativeArraySizeException</a>.</p>
+<a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/NegativeArraySizeException.html">java.lang.NegativeArraySizeException</a>.</p>
 </div>
 </div>
 <div class="section" id="acces-aux-elements-d-un-tableau">
@@ -671,7 +671,7 @@ un <strong>for</strong> amélioré.</p>
 Par contre, il n’est pas possible avec un <strong>for</strong> amélioré de connaître l’indice
 de l’élément courant.</p>
 <p>Si le programme tente d’accéder à un indice de tableau trop grand (ou un indice
-négatif), une erreur de type <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/ArrayIndexOutOfBoundsException.html">java.lang.ArrayIndexOutOfBoundsException</a> survient.</p>
+négatif), une erreur de type <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/ArrayIndexOutOfBoundsException.html">java.lang.ArrayIndexOutOfBoundsException</a> survient.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">[]</span> <span class="n">tableau</span> <span class="o">=</span> <span class="o">{</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="mi">5</span><span class="o">};</span>
 <span class="hll"><span class="kt">int</span> <span class="n">value</span> <span class="o">=</span> <span class="n">tableau</span><span class="o">[</span><span class="mi">1000</span><span class="o">];</span> <span class="c1">// ERREUR À L&#39;EXÉCUTION</span>
 </span></pre></div>
@@ -723,7 +723,7 @@ objet en chaîne de caractères affiche par défaut son type suivi du caractère
 correspond au nom de sa classe. Mais le type d’un tableau est noté <strong>[</strong> suivi
 du type des éléments du tableau (<strong>I</strong> indique le type primitif <strong>int</strong>).</p>
 <p>Pour obtenir une chaîne de caractères donnant le contenu du tableau, il faut
-utiliser la classe outil <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Arrays.html">java.util.Arrays</a> qui contient des méthodes de classe
+utiliser la classe outil <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Arrays.html">java.util.Arrays</a> qui contient des méthodes de classe
 <strong>toString</strong> adaptées pour les tableaux.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">[]</span> <span class="n">tableau</span> <span class="o">=</span> <span class="o">{</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="mi">5</span><span class="o">};</span>
 <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">java</span><span class="o">.</span><span class="na">util</span><span class="o">.</span><span class="na">Arrays</span><span class="o">.</span><span class="na">toString</span><span class="o">(</span><span class="n">tableau</span><span class="o">));</span>
@@ -732,7 +732,7 @@ utiliser la classe outil <a class="reference external" href="https://docs.oracle
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">Pour les tableaux multi-dimensionnels, vous pouvez utiliser la méthode
-<a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Arrays.html#deepToString-java.lang.Object:A-">java.util.Arrays.deepToString(Object[])</a>.</p>
+<a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Arrays.html#deepToString(java.lang.Object[])">java.util.Arrays.deepToString(Object[])</a>.</p>
 </div>
 </div>
 <div class="section" id="egalite-de-deux-tableaux">
@@ -758,7 +758,7 @@ le même comportement que l’utilisation de l’opérateur <strong>==</strong>.
 <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">tableau1</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">tableau2</span><span class="o">));</span> <span class="c1">// false</span>
 </pre></div>
 </div>
-<p>La classe outil <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Arrays.html">java.util.Arrays</a> fournit des méthodes de classe <strong>equals</strong>
+<p>La classe outil <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Arrays.html">java.util.Arrays</a> fournit des méthodes de classe <strong>equals</strong>
 pour comparer des tableaux en comparant un à un leurs éléments.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">[]</span> <span class="n">tableau1</span> <span class="o">=</span> <span class="o">{</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="mi">5</span><span class="o">};</span>
 <span class="kt">int</span><span class="o">[]</span> <span class="n">tableau2</span> <span class="o">=</span> <span class="o">{</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="mi">5</span><span class="o">};</span>
@@ -775,7 +775,7 @@ des élements se fait en appelant la méthode <strong>equals</strong> de chaque 
 <span class="o">}</span>
 </pre></div>
 </div>
-<p>Par exemple, la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">java.lang.String</a> fournit une implémentation de la méthode
+<p>Par exemple, la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html">java.lang.String</a> fournit une implémentation de la méthode
 <strong>equals</strong>. Il est donc possible de comparer des tableaux de chaînes de caractères.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span><span class="o">[]</span> <span class="n">tableau1</span> <span class="o">=</span> <span class="o">{</span><span class="s">&quot;premier&quot;</span><span class="o">,</span> <span class="s">&quot;deuxième&quot;</span><span class="o">,</span> <span class="s">&quot;troisième&quot;</span><span class="o">,</span> <span class="s">&quot;quatrième&quot;</span><span class="o">};</span>
 <span class="n">String</span><span class="o">[]</span> <span class="n">tableau2</span> <span class="o">=</span> <span class="o">{</span><span class="s">&quot;premier&quot;</span><span class="o">,</span> <span class="s">&quot;deuxième&quot;</span><span class="o">,</span> <span class="s">&quot;troisième&quot;</span><span class="o">,</span> <span class="s">&quot;quatrième&quot;</span><span class="o">};</span>
@@ -786,15 +786,15 @@ des élements se fait en appelant la méthode <strong>equals</strong> de chaque 
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">Pour les tableaux multi-dimensionnels, vous pouvez utiliser la méthode
-<a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Arrays.html#deepEquals-java.lang.Object:A-java.lang.Object:A-">java.util.Arrays.deepEquals(Object[], Object[])</a></p>
+<a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Arrays.html#deepEquals(java.lang.Object[],java.lang.Object[])">java.util.Arrays.deepEquals(Object[], Object[])</a></p>
 </div>
 </div>
 <div class="section" id="tri-recherche">
 <h2>Tri &amp; recherche<a class="headerlink" href="#tri-recherche" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Le tri et la recherche sont des opérations courantes sur des tableaux de valeurs.
-La classe outil <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Arrays.html">java.util.Arrays</a> offrent un ensemble de méthodes de classe pour
+La classe outil <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Arrays.html">java.util.Arrays</a> offrent un ensemble de méthodes de classe pour
 nous aider dans ces opérations.</p>
-<p>Tout d’abord, <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Arrays.html">java.util.Arrays</a> fournit plusieurs méthodes <strong>sort</strong>. Celles
+<p>Tout d’abord, <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Arrays.html">java.util.Arrays</a> fournit plusieurs méthodes <strong>sort</strong>. Celles
 prenant un tableau de primitives en paramètre trient selon l’ordre naturel
 des éléments.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">[]</span> <span class="n">tableau</span> <span class="o">=</span> <span class="o">{</span><span class="mi">1</span><span class="o">,</span> <span class="mi">5</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">2</span><span class="o">};</span>
@@ -811,10 +811,10 @@ Par exemple, il est possible de trier des tableaux de chaînes de caractères.</
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">La méthode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Arrays.html#sort-java.lang.Object:A-">java.util.Arrays.sort(Object[])</a> permet de trier des tableaux
-d’objets dont la classe implémente l’interface <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Comparable.html">java.lang.Comparable</a>.</p>
+<p class="last">La méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Arrays.html#sort(java.lang.Object[])">java.util.Arrays.sort(Object[])</a> permet de trier des tableaux
+d’objets dont la classe implémente l’interface <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Comparable.html">java.lang.Comparable</a>.</p>
 </div>
-<p><a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Arrays.html">java.util.Arrays</a> fournit des méthodes <strong>binarySearch</strong> qui implémentent l’algorithme
+<p><a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Arrays.html">java.util.Arrays</a> fournit des méthodes <strong>binarySearch</strong> qui implémentent l’algorithme
 de recherche binaire. Ces méthodes attendent comme paramètres un tableau et une valeur
 compatible avec le type des éléments du tableau. Ces méthodes retournent l’index
 de la valeur trouvée. Si la valeur n’est pas dans le tableau, alors ces méthodes
@@ -834,7 +834,7 @@ trié.</p>
 <div class="section" id="copie-d-un-tableau">
 <h2>Copie d’un tableau<a class="headerlink" href="#copie-d-un-tableau" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Comme il n’est pas possible de modifier la taille d’un tableau, la copie peut
-s’avérer une opération utile. <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Arrays.html">java.util.Arrays</a> fournit des méthodes de classe
+s’avérer une opération utile. <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Arrays.html">java.util.Arrays</a> fournit des méthodes de classe
 <em>copyOf</em> et <em>copyOfRange</em> pour réaliser des copies de tableaux.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">[]</span> <span class="n">tableau</span> <span class="o">=</span> <span class="o">{</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="mi">5</span><span class="o">};</span>
 
@@ -851,7 +851,7 @@ s’avérer une opération utile. <a class="reference external" href="https://do
 <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">java</span><span class="o">.</span><span class="na">util</span><span class="o">.</span><span class="na">Arrays</span><span class="o">.</span><span class="na">toString</span><span class="o">(</span><span class="n">nouveauTableau</span><span class="o">));</span> <span class="c1">// [3]</span>
 </pre></div>
 </div>
-<p>Pour réaliser une copie, il existe également la méthode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/System.html#arraycopy-java.lang.Object-int-java.lang.Object-int-int-">java.lang.System.arraycopy</a>.
+<p>Pour réaliser une copie, il existe également la méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/System.html#arraycopy(java.lang.Object,int,java.lang.Object,int,int)">java.lang.System.arraycopy</a>.
 Contrairement aux précédentes, cette méthode ne crée pas de nouveau tableau,
 elle copie d’un tableau existant vers un autre tableau existant.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">[]</span> <span class="n">tableau</span> <span class="o">=</span> <span class="o">{</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="mi">5</span><span class="o">};</span>
@@ -885,13 +885,13 @@ du langage. Ainsi on ne peut mettre dans un tableau que des valeurs qui peuvent
 <span class="n">Number</span><span class="o">[]</span> <span class="n">tableauNumber</span> <span class="o">=</span> <span class="n">tableau</span><span class="o">;</span>
 </pre></div>
 </div>
-<p>Pour l’exemple précédent, il faut se rappeler la classe enveloppe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html">java.lang.Integer</a>
-hérite de la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Number.html">java.lang.Number</a>. Cependant, un tableau conserve son type
+<p>Pour l’exemple précédent, il faut se rappeler la classe enveloppe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Integer.html">java.lang.Integer</a>
+hérite de la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Number.html">java.lang.Number</a>. Cependant, un tableau conserve son type
 d’origine : si on affecte une valeur dans un tableau, elle doit non seulement
 être compatible avec le type de la variable (pour passer la compilation)
 mais aussi être compatible avec le type de tableau à l’exécution.
 Si cette dernière condition n’est pas remplie, on obtiendra une erreur de type
-<a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/ArrayStoreException.html">java.lang.ArrayStoreException</a> au moment de l’exécution.</p>
+<a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/ArrayStoreException.html">java.lang.ArrayStoreException</a> au moment de l’exécution.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Integer</span><span class="o">[]</span> <span class="n">tableau</span> <span class="o">=</span> <span class="o">{</span><span class="mi">1</span><span class="o">};</span>
 <span class="n">Number</span><span class="o">[]</span> <span class="n">tableauNumber</span> <span class="o">=</span> <span class="n">tableau</span><span class="o">;</span>
 <span class="hll"><span class="n">tableauNumber</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">=</span> <span class="n">Float</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="mf">2.3f</span><span class="o">);</span> <span class="c1">// ERREUR À L&#39;EXÉCUTION</span>
@@ -901,7 +901,7 @@ Si cette dernière condition n’est pas remplie, on obtiendra une erreur de typ
 <div class="section" id="conversion-d-un-tableau-en-liste">
 <h2>Conversion d’un tableau en liste<a class="headerlink" href="#conversion-d-un-tableau-en-liste" title="Lien permanent vers ce titre">¶</a></h2>
 <p>La plupart des API Java utilisent des <a class="reference internal" href="les_collections.html"><span class="doc">collections</span></a> plutôt que des tableaux.
-Pour transformer un tableau d’objets en liste, on utilise la méthode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Arrays.html#asList-T...-">java.util.Arrays.asList</a>.
+Pour transformer un tableau d’objets en liste, on utilise la méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Arrays.html#asList(T...)">java.util.Arrays.asList</a>.
 La liste obtenue possède une taille fixe. Par contre le contenu de la liste est modifiable,
 et toute modification des éléments de cette liste sera répercutée sur le tableau.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span><span class="o">[]</span> <span class="n">tableau</span> <span class="o">=</span> <span class="o">{</span><span class="s">&quot;Bonjour&quot;</span><span class="o">,</span> <span class="s">&quot;le&quot;</span><span class="o">,</span> <span class="s">&quot;monde&quot;</span><span class="o">};</span>

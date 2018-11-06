@@ -32,7 +32,7 @@
   <link rel="stylesheet" href="../_static/custom_rtd_theme.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Recherche" href="../search.html" />
-    <link rel="next" title="La classe Object" href="la_classe_object.html" />
+    <link rel="next" title="Les classes abstraites" href="classe_abstraite.html" />
     <link rel="prev" title="Les relations entre objets" href="relations_entre_objets.html" /> 
 
   
@@ -293,6 +293,11 @@
 <li class="toctree-l2"><a class="reference internal" href="#le-principe-du-ouvert-ferme">Le principe du ouvert/fermé</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="classe_abstraite.html">Les classes abstraites</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classe_abstraite.html#declarer-une-classe-abstraite">Déclarer une classe abstraite</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classe_abstraite.html#declarer-une-methode-abstraite">Déclarer une méthode abstraite</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="la_classe_object.html">La classe Object</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="la_classe_object.html#la-methode-equals">La méthode equals</a></li>
 <li class="toctree-l2"><a class="reference internal" href="la_classe_object.html#la-methode-hashcode">La méthode hashCode</a></li>
@@ -325,11 +330,6 @@
 <li class="toctree-l2"><a class="reference internal" href="les_exceptions.html#exception-cause">Exception cause</a></li>
 <li class="toctree-l2"><a class="reference internal" href="les_exceptions.html#les-erreurs-et-les-exceptions-runtime">Les erreurs et les exceptions runtime</a></li>
 <li class="toctree-l2"><a class="reference internal" href="les_exceptions.html#choix-entre-checked-et-unchecked">Choix entre checked et unchecked</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="classe_abstraite.html">Les classes abstraites</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="classe_abstraite.html#declarer-une-classe-abstraite">Déclarer une classe abstraite</a></li>
-<li class="toctree-l2"><a class="reference internal" href="classe_abstraite.html#declarer-une-methode-abstraite">Déclarer une méthode abstraite</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="enumeration.html">Les énumérations</a><ul>
@@ -516,7 +516,7 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="la_classe_object.html" class="btn btn-neutral float-right" title="La classe Object" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="classe_abstraite.html" class="btn btn-neutral float-right" title="Les classes abstraites" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="relations_entre_objets.html" class="btn btn-neutral" title="Les relations entre objets" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
@@ -843,7 +843,7 @@ annotations servent à ajouter une information sur une classe, un attribut,
 une méthode, un paramètre ou une variable. Une annotation apporte une information
 au moment de la compilation, du chargement de la classe dans la JVM ou lors
 de l’exécution du code. Le langage Java proprement dit utilise relativement peu les annotations.
-On trouve cependant l’annotation <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Override.html">&#64;Override</a> qui est très utile pour le polymorphisme.
+On trouve cependant l’annotation <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Override.html">&#64;Override</a> qui est très utile pour le polymorphisme.
 Cette annotation s’ajoute au début de la signature d’une méthode pour préciser
 que cette méthode est une redéfinition d’une méthode héritée. Cela permet au
 compilateur de vérifier que la signature de la méthode correspond bien à une
@@ -941,8 +941,8 @@ méthode de classe qui a la même signature dans les classes qui en héritent.</
 <p>Les constructeurs sont des méthodes particulières qu’il n’est pas possible
 de redéfinir. Les constructeurs créent une séquence d’appel qui garantit
 qu’ils seront exécutés en commençant par la classe la plus haute dans la hiérarchie
-d’héritage. Puisque toutes les classes Java héritent de la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html">Object</a>, cela
-signifie que le constructeur de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html">Object</a> est toujours appelé en premier.</p>
+d’héritage. Puisque toutes les classes Java héritent de la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Object.html">Object</a>, cela
+signifie que le constructeur de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Object.html">Object</a> est toujours appelé en premier.</p>
 <p>Cependant un constructeur peut appeler une méthode et dans ce cas le polymorphisme
 s’applique. Comme les constructeurs sont appelés dans l’ordre
 de la hiérarchie d’héritage, cela signifie qu’un constructeur invoque
@@ -1000,13 +1000,13 @@ avec une vitesse minimale :</p>
 </pre></div>
 </div>
 <p>Le constructeur de <em>VehiculeMotorise</em> commence par appeler le constructeur
-de <em>Vehicule</em>. Ce dernier appelle implicitement le constructeur de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html">Object</a> (qui
+de <em>Vehicule</em>. Ce dernier appelle implicitement le constructeur de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Object.html">Object</a> (qui
 ne fait rien) puis il initialise l’attribut <em>marque</em> et il appelle la méthode
 <em>accelerer</em>. Comme cette dernière est redéfinie, c’est en fait l’implémentation
 fournie par <em>VehiculeMotorise</em> qui est appelée. Cette implémentation commence par appeler
 une méthode sur l’attribut <em>moteur</em> qui n’a pas encore été initialisé. Donc sa
 valeur est nulle et donc la création d’une instance de <em>VehiculeMotorise</em>
-échoue systématiquement avec une erreur du type <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/NullPointerException.html">NullPointerException</a>.</p>
+échoue systématiquement avec une erreur du type <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/NullPointerException.html">NullPointerException</a>.</p>
 <p>On voit par cet exemple que l’appel de méthode dans un constructeur peut amener
 à des situations complexes. Il est fortement recommandé d’appeler dans un constructeur
 des méthodes dont le comportement ne peut pas être modifié par la redéfinition : soit
@@ -1092,7 +1092,7 @@ interdire de modifier le comportement d’une classe, on peut déclarer ses attr
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="la_classe_object.html" class="btn btn-neutral float-right" title="La classe Object" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="classe_abstraite.html" class="btn btn-neutral float-right" title="Les classes abstraites" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="relations_entre_objets.html" class="btn btn-neutral" title="Les relations entre objets" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
