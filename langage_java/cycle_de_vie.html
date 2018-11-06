@@ -817,9 +817,7 @@ de ces méthodes est correctement initialisé avant par le constructeur.</p>
 objets. Parfois, ces objets peuvent eux-même avoir une représentation interne complexe
 qui nécessite des références vers d’autres objets… Par exemple, une classe
 <em>Voiture</em> peut nécessiter une instance d’une classe <em>Moteur</em> :</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.cgi.udev</span><span class="o">;</span>
-
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Moteur</span> <span class="o">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Moteur</span> <span class="o">{</span>
 
   <span class="kd">private</span> <span class="kt">int</span> <span class="n">nbCylindres</span><span class="o">;</span>
   <span class="kd">private</span> <span class="kt">int</span> <span class="n">nbSoupapesParCylindre</span><span class="o">;</span>
@@ -837,9 +835,7 @@ qui nécessite des références vers d’autres objets… Par exemple, une class
 </div>
 <p>À partir de la classe <em>Moteur</em> ci-dessus, nous pouvons fournir l’implémentation
 suivante de la classe <em>Voiture</em> :</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.cgi.udev</span><span class="o">;</span>
-
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Voiture</span> <span class="o">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Voiture</span> <span class="o">{</span>
 
   <span class="kd">private</span> <span class="n">String</span> <span class="n">marque</span><span class="o">;</span>
   <span class="kd">private</span> <span class="n">Moteur</span> <span class="n">moteur</span><span class="o">;</span>
