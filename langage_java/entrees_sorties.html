@@ -531,19 +531,19 @@
   <div class="section" id="les-entrees-sorties">
 <h1>Les entrées/sorties<a class="headerlink" href="#les-entrees-sorties" title="Lien permanent vers ce titre">¶</a></h1>
 <p>En Java les entrées/sorties sont représentées par des objets de type
-<a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/InputStream.html">java.io.InputStream</a> <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/Reader.html">java.io.Reader</a>, <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/OutputStream.html">java.io.OutputStream</a> et <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/Writer.html">java.io.Writer</a>.
-Le package <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/package-summary.html">java.io</a> définit
+<a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/InputStream.html">java.io.InputStream</a> <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/Reader.html">java.io.Reader</a>, <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/OutputStream.html">java.io.OutputStream</a> et <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/Writer.html">java.io.Writer</a>.
+Le package <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/package-summary.html">java.io</a> définit
 un ensemble de classes qui vont pouvoir être utilisées conjointement avec ces
 quatre classes abstraites pour réaliser des traitements plus complexes.</p>
 <div class="section" id="inputstream-et-classes-concretes">
 <h2>InputStream et classes concrètes<a class="headerlink" href="#inputstream-et-classes-concretes" title="Lien permanent vers ce titre">¶</a></h2>
-<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/InputStream.html">InputStream</a> est une <a class="reference internal" href="classe_abstraite.html"><span class="doc">classe abstraite</span></a> qui
-représente un flux d’entrée de données binaires. Elle déclare des méthodes <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/InputStream.html#read()">read</a>
+<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/InputStream.html">InputStream</a> est une <a class="reference internal" href="classe_abstraite.html"><span class="doc">classe abstraite</span></a> qui
+représente un flux d’entrée de données binaires. Elle déclare des méthodes <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/InputStream.html#read--">read</a>
 qui permettent de lire des données octet par octet ou bien de les copier
 dans un tableau. Ces méthodes retournent le nombre de caractères lus ou -1 pour
 signaler la fin du flux. Il existe plusieurs classes qui en fournissent une
 implémentation concrète.</p>
-<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/ByteArrayInputStream.html">ByteArrayInputStream</a> permet d’ouvrir un flux de lecture binaire sur
+<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/ByteArrayInputStream.html">ByteArrayInputStream</a> permet d’ouvrir un flux de lecture binaire sur
 un tableau de <strong>byte</strong>.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.cgi.udev.io</span><span class="o">;</span>
 
@@ -564,7 +564,7 @@ un tableau de <strong>byte</strong>.</p>
 <span class="o">}</span>
 </pre></div>
 </div>
-<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/FileInputStream.html">FileInputStream</a> permet d’ouvrir un flux de lecture binaire sur un fichier.</p>
+<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/FileInputStream.html">FileInputStream</a> permet d’ouvrir un flux de lecture binaire sur un fichier.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.cgi.udev.io</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">java.io.FileInputStream</span><span class="o">;</span>
@@ -588,7 +588,7 @@ un tableau de <strong>byte</strong>.</p>
 <span class="o">}</span>
 </pre></div>
 </div>
-<p>Dans l’exemple ci-dessus, on utilise la méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/InputStream.html#read(byte[])">InputStream.read</a> qui prend un
+<p>Dans l’exemple ci-dessus, on utilise la méthode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/InputStream.html#read-byte:A-">InputStream.read</a> qui prend un
 tableau d’octets en paramètre. Cela est plus efficace que de lire le fichier
 octet par octet.</p>
 <div class="admonition caution">
@@ -597,7 +597,7 @@ octet par octet.</p>
 attachés à des ressources système (descripteurs de fichier ou de socket). Il
 est donc impératif de fermer ces flux en appelant leur méthode <strong>close</strong>
 lorsqu’ils ne sont plus nécessaires pour libérer les ressources système associées.
-Comme toutes les méthodes d’un flux sont susceptibles de jeter une <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/IOException.html">IOException</a>,
+Comme toutes les méthodes d’un flux sont susceptibles de jeter une <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html">IOException</a>,
 on utilise généralement le bloc <strong>finally</strong> pour appeler la méthode <strong>close</strong>.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">InputStream</span> <span class="n">stream</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FileInputStream</span><span class="o">(</span><span class="s">&quot;chemin/vers/mon/fichier.bin&quot;</span><span class="o">);</span>
 <span class="k">try</span> <span class="o">{</span>
@@ -612,7 +612,7 @@ on utilise généralement le bloc <strong>finally</strong> pour appeler la méth
 </pre></div>
 </div>
 <p>Toutes les classes qui représentent
-des flux d’entrée ou de sortie implémentent l’interface <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/Closeable.html">Closeable</a>. Cela
+des flux d’entrée ou de sortie implémentent l’interface <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/Closeable.html">Closeable</a>. Cela
 signifie qu’elles peuvent être utilisées avec la syntaxe <em>try-with-resources</em> et
 ainsi faciliter leur gestion en garantissant une fermeture automatique.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">try</span> <span class="o">(</span><span class="n">InputStream</span> <span class="n">stream</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FileInputStream</span><span class="o">(</span><span class="s">&quot;/chemin/vers/mon/fichier.bin&quot;</span><span class="o">))</span> <span class="o">{</span>
@@ -624,7 +624,7 @@ ainsi faciliter leur gestion en garantissant une fermeture automatique.</p>
 <span class="o">}</span>
 </pre></div>
 </div>
-<p class="last">Les flux <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/System.html#in">System.in</a>, <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/System.html#out">System.out</a> et <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/System.html#err">System.err</a> qui permettent de lire ou d’écrire
+<p class="last">Les flux <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/System.html#in">System.in</a>, <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/System.html#out">System.out</a> et <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/System.html#err">System.err</a> qui permettent de lire ou d’écrire
 sur la console sont des cas particuliers. Ils sont ouverts au lancement de l’application
 et seront automatiquement fermés à la fin. Il est néanmoins possible de fermer
 explicitement ces flux si on veut détacher l’application du <em>shell</em> à partir
@@ -633,16 +633,16 @@ duquel elle a été lancée.</p>
 </div>
 <div class="section" id="outputstream-et-classes-concretes">
 <h2>OutputStream et classes concrètes<a class="headerlink" href="#outputstream-et-classes-concretes" title="Lien permanent vers ce titre">¶</a></h2>
-<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/OutputStream.html">OutputStream</a> est une <a class="reference internal" href="classe_abstraite.html"><span class="doc">classe abstraite</span></a> qui
-représente un flux de sortie de données binaires. Elle déclare des méthodes <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/OutputStream.html#write(byte[])">write</a>
+<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/OutputStream.html">OutputStream</a> est une <a class="reference internal" href="classe_abstraite.html"><span class="doc">classe abstraite</span></a> qui
+représente un flux de sortie de données binaires. Elle déclare des méthodes <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/OutputStream.html#write-byte:A-">write</a>
 qui permettent d’écrire des données octet par octet ou bien de les écrire
-depuis un tableau. La classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/OutputStream.html">OutputStream</a> fournit également la méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/OutputStream.html#flush()">flush</a>
+depuis un tableau. La classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/OutputStream.html">OutputStream</a> fournit également la méthode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/OutputStream.html#flush--">flush</a>
 pour forcer l’écriture de la zone tampon (s’il existe une zone tampon sinon un
 appel à cette méthode est sans effet).</p>
 <p>Il existe plusieurs classes qui en fournissent une implémentation concrète.</p>
-<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/ByteArrayOutputStream.html">ByteArrayOutputStream</a> permet d’ouvrir un flux d’écriture binaire en
+<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/ByteArrayOutputStream.html">ByteArrayOutputStream</a> permet d’ouvrir un flux d’écriture binaire en
 mémoire. Le contenu peut ensuite être récupéré sous la forme d’un tableau d’octets
-grâce à la méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/ByteArrayOutputStream.html#toByteArray()">toByteArray</a>.</p>
+grâce à la méthode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/ByteArrayOutputStream.html#toByteArray--">toByteArray</a>.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.cgi.udev.io</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">java.io.ByteArrayOutputStream</span><span class="o">;</span>
@@ -664,7 +664,7 @@ grâce à la méthode <a class="reference external" href="https://docs.oracle.co
 <span class="o">}</span>
 </pre></div>
 </div>
-<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/FileOutputStream.html">FileOutputStream</a> permet d’ouvrir un flux d’écriture binaire sur un fichier.</p>
+<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/FileOutputStream.html">FileOutputStream</a> permet d’ouvrir un flux d’écriture binaire sur un fichier.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.cgi.udev.io</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">java.io.FileOutputStream</span><span class="o">;</span>
@@ -684,12 +684,12 @@ grâce à la méthode <a class="reference external" href="https://docs.oracle.co
 <span class="o">}</span>
 </pre></div>
 </div>
-<p>Dans l’exemple ci-dessus, on utilise la méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/OutputStream.html#write(byte[])">OutputStream.write</a> qui prend un
+<p>Dans l’exemple ci-dessus, on utilise la méthode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/OutputStream.html#write-byte:A-">OutputStream.write</a> qui prend un
 tableau d’octets en paramètre. Cela est plus efficace que d’écrire dans le fichier
 octet par octet.</p>
 <div class="admonition caution">
 <p class="first admonition-title">Prudence</p>
-<p class="last">Comme cela a été signalé ci-dessus pour les <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/InputStream.html">InputStream</a>, les flux d’écriture
+<p class="last">Comme cela a été signalé ci-dessus pour les <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/InputStream.html">InputStream</a>, les flux d’écriture
 qui ne correspondent pas à des zones mémoire (fichiers, sockets…) doivent
 impérativement être fermés lorsqu’ils ne sont plus utilisés pour libérer les
 ressources système associées.</p>
@@ -697,19 +697,19 @@ ressources système associées.</p>
 </div>
 <div class="section" id="flux-orientes-caracteres">
 <h2>Flux orientés caractères<a class="headerlink" href="#flux-orientes-caracteres" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Le package <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/package-summary.html">java.io</a> contient un ensemble de classes qui permettent de manipuler
+<p>Le package <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/package-summary.html">java.io</a> contient un ensemble de classes qui permettent de manipuler
 des flux caractères et donc du texte. Toutes les classes qui permettent d’écrire
-dans un flux de caractères héritent de la classe abstraite <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/Writer.html">Writer</a> et toutes
+dans un flux de caractères héritent de la classe abstraite <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/Writer.html">Writer</a> et toutes
 les classes qui permettent de lire un flux de caractères héritent de la classe
-abstraite <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/Reader.html">Reader</a>.</p>
+abstraite <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/Reader.html">Reader</a>.</p>
 </div>
 <div class="section" id="reader-et-classes-concretes">
 <h2>Reader et classes concrètes<a class="headerlink" href="#reader-et-classes-concretes" title="Lien permanent vers ce titre">¶</a></h2>
-<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/Reader.html">Reader</a> est une <a class="reference internal" href="classe_abstraite.html"><span class="doc">classe abstraite</span></a> qui permet de
-lire des flux de caractères. Comme <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/InputStream.html">InputStream</a>, la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/Reader.html">Reader</a> fournit des méthodes
-<a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/InputStream.html#read()">read</a> mais qui acceptent en paramètre des caractères. Il existe
+<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/Reader.html">Reader</a> est une <a class="reference internal" href="classe_abstraite.html"><span class="doc">classe abstraite</span></a> qui permet de
+lire des flux de caractères. Comme <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/InputStream.html">InputStream</a>, la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/Reader.html">Reader</a> fournit des méthodes
+<a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/InputStream.html#read--">read</a> mais qui acceptent en paramètre des caractères. Il existe
 plusieurs classes qui en fournissent une implémentation concrète.</p>
-<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/StringReader.html">StringReader</a> permet de parcourir une chaîne de caractères sous la forme
+<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/StringReader.html">StringReader</a> permet de parcourir une chaîne de caractères sous la forme
 d’un flux de caractères.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.cgi.udev.io</span><span class="o">;</span>
 
@@ -733,12 +733,12 @@ d’un flux de caractères.</p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Il n’est pas nécessaire d’utiliser un <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/StringReader.html">StringReader</a> pour parcourir une chaîne
+<p class="last">Il n’est pas nécessaire d’utiliser un <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/StringReader.html">StringReader</a> pour parcourir une chaîne
 de caractères. Par contre, cette classe est très pratique si une partie
-d’un programme réalise des traitements en utilisant une instance de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/Reader.html">Reader</a>.
-Le principe de substitution peut s’appliquer en passant une instance de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/StringReader.html">StringReader</a>.</p>
+d’un programme réalise des traitements en utilisant une instance de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/Reader.html">Reader</a>.
+Le principe de substitution peut s’appliquer en passant une instance de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/StringReader.html">StringReader</a>.</p>
 </div>
-<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/FileReader.html">FileReader</a> permet de lire le contenu d’un fichier texte.</p>
+<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/FileReader.html">FileReader</a> permet de lire le contenu d’un fichier texte.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.cgi.udev.io</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">java.io.FileReader</span><span class="o">;</span>
@@ -764,7 +764,7 @@ Le principe de substitution peut s’appliquer en passant une instance de <a cla
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">La classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/FileReader.html">FileReader</a> ne permet pas de positionner l’encodage de caractères
+<p class="last">La classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/FileReader.html">FileReader</a> ne permet pas de positionner l’encodage de caractères
 (<em>charset</em>) utilisé dans le fichier. Elle utilise l’encodage par défaut de la
 JVM qui est dépendant du système. Dans la pratique l’usage de cette classe
 est donc assez limité.</p>
@@ -772,13 +772,13 @@ est donc assez limité.</p>
 </div>
 <div class="section" id="writer-et-classes-concretes">
 <h2>Writer et classes concrètes<a class="headerlink" href="#writer-et-classes-concretes" title="Lien permanent vers ce titre">¶</a></h2>
-<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/Writer.html">Writer</a> est une <a class="reference internal" href="classe_abstraite.html"><span class="doc">classe abstraite</span></a> qui permet
-d’écrire des flux de caractères. Comme <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/OutputStream.html">OutputStream</a>, la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/Writer.html">Writer</a> fournit des méthodes
-<a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/OutputStream.html#write(byte[])">write</a> mais qui acceptent en paramètre des caractères. Elle fournit également
-des méthodes <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/Writer.html#append(char)">append</a> qui réalisent la même type d’opérations et qui retournent l’instance du <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/Writer.html">Writer</a>
+<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/Writer.html">Writer</a> est une <a class="reference internal" href="classe_abstraite.html"><span class="doc">classe abstraite</span></a> qui permet
+d’écrire des flux de caractères. Comme <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/OutputStream.html">OutputStream</a>, la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/Writer.html">Writer</a> fournit des méthodes
+<a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/OutputStream.html#write-byte:A-">write</a> mais qui acceptent en paramètre des caractères. Elle fournit également
+des méthodes <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/Writer.html#append-char-">append</a> qui réalisent la même type d’opérations et qui retournent l’instance du <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/Writer.html">Writer</a>
 afin de pouvoir chaîner les appels. Il existe plusieurs classes qui en
 fournissent une implémentation concrète.</p>
-<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/StringWriter.html">StringWriter</a> permet d’écrire dans un flux caractères pour ensuite produire
+<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/StringWriter.html">StringWriter</a> permet d’écrire dans un flux caractères pour ensuite produire
 une chaîne de caractères.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.cgi.udev.io</span><span class="o">;</span>
 
@@ -804,7 +804,7 @@ une chaîne de caractères.</p>
 <span class="o">}</span>
 </pre></div>
 </div>
-<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/FileWriter.html">FileWriter</a> permet d’écrire un flux de caractères dans un fichier.</p>
+<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/FileWriter.html">FileWriter</a> permet d’écrire un flux de caractères dans un fichier.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.cgi.udev.io</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">java.io.FileWriter</span><span class="o">;</span>
@@ -826,12 +826,12 @@ une chaîne de caractères.</p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Le booléen passé en second paramètre du constructeur de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/FileWriter.html">FileWriter</a> permet
+<p class="last">Le booléen passé en second paramètre du constructeur de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/FileWriter.html">FileWriter</a> permet
 de spécifier si le fichier doit être ouvert en ajout (<em>append</em>).</p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">La classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/FileWriter.html">FileWriter</a> ne permet pas de positionner l’encodage de caractères
+<p class="last">La classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/FileWriter.html">FileWriter</a> ne permet pas de positionner l’encodage de caractères
 (<em>charset</em>) utilisé pour écrire dans le fichier. Elle utilise l’encodage par
 défaut de la JVM qui est dépendant du système. Dans la pratique l’usage de
 cette classe est donc assez limité.</p>
@@ -839,13 +839,13 @@ cette classe est donc assez limité.</p>
 </div>
 <div class="section" id="les-decorateurs-de-flux">
 <h2>Les décorateurs de flux<a class="headerlink" href="#les-decorateurs-de-flux" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Le package <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/package-summary.html">java.io</a> fournit un ensemble de classes qui agissent comme
-des <a class="reference external" href="https://en.wikipedia.org/wiki/Decorator_pattern">décorateurs</a> pour des instances de type <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/InputStream.html">InputStream</a>, <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/Reader.html">Reader</a>, <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/OutputStream.html">OutputStream</a>
-ou <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/Writer.html">Writer</a>. Ces <a class="reference external" href="https://en.wikipedia.org/wiki/Decorator_pattern">décorateurs</a> permettent d’ajouter des fonctionnalités tout en
+<p>Le package <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/package-summary.html">java.io</a> fournit un ensemble de classes qui agissent comme
+des <a class="reference external" href="https://en.wikipedia.org/wiki/Decorator_pattern">décorateurs</a> pour des instances de type <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/InputStream.html">InputStream</a>, <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/Reader.html">Reader</a>, <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/OutputStream.html">OutputStream</a>
+ou <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/Writer.html">Writer</a>. Ces <a class="reference external" href="https://en.wikipedia.org/wiki/Decorator_pattern">décorateurs</a> permettent d’ajouter des fonctionnalités tout en
 présentant les mêmes méthodes. Il est donc très simple d’utiliser ces décorateurs
 dans du code initialement implémenté pour manipuler des instances des types décorés.</p>
-<p>Les classes <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/BufferedInputStream.html">BufferedInputStream</a>, <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/BufferedReader.html">BufferedReader</a>, <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/BufferedOutputStream.html">BufferedOutputStream</a> et
-<a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/BufferedWriter.html">BufferedWriter</a> permettent de créer un décorateur qui gère une zone tampon dont
+<p>Les classes <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/BufferedInputStream.html">BufferedInputStream</a>, <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/BufferedReader.html">BufferedReader</a>, <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/BufferedOutputStream.html">BufferedOutputStream</a> et
+<a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/BufferedWriter.html">BufferedWriter</a> permettent de créer un décorateur qui gère une zone tampon dont
 il est possible d’indiquer la taille à la construction de l’objet. Ces classes
 sont très utiles lorsque l’on veut lire ou écrire des données sur un disque
 ou sur un réseau afin de limiter les accès système et améliorer les performances.</p>
@@ -869,10 +869,10 @@ ou sur un réseau afin de limiter les accès système et améliorer les performa
 <span class="o">}</span>
 </pre></div>
 </div>
-<p>Dans l’exemple ci-dessus, on crée un <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/BufferedWriter.html">BufferedWriter</a> avec une zone tampon de
+<p>Dans l’exemple ci-dessus, on crée un <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/BufferedWriter.html">BufferedWriter</a> avec une zone tampon de
 1 Ko.</p>
-<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/LineNumberReader.html">LineNumberReader</a> permet quant à elle, de compter les lignes lors
-de la lecture d’un flux caractères. Elle fournit également la méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/LineNumberReader.html#readLine()">readLine</a>
+<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/LineNumberReader.html">LineNumberReader</a> permet quant à elle, de compter les lignes lors
+de la lecture d’un flux caractères. Elle fournit également la méthode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/LineNumberReader.html#readLine--">readLine</a>
 pour lire une ligne complète.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.cgi.udev.io</span><span class="o">;</span>
 
@@ -898,11 +898,11 @@ pour lire une ligne complète.</p>
 <span class="o">}</span>
 </pre></div>
 </div>
-<p>Les classes <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/InputStreamReader.html">InputStreamReader</a> et <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/OutputStreamWriter.html">OutputStreamWriter</a> permettent de manipuler
-un flux binaire sous la forme d’un flux caractères. La classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/InputStreamReader.html">InputStreamReader</a>
-hérite de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/Reader.html">Reader</a> et prend comme paramètre de constructeur une instance de
-<a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/InputStream.html">InputStream</a>. La classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/OutputStreamWriter.html">OutputStreamWriter</a> hérite de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/Writer.html">Writer</a> et prend
-comme paramètre de constructeur une instance de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/OutputStream.html">OutputStream</a>. Ces classes sont
+<p>Les classes <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/InputStreamReader.html">InputStreamReader</a> et <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/OutputStreamWriter.html">OutputStreamWriter</a> permettent de manipuler
+un flux binaire sous la forme d’un flux caractères. La classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/InputStreamReader.html">InputStreamReader</a>
+hérite de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/Reader.html">Reader</a> et prend comme paramètre de constructeur une instance de
+<a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/InputStream.html">InputStream</a>. La classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/OutputStreamWriter.html">OutputStreamWriter</a> hérite de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/Writer.html">Writer</a> et prend
+comme paramètre de constructeur une instance de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/OutputStream.html">OutputStream</a>. Ces classes sont
 particulièrement utiles car elles permettent de préciser l’encodage des caractères
 (<em>charset</em>) qui doit être utilisé pour passer d’un flux binaire au flux
 caractères et vice-versa.</p>
@@ -931,8 +931,8 @@ caractères et vice-versa.</p>
 <span class="o">}</span>
 </pre></div>
 </div>
-<p>Dans l’exemple ci-dessus, le fichier est ouvert grâce à un instance de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/FileInputStream.html">FileInputStream</a>
-qui est passée à une instance de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/InputStreamReader.html">InputStreamReader</a> qui lit les caractères
+<p>Dans l’exemple ci-dessus, le fichier est ouvert grâce à un instance de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/FileInputStream.html">FileInputStream</a>
+qui est passée à une instance de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/InputStreamReader.html">InputStreamReader</a> qui lit les caractères
 au format UTF-8.</p>
 <p>Il est possible de créer très facilement des chaînes de décorateurs.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.cgi.udev.io</span><span class="o">;</span>
@@ -964,31 +964,32 @@ au format UTF-8.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">Dans l’exemple ci-dessus, on utilise la syntaxe try-with-resources pour
-appeler automatiquement la méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/Closeable.html#close()">close</a> à la fin du bloc <strong>try</strong>. Les
-décorateurs de flux implémentent la méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/Closeable.html#close()">close</a> de manière à appeler
-la méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/Closeable.html#close()">close</a> de l’objet qu’il décore. Ainsi quand on crée une chaîne
-de flux avec des décorateurs, un appel à la méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/Closeable.html#close()">close</a> du décorateur
-le plus englobant appelle automatiquement toutes les méthodes <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/Closeable.html#close()">close</a>
+appeler automatiquement la méthode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/Closeable.html#close--">close</a> à la fin du bloc <strong>try</strong>. Les
+décorateurs de flux implémentent la méthode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/Closeable.html#close--">close</a> de manière à appeler
+la méthode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/Closeable.html#close--">close</a> de l’objet qu’il décore. Ainsi quand on crée une chaîne
+de flux avec des décorateurs, un appel à la méthode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/Closeable.html#close--">close</a> du décorateur
+le plus englobant appelle automatiquement toutes les méthodes <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/Closeable.html#close--">close</a>
 de la chaîne de flux.</p>
 </div>
-<p>Les objets statiques <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/System.html#in">System.in</a>, <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/System.html#out">System.out</a> et <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/System.html#err">System.err</a> qui représentent
+<p>Les objets statiques <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/System.html#in">System.in</a>, <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/System.html#out">System.out</a> et <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/System.html#err">System.err</a> qui représentent
 respectivement le flux d’entrée de la console, le flux de sortie de la console
-et le flux de sortie d’erreur de la console sont des instances de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/InputStream.html">InputStream</a>
-ou de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/PrintStream.html">PrintStream</a>. <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/PrintStream.html">PrintStream</a> est un décorateur qui offre notamment les méthodes
-<a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/PrintStream.html#print(boolean)">print</a>, <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/PrintStream.html#println()">println</a> et <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/PrintStream.html#printf(java.lang.String,java.lang.Object...)">printf</a>.</p>
+et le flux de sortie d’erreur de la console sont des instances de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/InputStream.html">InputStream</a>
+ou de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/PrintStream.html">PrintStream</a>. <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/PrintStream.html">PrintStream</a> est un décorateur qui offre notamment les méthodes
+<a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/PrintStream.html#print-boolean-">print</a>, <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/PrintStream.html#println--">println</a> et <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/PrintStream.html#printf-java.lang.String-java.lang.Object...-">printf</a>.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">Pour manipuler les flux de la console, il est également possible de récupérer
-une instance de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/Console.html">Console</a> en appelant la méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/System.html#console()">System.console()</a>.</p>
+une instance de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/Console.html">Console</a> en appelant la méthode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/System.html#console--">System.console()</a>.</p>
 </div>
 </div>
 <div class="section" id="la-classe-scanner">
-<span id="java-classe-scanner"></span><h2>La classe Scanner<a class="headerlink" href="#la-classe-scanner" title="Lien permanent vers ce titre">¶</a></h2>
-<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Scanner.html">java.util.Scanner</a> agit comme un décorateur pour différents types d’instance
+<h2>La classe Scanner<a class="headerlink" href="#la-classe-scanner" title="Lien permanent vers ce titre">¶</a></h2>
+<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Scanner.html">java.util.Scanner</a> agit comme un décorateur pour différents types d’instance
 qui représentent une entrée. Elle permet de réaliser des opérations de lecture
-et de validation de données plus complexes que les classes du packages <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/package-summary.html">java.io</a>.</p>
+et de validation de données plus complexes que les classes du packages <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/package-summary.html">java.io</a>.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.cgi.udev.io</span><span class="o">;</span>
 
+<span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="o">;</span>
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">TestScanner</span> <span class="o">{</span>
@@ -1061,7 +1062,7 @@ sur les données saisies par l’utilisateur :</p>
 </div>
 <div class="section" id="fichiers-et-chemins">
 <h2>Fichiers et chemins<a class="headerlink" href="#fichiers-et-chemins" title="Lien permanent vers ce titre">¶</a></h2>
-<p>En plus des flux de type fichier, le package <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/package-summary.html">java.io</a> fournit la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/File.html">File</a>
+<p>En plus des flux de type fichier, le package <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/package-summary.html">java.io</a> fournit la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/File.html">File</a>
 qui représente un fichier. À travers, cette classe, il est possible de savoir
 si le fichier existe, s’il s’agit d’un répertoire… On peut également créer
 le fichier ou le supprimer.</p>
@@ -1101,12 +1102,12 @@ le schéma <em>file</em> :</p>
 <p>ou bien une chaîne de caractère représentant directement le chemin. L’inconvénient
 de cette dernière méthode est qu’elle n’est pas portable suivant les différents
 systèmes de fichiers et les différents systèmes d’exploitation. En Java, on
-utilise l’interface <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/nio/file/Path.html">Path</a> pour représenter un chemin de fichier de manière générique.
-Les classes <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/nio/file/Paths.html">Paths</a> et <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/nio/file/FileSystem.html">FileSystem</a> servent à construire des instances de type
-<a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/nio/file/Path.html">Path</a>. La classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/nio/file/FileSystem.html">FileSystem</a> fournit également des méthodes pour obtenir des
+utilise l’interface <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/nio/file/Path.html">Path</a> pour représenter un chemin de fichier de manière générique.
+Les classes <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/nio/file/Paths.html">Paths</a> et <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/nio/file/FileSystem.html">FileSystem</a> servent à construire des instances de type
+<a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/nio/file/Path.html">Path</a>. La classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/nio/file/FileSystem.html">FileSystem</a> fournit également des méthodes pour obtenir des
 informations à propos du ou des systèmes de fichiers présents sur la machine.
-On peut accéder à une instance de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/nio/file/FileSystem.html">FileSystem</a> grâce à la méthode
-<a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/nio/file/FileSystems.html#getDefault()">FileSystems.getDefault()</a>.</p>
+On peut accéder à une instance de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/nio/file/FileSystem.html">FileSystem</a> grâce à la méthode
+<a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/nio/file/FileSystems.html#getDefault--">FileSystems.getDefault()</a>.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.cgi.udev.io</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">java.io.File</span><span class="o">;</span>
@@ -1134,7 +1135,7 @@ On peut accéder à une instance de <a class="reference external" href="https://
 <span class="o">}</span>
 </pre></div>
 </div>
-<p>Pour les opérations les plus courantes sur les fichiers, la classe outil <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/nio/file/Files.html">Files</a>
+<p>Pour les opérations les plus courantes sur les fichiers, la classe outil <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/nio/file/Files.html">Files</a>
 fournit un ensemble de méthodes statiques qui permettent de créer, de consulter,
 de modifier ou de supprimer des fichiers et des répertoires en utilisant
 un minimum d’appel.</p>
@@ -1184,9 +1185,9 @@ un minimum d’appel.</p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">La classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/nio/file/Files.html">Files</a> se révèle très pratique d’utilisation notamment pour lire
+<p class="last">La classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/nio/file/Files.html">Files</a> se révèle très pratique d’utilisation notamment pour lire
 l’intégralité d’un fichier.
-Elle ne rend pas pour autant obsolète l’utilisation de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/Reader.html">Reader</a> ou de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/OutputStream.html">OutputStream</a>.
+Elle ne rend pas pour autant obsolète l’utilisation de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/Reader.html">Reader</a> ou de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/OutputStream.html">OutputStream</a>.
 En effet, travailler à partir d’un flux peut avoir un impact important sur
 l’empreinte mémoire d’une application. Si une application doit parcourir un
 fichier pour trouver une information précise alors, si le fichier peut
@@ -1197,12 +1198,12 @@ tampon allouée pour la lecture ou l’écriture.</p>
 </div>
 <div class="section" id="acces-au-reseau">
 <h2>Accès au réseau<a class="headerlink" href="#acces-au-reseau" title="Lien permanent vers ce titre">¶</a></h2>
-<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/net/URL.html">URL</a>, comme son nom l’indique, représente une URL. Elle déclare la méthode
-<a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/net/URL.html#openConnection()">openConnection</a> qui retourne une instance de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/net/URLConnection.html">URLConnection</a>. Une instance de
-<a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/net/URLConnection.html">URLConnection</a> ouvre une connexion distante avec le serveur et permet de
+<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/net/URL.html">URL</a>, comme son nom l’indique, représente une URL. Elle déclare la méthode
+<a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/net/URL.html#openConnection--">openConnection</a> qui retourne une instance de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/net/URLConnection.html">URLConnection</a>. Une instance de
+<a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/net/URLConnection.html">URLConnection</a> ouvre une connexion distante avec le serveur et permet de
 récupérer des informations du serveur distant. Elle permet surtout d’obtenir
-une instance de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/OutputStream.html">OutputStream</a> si on désire envoyer des informations au serveur
-et une instance de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/InputStream.html">InputStream</a> si on désire récupérer les informations
+une instance de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/OutputStream.html">OutputStream</a> si on désire envoyer des informations au serveur
+et une instance de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/InputStream.html">InputStream</a> si on désire récupérer les informations
 retournées par le serveur.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.cgi.udev.io</span><span class="o">;</span>
 
@@ -1246,7 +1247,7 @@ mémoire et des flux réseaux.</p>
 </div>
 <div class="section" id="la-serialisation-d-objets">
 <h2>La sérialisation d’objets<a class="headerlink" href="#la-serialisation-d-objets" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Les classes <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/ObjectOutputStream.html">ObjectOutputStream</a> et <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/ObjectInputStream.html">ObjectInputStream</a>  permettent de réaliser la
+<p>Les classes <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/ObjectOutputStream.html">ObjectOutputStream</a> et <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/ObjectInputStream.html">ObjectInputStream</a>  permettent de réaliser la
 sérialisation/désérialisation d’objets : un objet (et tous les objets qu’il référence)
 peut être écrit dans un flux ou lu depuis un flux. Cela peut permettre de sauvegarder dans
 un fichier un état de l’application ou bien d’échanger des données entre deux programmes
@@ -1255,7 +1256,7 @@ Java à travers un réseau. La sérialisation d’objets a des limites :</p>
 <li>Seul l’état des objets est écrit ou lu, cela signifie que les fichiers <em>class</em>
 ne font pas partie de la sérialisation et doivent être disponibles pour la JVM
 au moment de la lecture (opération de désérialisation réalisée avec la classe
-<a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/ObjectInputStream.html">ObjectInputStream</a>).</li>
+<a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/ObjectInputStream.html">ObjectInputStream</a>).</li>
 <li>Le format des données sérialisées est propre à Java, ce mécanisme n’est donc
 pas adapté pour échanger des informations avec des applications qui ne seraient
 pas écrites en Java.</li>
@@ -1264,17 +1265,17 @@ des modifications sont apportées à ces dernières, une grappe d’objets préa
 sérialisée dans un fichier ne sera sans doute plus lisible.</li>
 </ul>
 <p>Pour qu’un objet puisse être sérialisé, il faut que sa classe implémente
-<a class="reference internal" href="interface.html#interface-marqueur"><span class="std std-ref">l’interface marqueur</span></a> <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/Serializable.html">Serializable</a>. Si un objet
+<a class="reference internal" href="interface.html#interface-marqueur"><span class="std std-ref">l’interface marqueur</span></a> <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html">Serializable</a>. Si un objet
 référence d’autres objets dans ses attributs alors il faut également que les classes
-de ces objets implémentent l’interface <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/Serializable.html">Serializable</a>. Beaucoup de classes de l’API standard de
-Java implémentent l’interface <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/Serializable.html">Serializable</a>, à commencer par la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html">String</a>.</p>
+de ces objets implémentent l’interface <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html">Serializable</a>. Beaucoup de classes de l’API standard de
+Java implémentent l’interface <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html">Serializable</a>, à commencer par la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a>.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Tenter de sérialiser un objet dont la classe n’implémente pas <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/Serializable.html">Serializable</a>
-produit une exception de type <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/NotSerializableException.html">java.io.NotSerializableException</a>.</p>
+<p class="last">Tenter de sérialiser un objet dont la classe n’implémente pas <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html">Serializable</a>
+produit une exception de type <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/NotSerializableException.html">java.io.NotSerializableException</a>.</p>
 </div>
 <p>Prenons comme exemple une classe <em>Personne</em> qui contient la liste de ses enfants
-(eux-mêmes de type <em>Personne</em>). Cette classe implémente l’interface <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/Serializable.html">Serializable</a> :</p>
+(eux-mêmes de type <em>Personne</em>). Cette classe implémente l’interface <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html">Serializable</a> :</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.cgi.udev</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">java.io.Serializable</span><span class="o">;</span>
@@ -1385,7 +1386,7 @@ Loulou Duck
 <h3>Donnée transient<a class="headerlink" href="#donnee-transient" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Parfois une classe contient des informations que l’on ne souhaite pas sérialiser.
 Cela peut être dû à des limitations techniques (par exemple la classe associée n’implémente
-pas l’interface <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/Serializable.html">Serializable</a>). Mais il peut aussi s’agir de données sensibles
+pas l’interface <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html">Serializable</a>). Mais il peut aussi s’agir de données sensibles
 ou volatiles qui n’ont pas à être sérialisées. Pour que les processus de
 sérialisation/désérialisation ignorent ces attributs, il faut leur ajouter
 le mot-clé <strong>transient</strong>.</p>
@@ -1429,11 +1430,11 @@ classes.</p>
 <p>Si la sérialisation est utilisée pour sauvegarder dans un fichier l’état des objets entre deux
 exécutions, alors il n’est pas possible de modifier significativement puis de
 recompiler les classes sérialisables (sinon l’opération de désérialisation
-échouera avec une erreur <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/InvalidClassException.html">InvalidClassException</a>). Si la sérialisation est utilisée
+échouera avec une erreur <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/InvalidClassException.html">InvalidClassException</a>). Si la sérialisation est utilisée
 pour échanger des informations entre deux applications sur un réseau, alors
 le deux applications doivent disposer dans leur <em>classpath</em> des mêmes définitions
 de classes.</p>
-<p>En fait les classes qui implémentent l’interface <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/Serializable.html">Serializable</a> possèdent un
+<p>En fait les classes qui implémentent l’interface <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html">Serializable</a> possèdent un
 numéro de version interne qui change à la compilation si des modifications
 substantielles ont été apportées (ajout ou suppression d’attributs ou de méthodes
 par exemple). Lorsqu’un objet est sérialisé, le numéro de version de sa classe
@@ -1464,7 +1465,7 @@ qui doit s’appeler <em>serialVersionUID</em>.</p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Eclipse produit un avertissement si une classe qui implémente <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/Serializable.html">Serializable</a>
+<p class="last">Eclipse produit un avertissement si une classe qui implémente <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html">Serializable</a>
 ne déclare pas une constante <em>serialVersionUID</em>.</p>
 </div>
 <div class="admonition tip">

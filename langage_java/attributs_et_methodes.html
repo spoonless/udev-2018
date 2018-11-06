@@ -718,12 +718,12 @@ Il est donc possible d’accéder directement à cet attribut depuis la classe :
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">Voiture</span><span class="o">.</span><span class="na">nombreDeRoues</span><span class="o">);</span>
 </pre></div>
 </div>
-<p>Notez que dans l’exemple précédent, <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/System.html#out">out</a> est également un attribut de la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/System.html">System</a>. Si
-vous vous rendez sur la documentation de cette classe, vous constaterez que <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/System.html#out">out</a> est déclaré
+<p>Notez que dans l’exemple précédent, <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/System.html#out">out</a> est également un attribut de la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/System.html">System</a>. Si
+vous vous rendez sur la documentation de cette classe, vous constaterez que <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/System.html#out">out</a> est déclaré
 comme <strong>static</strong> dans cette classe. Il s’agit d’une autre utilisation des attributs de classe :
 lorsqu’il n’existe qu’une seule instance d’un objet pour toute une application, cette instance
 est généralement accessible grâce à un attribut <strong>static</strong>. C’est une des façons
-d’implémenter le design pattern <a class="reference external" href="https://fr.wikipedia.org/wiki/Singleton_(patron_de_conception)">singleton</a> en Java. Dans notre exemple, <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/System.html#out">out</a> est l’objet
+d’implémenter le design pattern <a class="reference external" href="https://fr.wikipedia.org/wiki/Singleton_(patron_de_conception)">singleton</a> en Java. Dans notre exemple, <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/System.html#out">out</a> est l’objet
 qui représente la sortie standard de notre application. Cet objet est unique pour toute l’application
 et nous n’avons pas à le créer car il existe dès le lancement.</p>
 <p>Si le programme modifie un attribut de classe, alors la modification est visible depuis toutes
@@ -1020,7 +1020,7 @@ Donc il n’est pas nécessaire de créer une instance.</p>
 <p class="last">Certaines classes de l’API Java ne contiennent que des méthodes de classe.
 On parle de classes utilitaires ou de classes outils puisqu’elles s’apparentent à
 une collection de fonctions. Parmi les plus utilisées, on trouve les classes
-<a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Math.html">java.lang.Math</a>, <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/System.html">java.lang.System</a>, <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Arrays.html">java.util.Arrays</a> et <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Collections.html">java.util.Collections</a>.</p>
+<a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html">java.lang.Math</a>, <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/System.html">java.lang.System</a>, <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Arrays.html">java.util.Arrays</a> et <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Collections.html">java.util.Collections</a>.</p>
 </div>
 <p>Il est tout à fait possible d’invoquer une méthode de classe à travers une variable
 pointant sur une instance de cette classe :</p>
@@ -1414,7 +1414,7 @@ sous la forme d’une chaîne de caractères de l’objet</li>
 <p class="first admonition-title">Indication</p>
 <p>On ne peut pas parcourir directement une chaîne de caractères, par contre
 on peut obtenir un tableau de caractères à partir d’une chaîne avec la méthode
-<a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html#toCharArray()">toCharArray</a>.</p>
+<a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#toCharArray--">toCharArray</a>.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">helloWorld</span> <span class="o">=</span> <span class="s">&quot;Hello world!&quot;</span><span class="o">;</span>
 <span class="k">for</span> <span class="o">(</span><span class="kt">char</span> <span class="n">c</span> <span class="o">:</span> <span class="n">helloWorld</span><span class="o">.</span><span class="na">toCharArray</span><span class="o">())</span> <span class="o">{</span>
   <span class="c1">// ...</span>
@@ -1422,7 +1422,7 @@ on peut obtenir un tableau de caractères à partir d’une chaîne avec la mét
 </pre></div>
 </div>
 <p class="last">Pour savoir si un caractère est une lettre, on utilise la méthode
-<strong>static</strong> <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Character.html#isAlphabetic(int)">Character.isAlphabetic</a>.</p>
+<strong>static</strong> <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Character.html#isAlphabetic-int-">Character.isAlphabetic</a>.</p>
 </div>
 </div>
 <div class="exercice admonition">

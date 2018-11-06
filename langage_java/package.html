@@ -605,8 +605,8 @@ dans la bibliothèque standard fournie avec le JDK.</p>
 <h2>Nom complet d’une classe<a class="headerlink" href="#nom-complet-d-une-classe" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Une classe est normalement désignée par son <em>nom complet</em>, c’est-à-dire par le
 chemin de packages suivi d’un <strong>.</strong> suivi du nom de la classe.</p>
-<p>Par exemple, la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html">String</a> s’appelle en fait <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html">java.lang.String</a> car elle se
-trouve dans le package <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/package-summary.html">java.lang</a>. J’ai donc la possibilité, si je le souhaite,
+<p>Par exemple, la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a> s’appelle en fait <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">java.lang.String</a> car elle se
+trouve dans le package <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/package-summary.html">java.lang</a>. J’ai donc la possibilité, si je le souhaite,
 de créer ma propre classe String par exemple dans le package com.cgi.udev :</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.cgi.udev</span><span class="o">;</span>
 
@@ -616,7 +616,7 @@ de créer ma propre classe String par exemple dans le package com.cgi.udev :</p>
 </pre></div>
 </div>
 <p>Il est possible d’accèder à une classe en spécifiant son nom complet. Par
-exemple, pour accèder à la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Arrays.html">java.util.Arrays</a> :</p>
+exemple, pour accèder à la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Arrays.html">java.util.Arrays</a> :</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.cgi.udev</span><span class="o">;</span>
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">MaClasse</span> <span class="o">{</span>
@@ -629,9 +629,9 @@ exemple, pour accèder à la classe <a class="reference external" href="https://
 </pre></div>
 </div>
 <p>Par défaut, une classe a accès à l’espace de nom de son propre package et du
-package <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/package-summary.html">java.lang</a>. Voilà pourquoi, il est possible d’utiliser directement
-les classes <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html">String</a> ou <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Math.html">Math</a> sans avoir à donner leur nom complet :
-<a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html">java.lang.String</a>, <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Math.html">java.lang.Math</a>.</p>
+package <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/package-summary.html">java.lang</a>. Voilà pourquoi, il est possible d’utiliser directement
+les classes <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a> ou <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html">Math</a> sans avoir à donner leur nom complet :
+<a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">java.lang.String</a>, <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html">java.lang.Math</a>.</p>
 <p>Si nous créons deux classes : <em>Voiture</em> et <em>Conducteur</em>, toutes deux dans le
 package com.cgi.udev :</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.cgi.udev</span><span class="o">;</span>
