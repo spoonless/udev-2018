@@ -547,6 +547,54 @@
 <li class="toctree-l1"><a class="reference internal" href="les_annotations.html">Les annotations</a></li>
 </ul>
 </div>
+<div class="exercice admonition">
+<p class="first admonition-title">TP - Gestionnaire de musique</p>
+<p>On souhaite modéliser un gestionnaire de musique.</p>
+<p>Une vue générale des classes principales est donnée dans le diagramme ci-dessous :</p>
+<img alt="../_images/discotheque_classes_modele.png" src="../_images/discotheque_classes_modele.png" />
+<p>La classe <code class="docutils literal notranslate"><span class="pre">Discotheque</span></code> contient la liste des albums disponibles.
+Cette classe peut donner accès à la liste des albums qu’elle contient.</p>
+<p>Un artiste est représenté par la classe <code class="docutils literal notranslate"><span class="pre">Artiste</span></code>. Un artiste est désigné par son nom.</p>
+<p>Un album est représenté par la classe <code class="docutils literal notranslate"><span class="pre">Album</span></code>. Un album est défini par :</p>
+<ul class="simple">
+<li>son titre</li>
+<li>son année de sortie</li>
+<li>sa durée qui est la somme des durées des pistes musicales qu’il contient.</li>
+</ul>
+<p>Une piste musicale est représentée par la classe <code class="docutils literal notranslate"><span class="pre">Piste</span></code>. Une piste musicale est définie par :</p>
+<ul class="simple">
+<li>son titre</li>
+<li>sa durée</li>
+</ul>
+<p class="last">En vous aidant du diagramme UML pour les relations entre classes ainsi que des
+indications ci-dessus, écrivez les classes Java correspondantes.</p>
+</div>
+<div class="exercice admonition">
+<p class="first admonition-title">TP - Diplôme et examens</p>
+<p>On veut modéliser une système de remise de diplôme. Le système est constitué
+des classes <em>Diplome</em>, <em>Examen</em>, <em>Qcm</em> et <em>Projet</em>.</p>
+<dl class="docutils">
+<dt><em>Diplome</em></dt>
+<dd>Cette classe contient un ensemble d’examens. Sa méthode
+<em>isValide</em> retourne <strong>true</strong> si la moyenne des notes de tous les examens est
+supérieure à 10.</dd>
+<dt><em>Examen</em></dt>
+<dd>Une classe qui contient une note sur 20.</dd>
+<dt><em>Projet</em></dt>
+<dd>Le projet est un type spécialisé d’examen. Il est défini par une note d’écrit
+sur 10 et une note d’oral sur 10. La note finale est la somme de ces deux notes.</dd>
+<dt><em>Qcm</em></dt>
+<dd>Le QCM est un type spécialisé d’examen. Il est défini par un nombre de questions.
+On calcule la note sur 20 en faisant le rapport entre le nombre de réponses correctes
+et le nombre total de questions.</dd>
+</dl>
+<p>Les relations entre ces classes sont résumées par le diagramme
+de classes ci-dessous :</p>
+<img alt="../_images/examen_classes_modele.png" src="../_images/examen_classes_modele.png" />
+<p class="last">Réalisez les implémentations de ces classes en Java. Écrivez une méthode <strong>main</strong>
+qui crée une instance de <em>Diplome</em>, y ajoute tous les types d’examen de manière
+à ce que le diplôme soit validé (la méthode <em>Diplome.isValide</em> retourne <strong>true</strong>).</p>
+</div>
 
 
            </div>
