@@ -576,6 +576,86 @@ indications ci-dessus, écrivez les classes Java correspondantes.</p>
 <p class="last">Transformez la classe <code class="docutils literal notranslate"><span class="pre">Composition</span></code> en classe abstraite.</p>
 </div>
 <div class="exercice admonition">
+<p class="first admonition-title">TP - Gestionnaire de musique (chargement à partir d’un fichier)</p>
+<p>On souhaite créer la méthode <code class="docutils literal notranslate"><span class="pre">Discotheque.charger</span></code> afin de charger les
+données depuis un fichier. Le fichier sera un fichier CSV contenant une piste
+par ligne avec <strong>le titre de l’album, le titre de la piste et la durée de la piste</strong>.</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">Exemple de fichier des pistes</span><a class="headerlink" href="#id1" title="Lien permanent vers ce code">¶</a></div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Are You Experienced;Purple Haze;2:46
+Are You Experienced;Manic Depression;3:46
+Are You Experienced;Hey Joe (Billy Roberts);3:23
+Are You Experienced;Love or Confusion;3:15
+Are You Experienced;May This Be Love;3:14
+Are You Experienced;I Don&#39;t Live Today;3:55
+Are You Experienced;The Wind Cries Mary;3:21
+Are You Experienced;Fire;2:34
+Are You Experienced;Third Stone from the Sun;6:40
+Are You Experienced;Foxy Lady;3:15
+Are You Experienced;Are You Experienced?;3:55
+</pre></div>
+</div>
+</div>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">Pour des raisons de simplification, le fichier ne contient pas le nom de
+l’artiste. Le fichier est trié dans l’ordre pour les pistes de chaque album.
+Vous pouvez adapter le format de la durée dans le fichier (par exemple
+le fichier peut contenir les durées en secondes si vous préférez).</p>
+</div>
+<p>La méthode <code class="docutils literal notranslate"><span class="pre">Discotheque.charger</span></code> prend en paramètre le chemin du fichier.
+Cette méthode peut lancer les exceptions suivantes :</p>
+<ul class="simple">
+<li>java.io.IOException si le fichier n’existe pas ou ne peut pas être lu</li>
+<li>Une exception propre à l’application (que vous devez créer) pour signaler que le contenu d’une ligne
+n’est pas valide. Soit parce qu’il manque des champs, soit parce que la durée
+d’une piste est un nombre négatif.</li>
+</ul>
+<p>Créer un programme qui demande au démarrage le chemin du fichier à charger.
+Si une exception survient, il faut afficher un message d’erreur clair à l’utilisateur
+et lui demander un nouveau chemin pour le fichier à charger.</p>
+<p>Un fois le fichier charger, le programme doit afficher la liste des albums
+en précisant leur titre et leur durée totale.</p>
+<p>Pour réaliser le chargement, vous pouvez vous inspirer du bout de programme suivant
+qui utilise l’API d’entrée/sortie en Java :</p>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">Programme d’exemple pour la lecture d’un fichier</span><a class="headerlink" href="#id2" title="Lien permanent vers ce code">¶</a></div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.cgi.udev.io</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.io.FileInputStream</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.InputStreamReader</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.LineNumberReader</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.Reader</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">TestFileReader</span> <span class="o">{</span>
+
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="o">{</span>
+    <span class="n">String</span> <span class="n">fichier</span> <span class="o">=</span> <span class="s">&quot;/le/chemin/du/fichier.txt&quot;</span><span class="o">;</span>
+    <span class="n">Reader</span> <span class="n">inputStreamReader</span> <span class="o">=</span> <span class="k">new</span> <span class="n">InputStreamReader</span><span class="o">(</span><span class="k">new</span> <span class="n">FileInputStream</span><span class="o">(</span><span class="n">fichier</span><span class="o">),</span> <span class="s">&quot;UTF-8&quot;</span><span class="o">);</span>
+    <span class="n">LineNumberReader</span> <span class="n">reader</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LineNumberReader</span><span class="o">(</span><span class="n">inputStreamReader</span><span class="o">);</span>
+    <span class="k">try</span> <span class="o">{</span>
+      <span class="n">String</span> <span class="n">ligne</span><span class="o">;</span>
+      <span class="k">while</span> <span class="o">((</span><span class="n">ligne</span> <span class="o">=</span> <span class="n">reader</span><span class="o">.</span><span class="na">readLine</span><span class="o">())</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// on affiche la ligne</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">ligne</span><span class="o">);</span>
+      <span class="o">}</span>
+    <span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
+      <span class="n">reader</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+    <span class="o">}</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<p>Pour analyser les lignes lues, vous pouvez utiliser la méthode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#split-java.lang.String-">split</a> de la classe
+<code class="docutils literal notranslate"><span class="pre">String</span></code>.</p>
+<div class="last highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">exemple</span> <span class="o">=</span> <span class="s">&quot;Hello;the;world&quot;</span><span class="o">;</span>
+<span class="n">String</span> <span class="n">resultat</span><span class="o">[]</span> <span class="o">=</span> <span class="n">exemple</span><span class="o">.</span><span class="na">split</span><span class="o">(</span><span class="s">&quot;;&quot;</span><span class="o">);</span>
+</pre></div>
+</div>
+</div>
+<div class="exercice admonition">
 <p class="first admonition-title">TP - Diplôme et examens</p>
 <p>On veut modéliser une système de remise de diplôme. Le système est constitué
 des classes <em>Diplome</em>, <em>Examen</em>, <em>Qcm</em> et <em>Projet</em>.</p>
@@ -606,6 +686,75 @@ qui crée une instance de <em>Diplome</em>, y ajoute tous les types d’examen d
 <p>Modifiez l’héritage. Les classes <code class="docutils literal notranslate"><span class="pre">Examen</span></code>, <code class="docutils literal notranslate"><span class="pre">Diplome</span></code> et <code class="docutils literal notranslate"><span class="pre">Qcm</span></code> doivent
 hériter de la classe abstraite <code class="docutils literal notranslate"><span class="pre">Evaluation</span></code>.</p>
 <img alt="../_images/examen_classes_modele_avec_evaluation.png" class="last" src="../_images/examen_classes_modele_avec_evaluation.png" />
+</div>
+<div class="exercice admonition">
+<p class="first admonition-title">TP - Diplôme et examens (chargement à partir d’un fichier)</p>
+<p>On souhaite créer la méthode <code class="docutils literal notranslate"><span class="pre">Diplome.charger</span></code> afin de charger les
+données depuis un fichier. Le fichier sera un fichier CSV contenant le résultat
+à une évaluation par ligne. La ligne commence par le type de l’évaluation (examen,
+projet ou QCM). Puis le contenu de la ligne dépend du type de l’évaluation.
+Pour un examen, on trouve la note. Pour un projet, on trouve la note d’oral
+et la note d’écrit. Pour un QCM, on trouve le nombre total de questions suivi
+du nombre de questions justes.</p>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">Exemple de fichier d’un diplôme</span><a class="headerlink" href="#id3" title="Lien permanent vers ce code">¶</a></div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>examen;12.0
+projet;5.0;6.5
+qcm;60;28
+</pre></div>
+</div>
+</div>
+<p>La méthode <code class="docutils literal notranslate"><span class="pre">Diplome.charger</span></code> prend en paramètre le chemin du fichier.
+Cette méthode peut lancer les exceptions suivantes :</p>
+<ul class="simple">
+<li>java.io.IOException si le fichier n’existe pas ou ne peut pas être lu</li>
+<li>Une exception propre à l’application (que vous devez créer) pour signaler que le contenu d’une ligne
+n’est pas valide. Soit parce qu’il manque des champs, soit parce que les champs
+ne sont pas corrects.</li>
+</ul>
+<p>Créer un programme qui demande au démarrage le chemin du fichier à charger.
+Si une exception survient, il faut afficher un message d’erreur clair à l’utilisateur
+et lui demander un nouveau chemin pour le fichier à charger.</p>
+<p>Un fois le fichier charger, le programme doit afficher la liste des évaluations
+et indiquer si le diplôme a été validé.</p>
+<p>Pour réaliser le chargement, vous pouvez vous inspirer du bout de programme suivant
+qui utilise l’API d’entrée/sortie en Java :</p>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text">Programme d’exemple pour la lecture d’un fichier</span><a class="headerlink" href="#id4" title="Lien permanent vers ce code">¶</a></div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.cgi.udev.io</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.io.FileInputStream</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.InputStreamReader</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.LineNumberReader</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.Reader</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">TestFileReader</span> <span class="o">{</span>
+
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="o">{</span>
+    <span class="n">String</span> <span class="n">fichier</span> <span class="o">=</span> <span class="s">&quot;/le/chemin/du/fichier.txt&quot;</span><span class="o">;</span>
+    <span class="n">Reader</span> <span class="n">inputStreamReader</span> <span class="o">=</span> <span class="k">new</span> <span class="n">InputStreamReader</span><span class="o">(</span><span class="k">new</span> <span class="n">FileInputStream</span><span class="o">(</span><span class="n">fichier</span><span class="o">),</span> <span class="s">&quot;UTF-8&quot;</span><span class="o">);</span>
+    <span class="n">LineNumberReader</span> <span class="n">reader</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LineNumberReader</span><span class="o">(</span><span class="n">inputStreamReader</span><span class="o">);</span>
+    <span class="k">try</span> <span class="o">{</span>
+      <span class="n">String</span> <span class="n">ligne</span><span class="o">;</span>
+      <span class="k">while</span> <span class="o">((</span><span class="n">ligne</span> <span class="o">=</span> <span class="n">reader</span><span class="o">.</span><span class="na">readLine</span><span class="o">())</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// on affiche la ligne</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">ligne</span><span class="o">);</span>
+      <span class="o">}</span>
+    <span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
+      <span class="n">reader</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+    <span class="o">}</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<p>Pour analyser les lignes lues, vous pouvez utiliser la méthode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#split-java.lang.String-">split</a> de la classe
+<code class="docutils literal notranslate"><span class="pre">String</span></code>.</p>
+<div class="last highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">exemple</span> <span class="o">=</span> <span class="s">&quot;Hello;the;world&quot;</span><span class="o">;</span>
+<span class="n">String</span> <span class="n">resultat</span><span class="o">[]</span> <span class="o">=</span> <span class="n">exemple</span><span class="o">.</span><span class="na">split</span><span class="o">(</span><span class="s">&quot;;&quot;</span><span class="o">);</span>
+</pre></div>
+</div>
 </div>
 
 
