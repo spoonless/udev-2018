@@ -1,0 +1,1106 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="fr" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="fr" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>L’héritage avec JPA &mdash; Documentation U&#39;Dev 2018 1.0</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom_rtd_theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="next" title="Les relations avec JPA" href="jpa_relations.html" />
+    <link rel="prev" title="Les requêtes JPA" href="jpa_queries.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> U'Dev 2018
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Recherche dans les pages" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">L'algèbre de Boole</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../algebre_boole/algebre_boole.html">L’algèbre de Boole</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../algebre_boole/algebre_boole.html#definition">Définition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../algebre_boole/algebre_boole.html#algebre-de-boole-et-connecteurs-logiques">Algèbre de Boole et connecteurs logiques</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../algebre_boole/algebre_boole.html#proprietes">Propriétés</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../algebre_boole/algebre_boole.html#l-involution">L’involution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../algebre_boole/algebre_boole.html#l-idempotence">L’idempotence</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../algebre_boole/algebre_boole.html#les-elements-absorbants">Les éléments absorbants</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../algebre_boole/algebre_boole.html#les-lois-de-de-morgan">Les lois de De Morgan</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../algebre_boole/algebre_boole.html#l-optimisation">L’optimisation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../algebre_boole/algebre_boole.html#les-fonctions-logiques">Les fonctions logiques</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../algebre_boole/algebre_boole.html#la-fonction-de-conjonction">La fonction de conjonction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../algebre_boole/algebre_boole.html#la-fonction-de-disjonction">La fonction de disjonction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../algebre_boole/algebre_boole.html#la-fonction-de-negation">La fonction de négation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../algebre_boole/algebre_boole.html#formes-canoniques">Formes canoniques</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../algebre_boole/algebre_boole.html#forme-normale-disjonctive">Forme normale disjonctive</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../algebre_boole/algebre_boole.html#forme-normale-conjonctive">Forme normale conjonctive</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../algebre_boole/algebre_boole.html#simplification">Simplification</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../algebre_boole/representation_simplification.html">Représentation et simplification d’une fonction booléenne</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../algebre_boole/representation_simplification.html#table-de-verite">Table de vérité</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../algebre_boole/representation_simplification.html#table-de-verite-pour-la-fonction-et">Table de vérité pour la fonction ET</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../algebre_boole/representation_simplification.html#table-de-verite-pour-la-fonction-ou">Table de vérité pour la fonction OU</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../algebre_boole/representation_simplification.html#table-de-verite-pour-la-fonction-non">Table de vérité pour la fonction NON</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../algebre_boole/representation_simplification.html#passage-d-une-fonction-logique-a-une-table-de-verite">Passage d’une fonction logique à une table de vérité</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../algebre_boole/representation_simplification.html#passage-d-une-table-de-verite-a-une-fonction-logique">Passage d’une table de vérité à une fonction logique</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../algebre_boole/representation_simplification.html#les-tables-de-karnaugh">Les tables de Karnaugh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../algebre_boole/representation_simplification.html#simplification-a-l-aide-d-une-table-de-karnaugh">Simplification à l’aide d’une table de Karnaugh</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Le langage Java</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../langage_java/introduction.html">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/introduction.html#l-environnement">L’environnement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/introduction.html#oracle-jdk-et-open-jdk">Oracle JDK et Open JDK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/introduction.html#un-bref-historique-des-versions">Un bref historique des versions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../langage_java/installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/installation.html#configuration-d-eclipse">Configuration d’Eclipse</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../langage_java/compilation.html">Compilation &amp; exécution</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/compilation.html#un-premier-programme">Un premier programme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/compilation.html#la-compilation">La compilation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/compilation.html#l-execution">L’exécution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/compilation.html#la-liaison-dynamique">La liaison dynamique</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/compilation.html#le-classpath">Le classpath</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/compilation.html#bibliotheques-java-les-fichiers-jar">Bibliothèques Java : les fichiers JAR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/compilation.html#creation-d-un-projet-dans-eclipse">Création d’un projet dans Eclipse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/compilation.html#exercice">Exercice</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../langage_java/structure_fondamentale.html">La structure fondamentale du langage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/structure_fondamentale.html#les-instructions">Les instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/structure_fondamentale.html#le-typage">Le typage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/structure_fondamentale.html#les-blocs-de-code">Les blocs de code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/structure_fondamentale.html#les-commentaires">Les commentaires</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/structure_fondamentale.html#le-formatage-du-code">Le formatage du code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/structure_fondamentale.html#les-conventions-de-nommage">Les conventions de nommage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/structure_fondamentale.html#les-mots-cles">Les mots-clés</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../langage_java/premiere_classe.html">Une première classe</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/premiere_classe.html#declarer-une-classe">Déclarer une classe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/premiere_classe.html#anatomie-d-une-classe">Anatomie d’une classe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/premiere_classe.html#ajouter-des-methodes">Ajouter des méthodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/premiere_classe.html#la-methode-main">La méthode main</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/premiere_classe.html#executer-le-programme-en-ligne-de-commandes">Exécuter le programme en ligne de commandes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/premiere_classe.html#executer-le-programme-depuis-eclipse">Exécuter le programme depuis Eclipse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/premiere_classe.html#exercices">Exercices</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../langage_java/types_primitifs.html">Les types primitifs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/types_primitifs.html#le-type-booleen-boolean">Le type booléen : boolean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/types_primitifs.html#le-type-caractere-char">Le type caractère : char</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/types_primitifs.html#les-types-entiers-byte-short-int-long">Les types entiers : byte, short, int, long</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/types_primitifs.html#les-types-a-virgule-flottante-float-double">Les types à virgule flottante : float, double</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/types_primitifs.html#les-classes-enveloppes">Les classes enveloppes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/types_primitifs.html#l-autoboxing">L’autoboxing</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../langage_java/operateurs.html">Les opérateurs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/operateurs.html#l-operateur-d-affectation">L’opérateur d’affectation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/operateurs.html#les-operateurs-arithmetiques">Les opérateurs arithmétiques</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/operateurs.html#les-operateurs-arithmetiques-unaires">Les opérateurs arithmétiques unaires</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/operateurs.html#l-operateur-de-concatenation-de-chaines">L’opérateur de concaténation de chaînes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/operateurs.html#les-operateurs-relationnels">Les opérateurs relationnels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/operateurs.html#les-operateurs-logiques">Les opérateurs logiques</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/operateurs.html#l-operateur-ternaire">L’opérateur ternaire</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/operateurs.html#les-operateurs-bitwise">Les opérateurs <em>bitwise</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/operateurs.html#les-operateurs-de-decalage">Les opérateurs de décalage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/operateurs.html#le-transtypage-cast">Le transtypage (cast)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/operateurs.html#operateur-et-assignation">Opérateur et assignation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/operateurs.html#l-operateur">L’opérateur .</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/operateurs.html#id1">L’opérateur ,</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/operateurs.html#exercice">Exercice</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../langage_java/structures_de_controle.html">Les structures de contrôle</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/structures_de_controle.html#if-else">if-else</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/structures_de_controle.html#return">return</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/structures_de_controle.html#while">while</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/structures_de_controle.html#do-while">do-while</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/structures_de_controle.html#for">for</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/structures_de_controle.html#for-ameliore">for amélioré</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/structures_de_controle.html#break-continue">break-continue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/structures_de_controle.html#libelle">libellé</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/structures_de_controle.html#switch">switch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/structures_de_controle.html#exercices">Exercices</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../langage_java/tableau.html">Les tableaux</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/tableau.html#initialisation">Initialisation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/tableau.html#creation-avec-new">Création avec new</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/tableau.html#acces-aux-elements-d-un-tableau">Accès aux éléments d’un tableau</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/tableau.html#tableau-multi-dimensionnel">Tableau multi-dimensionnel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/tableau.html#conversion-en-chaine-de-caracteres">Conversion en chaîne de caractères</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/tableau.html#egalite-de-deux-tableaux">Égalité de deux tableaux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/tableau.html#tri-recherche">Tri &amp; recherche</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/tableau.html#copie-d-un-tableau">Copie d’un tableau</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/tableau.html#typage-d-un-tableau">Typage d’un tableau</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/tableau.html#conversion-d-un-tableau-en-liste">Conversion d’un tableau en liste</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../langage_java/attributs_et_methodes.html">Attributs &amp; méthodes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/attributs_et_methodes.html#les-attributs">Les attributs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../langage_java/attributs_et_methodes.html#la-portee">La portée</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../langage_java/attributs_et_methodes.html#l-initialisation">L’initialisation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../langage_java/attributs_et_methodes.html#attributs-finaux">attributs finaux</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../langage_java/attributs_et_methodes.html#attributs-de-classe">Attributs de classe</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../langage_java/attributs_et_methodes.html#attributs-de-classe-finaux">Attributs de classe finaux</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/attributs_et_methodes.html#les-methodes">Les méthodes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../langage_java/attributs_et_methodes.html#id1">La portée</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../langage_java/attributs_et_methodes.html#la-valeur-de-retour">La valeur de retour</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../langage_java/attributs_et_methodes.html#les-parametres">Les paramètres</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../langage_java/attributs_et_methodes.html#parametre-final">Paramètre final</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../langage_java/attributs_et_methodes.html#les-variables">Les variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../langage_java/attributs_et_methodes.html#methodes-de-classe">Méthodes de classe</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/attributs_et_methodes.html#surcharge-de-methode-overloading">Surcharge de méthode : overloading</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/attributs_et_methodes.html#portee-des-noms-et-this">Portée des noms et this</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/attributs_et_methodes.html#principe-d-encapsulation">Principe d’encapsulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/attributs_et_methodes.html#exercice">Exercice</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../langage_java/cycle_de_vie.html">Cycle de vie d’un objet</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/cycle_de_vie.html#le-constructeur">Le constructeur</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../langage_java/cycle_de_vie.html#parametres-de-constructeur">Paramètres de constructeur</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../langage_java/cycle_de_vie.html#valeur-par-defaut-des-attributs">Valeur par défaut des attributs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../langage_java/cycle_de_vie.html#constructeur-par-defaut">Constructeur par défaut</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../langage_java/cycle_de_vie.html#constructeur-prive">Constructeur privé</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../langage_java/cycle_de_vie.html#appel-d-un-constructeur-dans-un-constructeur">Appel d’un constructeur dans un constructeur</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../langage_java/cycle_de_vie.html#appel-d-une-methode-dans-un-constructeur">Appel d’une méthode dans un constructeur</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/cycle_de_vie.html#injection-de-dependances-par-le-constructeur">Injection de dépendances par le constructeur</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/cycle_de_vie.html#le-bloc-d-initialisation">Le bloc d’initialisation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/cycle_de_vie.html#le-bloc-d-initialisation-de-classe">Le bloc d’initialisation de classe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/cycle_de_vie.html#exercice">Exercice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/cycle_de_vie.html#memoire-heap-et-stack">Mémoire heap et stack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/cycle_de_vie.html#le-ramasse-miettes">Le ramasse-miettes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/cycle_de_vie.html#la-methode-finalize">La méthode finalize</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../langage_java/package.html">Les packages</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/package.html#declaration-d-un-package">Déclaration d’un package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/package.html#sous-package">Sous package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/package.html#nom-d-un-package">Nom d’un package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/package.html#nom-complet-d-une-classe">Nom complet d’une classe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/package.html#import-de-noms">Import de noms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/package.html#la-portee-de-niveau-package">La portée de niveau package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/package.html#le-fichier-package-info-java">Le fichier package-info.java</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../langage_java/relations_entre_objets.html">Les relations entre objets</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/relations_entre_objets.html#l-heritage-is-a">L’héritage (is-a)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/relations_entre_objets.html#heritage-et-constructeur">Héritage et constructeur</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/relations_entre_objets.html#heritage-simple-object">Héritage simple : Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/relations_entre_objets.html#heritage-et-affectation">Héritage et affectation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/relations_entre_objets.html#le-mot-cle-instanceof">Le mot-clé instanceof</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/relations_entre_objets.html#la-portee-protected">La portée protected</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/relations_entre_objets.html#heritage-des-methodes-et-attributs-de-classe">Héritage des méthodes et attributs de classe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/relations_entre_objets.html#heritage-et-final">Héritage et final</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/relations_entre_objets.html#la-composition-has-a">La composition (has-a)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../langage_java/polymorphisme.html">Le polymorphisme</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/polymorphisme.html#principe-du-polymorphisme">Principe du polymorphisme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/polymorphisme.html#une-exception-les-methodes-privees">Une exception : les méthodes privées</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/polymorphisme.html#redefinition-et-signature-de-methode">Redéfinition et signature de méthode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/polymorphisme.html#le-mot-cle-super">Le mot-clé super</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/polymorphisme.html#l-annotation-override">L’annotation &#64;Override</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/polymorphisme.html#les-methodes-de-classe">Les méthodes de classe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/polymorphisme.html#methode-finale">Méthode finale</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/polymorphisme.html#constructeur-et-polymorphisme">Constructeur et polymorphisme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/polymorphisme.html#masquage-des-attributs-par-heritage">Masquage des attributs par héritage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/polymorphisme.html#le-principe-du-ouvert-ferme">Le principe du ouvert/fermé</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../langage_java/classe_abstraite.html">Les classes abstraites</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/classe_abstraite.html#declarer-une-classe-abstraite">Déclarer une classe abstraite</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/classe_abstraite.html#declarer-une-methode-abstraite">Déclarer une méthode abstraite</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../langage_java/la_classe_object.html">La classe Object</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/la_classe_object.html#la-methode-equals">La méthode equals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/la_classe_object.html#la-methode-hashcode">La méthode hashCode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/la_classe_object.html#la-methode-tostring">La méthode toString</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/la_classe_object.html#la-methode-finalize">La méthode finalize</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/la_classe_object.html#la-methode-clone">La méthode clone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/la_classe_object.html#la-methode-getclass">La méthode getClass</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/la_classe_object.html#les-methodes-de-concurrence">Les méthodes de concurrence</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../langage_java/la_classe_string.html">La classe String</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/la_classe_string.html#string-et-tableau-de-caracteres">String et tableau de caractères</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/la_classe_string.html#quelques-methodes-utilitaires">Quelques méthodes utilitaires</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/la_classe_string.html#construction-d-une-instance-de-string">Construction d’une instance de String</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/la_classe_string.html#immutabilite-des-chaines-de-caracteres">Immutabilité des chaînes de caractères</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/la_classe_string.html#la-classe-stringbuilder">La classe StringBuilder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/la_classe_string.html#formatage-de-texte">Formatage de texte</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/la_classe_string.html#les-expressions-regulieres">Les expressions régulières</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../langage_java/les_exceptions.html">Les exceptions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/les_exceptions.html#qu-est-ce-qu-une-exception">Qu’est-ce qu’une exception ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/les_exceptions.html#signaler-une-exception">Signaler une exception</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/les_exceptions.html#traiter-une-exception">Traiter une exception</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/les_exceptions.html#propagation-d-une-exception">Propagation d’une exception</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/les_exceptions.html#exceptions-et-polymorphisme">Exceptions et polymorphisme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/les_exceptions.html#le-bloc-finally">Le bloc finally</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/les_exceptions.html#le-try-with-resources">Le try-with-resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/les_exceptions.html#hierarchie-applicative-d-exception">Hiérarchie applicative d’exception</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/les_exceptions.html#exception-cause">Exception cause</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/les_exceptions.html#les-erreurs-et-les-exceptions-runtime">Les erreurs et les exceptions runtime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/les_exceptions.html#choix-entre-checked-et-unchecked">Choix entre checked et unchecked</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../langage_java/enumeration.html">Les énumérations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/enumeration.html#les-methodes-d-une-enumeration">Les méthodes d’une énumération</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/enumeration.html#egalite-entre-enumerations">Égalité entre énumérations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/enumeration.html#support-de-switch">Support de switch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/enumeration.html#generation-d-une-enumeration">Génération d’une énumération</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/enumeration.html#ajout-de-methodes-et-d-attributs">Ajout de méthodes et d’attributs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/enumeration.html#ajout-de-constructeurs">Ajout de constructeurs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../langage_java/interface.html">Les interfaces</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/interface.html#declaration-d-une-interface">Déclaration d’une interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/interface.html#implementation-d-une-interface">Implémentation d’une interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/interface.html#attributs-et-methodes-statiques">Attributs et méthodes statiques</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/interface.html#heritage-d-interface">Héritage d’interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/interface.html#les-interfaces-marqueurs">Les interfaces marqueurs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/interface.html#implementation-par-defaut">Implémentation par défaut</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/interface.html#la-segregation-d-interface">La ségrégation d’interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/interface.html#l-inversion-de-dependance">L’inversion de dépendance</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../langage_java/generiques.html">Méthodes et classes génériques</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/generiques.html#l-exemple-de-la-classe-arraylist">L’exemple de la classe ArrayList</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/generiques.html#creation-et-assignation-d-une-classe-generique">Création et assignation d’une classe générique</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/generiques.html#notation-en-diamant">Notation en diamant</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/generiques.html#substitution-et-type-generique">Substitution et type générique</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/generiques.html#ecrire-une-methode-generique">Écrire une méthode générique</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/generiques.html#ecrire-une-classe-generique">Écrire une classe générique</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/generiques.html#limitations">Limitations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../langage_java/les_collections.html">Les collections</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/les_collections.html#les-listes">Les listes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../langage_java/les_collections.html#la-classe-arraylist">La classe ArrayList</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../langage_java/les_collections.html#la-classe-linkedlist">La classe LinkedList</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../langage_java/les_collections.html#la-classe-arraydeque">La classe ArrayDeque</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../langage_java/les_collections.html#la-classe-priorityqueue">La classe PriorityQueue</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../langage_java/les_collections.html#les-classes-vector-et-stack">Les classes Vector et Stack</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../langage_java/les_collections.html#les-interfaces-pour-les-listes">Les interfaces pour les listes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/les_collections.html#les-ensembles-set">Les ensembles (set)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../langage_java/les_collections.html#la-classe-treeset">La classe TreeSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../langage_java/les_collections.html#la-classe-hashset">La classe HashSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../langage_java/les_collections.html#la-classe-linkedhashset">La classe LinkedHashSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../langage_java/les_collections.html#les-interfaces-pour-les-ensembles">Les interfaces pour les ensembles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/les_collections.html#copie-d-une-collection-dans-un-tableau">Copie d’une collection dans un tableau</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/les_collections.html#les-tableaux-associatifs-maps">Les tableaux associatifs (maps)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../langage_java/les_collections.html#la-classe-treemap">La classe TreeMap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../langage_java/les_collections.html#la-classe-hashmap">La classe HashMap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../langage_java/les_collections.html#la-classe-linkedhashmap">La classe LinkedHashMap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../langage_java/les_collections.html#les-classes-dictionary-et-hashtable">Les classes Dictionary et Hashtable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../langage_java/les_collections.html#les-interfaces-pour-les-tableaux-associatifs">Les interfaces pour les tableaux associatifs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/les_collections.html#la-classe-outil-collections">La classe outil Collections</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../langage_java/entrees_sorties.html">Les entrées/sorties</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/entrees_sorties.html#inputstream-et-classes-concretes">InputStream et classes concrètes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/entrees_sorties.html#outputstream-et-classes-concretes">OutputStream et classes concrètes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/entrees_sorties.html#flux-orientes-caracteres">Flux orientés caractères</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/entrees_sorties.html#reader-et-classes-concretes">Reader et classes concrètes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/entrees_sorties.html#writer-et-classes-concretes">Writer et classes concrètes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/entrees_sorties.html#les-decorateurs-de-flux">Les décorateurs de flux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/entrees_sorties.html#la-classe-scanner">La classe Scanner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/entrees_sorties.html#fichiers-et-chemins">Fichiers et chemins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/entrees_sorties.html#acces-au-reseau">Accès au réseau</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/entrees_sorties.html#la-serialisation-d-objets">La sérialisation d’objets</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../langage_java/entrees_sorties.html#donnee-transient">Donnée transient</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../langage_java/entrees_sorties.html#identifiant-de-version-de-serialisation">Identifiant de version de sérialisation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../langage_java/les_dates.html">Les dates</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/les_dates.html#date-la-classe-historique">Date : la classe historique</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/les_dates.html#calendar">Calendar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/les_dates.html#l-api-date-time">L’API Date/Time</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../langage_java/les_dates.html#id1">Les Dates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../langage_java/les_dates.html#la-classe-instant">La classe Instant</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../langage_java/les_dates.html#periode-et-duree">Période et durée</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/les_dates.html#formatage-des-dates">Formatage des dates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/les_dates.html#lecture-des-dates">Lecture des dates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/les_dates.html#exercice">Exercice</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../langage_java/les_lambdas.html">Les lambdas</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/les_lambdas.html#syntaxe-des-lambdas">Syntaxe des lambdas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/les_lambdas.html#lambda-et-closure">Lambda et closure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/les_lambdas.html#les-interfaces-fonctionnelles">Les interfaces fonctionnelles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/les_lambdas.html#l-operateur-de-reference-de-methode">L’opérateur :: de référence de méthode</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../langage_java/streams.html">Streams</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/streams.html#creation-d-un-stream">Création d’un stream</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/streams.html#la-reduction">La réduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/streams.html#la-collecte">La collecte</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/streams.html#le-filtrage">Le filtrage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/streams.html#le-mapping">Le mapping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/streams.html#le-parallelisme">Le parallélisme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/streams.html#exercice">Exercice</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../langage_java/classe_interne.html">Les classes internes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/classe_interne.html#les-classes-internes-static">Les classes internes static</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/classe_interne.html#id1">Les classes internes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/classe_interne.html#les-classes-anonymes">Les classes anonymes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/classe_interne.html#acces-aux-elements-de-l-objet-englobant">Accès aux éléments de l’objet englobant</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/classe_interne.html#classe-interne-a-une-methode">Classe interne à une méthode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/classe_interne.html#interface-et-enumeration">Interface et énumération</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/classe_interne.html#plusieurs-classes-dans-un-meme-fichier">Plusieurs classes dans un même fichier</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../langage_java/les_annotations.html">Les annotations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/les_annotations.html#utilisation-des-annotations">Utilisation des annotations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/les_annotations.html#declaration-d-une-annotation">Déclaration d’une annotation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/les_annotations.html#retention-d-une-annotation">Rétention d’une annotation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/les_annotations.html#utilisation-des-annotations-par-introspection">Utilisation des annotations par introspection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/les_annotations.html#exercice">Exercice</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Java et les bases de données</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="jdbc.html">Accès aux bases de données : JDBC</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="jdbc.html#preambule-try-with-resources">Préambule : try-with-resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jdbc.html#le-pilote-de-base-de-donnees">Le pilote de base de données</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jdbc.html#creation-d-une-connexion">Création d’une connexion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jdbc.html#l-url-de-connexion-et-la-classe-des-pilotes">L’URL de connexion et la classe des pilotes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jdbc.html#les-requetes-sql-statement">Les requêtes SQL (Statement)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jdbc.html#le-statement">Le Statement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jdbc.html#le-resultset">Le ResultSet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jdbc.html#le-preparedstatement">Le PreparedStatement</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="jdbc.html#l-injection-sql">L’injection SQL</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="jdbc.html#le-callablestatement">Le CallableStatement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jdbc.html#la-transaction">La transaction</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="jpa_entites.html">Les entités JPA</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="jpa_entites.html#les-orm-object-relational-mapping">Les ORM (Object-Relational Mapping)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jpa_entites.html#id1">Les entités JPA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jpa_entites.html#l-entitymanager">L’EntityManager</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="jpa_entites.html#obtenir-un-entitymanager">Obtenir un EntityManager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="jpa_entites.html#creer-une-fabrique-d-entitymanager">Créer une fabrique d’EntityManager</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="jpa_entites.html#manipuler-des-entites-a-partir-d-un-entitymanager">Manipuler des entités à partir d’un EntityManager</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="jpa_entites.html#la-methode-persist">La méthode persist</a></li>
+<li class="toctree-l3"><a class="reference internal" href="jpa_entites.html#la-methode-find">La méthode find</a></li>
+<li class="toctree-l3"><a class="reference internal" href="jpa_entites.html#la-methode-refresh">La méthode refresh</a></li>
+<li class="toctree-l3"><a class="reference internal" href="jpa_entites.html#la-methode-merge">La méthode merge</a></li>
+<li class="toctree-l3"><a class="reference internal" href="jpa_entites.html#la-methode-detach">La méthode detach</a></li>
+<li class="toctree-l3"><a class="reference internal" href="jpa_entites.html#la-methode-remove">La méthode remove</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="jpa_queries.html">Les requêtes JPA</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="jpa_queries.html#les-requetes-natives">Les requêtes Natives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jpa_queries.html#les-requetes-jpql">Les requêtes JPQL</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="jpa_queries.html#les-requetes-par-programmation">Les requêtes par programmation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="jpa_queries.html#utilisation-de-requetes-nommees">Utilisation de requêtes nommées</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">L’héritage avec JPA</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#l-annotation-inheritance">L’annotation &#64;Inheritance</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#heritage-avec-une-seule-table">Héritage avec une seule table</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#heritage-avec-jointure-de-tables">Héritage avec jointure de tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#heritage-avec-une-table-par-classe">Héritage avec une table par classe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#l-heritage-et-les-requetes-jpql-polymorphiques">L’héritage et les requêtes JPQL polymorphiques</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#un-cas-a-part-fusion-de-la-super-classe">Un cas à part : fusion de la super classe</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="jpa_relations.html">Les relations avec JPA</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="jpa_relations.html#la-relation-1-1-one-to-one">La relation 1:1 (one to one)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="jpa_relations.html#la-relation-n-1-many-to-one">La relation n:1 (many to one)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="jpa_relations.html#la-relation-1-n-one-to-many">La relation 1:n (one to many)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jpa_relations.html#la-relation-n-n-many-to-many">La relation n:n (many to many)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jpa_relations.html#les-relations-bi-directionnelles">Les relations bi-directionnelles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jpa_relations.html#la-propagation-en-cascade">La propagation en cascade</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jpa_relations.html#requetes-jpql-et-jointure">Requêtes JPQL et jointure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jpa_relations.html#fetch-lazy-ou-fetch-eager">Fetch lazy ou fetch eager</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">U'Dev 2018</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Accueil</a> &raquo;</li>
+        
+      <li>L’héritage avec JPA</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="jpa_relations.html" class="btn btn-neutral float-right" title="Les relations avec JPA" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="jpa_queries.html" class="btn btn-neutral" title="Les requêtes JPA" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="l-heritage-avec-jpa">
+<h1>L’héritage avec JPA<a class="headerlink" href="#l-heritage-avec-jpa" title="Lien permanent vers ce titre">¶</a></h1>
+<p>JPA offre plusieurs stratégies pour associer une relation d’héritage dans le
+modèle objet avec une représentation dans le modèle relationnel de données.</p>
+<p>Pour décrire la relation d’héritage avec JPA, on utilise l’annotation <a class="reference external" href="https://docs.oracle.com/javaee/7/api/javax/persistence/Inheritance.html">&#64;Inheritance</a>
+ou <a class="reference external" href="https://docs.oracle.com/javaee/7/api/javax/persistence/MappedSuperclass.html">&#64;MappedSuperclass</a>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Pour une présentation complète de l’héritage dans JPA, reportez-vous
+au <a class="reference external" href="https://en.wikibooks.org/wiki/Java_Persistence/Inheritance">Wikibook</a>.</p>
+</div>
+<div class="section" id="l-annotation-inheritance">
+<h2>L’annotation &#64;Inheritance<a class="headerlink" href="#l-annotation-inheritance" title="Lien permanent vers ce titre">¶</a></h2>
+<p>L’annotation <a class="reference external" href="https://docs.oracle.com/javaee/7/api/javax/persistence/Inheritance.html">&#64;Inheritance</a> permet d’indiquer qu’il existe une relation d’héritage
+dans le modèle objet et dans le modèle relationnel. Comme il existe plusieurs
+façon de représenter un héritage de données dans le modèle relationnel,
+l’annotation <a class="reference external" href="https://docs.oracle.com/javaee/7/api/javax/persistence/Inheritance.html">&#64;Inheritance</a> dispose de l’attribut <code class="docutils literal notranslate"><span class="pre">strategy</span></code> pour préciser
+la stratégie utilisée dans le modèle de données. Cette stratégie est une énumération
+du type <a class="reference external" href="https://docs.oracle.com/javaee/7/api/javax/persistence/InheritanceType.html">InheritanceType</a> et accepte les valeurs :</p>
+<dl class="docutils">
+<dt><code class="docutils literal notranslate"><span class="pre">SINGLE_TABLE</span></code></dt>
+<dd>l’héritage est représenté par une seule table en base de données</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">JOINED</span></code></dt>
+<dd>l’héritage est représenté par une jointure entre la table de l’entité parente et la table de l’entité enfant</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">TABLE_PER_CLASS</span></code></dt>
+<dd>l’héritage est représenté par une table par entité</dd>
+</dl>
+<div class="section" id="heritage-avec-une-seule-table">
+<h3>Héritage avec une seule table<a class="headerlink" href="#heritage-avec-une-seule-table" title="Lien permanent vers ce titre">¶</a></h3>
+<p>La stratégie <code class="docutils literal notranslate"><span class="pre">SINGLE_TABLE</span></code> permet de représenter en base de données un héritage
+avec une seule table. Une colonne contiendra un identifiant pour déterminer le
+type réel de la classe : on parle de la colonne <em>discriminante</em>. La table doit
+contenir toutes les colonnes nécessaires pour stocker les informations de la
+super classe et de l’ensemble des classes filles.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">L’inconvénient de la stratégie <code class="docutils literal notranslate"><span class="pre">SINGLE_TABLE</span></code> est qu’il n’est pas possible
+d’ajouter des contraintes de type <code class="docutils literal notranslate"><span class="pre">NOT</span> <span class="pre">NULL</span></code> sur les colonnes représentant
+les propriétés des classes filles.</p>
+</div>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">Super classe</span><a class="headerlink" href="#id2" title="Lien permanent vers ce code">¶</a></div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.cgi.udev.vehicule</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">javax.persistence.DiscriminatorColumn</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.persistence.Entity</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.persistence.GeneratedValue</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.persistence.GenerationType</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.persistence.Id</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.persistence.Inheritance</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.persistence.InheritanceType</span><span class="o">;</span>
+
+<span class="nd">@Entity</span>
+<span class="nd">@Inheritance</span><span class="o">(</span><span class="n">strategy</span><span class="o">=</span><span class="n">InheritanceType</span><span class="o">.</span><span class="na">SINGLE_TABLE</span><span class="o">)</span>
+<span class="nd">@DiscriminatorColumn</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="s">&quot;vehicule_type&quot;</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">Vehicule</span> <span class="o">{</span>
+
+    <span class="nd">@Id</span>
+    <span class="nd">@GeneratedValue</span><span class="o">(</span><span class="n">strategy</span><span class="o">=</span><span class="n">GenerationType</span><span class="o">.</span><span class="na">IDENTITY</span><span class="o">)</span>
+    <span class="kd">private</span> <span class="n">Long</span> <span class="n">id</span><span class="o">;</span>
+
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">marque</span><span class="o">;</span>
+
+    <span class="c1">// getters/setters omis</span>
+
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<p>Dans l’exemple précédent, la colonne discriminante est donnée par l’annotation
+<a class="reference external" href="https://docs.oracle.com/javaee/7/api/javax/persistence/DiscriminatorColumn.html">&#64;DiscriminatorColumn</a>. Cette colonne n’est donc pas représentée par un attribut
+dans la classe.</p>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">Classe enfant</span><a class="headerlink" href="#id3" title="Lien permanent vers ce code">¶</a></div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.cgi.udev.vehicule</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">javax.persistence.DiscriminatorValue</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.persistence.Entity</span><span class="o">;</span>
+
+<span class="nd">@Entity</span>
+<span class="nd">@DiscriminatorValue</span><span class="o">(</span><span class="s">&quot;V&quot;</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Voiture</span> <span class="kd">extends</span> <span class="n">Vehicule</span> <span class="o">{</span>
+
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">nbPlaces</span><span class="o">;</span>
+
+    <span class="c1">// getters/setters omis</span>
+
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text">Une autre classe enfant</span><a class="headerlink" href="#id4" title="Lien permanent vers ce code">¶</a></div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.cgi.udev.vehicule</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">javax.persistence.DiscriminatorValue</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.persistence.Entity</span><span class="o">;</span>
+
+<span class="nd">@Entity</span>
+<span class="nd">@DiscriminatorValue</span><span class="o">(</span><span class="s">&quot;M&quot;</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Moto</span> <span class="kd">extends</span> <span class="n">Vehicule</span> <span class="o">{</span>
+
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">cylindree</span><span class="o">;</span>
+
+    <span class="c1">// getters/setters omis</span>
+
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<p>L’annotation <a class="reference external" href="https://docs.oracle.com/javaee/7/api/javax/persistence/DiscriminatorValue.html">&#64;DiscriminatorValue</a> permet de préciser la valeur dans la colonne
+discriminante qui permet d’identifier un objet du type de cette classe. Cette
+valeur doit être unique pour l’ensemble des classes de l’héritage. Dans l’exemple
+ci-dessus, lors de la persistance d’un objet de la classe <code class="docutils literal notranslate"><span class="pre">Voiture</span></code>, JPA positionnera
+automatiquement la valeur <code class="docutils literal notranslate"><span class="pre">&quot;V&quot;</span></code> dans la colonne <code class="docutils literal notranslate"><span class="pre">vehicule_type</span></code>.</p>
+<p>Pour l’exemple précédent, le schéma de base de données contiendra la table <code class="docutils literal notranslate"><span class="pre">Vehicule</span></code>
+qui peut être créée comme suit :</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">create</span> <span class="k">table</span> <span class="n">Vehicule</span> <span class="p">(</span>
+    <span class="n">id</span> <span class="nb">int</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="n">AUTO_INCREMENT</span><span class="p">,</span>
+    <span class="n">vehicule_type</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">marque</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span>
+    <span class="n">cylindree</span> <span class="nb">int</span><span class="p">,</span>
+    <span class="n">nbPlaces</span> <span class="nb">int</span><span class="p">,</span>
+    <span class="k">primary</span> <span class="k">key</span> <span class="p">(</span><span class="n">id</span><span class="p">)</span>
+<span class="p">)</span> <span class="n">engine</span> <span class="o">=</span> <span class="n">InnoDB</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="heritage-avec-jointure-de-tables">
+<h2>Héritage avec jointure de tables<a class="headerlink" href="#heritage-avec-jointure-de-tables" title="Lien permanent vers ce titre">¶</a></h2>
+<p>La stratégie <code class="docutils literal notranslate"><span class="pre">JOINED</span></code> permet de représenter en base de données un héritage
+avec une table par entité. Pour les classes filles, JPA réalisera une jointure
+entre la table représentant l’entité et la table représentant l’entité de la
+super classe. L’implémentation est très proche de celle d’un héritage avec
+une seule table (seule la stratégie change) mais le schéma de la base de données
+est très différent.</p>
+<div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-text">Super classe</span><a class="headerlink" href="#id5" title="Lien permanent vers ce code">¶</a></div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.cgi.udev.vehicule</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">javax.persistence.DiscriminatorColumn</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.persistence.Entity</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.persistence.GeneratedValue</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.persistence.GenerationType</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.persistence.Id</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.persistence.Inheritance</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.persistence.InheritanceType</span><span class="o">;</span>
+
+<span class="nd">@Entity</span>
+<span class="nd">@Inheritance</span><span class="o">(</span><span class="n">strategy</span><span class="o">=</span><span class="n">InheritanceType</span><span class="o">.</span><span class="na">JOINED</span><span class="o">)</span>
+<span class="nd">@DiscriminatorColumn</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="s">&quot;vehicule_type&quot;</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">Vehicule</span> <span class="o">{</span>
+
+    <span class="nd">@Id</span>
+    <span class="nd">@GeneratedValue</span><span class="o">(</span><span class="n">strategy</span><span class="o">=</span><span class="n">GenerationType</span><span class="o">.</span><span class="na">IDENTITY</span><span class="o">)</span>
+    <span class="kd">private</span> <span class="n">Long</span> <span class="n">id</span><span class="o">;</span>
+
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">marque</span><span class="o">;</span>
+
+    <span class="c1">// getters/setters omis</span>
+
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id6">
+<div class="code-block-caption"><span class="caption-text">Classe enfant</span><a class="headerlink" href="#id6" title="Lien permanent vers ce code">¶</a></div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.cgi.udev.vehicule</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">javax.persistence.DiscriminatorValue</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.persistence.Entity</span><span class="o">;</span>
+
+<span class="nd">@Entity</span>
+<span class="nd">@DiscriminatorValue</span><span class="o">(</span><span class="s">&quot;V&quot;</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Voiture</span> <span class="kd">extends</span> <span class="n">Vehicule</span> <span class="o">{</span>
+
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">nbPlaces</span><span class="o">;</span>
+
+    <span class="c1">// getters/setters omis</span>
+
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id7">
+<div class="code-block-caption"><span class="caption-text">Une autre classe enfant</span><a class="headerlink" href="#id7" title="Lien permanent vers ce code">¶</a></div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.cgi.udev.vehicule</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">javax.persistence.DiscriminatorValue</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.persistence.Entity</span><span class="o">;</span>
+
+<span class="nd">@Entity</span>
+<span class="nd">@DiscriminatorValue</span><span class="o">(</span><span class="s">&quot;M&quot;</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Moto</span> <span class="kd">extends</span> <span class="n">Vehicule</span> <span class="o">{</span>
+
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">cylindree</span><span class="o">;</span>
+
+    <span class="c1">// getters/setters omis</span>
+
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<p>Dans cette configuration, JPA attend 3 tables dans le schéma de base de données
+qui peuvent être créées par les instructions suivantes :</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">create</span> <span class="k">table</span> <span class="n">Vehicule</span> <span class="p">(</span>
+    <span class="n">id</span> <span class="nb">int</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="n">AUTO_INCREMENT</span><span class="p">,</span>
+    <span class="n">vehicule_type</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">marque</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span>
+    <span class="k">primary</span> <span class="k">key</span> <span class="p">(</span><span class="n">id</span><span class="p">)</span>
+<span class="p">)</span> <span class="n">engine</span> <span class="o">=</span> <span class="n">InnoDB</span><span class="p">;</span>
+
+<span class="k">create</span> <span class="k">table</span> <span class="n">Voiture</span> <span class="p">(</span>
+    <span class="n">id</span> <span class="nb">int</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="n">AUTO_INCREMENT</span><span class="p">,</span>
+    <span class="n">nbPlaces</span> <span class="nb">int</span><span class="p">,</span>
+    <span class="k">primary</span> <span class="k">key</span> <span class="p">(</span><span class="n">id</span><span class="p">),</span>
+    <span class="k">foreign</span> <span class="k">key</span> <span class="p">(</span><span class="n">id</span><span class="p">)</span> <span class="k">references</span> <span class="n">Vehicule</span><span class="p">(</span><span class="n">id</span><span class="p">)</span>
+<span class="p">)</span> <span class="n">engine</span> <span class="o">=</span> <span class="n">InnoDB</span><span class="p">;</span>
+
+<span class="k">create</span> <span class="k">table</span> <span class="n">Moto</span> <span class="p">(</span>
+    <span class="n">id</span> <span class="nb">int</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="n">AUTO_INCREMENT</span><span class="p">,</span>
+    <span class="n">cylindree</span> <span class="nb">int</span><span class="p">,</span>
+    <span class="k">primary</span> <span class="k">key</span> <span class="p">(</span><span class="n">id</span><span class="p">),</span>
+    <span class="k">foreign</span> <span class="k">key</span> <span class="p">(</span><span class="n">id</span><span class="p">)</span> <span class="k">references</span> <span class="n">Vehicule</span><span class="p">(</span><span class="n">id</span><span class="p">)</span>
+<span class="p">)</span> <span class="n">engine</span> <span class="o">=</span> <span class="n">InnoDB</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="heritage-avec-une-table-par-classe">
+<h2>Héritage avec une table par classe<a class="headerlink" href="#heritage-avec-une-table-par-classe" title="Lien permanent vers ce titre">¶</a></h2>
+<p>La stratégie <code class="docutils literal notranslate"><span class="pre">TABLE_PER_CLASS</span></code> permet de représenter en base de données un héritage
+avec une table par entité. Les attributs hérités sont répétés dans chaque table.
+Ainsi, la notion d’héritage n’est pas exprimée dans le modèle relationnel de données.</p>
+<div class="literal-block-wrapper docutils container" id="id8">
+<div class="code-block-caption"><span class="caption-text">Super classe</span><a class="headerlink" href="#id8" title="Lien permanent vers ce code">¶</a></div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.cgi.udev.vehicule</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">javax.persistence.Entity</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.persistence.GeneratedValue</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.persistence.GenerationType</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.persistence.Id</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.persistence.Inheritance</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.persistence.InheritanceType</span><span class="o">;</span>
+
+<span class="nd">@Entity</span>
+<span class="nd">@Inheritance</span><span class="o">(</span><span class="n">strategy</span><span class="o">=</span><span class="n">InheritanceType</span><span class="o">.</span><span class="na">TABLE_PER_CLASS</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">Vehicule</span> <span class="o">{</span>
+
+    <span class="nd">@Id</span>
+    <span class="nd">@GeneratedValue</span><span class="o">(</span><span class="n">strategy</span><span class="o">=</span><span class="n">GenerationType</span><span class="o">.</span><span class="na">AUTO</span><span class="o">)</span>
+    <span class="kd">private</span> <span class="n">Long</span> <span class="n">id</span><span class="o">;</span>
+
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">marque</span><span class="o">;</span>
+
+    <span class="c1">// getters/setters omis</span>
+
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id9">
+<div class="code-block-caption"><span class="caption-text">Classe enfant</span><a class="headerlink" href="#id9" title="Lien permanent vers ce code">¶</a></div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.cgi.udev.vehicule</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">javax.persistence.Entity</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.persistence.Table</span><span class="o">;</span>
+
+<span class="nd">@Entity</span>
+<span class="nd">@Table</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="s">&quot;Voiture&quot;</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Voiture</span> <span class="kd">extends</span> <span class="n">Vehicule</span> <span class="o">{</span>
+
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">nbPlaces</span><span class="o">;</span>
+
+    <span class="c1">// getters/setters omis</span>
+
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id10">
+<div class="code-block-caption"><span class="caption-text">Une autre classe enfant</span><a class="headerlink" href="#id10" title="Lien permanent vers ce code">¶</a></div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.cgi.udev.vehicule</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">javax.persistence.Entity</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.persistence.Table</span><span class="o">;</span>
+
+<span class="nd">@Entity</span>
+<span class="nd">@Table</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="s">&quot;Moto&quot;</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Moto</span> <span class="kd">extends</span> <span class="n">Vehicule</span> <span class="o">{</span>
+
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">cylindree</span><span class="o">;</span>
+
+    <span class="c1">// getters/setters omis</span>
+
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<p>Dans cette configuration, JPA attend 2 tables dans le schéma de base de données
+qui peuvent être créées par les instructions suivantes :</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">create</span> <span class="k">table</span> <span class="n">Voiture</span> <span class="p">(</span>
+    <span class="n">id</span> <span class="nb">int</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
+    <span class="n">marque</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span>
+    <span class="n">nbPlaces</span> <span class="nb">int</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
+    <span class="k">primary</span> <span class="k">key</span> <span class="p">(</span><span class="n">id</span><span class="p">)</span>
+<span class="p">)</span> <span class="n">engine</span> <span class="o">=</span> <span class="n">InnoDB</span><span class="p">;</span>
+
+<span class="k">create</span> <span class="k">table</span> <span class="n">Moto</span> <span class="p">(</span>
+    <span class="n">id</span> <span class="nb">int</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
+    <span class="n">marque</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span>
+    <span class="n">cylindree</span> <span class="nb">int</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
+    <span class="k">primary</span> <span class="k">key</span> <span class="p">(</span><span class="n">id</span><span class="p">)</span>
+<span class="p">)</span> <span class="n">engine</span> <span class="o">=</span> <span class="n">InnoDB</span><span class="p">;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">La table <code class="docutils literal notranslate"><span class="pre">Vehicule</span></code> n’est pas nécessaire car la classe <code class="docutils literal notranslate"><span class="pre">Vehicule</span></code> est
+abstraite. Il n’est donc pas possible de créer des entités de type <code class="docutils literal notranslate"><span class="pre">Vehicule</span></code>.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>La stratégie <code class="docutils literal notranslate"><span class="pre">TABLE_PER_CLASS</span></code> est plus complexe à mettre en place pour
+la gestion des clés primaires. En effet, du point de vue de JPA, les objets
+de type <code class="docutils literal notranslate"><span class="pre">Voiture</span></code> et <code class="docutils literal notranslate"><span class="pre">Moto</span></code> sont également des objets de type <code class="docutils literal notranslate"><span class="pre">Voiture</span></code>.
+À ce titre, il ne peut pas exister deux objets avec la même clé primaire. Mais,
+comme ces objets sont représentés en base de données par deux tables différentes,
+une colonne de type <code class="docutils literal notranslate"><span class="pre">AUTO_INCREMENT</span></code> en MySQL ne suffit pas à garantir qu’il
+n’existe pas une voiture ayant la même clé qu’une moto.</p>
+<p class="last">Avec, la stratégie <code class="docutils literal notranslate"><span class="pre">TABLE_PER_CLASS</span></code>, il n’est pas possible d’utiliser
+l’annotation <a class="reference external" href="https://docs.oracle.com/javaee/7/api/javax/persistence/GeneratedValue.html">&#64;GeneratedValue</a> avec la valeur <code class="docutils literal notranslate"><span class="pre">IDENTITY</span></code>. On peut,
+par exemple, utiliser une table servant à générer une séquence de clés.</p>
+</div>
+</div>
+<div class="section" id="l-heritage-et-les-requetes-jpql-polymorphiques">
+<h2>L’héritage et les requêtes JPQL polymorphiques<a class="headerlink" href="#l-heritage-et-les-requetes-jpql-polymorphiques" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Lorsqu’il existe une relation d’héritage entre les entités, il est possible
+de créer des requêtes polymorphiques. Si on exécute la requête JPQL suivante :</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>select v from Vehicule v
+</pre></div>
+</div>
+<p>Alors quelle que soit la stratégie d’héritage utilisée, la requête JPQL doit
+remonter l’ensemble des objets qui héritent de la classe <code class="docutils literal notranslate"><span class="pre">Vehicule</span></code>. Pour notre
+exemple, cette requête retourne la liste de tous les objets <code class="docutils literal notranslate"><span class="pre">Voiture</span></code> et <code class="docutils literal notranslate"><span class="pre">Moto</span></code>.</p>
+<p>Néanmoins il est possible d’avoir un type plus précis si nécessaire. Pour retourner
+uniquement la liste des objets <code class="docutils literal notranslate"><span class="pre">Voiture</span></code> :</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>select v from Voiture v
+</pre></div>
+</div>
+</div>
+<div class="section" id="un-cas-a-part-fusion-de-la-super-classe">
+<h2>Un cas à part : fusion de la super classe<a class="headerlink" href="#un-cas-a-part-fusion-de-la-super-classe" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Il arrive parfois que la relation d’héritage n’ait pas de sens dans le modèle
+relationnel. Dans ce cas, la classe parente n’est pas vraiment une entité au
+sens JPA, on parle de <em>mapped superclass</em>.</p>
+<div class="literal-block-wrapper docutils container" id="id11">
+<div class="code-block-caption"><span class="caption-text">Super classe</span><a class="headerlink" href="#id11" title="Lien permanent vers ce code">¶</a></div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.cgi.udev.vehicule</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">javax.persistence.GeneratedValue</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.persistence.GenerationType</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.persistence.Id</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.persistence.MappedSuperclass</span><span class="o">;</span>
+
+<span class="nd">@MappedSuperclass</span>
+<span class="kd">public</span> <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">Vehicule</span> <span class="o">{</span>
+
+        <span class="nd">@Id</span>
+        <span class="nd">@GeneratedValue</span><span class="o">(</span><span class="n">strategy</span><span class="o">=</span><span class="n">GenerationType</span><span class="o">.</span><span class="na">IDENTITY</span><span class="o">)</span>
+        <span class="kd">private</span>     <span class="n">Long</span> <span class="n">id</span><span class="o">;</span>
+
+        <span class="kd">private</span> <span class="n">String</span> <span class="n">marque</span><span class="o">;</span>
+
+    <span class="c1">// getters/setters omis</span>
+
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<p>La classe <code class="docutils literal notranslate"><span class="pre">Vehicule</span></code> n’est plus déclarée avec l’annotation <a class="reference external" href="https://docs.oracle.com/javaee/7/api/javax/persistence/Entity.html">&#64;Entity</a> mais
+avec l’annotation <a class="reference external" href="https://docs.oracle.com/javaee/7/api/javax/persistence/MappedSuperclass.html">&#64;MappedSuperclass</a>.</p>
+<div class="literal-block-wrapper docutils container" id="id12">
+<div class="code-block-caption"><span class="caption-text">Classe enfant</span><a class="headerlink" href="#id12" title="Lien permanent vers ce code">¶</a></div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.cgi.udev.vehicule</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">javax.persistence.Entity</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.persistence.Table</span><span class="o">;</span>
+
+<span class="nd">@Entity</span>
+<span class="nd">@Table</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="s">&quot;Voiture&quot;</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Voiture</span> <span class="kd">extends</span> <span class="n">Vehicule</span> <span class="o">{</span>
+
+        <span class="kd">private</span> <span class="kt">int</span> <span class="n">nbPlaces</span><span class="o">;</span>
+
+    <span class="c1">// getters/setters omis</span>
+
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id13">
+<div class="code-block-caption"><span class="caption-text">Une autre classe enfant</span><a class="headerlink" href="#id13" title="Lien permanent vers ce code">¶</a></div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.cgi.udev.vehicule</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">javax.persistence.Entity</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.persistence.Table</span><span class="o">;</span>
+
+<span class="nd">@Entity</span>
+<span class="nd">@Table</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="s">&quot;Moto&quot;</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Moto</span> <span class="kd">extends</span> <span class="n">Vehicule</span> <span class="o">{</span>
+
+        <span class="kd">private</span> <span class="kt">int</span> <span class="n">cylindree</span><span class="o">;</span>
+
+    <span class="c1">// getters/setters omis</span>
+
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<p>Dans cette configuration, JPA attend 2 tables dans le schéma de base de données
+qui peuvent être créées par les instructions suivantes :</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">create</span> <span class="k">table</span> <span class="n">Voiture</span> <span class="p">(</span>
+    <span class="n">id</span> <span class="nb">int</span> <span class="k">not</span> <span class="k">null</span> <span class="n">auto_increment</span><span class="p">,</span>
+    <span class="n">marque</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span>
+    <span class="n">nbPlaces</span> <span class="nb">int</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
+    <span class="k">primary</span> <span class="k">key</span> <span class="p">(</span><span class="n">id</span><span class="p">)</span>
+<span class="p">)</span> <span class="n">engine</span> <span class="o">=</span> <span class="n">InnoDB</span><span class="p">;</span>
+
+<span class="k">create</span> <span class="k">table</span> <span class="n">Moto</span> <span class="p">(</span>
+    <span class="n">id</span> <span class="nb">int</span> <span class="k">not</span> <span class="k">null</span> <span class="n">auto_increment</span><span class="p">,</span>
+    <span class="n">marque</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span>
+    <span class="n">cylindree</span> <span class="nb">int</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
+    <span class="k">primary</span> <span class="k">key</span> <span class="p">(</span><span class="n">id</span><span class="p">)</span>
+<span class="p">)</span> <span class="n">engine</span> <span class="o">=</span> <span class="n">InnoDB</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>L’utilisation de <a class="reference external" href="https://docs.oracle.com/javaee/7/api/javax/persistence/MappedSuperclass.html">&#64;MappedSuperclass</a> implique qu’il
+n’existe pas de relation entre les classes filles pour JPA. Comme la super classe
+n’est pas un entité, il n’est pas possible d’effectuer des requêtes sur la super classe
+ni d’utiliser des requêtes polymorphiques.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="jpa_relations.html" class="btn btn-neutral float-right" title="Les relations avec JPA" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="jpa_queries.html" class="btn btn-neutral" title="Les requêtes JPA" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright David Gayerie - david.gayerie at epsi.fr - CC-BY-SA
+
+    </p>
+  </div>
+    <div><a class="reference download" href="https://github.com/spoonless/udev-2018/archive/gh-pages.zip"><code class="download docutils literal notranslate"><span class="pre">Télécharger ce cours</pre></code></a></div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>
