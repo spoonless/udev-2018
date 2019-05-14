@@ -11,7 +11,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Les packages &mdash; Documentation U&#39;Dev 2018 1.0</title>
+  <title>Les packages &mdash; Documentation U&#39;Dev 2018 </title>
   
 
   
@@ -20,35 +20,38 @@
   
 
   
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/custom_rtd_theme.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Recherche" href="../search.html" />
-    <link rel="next" title="Les relations entre objets" href="relations_entre_objets.html" />
+    <link rel="next" title="Héritage et composition" href="heritage_composition.html" />
     <link rel="prev" title="Cycle de vie d’un objet" href="cycle_de_vie.html" /> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -268,16 +271,16 @@
 <li class="toctree-l2"><a class="reference internal" href="#le-fichier-package-info-java">Le fichier package-info.java</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="relations_entre_objets.html">Les relations entre objets</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="relations_entre_objets.html#l-heritage-is-a">L’héritage (is-a)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="relations_entre_objets.html#heritage-et-constructeur">Héritage et constructeur</a></li>
-<li class="toctree-l2"><a class="reference internal" href="relations_entre_objets.html#heritage-simple-object">Héritage simple : Object</a></li>
-<li class="toctree-l2"><a class="reference internal" href="relations_entre_objets.html#heritage-et-affectation">Héritage et affectation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="relations_entre_objets.html#le-mot-cle-instanceof">Le mot-clé instanceof</a></li>
-<li class="toctree-l2"><a class="reference internal" href="relations_entre_objets.html#la-portee-protected">La portée protected</a></li>
-<li class="toctree-l2"><a class="reference internal" href="relations_entre_objets.html#heritage-des-methodes-et-attributs-de-classe">Héritage des méthodes et attributs de classe</a></li>
-<li class="toctree-l2"><a class="reference internal" href="relations_entre_objets.html#heritage-et-final">Héritage et final</a></li>
-<li class="toctree-l2"><a class="reference internal" href="relations_entre_objets.html#la-composition-has-a">La composition (has-a)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="heritage_composition.html">Héritage et composition</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="heritage_composition.html#l-heritage-is-a">L’héritage (is-a)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="heritage_composition.html#heritage-et-constructeur">Héritage et constructeur</a></li>
+<li class="toctree-l2"><a class="reference internal" href="heritage_composition.html#heritage-simple-object">Héritage simple : Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="heritage_composition.html#heritage-et-affectation">Héritage et affectation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="heritage_composition.html#le-mot-cle-instanceof">Le mot-clé instanceof</a></li>
+<li class="toctree-l2"><a class="reference internal" href="heritage_composition.html#la-portee-protected">La portée protected</a></li>
+<li class="toctree-l2"><a class="reference internal" href="heritage_composition.html#heritage-des-methodes-et-attributs-de-classe">Héritage des méthodes et attributs de classe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="heritage_composition.html#heritage-et-final">Héritage et final</a></li>
+<li class="toctree-l2"><a class="reference internal" href="heritage_composition.html#la-composition-has-a">La composition (has-a)</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="polymorphisme.html">Le polymorphisme</a><ul>
@@ -458,7 +461,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Java et les bases de données</span></p>
+<p class="caption"><span class="caption-text">Java EE ORM</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../javaee_orm/jdbc.html">Accès aux bases de données : JDBC</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../javaee_orm/jdbc.html#preambule-try-with-resources">Préambule : try-with-resources</a></li>
@@ -472,8 +475,16 @@
 <li class="toctree-l3"><a class="reference internal" href="../javaee_orm/jdbc.html#l-injection-sql">L’injection SQL</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../javaee_orm/jdbc.html#recuperation-des-cles-generees">Récupération des clés générées</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../javaee_orm/jdbc.html#le-callablestatement">Le CallableStatement</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../javaee_orm/jdbc.html#la-transaction">La transaction</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../javaee_orm/jdbc_webapp.html">JDBC dans une application Web</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../javaee_orm/jdbc_webapp.html#acces-a-une-datasource">Accès à une DataSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../javaee_orm/jdbc_webapp.html#injection-d-une-datasource">Injection d’une DataSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../javaee_orm/jdbc_webapp.html#declaration-de-la-datasource-dans-le-fichier-web-xml">Déclaration de la DataSource dans le fichier web.xml</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../javaee_orm/jdbc_webapp.html#declaration-d-une-datasource-dans-tomcat">Déclaration d’une DataSource dans Tomcat</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../javaee_orm/jpa_entites.html">Les entités JPA</a><ul>
@@ -589,7 +600,7 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="relations_entre_objets.html" class="btn btn-neutral float-right" title="Les relations entre objets" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="heritage_composition.html" class="btn btn-neutral float-right" title="Héritage et composition" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="cycle_de_vie.html" class="btn btn-neutral" title="Cycle de vie d’un objet" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
@@ -640,8 +651,8 @@ portent le même nom, elles se trouveront chacune dans un fichier avec le
 même nom mais dans des répertoires différents puisque ces classes appartiendront
 à des packages différents.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Quand on spécifie le <strong>classpath</strong> à la compilation ou au lancement d’un
+<p class="admonition-title">Note</p>
+<p>Quand on spécifie le <strong>classpath</strong> à la compilation ou au lancement d’un
 programme, on spécifie le ou les répertoires à partir desquels se trouvent
 les packages.</p>
 </div>
@@ -745,28 +756,28 @@ possible d’importer un nom en cours de déclaration d’une classe ou d’une
 méthode.</p>
 <p>Le mot-clé <strong>import</strong> permet d’importer :</p>
 <ul>
-<li><p class="first">Un nom de classe particulier</p>
+<li><p>Un nom de classe particulier</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.Arrays</span><span class="o">;</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first">Un nom de méthode de classe ou d’attribut de classe</p>
+<li><p>Un nom de méthode de classe ou d’attribut de classe</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import static</span> <span class="nn">java.lang.Math.abs</span><span class="o">;</span>
 <span class="kn">import static</span> <span class="nn">java.lang.System.out</span><span class="o">;</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first">Un nom de classe interne (inner class)</p>
+<li><p>Un nom de classe interne (inner class)</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.Map.Entry</span><span class="o">;</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first">Tous les noms d’un package</p>
+<li><p>Tous les noms d’un package</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.*</span><span class="o">;</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first">Tous les noms des méthodes et des attributs de classe</p>
+<li><p>Tous les noms des méthodes et des attributs de classe</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import static</span> <span class="nn">java.lang.Math.*</span><span class="o">;</span>
 </pre></div>
 </div>
@@ -812,8 +823,8 @@ plus vraiment utile.</p>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Si vous importez un nom qui est déjà défini dans l’espace courant, alors l’import
+<p class="admonition-title">Note</p>
+<p>Si vous importez un nom qui est déjà défini dans l’espace courant, alors l’import
 n’aura aucun effet. Dans ce cas, vous serez obligé d’accéder à un nom de classe
 avec son nom long afin d’éviter toute ambiguïté.</p>
 </div>
@@ -901,10 +912,10 @@ lui-même. Il peut également contenir des annotations pour le package.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="relations_entre_objets.html" class="btn btn-neutral float-right" title="Les relations entre objets" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="heritage_composition.html" class="btn btn-neutral float-right" title="Héritage et composition" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="cycle_de_vie.html" class="btn btn-neutral" title="Cycle de vie d’un objet" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
+        <a href="cycle_de_vie.html" class="btn btn-neutral float-left" title="Cycle de vie d’un objet" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
       
     </div>
   
@@ -917,7 +928,8 @@ lui-même. Il peut également contenir des annotations pour le package.</p>
 
     </p>
   </div>
-    <div><a class="reference download" href="https://github.com/spoonless/udev-2018/archive/gh-pages.zip"><code class="download docutils literal notranslate"><span class="pre">Télécharger ce cours</pre></code></a></div>
+    <div>Téléchargez ce support au format <a class="reference download" href="https://github.com/spoonless/udev-2018/archive/gh-pages.zip">HTML</a>
+    </div>
 
 
 </footer>
@@ -931,27 +943,16 @@ lui-même. Il peut également contenir des annotations pour le package.</p>
   
 
 
-  
-
-    
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/translations.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-
-  
-
-  <script type="text/javascript" src="../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(false);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

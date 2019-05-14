@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Les entités JPA &mdash; Documentation U&#39;Dev 2018 1.0</title>
+  <title>Les entités JPA &mdash; Documentation U&#39;Dev 2018 </title>
   
 
   
@@ -17,35 +17,38 @@
   
 
   
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/custom_rtd_theme.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Recherche" href="../search.html" />
     <link rel="next" title="Les requêtes JPA" href="jpa_queries.html" />
-    <link rel="prev" title="Accès aux bases de données : JDBC" href="jdbc.html" /> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
+    <link rel="prev" title="JDBC dans une application Web" href="jdbc_webapp.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -265,16 +268,16 @@
 <li class="toctree-l2"><a class="reference internal" href="../langage_java/package.html#le-fichier-package-info-java">Le fichier package-info.java</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../langage_java/relations_entre_objets.html">Les relations entre objets</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../langage_java/relations_entre_objets.html#l-heritage-is-a">L’héritage (is-a)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../langage_java/relations_entre_objets.html#heritage-et-constructeur">Héritage et constructeur</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../langage_java/relations_entre_objets.html#heritage-simple-object">Héritage simple : Object</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../langage_java/relations_entre_objets.html#heritage-et-affectation">Héritage et affectation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../langage_java/relations_entre_objets.html#le-mot-cle-instanceof">Le mot-clé instanceof</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../langage_java/relations_entre_objets.html#la-portee-protected">La portée protected</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../langage_java/relations_entre_objets.html#heritage-des-methodes-et-attributs-de-classe">Héritage des méthodes et attributs de classe</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../langage_java/relations_entre_objets.html#heritage-et-final">Héritage et final</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../langage_java/relations_entre_objets.html#la-composition-has-a">La composition (has-a)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../langage_java/heritage_composition.html">Héritage et composition</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/heritage_composition.html#l-heritage-is-a">L’héritage (is-a)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/heritage_composition.html#heritage-et-constructeur">Héritage et constructeur</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/heritage_composition.html#heritage-simple-object">Héritage simple : Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/heritage_composition.html#heritage-et-affectation">Héritage et affectation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/heritage_composition.html#le-mot-cle-instanceof">Le mot-clé instanceof</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/heritage_composition.html#la-portee-protected">La portée protected</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/heritage_composition.html#heritage-des-methodes-et-attributs-de-classe">Héritage des méthodes et attributs de classe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/heritage_composition.html#heritage-et-final">Héritage et final</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../langage_java/heritage_composition.html#la-composition-has-a">La composition (has-a)</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../langage_java/polymorphisme.html">Le polymorphisme</a><ul>
@@ -455,7 +458,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Java et les bases de données</span></p>
+<p class="caption"><span class="caption-text">Java EE ORM</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="jdbc.html">Accès aux bases de données : JDBC</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="jdbc.html#preambule-try-with-resources">Préambule : try-with-resources</a></li>
@@ -469,8 +472,16 @@
 <li class="toctree-l3"><a class="reference internal" href="jdbc.html#l-injection-sql">L’injection SQL</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="jdbc.html#recuperation-des-cles-generees">Récupération des clés générées</a></li>
 <li class="toctree-l2"><a class="reference internal" href="jdbc.html#le-callablestatement">Le CallableStatement</a></li>
 <li class="toctree-l2"><a class="reference internal" href="jdbc.html#la-transaction">La transaction</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="jdbc_webapp.html">JDBC dans une application Web</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="jdbc_webapp.html#acces-a-une-datasource">Accès à une DataSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jdbc_webapp.html#injection-d-une-datasource">Injection d’une DataSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jdbc_webapp.html#declaration-de-la-datasource-dans-le-fichier-web-xml">Déclaration de la DataSource dans le fichier web.xml</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jdbc_webapp.html#declaration-d-une-datasource-dans-tomcat">Déclaration d’une DataSource dans Tomcat</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Les entités JPA</a><ul>
@@ -589,7 +600,7 @@
         <a href="jpa_queries.html" class="btn btn-neutral float-right" title="Les requêtes JPA" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="jdbc.html" class="btn btn-neutral" title="Accès aux bases de données : JDBC" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
+        <a href="jdbc_webapp.html" class="btn btn-neutral" title="JDBC dans une application Web" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
       
   </div>
   
@@ -605,43 +616,43 @@ qui interagissent avec des bases de données. JDBC nous assure que le
 code Java sera semblable quel que soit le SGBDR utilisé (mais le code
 SQL pourra bien sûr être différent en exploitant telle ou telle
 fonctionnalité non standard fournie par le SGBDR).</p>
-<p>Néanmoins, JDBC a quelques inconvénients&nbsp;:</p>
+<p>Néanmoins, JDBC a quelques inconvénients :</p>
 <ul class="simple">
-<li>l’API est verbeuse et répétitive. Pour un programme de quelques
+<li><p>l’API est verbeuse et répétitive. Pour un programme de quelques
 centaines de lignes de code, elle se révèle très efficace. Mais pour
 des applications plus volumineuses, la quantité de code nécessaire
 (notamment SQL) peut devenir une source de ralentissement du
-développement.</li>
-<li>la gestion des nombreuses ressources (<a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/sql/Connection.html">Connection</a>, <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/sql/Statement.html">Statement</a>,
+développement.</p></li>
+<li><p>la gestion des nombreuses ressources (<a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/sql/Connection.html">Connection</a>, <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/sql/Statement.html">Statement</a>,
 <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/sql/ResultSet.html">ResultSet</a>) est une source permanente de bugs pour les
 développeurs. Il est donc très facile d’écrire des applications qui
-perdent des ressources.</li>
-<li>JDBC n’offre qu’un service limité&nbsp;: un système d’échange avec une
-base de données (même s’il le fait très bien).</li>
+perdent des ressources.</p></li>
+<li><p>JDBC n’offre qu’un service limité : un système d’échange avec une
+base de données (même s’il le fait très bien).</p></li>
 </ul>
 <div class="section" id="les-orm-object-relational-mapping">
 <h2>Les ORM (Object-Relational Mapping)<a class="headerlink" href="#les-orm-object-relational-mapping" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Les ORM sont des frameworks qui, comme l’indique leur nom, permettent de
 créer une correspondance entre un modèle objet et un modèle relationnel
 de base de données. Un ORM fournit généralement les fonctionnalités
-suivantes&nbsp;:</p>
+suivantes :</p>
 <ul class="simple">
-<li>génération à la volée des requêtes SQL les plus simples (CRUD)</li>
-<li>prise en charge des dépendances entre objets pour la mise en jour en
-cascade de la base de données</li>
-<li>support pour la construction de requêtes complexes par programmation</li>
+<li><p>génération à la volée des requêtes SQL les plus simples (CRUD)</p></li>
+<li><p>prise en charge des dépendances entre objets pour la mise en jour en
+cascade de la base de données</p></li>
+<li><p>support pour la construction de requêtes complexes par programmation</p></li>
 </ul>
-<p>Java EE fournit une API standard pour l’utilisation d’un ORM&nbsp;: <strong>JPA
+<p>Java EE fournit une API standard pour l’utilisation d’un ORM : <strong>JPA
 (Java Persistence API)</strong> (la <a class="reference external" href="https://jcp.org/aboutJava/communityprocess/final/jsr338/index.html">JSR-338</a>). Il existe plusieurs implémentations
-open source qui respectent l’API JPA&nbsp;:
+open source qui respectent l’API JPA :
 <a class="reference external" href="https://www.eclipse.org/eclipselink/">EclipseLink</a> (qui est aussi l’implémentation de référence), <a class="reference external" href="http://hibernate.org/">Hibernate</a>
 (JBoss - Red Hat), <a class="reference external" href="http://openjpa.apache.org/">OpenJPA</a> (Apache).</p>
 <p>Toutes ces implémentations sont bâties sur JDBC. Nous retrouverons donc
 les notions de pilote, de data source et d’URL de connexion lorsqu’il
 s’agira de configurer l’accès à la base de données.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Pour ce cours, nous utiliserons comme exemple l’implémentation
+<p class="admonition-title">Note</p>
+<p>Pour ce cours, nous utiliserons comme exemple l’implémentation
 fournie par <a class="reference external" href="http://hibernate.org/">Hibernate</a>. À version identique, le code présenté devrait être
 compatible avec les autres implémentations de JPA.</p>
 </div>
@@ -687,44 +698,43 @@ la correspondance doit être faite entre le modèle objet et le modèle
 relationnel de base de données. Il est possible de déclarer cette
 correspondance à l’aide du fichier XML <code class="docutils literal notranslate"><span class="pre">orm.xml</span></code>. Cependant, la
 plupart de développeurs préfèrent utiliser des annotations.</p>
-<p>La liste ci-dessous résument les annotations les plus simples et les plus utiles
-pour définir une entité et ses attributs&nbsp;:</p>
-<dl class="docutils">
-<dt><a class="reference external" href="https://docs.oracle.com/javaee/7/api/javax/persistence/Entity.html">&#64;Entity</a></dt>
-<dd>Définit qu’une classe est une entité. Le nom de l’entité est donné par
+<p>La liste ci-dessous résume les annotations les plus simples et les plus utiles
+pour définir une entité et ses attributs :</p>
+<dl class="simple">
+<dt><a class="reference external" href="https://docs.oracle.com/javaee/7/api/javax/persistence/Entity.html">&#64;Entity</a></dt><dd><p>Définit qu’une classe est une entité. Le nom de l’entité est donné par
 l’attribut <code class="docutils literal notranslate"><span class="pre">name</span></code> (en son absence le nom de l’entité correspond au nom
-de la classe).</dd>
-<dt><a class="reference external" href="https://docs.oracle.com/javaee/7/api/javax/persistence/Id.html">&#64;Id</a></dt>
-<dd>Définit l’attribut qui sert de clé primaire dans la table. Il est recommandé
+de la classe).</p>
+</dd>
+<dt><a class="reference external" href="https://docs.oracle.com/javaee/7/api/javax/persistence/Id.html">&#64;Id</a></dt><dd><p>Définit l’attribut qui sert de clé primaire dans la table. Il est recommandé
 au départ d’utiliser un type primitif, un wrapper de type primitif ou une
 <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a> pour représenter un id. Pour les clés composites,
 la mise en œuvre est plus compliquée. Afin  de ne pas se compliquer
-inutilement la tâche, il vaut mieux prévoir une clé simple pour chaque entité.</dd>
-<dt><a class="reference external" href="https://docs.oracle.com/javaee/7/api/javax/persistence/Basic.html">&#64;Basic</a></dt>
-<dd>Définit un mapping simple pour un attribut (par exemple <code class="docutils literal notranslate"><span class="pre">VARCHAR</span></code> pour
+inutilement la tâche, il vaut mieux prévoir une clé simple pour chaque entité.</p>
+</dd>
+<dt><a class="reference external" href="https://docs.oracle.com/javaee/7/api/javax/persistence/Basic.html">&#64;Basic</a></dt><dd><p>Définit un mapping simple pour un attribut (par exemple <code class="docutils literal notranslate"><span class="pre">VARCHAR</span></code> pour
 <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a>). Si on ne souhaite pas changer la valeur des attributs par défaut
 de cette annotation, alors il est possible de ne pas la spécifier
-puisqu’elle représente le mapping par défaut.</dd>
-<dt><a class="reference external" href="https://docs.oracle.com/javaee/7/api/javax/persistence/Temporal.html">&#64;Temporal</a></dt>
-<dd>Pour un attribut de type <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html">java.util.Date</a> et <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html">java.util.Calendar</a>, cette
+puisqu’elle représente le mapping par défaut.</p>
+</dd>
+<dt><a class="reference external" href="https://docs.oracle.com/javaee/7/api/javax/persistence/Temporal.html">&#64;Temporal</a></dt><dd><p>Pour un attribut de type <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html">java.util.Date</a> et <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html">java.util.Calendar</a>, cette
 annotation permet de préciser le type de mapping vers le type SQL (DATE,
-TIME ou TIMESTAMP).</dd>
-<dt><a class="reference external" href="https://docs.oracle.com/javaee/7/api/javax/persistence/Transient.html">&#64;Transient</a></dt>
-<dd>Indique qu’un attribut <strong>ne doit pas</strong> être persistant. Cet attribut ne sera
-donc jamais pris en compte lors de l’exécution des requêtes vers la base de données.</dd>
-<dt><a class="reference external" href="https://docs.oracle.com/javaee/7/api/javax/persistence/Lob.html">&#64;Lob</a></dt>
-<dd>Indique que la colonne correspondante en base de données est un LOB (large object).</dd>
+TIME ou TIMESTAMP).</p>
+</dd>
+<dt><a class="reference external" href="https://docs.oracle.com/javaee/7/api/javax/persistence/Transient.html">&#64;Transient</a></dt><dd><p>Indique qu’un attribut <strong>ne doit pas</strong> être persistant. Cet attribut ne sera
+donc jamais pris en compte lors de l’exécution des requêtes vers la base de données.</p>
+</dd>
+<dt><a class="reference external" href="https://docs.oracle.com/javaee/7/api/javax/persistence/Lob.html">&#64;Lob</a></dt><dd><p>Indique que la colonne correspondante en base de données est un LOB (large object).</p>
+</dd>
 </dl>
 <p>Certaines annotations sont utilisées pour fournir des informations sur la base
 de données sous-jacente :</p>
-<dl class="docutils">
-<dt><a class="reference external" href="https://docs.oracle.com/javaee/7/api/javax/persistence/Table.html">&#64;Table</a></dt>
-<dd>Permet de définir les informations sur la table représentant cette entité
+<dl class="simple">
+<dt><a class="reference external" href="https://docs.oracle.com/javaee/7/api/javax/persistence/Table.html">&#64;Table</a></dt><dd><p>Permet de définir les informations sur la table représentant cette entité
 en base de données. Il est possible de définir le nom de la table grâce à
 l’attribut <code class="docutils literal notranslate"><span class="pre">name</span></code>. Par défaut le nom de la table correspond au nom de
-l’entité (qui par défaut correspond au nom de la classe).</dd>
-<dt><a class="reference external" href="https://docs.oracle.com/javaee/7/api/javax/persistence/GeneratedValue.html">&#64;GeneratedValue</a></dt>
-<dd>Indique la stratégie à appliquer pour la génération de la clé lors de
+l’entité (qui par défaut correspond au nom de la classe).</p>
+</dd>
+<dt><a class="reference external" href="https://docs.oracle.com/javaee/7/api/javax/persistence/GeneratedValue.html">&#64;GeneratedValue</a></dt><dd><p>Indique la stratégie à appliquer pour la génération de la clé lors de
 l’insertion d’une entité en base. Les valeurs possibles sont données par
 l’énumération <a class="reference external" href="https://docs.oracle.com/javaee/7/api/javax/persistence/GenerationType.html">GenerationType</a>.
 Si vous utilisez MySQL et la propriété <code class="docutils literal notranslate"><span class="pre">autoincrement</span></code> sur une colonne,
@@ -732,9 +742,9 @@ alors vous devez utiliser <code class="docutils literal notranslate"><span class
 les exemples de ce cours).
 Si vous utilisez Oracle et un système de séquence, alors vous devez utiliser
 <code class="docutils literal notranslate"><span class="pre">GenerationType.SEQUENCE</span></code> et préciser le nom de la séquence dans
-l’attribut <code class="docutils literal notranslate"><span class="pre">generator</span></code> de <code class="docutils literal notranslate"><span class="pre">&#64;GeneratedValue</span></code>.</dd>
-<dt><a class="reference external" href="https://docs.oracle.com/javaee/7/api/javax/persistence/Column.html">&#64;Column</a></dt>
-<dd>Permet de déclarer des informations relatives à la colonne sur laquelle un
+l’attribut <code class="docutils literal notranslate"><span class="pre">generator</span></code> de <code class="docutils literal notranslate"><span class="pre">&#64;GeneratedValue</span></code>.</p>
+</dd>
+<dt><a class="reference external" href="https://docs.oracle.com/javaee/7/api/javax/persistence/Column.html">&#64;Column</a></dt><dd><p>Permet de déclarer des informations relatives à la colonne sur laquelle un
 attribut doit être mappé. Si cette annotation est absente, le nom de la
 colonne correspond au nom de l’attribut. Avec cette annotation, il est
 possible de donner le nom de la colonne (l’attribut <code class="docutils literal notranslate"><span class="pre">name</span></code>) mais également
@@ -743,7 +753,8 @@ si l’attribut doit être pris en compte pour des requêtes d’insertion
 Certains outils sont capables d’exploiter les annotations pour créer les
 bases de données. Dans ce cas, d’autres attributs sont disponibles pour
 ajouter toutes les contraintes nécessaires (telles que <code class="docutils literal notranslate"><span class="pre">length</span></code> ou
-<code class="docutils literal notranslate"><span class="pre">nullable</span></code>) et donner ainsi une description complète de la colonne.</dd>
+<code class="docutils literal notranslate"><span class="pre">nullable</span></code>) et donner ainsi une description complète de la colonne.</p>
+</dd>
 </dl>
 <div class="literal-block-wrapper docutils container" id="id3">
 <div class="code-block-caption"><span class="caption-text">Un exemple plus complet de classe entité</span><a class="headerlink" href="#id3" title="Lien permanent vers ce code">¶</a></div>
@@ -797,7 +808,7 @@ ajouter toutes les contraintes nécessaires (telles que <code class="docutils li
 </pre></div>
 </div>
 </div>
-<p>À l’entité JPA ci-dessus, on pourra faire correspondre la table MySQL&nbsp;:</p>
+<p>À l’entité JPA ci-dessus, on pourra faire correspondre la table MySQL :</p>
 <div class="literal-block-wrapper docutils container" id="id4">
 <div class="code-block-caption"><span class="caption-text">La script de création de la table associée à l’entité</span><a class="headerlink" href="#id4" title="Lien permanent vers ce code">¶</a></div>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="o">`</span><span class="n">individu</span><span class="o">`</span> <span class="p">(</span>
@@ -827,15 +838,15 @@ une implémentation compatible avec JPA. Dans le cadre de ce cours, nous utilise
 <a class="reference external" href="https://maven.apache.org/">Maven</a> pour gérer notre projet et ajouter comme dépendance dans le fichier
 <code class="docutils literal notranslate"><span class="pre">pom.xml</span></code> :</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;dependency&gt;</span>
-        <span class="nt">&lt;groupId&gt;</span>org.hibernate<span class="nt">&lt;/groupId&gt;</span>
-        <span class="nt">&lt;artifactId&gt;</span>hibernate-entitymanager<span class="nt">&lt;/artifactId&gt;</span>
-        <span class="nt">&lt;version&gt;</span>5.1.6.Final<span class="nt">&lt;/version&gt;</span>
+  <span class="nt">&lt;groupId&gt;</span>org.hibernate<span class="nt">&lt;/groupId&gt;</span>
+  <span class="nt">&lt;artifactId&gt;</span>hibernate-entitymanager<span class="nt">&lt;/artifactId&gt;</span>
+  <span class="nt">&lt;version&gt;</span>5.1.6.Final<span class="nt">&lt;/version&gt;</span>
 <span class="nt">&lt;/dependency&gt;</span>
 </pre></div>
 </div>
 <div class="admonition-template-de-projet-jpa admonition">
-<p class="first admonition-title">Template de projet JPA</p>
-<p class="last">Vous pouvez <a class="reference download internal" download="" href="../_downloads/2c9c1b422b01d462b78ab33bff30d99c/template-orm.zip"><code class="xref download docutils literal notranslate"><span class="pre">télécharger</span> <span class="pre">le</span> <span class="pre">projet</span> <span class="pre">d'exemple</span></code></a>.
+<p class="admonition-title">Template de projet JPA</p>
+<p>Vous pouvez <a class="reference download internal" download="" href="../_downloads/d9b9594766943eb7682af1ccf240f5e4/template-orm.zip"><code class="xref download docutils literal notranslate"><span class="pre">télécharger</span> <span class="pre">le</span> <span class="pre">projet</span> <span class="pre">d'exemple</span></code></a>.
 Il s’agit d’un projet Maven avec une dépendance vers Hibernate et le pilote JDBC MySQL.</p>
 </div>
 <p>Il faut fournir à l’implémentation de JPA un fichier XML de déploiement
@@ -868,8 +879,8 @@ par cette unité avec la balise <code class="docutils literal notranslate"><span
 permet de spécifier des propriétés propres à une implémentation de JPA et
 que indique comment se connecter au SGBDR.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">La liste complète des paramètres de configuration propres à <a class="reference external" href="http://hibernate.org/">Hibernate</a> est disponible dans la
+<p class="admonition-title">Note</p>
+<p>La liste complète des paramètres de configuration propres à <a class="reference external" href="http://hibernate.org/">Hibernate</a> est disponible dans la
 <a class="reference external" href="http://docs.jboss.org/hibernate/orm/5.1/userguide/html_single/Hibernate_User_Guide.html#configurations">documentation officielle</a>.</p>
 </div>
 <p>Le fichier <strong>persistence.xml doit se situer dans le répertoire
@@ -878,9 +889,9 @@ projet Maven, il suffit de créer ce fichier dans le répertoire
 <strong>src/main/resources/META-INF</strong> du projet (créez les répertoires
 manquants si nécessaire).</p>
 <div class="admonition tip">
-<p class="first admonition-title">Astuce</p>
-<p class="last">Le fichier <strong>persistence.xml</strong> est déjà inclus dans le
-<a class="reference download internal" download="" href="../_downloads/2c9c1b422b01d462b78ab33bff30d99c/template-orm.zip"><code class="xref download docutils literal notranslate"><span class="pre">projet</span> <span class="pre">d'exemple</span></code></a>.</p>
+<p class="admonition-title">Astuce</p>
+<p>Le fichier <strong>persistence.xml</strong> est déjà inclus dans le
+<a class="reference download internal" download="" href="../_downloads/d9b9594766943eb7682af1ccf240f5e4/template-orm.zip"><code class="xref download docutils literal notranslate"><span class="pre">projet</span> <span class="pre">d'exemple</span></code></a>.</p>
 </div>
 <p>On ajoute ensuite dans le fichier <strong>persistence.xml</strong> les propriétés permettant
 de décrire la connexion à la base de données.</p>
@@ -893,14 +904,14 @@ de décrire la connexion à la base de données.</p>
 <span class="s">             http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd&quot;</span>
              <span class="na">version=</span><span class="s">&quot;2.1&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;persistence-unit</span> <span class="na">name=</span><span class="s">&quot;monUniteDePersistance&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;properties&gt;</span>
-                <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;javax.persistence.jdbc.url&quot;</span> <span class="na">value=</span><span class="s">&quot;jdbc:mysql://localhost:3306/database&quot;</span> <span class="nt">/&gt;</span>
-                <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;javax.persistence.jdbc.driver&quot;</span> <span class="na">value=</span><span class="s">&quot;com.mysql.jdbc.Driver&quot;</span> <span class="nt">/&gt;</span>
-                <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;javax.persistence.jdbc.user&quot;</span> <span class="na">value=</span><span class="s">&quot;root&quot;</span> <span class="nt">/&gt;</span>
-                <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;javax.persistence.jdbc.password&quot;</span> <span class="na">value=</span><span class="s">&quot;root&quot;</span> <span class="nt">/&gt;</span>
-                <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;hibernate.show_sql&quot;</span> <span class="na">value=</span><span class="s">&quot;true&quot;</span> <span class="nt">/&gt;</span>
-                <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;hibernate.format_sql&quot;</span> <span class="na">value=</span><span class="s">&quot;true&quot;</span> <span class="nt">/&gt;</span>
-            <span class="nt">&lt;/properties&gt;</span>
+      <span class="nt">&lt;properties&gt;</span>
+        <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;javax.persistence.jdbc.url&quot;</span> <span class="na">value=</span><span class="s">&quot;jdbc:mysql://localhost:3306/database&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;javax.persistence.jdbc.driver&quot;</span> <span class="na">value=</span><span class="s">&quot;com.mysql.jdbc.Driver&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;javax.persistence.jdbc.user&quot;</span> <span class="na">value=</span><span class="s">&quot;root&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;javax.persistence.jdbc.password&quot;</span> <span class="na">value=</span><span class="s">&quot;root&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;hibernate.show_sql&quot;</span> <span class="na">value=</span><span class="s">&quot;true&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;hibernate.format_sql&quot;</span> <span class="na">value=</span><span class="s">&quot;true&quot;</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;/properties&gt;</span>
     <span class="nt">&lt;/persistence-unit&gt;</span>
 <span class="nt">&lt;/persistence&gt;</span>
 </pre></div>
@@ -952,15 +963,15 @@ appel à leur méthode <code class="docutils literal notranslate"><span class="p
 l’interface <code class="docutils literal notranslate"><span class="pre">AutoCloseable</span></code>. Il n’est donc pas possible d’utiliser la
 syntaxe du try-with-resources avec ces interfaces.</p>
 <div class="admonition caution">
-<p class="first admonition-title">Prudence</p>
-<p class="last"><a class="reference external" href="http://hibernate.org/">Hibernate</a> <strong>impose</strong> de fermer correctement les instances de type
+<p class="admonition-title">Prudence</p>
+<p><a class="reference external" href="http://hibernate.org/">Hibernate</a> <strong>impose</strong> de fermer correctement les instances de type
 <a class="reference external" href="https://docs.oracle.com/javaee/7/api/javax/persistence/EntityManagerFactory.html">EntityManagerFactory</a> et <a class="reference external" href="https://docs.oracle.com/javaee/7/api/javax/persistence/EntityManager.html">EntityManager</a>. Si vous ne le faites pas, votre programme
 ne s’arrêtera pas même si vous arrivez à la fin de la méthode <em>main</em> de votre
 programme.</p>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Nous verrons par la suite que la procédure pour récupérer une instance d’un
+<p class="admonition-title">Note</p>
+<p>Nous verrons par la suite que la procédure pour récupérer une instance d’un
 <a class="reference external" href="https://docs.oracle.com/javaee/7/api/javax/persistence/EntityManager.html">EntityManager</a> est différente si nous développons une application Java EE
 destinée à être déployée dans un serveur d’application.</p>
 </div>
@@ -970,14 +981,14 @@ destinée à être déployée dans un serveur d’application.</p>
 <h2>Manipuler des entités à partir d’un EntityManager<a class="headerlink" href="#manipuler-des-entites-a-partir-d-un-entitymanager" title="Lien permanent vers ce titre">¶</a></h2>
 <p>À partir d’une instance d”<a class="reference external" href="https://docs.oracle.com/javaee/7/api/javax/persistence/EntityManager.html">EntityManager</a>, nous allons pouvoir
 manipuler les entités afin de les créer, les modifier, les charger ou
-les supprimer. Pour cela, nous disposons de six méthodes&nbsp;:</p>
+les supprimer. Pour cela, nous disposons de six méthodes :</p>
 <ul class="simple">
-<li>find</li>
-<li>persist</li>
-<li>merge</li>
-<li>detach</li>
-<li>refresh</li>
-<li>remove</li>
+<li><p>find</p></li>
+<li><p>persist</p></li>
+<li><p>merge</p></li>
+<li><p>detach</p></li>
+<li><p>refresh</p></li>
+<li><p>remove</p></li>
 </ul>
 <p>L”<a class="reference external" href="https://docs.oracle.com/javaee/7/api/javax/persistence/EntityManager.html">EntityManager</a> va prendre en charge la relation avec la base de
 données et la génération des requêtes SQL nécessaires.</p>
@@ -1009,7 +1020,7 @@ partir des valeurs des colonnes sur lesquelles ils ont été mappés.</p>
 <code class="docutils literal notranslate"><span class="pre">remove</span></code>), il faut que l’appel se fasse dans le cadre d’une
 transaction. Grâce à la méthode <code class="docutils literal notranslate"><span class="pre">EntityManager.getTransaction()</span></code>, il
 est possible de récupérer la transaction est de gérer la démarcation
-comme ci-dessous&nbsp;:</p>
+comme ci-dessous :</p>
 <div class="literal-block-wrapper docutils container" id="id9">
 <div class="code-block-caption"><span class="caption-text">Gestion de la transaction avec un EntityManager</span><a class="headerlink" href="#id9" title="Lien permanent vers ce code">¶</a></div>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">EntityManager</span> <span class="n">entityManager</span> <span class="o">=</span> <span class="o">...</span> <span class="c1">// nous faisons l&#39;hypothèse que nous disposons d&#39;une instance</span>
@@ -1033,8 +1044,8 @@ comme ci-dessous&nbsp;:</p>
 </div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Nous verrons plus tard que l’exemple ci-dessus <strong>ne fonctionne pas</strong>
+<p class="admonition-title">Note</p>
+<p>Nous verrons plus tard que l’exemple ci-dessus <strong>ne fonctionne pas</strong>
 dans un serveur Java EE qui utilise l’API de gestion des transactions
 JTA.</p>
 </div>
@@ -1048,9 +1059,9 @@ Il ne s’agit pas d’un effet de style, les méthodes pour manipuler les
 entités ont un comportement qui dépasse la simple exécution de requêtes
 SQL.</p>
 <div class="admonition-a-votre-avis admonition">
-<p class="first admonition-title">À votre avis</p>
-<p>Quelles sont les requêtes SQL exécutées par le code ci-dessous&nbsp;?</p>
-<div class="last highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">EntityManager</span> <span class="n">entityManager</span> <span class="o">=</span> <span class="o">...</span> <span class="c1">// nous faisons l&#39;hypothèse que nous disposons d&#39;une instance</span>
+<p class="admonition-title">À votre avis</p>
+<p>Quelles sont les requêtes SQL exécutées par le code ci-dessous ?</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">EntityManager</span> <span class="n">entityManager</span> <span class="o">=</span> <span class="o">...</span> <span class="c1">// nous faisons l&#39;hypothèse que nous disposons d&#39;une instance</span>
 
 <span class="n">Individu</span> <span class="n">individu</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Individu</span><span class="o">();</span>
 <span class="n">individu</span><span class="o">.</span><span class="na">setNom</span><span class="o">(</span><span class="s">&quot;David&quot;</span><span class="o">);</span>
@@ -1126,8 +1137,8 @@ retournée est toujours <strong>la même</strong>.</p>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Il existe également la méthode
+<p class="admonition-title">Note</p>
+<p>Il existe également la méthode
 <code class="docutils literal notranslate"><span class="pre">EntityManager.find(Class&lt;T&gt;,</span> <span class="pre">Object,</span> <span class="pre">LockModeType)</span></code>. Cette méthode
 permet de récupérer une entité en posant un verrou. Elle est utilisée
 pour réaliser un verrouillage optimiste ou pessimiste (appelé parfois
@@ -1140,8 +1151,8 @@ pour réaliser un verrouillage optimiste ou pessimiste (appelé parfois
 modifications faites sur l’entité durant la transaction courante et
 recharge son état à partir des valeurs en base de données.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Il existe également la méthode
+<p class="admonition-title">Note</p>
+<p>Il existe également la méthode
 <code class="docutils literal notranslate"><span class="pre">EntityManager.refresh(Class&lt;T&gt;,</span> <span class="pre">Object,</span> <span class="pre">LockModeType)</span></code>. Cette méthode
 permet de rafraîchir une entité en vérouillant l’accès en écriture. Elle
 est utilisée pour réaliser un verrouillage optimiste ou pessimiste
@@ -1157,7 +1168,7 @@ très différente. En fait, il <strong>n’existe pas</strong> à proprement par
 méthode pour réaliser la mise à jour d’une entité. Un <a class="reference external" href="https://docs.oracle.com/javaee/7/api/javax/persistence/EntityManager.html">EntityManager</a>
 surveille les entités dont il a la charge et réalise les mises à jour si
 nécessaire au commit de la transaction. Par exemple le code ci-dessous
-suffit à déclencher une requête SQL UPDATE&nbsp;:</p>
+suffit à déclencher une requête SQL UPDATE :</p>
 <div class="literal-block-wrapper docutils container" id="id10">
 <div class="code-block-caption"><span class="caption-text">Mise à jour implicite d’une entité</span><a class="headerlink" href="#id10" title="Lien permanent vers ce code">¶</a></div>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">EntityManager</span> <span class="n">entityManager</span> <span class="o">=</span> <span class="o">...</span> <span class="c1">// nous faisons l&#39;hypothèse que nous disposons d&#39;une instance</span>
@@ -1182,10 +1193,10 @@ suffit à déclencher une requête SQL UPDATE&nbsp;:</p>
 </div>
 <p>Si un <a class="reference external" href="https://docs.oracle.com/javaee/7/api/javax/persistence/EntityManager.html">EntityManager</a> détecte automatiquement les modifications des
 entités dont il a la charge, à quoi peut donc servir la méthode
-<code class="docutils literal notranslate"><span class="pre">EntityManager.merge(T)</span></code>&nbsp;? En fait si vous créez vous même une
+<code class="docutils literal notranslate"><span class="pre">EntityManager.merge(T)</span></code> ? En fait si vous créez vous même une
 instance d’une entité et que vous positionnez la clé, cette entité n’est
 gérée par aucun <a class="reference external" href="https://docs.oracle.com/javaee/7/api/javax/persistence/EntityManager.html">EntityManager</a>. Pour qu’un <a class="reference external" href="https://docs.oracle.com/javaee/7/api/javax/persistence/EntityManager.html">EntityManager</a> prenne
-en compte votre entité, il faut appeler la méthode <code class="docutils literal notranslate"><span class="pre">merge</span></code>&nbsp;:</p>
+en compte votre entité, il faut appeler la méthode <code class="docutils literal notranslate"><span class="pre">merge</span></code> :</p>
 <div class="literal-block-wrapper docutils container" id="id11">
 <div class="code-block-caption"><span class="caption-text">Utilisation de la méthode merge</span><a class="headerlink" href="#id11" title="Lien permanent vers ce code">¶</a></div>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">EntityManager</span> <span class="n">entityManager</span> <span class="o">=</span> <span class="o">...</span> <span class="c1">// nous faisons l&#39;hypothèse que nous disposons d&#39;une instance</span>
@@ -1251,7 +1262,7 @@ entraînera une requête SQL DELETE.</p>
         <a href="jpa_queries.html" class="btn btn-neutral float-right" title="Les requêtes JPA" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="jdbc.html" class="btn btn-neutral" title="Accès aux bases de données : JDBC" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
+        <a href="jdbc_webapp.html" class="btn btn-neutral float-left" title="JDBC dans une application Web" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
       
     </div>
   
@@ -1264,7 +1275,8 @@ entraînera une requête SQL DELETE.</p>
 
     </p>
   </div>
-    <div><a class="reference download" href="https://github.com/spoonless/udev-2018/archive/gh-pages.zip"><code class="download docutils literal notranslate"><span class="pre">Télécharger ce cours</pre></code></a></div>
+    <div>Téléchargez ce support au format <a class="reference download" href="https://github.com/spoonless/udev-2018/archive/gh-pages.zip">HTML</a>
+    </div>
 
 
 </footer>
@@ -1278,27 +1290,16 @@ entraînera une requête SQL DELETE.</p>
   
 
 
-  
-
-    
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/translations.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-
-  
-
-  <script type="text/javascript" src="../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(false);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

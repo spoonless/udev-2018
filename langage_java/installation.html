@@ -11,7 +11,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Installation &mdash; Documentation U&#39;Dev 2018 1.0</title>
+  <title>Installation &mdash; Documentation U&#39;Dev 2018 </title>
   
 
   
@@ -20,13 +20,21 @@
   
 
   
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/custom_rtd_theme.css" type="text/css" />
@@ -34,21 +42,16 @@
     <link rel="search" title="Recherche" href="../search.html" />
     <link rel="next" title="Compilation &amp; exécution" href="compilation.html" />
     <link rel="prev" title="Introduction" href="introduction.html" /> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -268,16 +271,16 @@
 <li class="toctree-l2"><a class="reference internal" href="package.html#le-fichier-package-info-java">Le fichier package-info.java</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="relations_entre_objets.html">Les relations entre objets</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="relations_entre_objets.html#l-heritage-is-a">L’héritage (is-a)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="relations_entre_objets.html#heritage-et-constructeur">Héritage et constructeur</a></li>
-<li class="toctree-l2"><a class="reference internal" href="relations_entre_objets.html#heritage-simple-object">Héritage simple : Object</a></li>
-<li class="toctree-l2"><a class="reference internal" href="relations_entre_objets.html#heritage-et-affectation">Héritage et affectation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="relations_entre_objets.html#le-mot-cle-instanceof">Le mot-clé instanceof</a></li>
-<li class="toctree-l2"><a class="reference internal" href="relations_entre_objets.html#la-portee-protected">La portée protected</a></li>
-<li class="toctree-l2"><a class="reference internal" href="relations_entre_objets.html#heritage-des-methodes-et-attributs-de-classe">Héritage des méthodes et attributs de classe</a></li>
-<li class="toctree-l2"><a class="reference internal" href="relations_entre_objets.html#heritage-et-final">Héritage et final</a></li>
-<li class="toctree-l2"><a class="reference internal" href="relations_entre_objets.html#la-composition-has-a">La composition (has-a)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="heritage_composition.html">Héritage et composition</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="heritage_composition.html#l-heritage-is-a">L’héritage (is-a)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="heritage_composition.html#heritage-et-constructeur">Héritage et constructeur</a></li>
+<li class="toctree-l2"><a class="reference internal" href="heritage_composition.html#heritage-simple-object">Héritage simple : Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="heritage_composition.html#heritage-et-affectation">Héritage et affectation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="heritage_composition.html#le-mot-cle-instanceof">Le mot-clé instanceof</a></li>
+<li class="toctree-l2"><a class="reference internal" href="heritage_composition.html#la-portee-protected">La portée protected</a></li>
+<li class="toctree-l2"><a class="reference internal" href="heritage_composition.html#heritage-des-methodes-et-attributs-de-classe">Héritage des méthodes et attributs de classe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="heritage_composition.html#heritage-et-final">Héritage et final</a></li>
+<li class="toctree-l2"><a class="reference internal" href="heritage_composition.html#la-composition-has-a">La composition (has-a)</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="polymorphisme.html">Le polymorphisme</a><ul>
@@ -458,7 +461,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Java et les bases de données</span></p>
+<p class="caption"><span class="caption-text">Java EE ORM</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../javaee_orm/jdbc.html">Accès aux bases de données : JDBC</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../javaee_orm/jdbc.html#preambule-try-with-resources">Préambule : try-with-resources</a></li>
@@ -472,8 +475,16 @@
 <li class="toctree-l3"><a class="reference internal" href="../javaee_orm/jdbc.html#l-injection-sql">L’injection SQL</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../javaee_orm/jdbc.html#recuperation-des-cles-generees">Récupération des clés générées</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../javaee_orm/jdbc.html#le-callablestatement">Le CallableStatement</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../javaee_orm/jdbc.html#la-transaction">La transaction</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../javaee_orm/jdbc_webapp.html">JDBC dans une application Web</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../javaee_orm/jdbc_webapp.html#acces-a-une-datasource">Accès à une DataSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../javaee_orm/jdbc_webapp.html#injection-d-une-datasource">Injection d’une DataSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../javaee_orm/jdbc_webapp.html#declaration-de-la-datasource-dans-le-fichier-web-xml">Déclaration de la DataSource dans le fichier web.xml</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../javaee_orm/jdbc_webapp.html#declaration-d-une-datasource-dans-tomcat">Déclaration d’une DataSource dans Tomcat</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../javaee_orm/jpa_entites.html">Les entités JPA</a><ul>
@@ -607,8 +618,8 @@
 L’installation du JDK dépend de votre plate-forme : il est distribué sous la forme d’un installeur
 pour Windows et MacOS, et sous la forme d’un package ou d’une archive sous Linux.</p>
 <div class="admonition attention">
-<p class="first admonition-title">Attention</p>
-<p class="last">Votre machine dispose déjà très certainement d’un environnement d’exécution
+<p class="admonition-title">Attention</p>
+<p>Votre machine dispose déjà très certainement d’un environnement d’exécution
 Java (<strong>JRE</strong>) qui ne contient pas les outils nécessaires pour développer en Java. Vous
 devez donc installer un JDK.</p>
 </div>
@@ -635,24 +646,24 @@ que vous pouvez décompresser où vous le souhaitez.</p>
 <p>Après avoir lancé Eclipse, il va falloir vérifier la version de Java utilisée par l’IDE
 et la modifier si nécessaire.</p>
 <p>Pour vérifier les versions de Java disponibles dans Eclipse, ouvrez les préférences
-utilisateur : menu «&nbsp;Window &gt; Preferences&nbsp;». Dans la zone de filtre en haut à gauche,
-saisissez «&nbsp;jre&nbsp;» (pour Java Runtime Environment) et sélectionnez dans l’arbre
-«&nbsp;Installed JREs&nbsp;» comme ci-dessous :</p>
+utilisateur : menu « Window &gt; Preferences ». Dans la zone de filtre en haut à gauche,
+saisissez « jre » (pour Java Runtime Environment) et sélectionnez dans l’arbre
+« Installed JREs » comme ci-dessous :</p>
 <img alt="../_images/eclipse_installed_jre.png" src="../_images/eclipse_installed_jre.png" />
 <p>Vérifiez que le JDK que vous avez installé se trouve bien dans la liste des JRE détectés
 par Eclipse. De plus le JDK doit être coché pour indiquer à Eclipse qu’il s’agit de
 l’environnement d’exécution à utiliser par défaut pour tous les projets.</p>
-<p>Si vous ne trouvez pas le JDK installé dans la liste, utilisez le bouton «&nbsp;Add…&nbsp;»
+<p>Si vous ne trouvez pas le JDK installé dans la liste, utilisez le bouton « Add… »
 pour l’ajouter manuellement :</p>
 <ol class="arabic simple">
-<li>Pour le choix du type de JRE, choisissez «&nbsp;Standard VM&nbsp;» et cliquez sur «&nbsp;Next&nbsp;»</li>
-<li>Dans la boîte de dialogue «&nbsp;Add JRE&nbsp;», cliquez sur le bouton «&nbsp;Directory…&nbsp;» pour sélectionner le répertoire d’installation du JDK</li>
-<li>Eclipse s’occupe ensuite de remplir les champs nécessaires et vous n’avez plus qu’à cliquer sur «&nbsp;Finish&nbsp;»</li>
+<li><p>Pour le choix du type de JRE, choisissez « Standard VM » et cliquez sur « Next »</p></li>
+<li><p>Dans la boîte de dialogue « Add JRE », cliquez sur le bouton « Directory… » pour sélectionner le répertoire d’installation du JDK</p></li>
+<li><p>Eclipse s’occupe ensuite de remplir les champs nécessaires et vous n’avez plus qu’à cliquer sur « Finish »</p></li>
 </ol>
 <img alt="../_images/eclipse_jre_definition.png" src="../_images/eclipse_jre_definition.png" />
 <div class="admonition attention">
-<p class="first admonition-title">Attention</p>
-<p class="last">N’oubliez pas de cocher la ligne de votre JDK dans l’écran «&nbsp;Installed JREs&nbsp;» pour
+<p class="admonition-title">Attention</p>
+<p>N’oubliez pas de cocher la ligne de votre JDK dans l’écran « Installed JREs » pour
 qu’il devienne l’environnement d’exécution par défaut.</p>
 </div>
 </div>
@@ -669,7 +680,7 @@ qu’il devienne l’environnement d’exécution par défaut.</p>
         <a href="compilation.html" class="btn btn-neutral float-right" title="Compilation &amp; exécution" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="introduction.html" class="btn btn-neutral" title="Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
+        <a href="introduction.html" class="btn btn-neutral float-left" title="Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
       
     </div>
   
@@ -682,7 +693,8 @@ qu’il devienne l’environnement d’exécution par défaut.</p>
 
     </p>
   </div>
-    <div><a class="reference download" href="https://github.com/spoonless/udev-2018/archive/gh-pages.zip"><code class="download docutils literal notranslate"><span class="pre">Télécharger ce cours</pre></code></a></div>
+    <div>Téléchargez ce support au format <a class="reference download" href="https://github.com/spoonless/udev-2018/archive/gh-pages.zip">HTML</a>
+    </div>
 
 
 </footer>
@@ -696,27 +708,16 @@ qu’il devienne l’environnement d’exécution par défaut.</p>
   
 
 
-  
-
-    
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/translations.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-
-  
-
-  <script type="text/javascript" src="../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(false);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>
